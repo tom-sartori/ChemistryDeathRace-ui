@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Game} from "../classes/game";
 
 @Component({
   selector: 'app-zim-test',
@@ -7,15 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ZimTestComponent implements OnInit {
 
+  private _game!: Game;
+
   constructor() { }
 
   ngOnInit(): void {
-    new Frame(FIT, 1024, 768, light, dark, this.ready);
+    new Frame(FILL, 1000, 1000, grey, grey, this.ready.bind(this));
   }
 
   ready() {
-    new Circle(100, blue)
-      .center()
-      .drag();
+    this._game = new Game(1000, 1000, 4);
   }
+
 }
