@@ -12,8 +12,8 @@
 
 // Library documentation : http://www.createjs.com/Docs/SoundJS/modules/SoundJS.html
 
-//// <reference types="createjs-lib" />
-//// <reference types="preloadjs" />
+/// <reference types="../createjs-lib" />
+/// <reference types="../preloadjs" />
 
 declare namespace createjs {
 

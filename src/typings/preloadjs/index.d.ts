@@ -12,7 +12,7 @@
 
 // Library documentation : http://www.createjs.com/Docs/PreloadJS/modules/PreloadJS.html
 
-//// <reference types="createjs-lib" />
+/// <reference types="../createjs-lib" />
 
 declare namespace createjs {
     export class AbstractLoader extends EventDispatcher {

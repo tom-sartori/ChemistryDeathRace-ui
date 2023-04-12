@@ -12,8 +12,8 @@
 
 // Library documentation : http://www.createjs.com/Docs/EaselJS/modules/EaselJS.html
 
-//// <reference types="createjs-lib" />
-//// <reference types="tweenjs" />
+/// <reference types="../createjs-lib" />
+/// <reference types="../tweenjs" />
 
 // rename the native MouseEvent, to avoid conflict with createjs's MouseEvent
 interface NativeMouseEvent extends MouseEvent {
