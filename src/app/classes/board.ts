@@ -1,40 +1,42 @@
-import { Space } from './space';
+import {Space} from './space';
 import {Pawn} from "./pawn";
+import {UIConstants} from "../constant/UIConstants";
+import GradientColor = zim.GradientColor;
 
 export class Board extends Container {
 
-  private _board: Array<Space> = [];
+  private readonly board: Space[];
+  private readonly pawns: Pawn[];
 
-  private _pawns: Array<Pawn> = [];
+  private startSpace: Space;
+  private endSpace: Space;
 
-  private _startSpace: Space;
-  private _endSpace: Space;
-
-  private startAndEndIndex : number[] = [0, 41];
-  private pipeIndex : number[] = [8, 14, 23, 35];
+  private startAndEndIndex: number[] = [0, 41];
+  private pipeIndex: number[] = [8, 14, 23, 35];
 
 
   constructor(pawns: Array<Pawn>) {
     super();
-    const spaceColors = [pink, green, orange, blue, yellow, brown];
+    const spaceColors: GradientColor[] = [pink, green, orange, blue, yellow, brown];
+    this.board = [];
 
-    for (let i = 0; i < 42; i++) {
+    for (let i: number = 0; i < 42; i++) {
       if (this.startAndEndIndex.includes(i)) {
-        this._board.push(new Space(i, 50, 50, darker));
+        this.board.push(new Space(50, 50, darker, (i + 1).toString()));
       } else if (this.pipeIndex.includes(i)) {
-        this._board.push(new Space(i, 50, 50, lighter));
+        this.board.push(new Space(50, 50, UIConstants.pipeBackgroundColor, (i + 1).toString()));
       } else {
-        this._board.push(new Space(i, 50, 50, spaceColors[i % 6]));
+        this.board.push(new Space(50, 50, spaceColors[i % 6], (i + 1).toString()));
       }
     }
 
-    this._startSpace = this._board[0];
-    this._endSpace = this._board[41];
+    this.startSpace = this.board[0];
+    this.endSpace = this.board[41];
 
-    this._pawns = pawns;
+    this.pawns = pawns;
 
-    for (let i = 0; i < pawns.length; i++) {
-      this._startSpace.addPawn(pawns[i]);
+    for (let i: number = 0; i < pawns.length; i++) {
+      this.startSpace.addPawn(pawns[i]);
     }
 
     let x = 0;
@@ -42,7 +44,7 @@ export class Board extends Container {
     let row = 1;
     let column = 1;
     for (let i = 0; i < 42; i++) {
-      this._board[i].pos(x, y).addTo(this);
+      this.board[i].pos(x, y).addTo(this);
       if (row % 2 === 0) {
         x -= 50;
         if (column === 7) {
@@ -65,62 +67,33 @@ export class Board extends Container {
         }
       }
     }
-
   }
 
+  public movePawn(pawnNumber: number, spaces: number) {
+    let pawn: Pawn = this.pawns[pawnNumber];
 
-  get board(): Array<Space> {
-    return this._board;
-  }
+    let currentSpaceIndex: number = this.board.findIndex(space => space.pawns.includes(pawn));
+    if (currentSpaceIndex == -1) {
+      throw new Error("board.ts movePawn(...) : space not found. ");
+    }
 
-  set board(value: Array<Space>) {
-    this._board = value;
-  }
+    this.board[currentSpaceIndex].removePawn(pawn);
 
-  get startSpace(): Space {
-    return this._startSpace;
-  }
-
-  set startSpace(value: Space) {
-    this._startSpace = value;
-  }
-
-  get endSpace(): Space {
-    return this._endSpace;
-  }
-
-  set endSpace(value: Space) {
-    this._endSpace = value;
-  }
-
-  get pawns(): Array<Pawn> {
-    return this._pawns;
-  }
-
-  set pawns(value: Array<Pawn>) {
-    this._pawns = value;
-  }
-
-  pawn(pawnNumber : number): Pawn {
-    return this._pawns[pawnNumber];
-  }
-
-  movePawn(pawnNumber: number, spaces: number) {
-    let pawn = this.pawn(pawnNumber);
-    let currentSpace = this._board.find(space => space.pawns.includes(pawn));
-    currentSpace!.removePawn(pawn);
-
-    let newSpaceIndex = currentSpace!.spaceId + spaces;
+    /// TODO : constants.
+    let newSpaceIndex: number = currentSpaceIndex + spaces;
     if (newSpaceIndex > 41) {
       newSpaceIndex = 41;
-    } else if (newSpaceIndex < 0) {
+    }
+    else if (newSpaceIndex < 0) {
       newSpaceIndex = 0;
-    } else if (this.pipeIndex[0] === newSpaceIndex || this.pipeIndex[2] === newSpaceIndex) {
+    }
+    else if (this.pipeIndex[0] === newSpaceIndex || this.pipeIndex[2] === newSpaceIndex) {
       newSpaceIndex += 3;
-    } else if (this.pipeIndex[1] === newSpaceIndex || this.pipeIndex[3] === newSpaceIndex) {
+    }
+    else if (this.pipeIndex[1] === newSpaceIndex || this.pipeIndex[3] === newSpaceIndex) {
       newSpaceIndex -= 3;
     }
-    let newSpace = this._board[newSpaceIndex];
+    let newSpace: Space = this.board[newSpaceIndex];
     newSpace.addPawn(pawn);
   }
 }

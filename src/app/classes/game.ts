@@ -2,41 +2,40 @@ import {Player} from "./player";
 import {Board} from "./board";
 import {Dice} from "./dice";
 import {Pawn} from "./pawn";
+import {GameConstants} from "../constant/GameConstants";
+import {UIConstants} from "../constant/UIConstants";
 
 export class Game extends Container {
 
-  private _players: Player[] = [];
-  private _numberMaxPlayers: number;
-  private _currentPlayer: Player;
-  private _board: Board;
+  private readonly dice: Dice;
+  private readonly players: Player[];
 
-  private _dice!: Dice;
+  private currentPlayer: Player;
+  private board: Board;
 
-  constructor(width: number, height : number, numberMaxPlayers: number) {
+  constructor(width: number, height : number) {
     super(width, height);
 
-    // Création des pions
-    const pawnColors = ["#9d0000", "#76009d", "#229d00", "#00259d"];
+    // Pawns.
     let pawns: Pawn[] = [];
-    for (let i = 0; i < 4; i++) {
-      pawns.push(new Pawn(i+1, 8, pawnColors[i]));
+    for (let i: number = 0; i < 4; i++) { /// TODO : current number of players.
+      pawns.push(new Pawn(8, UIConstants.pawnColors[i]));
     }
 
-    // Création des joueurs
-    this._players = [];
+    // Players.
+    this.players = [];
     for (let i = 0; i < 4; i++) {
-      this._players.push(new Player(i, "Player " + i, pawns[i]));
+      this.players.push(new Player(i, "Player " + i, pawns[i]));
     }
-    this._numberMaxPlayers = numberMaxPlayers;
-    this._currentPlayer = this.players[0];
+    this.currentPlayer = this.players[0];
 
-    // Création du plateau
-    this._board = new Board(pawns);
-    this._board.center();
+    // Board.
+    this.board = new Board(pawns);
+    this.board.center();
 
-    // Création du dé
-    this._dice = new Dice(6);
-    this._dice.pos(200, 400);
+    // Dice.
+    this.dice = new Dice();
+    this.dice.pos(200, 400);
 
     let label = new Label({
       text:"Lancer le dé",
@@ -45,60 +44,28 @@ export class Game extends Container {
     });
     let button = new Button({
       label: label,
-      backgroundColor:"orange",
-      rollBackgroundColor:"green",
+      backgroundColor: orange,
+      rollBackgroundColor: green,
       width: 100,
       height: 30,
       corner:10
     });
     button.pos(175,475)
-    button.addTo(this._dice);
+    button.addTo(this.dice);
     button.on("mousedown", this.rollDice);
   }
 
-  private rollDice = () => {
-    let result = this._dice.roll();
-    this._board.movePawn(this._currentPlayer.playerId, result);
+  private rollDice = (): void => {
+    let result: number = this.dice.roll();
+    this.board.movePawn(this.currentPlayer.id, result);
     this.nextPlayer();
   }
 
-  private nextPlayer() {
-    let nextPlayerId = this._currentPlayer.playerId + 1;
-    if (nextPlayerId >= this._numberMaxPlayers) {
+  private nextPlayer(): void {
+    let nextPlayerId = this.currentPlayer.id + 1;
+    if (nextPlayerId >= GameConstants.maxNumberOfPlayer) {
       nextPlayerId = 0;
     }
-    this._currentPlayer = this._players[nextPlayerId];
-  }
-
-  get players(): Player[] {
-    return this._players;
-  }
-
-  set players(value: Player[]) {
-    this._players = value;
-  }
-
-  get numberMaxPlayers(): number {
-    return this._numberMaxPlayers;
-  }
-
-  set numberMaxPlayers(value: number) {
-    this._numberMaxPlayers = value;
-  }
-
-  get currentPlayer(): Player {
-    return this._currentPlayer;
-  }
-
-  set currentPlayer(value: Player) {
-    this._currentPlayer = value;
-  }
-
-  get board(): Board {
-    return this._board;
-  }
-
-  set board(value: Board) {
-    this._board = value;
+    this.currentPlayer = this.players[nextPlayerId];
   }
 }

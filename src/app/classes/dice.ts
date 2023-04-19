@@ -1,15 +1,18 @@
+import {GameConstants} from "../constant/GameConstants";
+import {UIConstants} from "../constant/UIConstants";
+
+const random = require('lodash/random.js')
+
 export class Dice extends Container {
 
-  private _size!: number;
-  private _currentFace!: number;
+  private _currentFace: number;
 
-  constructor(size: number) {
+  constructor() {
     super();
-    this._size = size;
     this._currentFace = 1;
-    for (let i = 1; i <= size; i++) {
-      let side = new Rectangle(50, 50, white);
-      let text = new Label({
+    for (let i: number = 1; i <= GameConstants.diceSize; i++) {
+      let side: Rectangle = new Rectangle(UIConstants.diceWidth, UIConstants.diceHeight, white);
+      let text: Label = new Label({
         text: i.toString(),
         color: black,
       });
@@ -20,32 +23,20 @@ export class Dice extends Container {
     }
   }
 
-  get size(): number {
-    return this._size;
+  public roll(): number {
+    this.currentFace = random(1, GameConstants.diceSize);
+    return this.currentFace;
   }
 
-  set size(value: number) {
-    this._size = value;
-  }
-
-  get currentFace(): number {
+  private get currentFace(): number {
     return this._currentFace;
   }
 
-  set currentFace(value: number) {
-    this._currentFace = value;
-  }
-
-  public roll(): number {
-    let newSide = Math.floor(Math.random() * this._size) + 1;
-    this.showSide(newSide);
-    return newSide;
-  }
-
-  private showSide(sideNumber: number) {
-    if (sideNumber < 1 || sideNumber > this._size) return;
-    this.getChildAt(this._currentFace - 1).visible = false;
-    this.getChildAt(sideNumber - 1).visible = true;
-    this._currentFace = sideNumber;
+  private set currentFace(value: number) {
+    if (0 < value && value <= GameConstants.diceSize) {
+      this.getChildAt(this.currentFace - 1).visible = false;
+      this.getChildAt(value - 1).visible = true;
+      this._currentFace = value;
+    }
   }
 }
