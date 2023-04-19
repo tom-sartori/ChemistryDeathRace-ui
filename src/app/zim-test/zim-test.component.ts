@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {Game} from "../classes/game";
-import {UiConstants} from "../constant/ui-constants";
+import { Component, OnInit } from '@angular/core';
+import { Game } from "../classes/game";
+import { frameHeight, frameWidth, } from "../constant/ui-constants";
 
 @Component({
   selector: 'app-zim-test',
@@ -9,13 +9,14 @@ import {UiConstants} from "../constant/ui-constants";
 })
 export class ZimTestComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
-    new Frame(FILL, 1000, 1000, grey, grey, this.ready.bind(this));
+    new Frame(FILL, frameWidth, frameHeight, grey, grey, this.ready.bind(this));
   }
 
   ready(): void {
-    new Game(UiConstants.gameWidth, UiConstants.gameHeight);
+    new Game();
   }
 }

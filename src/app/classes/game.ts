@@ -1,11 +1,11 @@
-import {Player} from "./player";
-import {Board} from "./board";
-import {Dice} from "./dice";
-import {Pawn} from "./pawn";
-import {GameConstants} from "../constant/game-constants";
-import {UiConstants} from "../constant/ui-constants";
+import { Player } from "./player";
+import { Board } from "./board";
+import { Dice } from "./dice";
+import { Pawn } from "./pawn";
+import { pawnColors } from '../constant/ui-constants';
+import { maxNumberOfPlayer } from '../constant/game-constants';
 
-export class Game extends Container {
+export class Game {
 
   private readonly dice: Dice;
   private readonly players: Player[];
@@ -13,13 +13,12 @@ export class Game extends Container {
   private currentPlayer: Player;
   private board: Board;
 
-  constructor(width: number, height : number) {
-    super(width, height);
-
+  constructor() {
+    // super(width, height);
     // Pawns.
     let pawns: Pawn[] = [];
     for (let i: number = 0; i < 4; i++) { /// TODO : current number of players.
-      pawns.push(new Pawn(8, UiConstants.pawnColors[i]));
+      pawns.push(new Pawn(8, pawnColors[i]));
     }
 
     // Players.
@@ -57,13 +56,13 @@ export class Game extends Container {
 
   private rollDice = (): void => {
     let result: number = this.dice.roll();
-    this.board.movePawn(this.currentPlayer.id, result);
+    this.board.movePawn(this.players[this.currentPlayer.id].pawn, result);
     this.nextPlayer();
   }
 
   private nextPlayer(): void {
     let nextPlayerId = this.currentPlayer.id + 1;
-    if (nextPlayerId >= GameConstants.maxNumberOfPlayer) {
+    if (nextPlayerId >= maxNumberOfPlayer) {
       nextPlayerId = 0;
     }
     this.currentPlayer = this.players[nextPlayerId];

@@ -1,5 +1,5 @@
-import {GameConstants} from "../constant/game-constants";
-import {UiConstants} from "../constant/ui-constants";
+import { diceHeight, diceWidth } from '../constant/ui-constants';
+import { diceSize } from '../constant/game-constants';
 
 const random = require('lodash/random.js')
 
@@ -10,8 +10,8 @@ export class Dice extends Container {
   constructor() {
     super();
     this._currentFace = 1;
-    for (let i: number = 1; i <= GameConstants.diceSize; i++) {
-      let side: Rectangle = new Rectangle(UiConstants.diceWidth, UiConstants.diceHeight, white);
+    for (let i: number = 1; i <= diceSize; i++) {
+      let side: Rectangle = new Rectangle(diceWidth, diceHeight, white);
       let text: Label = new Label({
         text: i.toString(),
         color: black,
@@ -24,7 +24,7 @@ export class Dice extends Container {
   }
 
   public roll(): number {
-    this.currentFace = random(1, GameConstants.diceSize);
+    this.currentFace = random(1, diceSize);
     return this.currentFace;
   }
 
@@ -33,7 +33,7 @@ export class Dice extends Container {
   }
 
   private set currentFace(value: number) {
-    if (0 < value && value <= GameConstants.diceSize) {
+    if (0 < value && value <= diceSize) {
       this.getChildAt(this.currentFace - 1).visible = false;
       this.getChildAt(value - 1).visible = true;
       this._currentFace = value;

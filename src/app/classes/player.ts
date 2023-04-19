@@ -1,10 +1,10 @@
-import {Pawn} from "./pawn";
+import { Pawn } from "./pawn";
 
 export class Player {
 
   public readonly id: number;
   private name: string;
-  private pawn: Pawn;
+  public pawn: Pawn;
 
   constructor(id: number, name: string, pawn: Pawn) {
     this.id = id;
