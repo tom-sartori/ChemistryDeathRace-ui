@@ -1,5 +1,5 @@
-import {GameConstants} from "../constant/GameConstants";
-import {UIConstants} from "../constant/UIConstants";
+import {GameConstants} from "../constant/game-constants";
+import {UiConstants} from "../constant/ui-constants";
 
 const random = require('lodash/random.js')
 
@@ -11,7 +11,7 @@ export class Dice extends Container {
     super();
     this._currentFace = 1;
     for (let i: number = 1; i <= GameConstants.diceSize; i++) {
-      let side: Rectangle = new Rectangle(UIConstants.diceWidth, UIConstants.diceHeight, white);
+      let side: Rectangle = new Rectangle(UiConstants.diceWidth, UiConstants.diceHeight, white);
       let text: Label = new Label({
         text: i.toString(),
         color: black,

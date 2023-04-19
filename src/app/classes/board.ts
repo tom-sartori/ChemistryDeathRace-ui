@@ -1,6 +1,6 @@
 import {Space} from './space';
 import {Pawn} from "./pawn";
-import {UIConstants} from "../constant/UIConstants";
+import {UiConstants} from "../constant/ui-constants";
 import GradientColor = zim.GradientColor;
 
 export class Board extends Container {
@@ -24,7 +24,7 @@ export class Board extends Container {
       if (this.startAndEndIndex.includes(i)) {
         this.board.push(new Space(50, 50, darker, (i + 1).toString()));
       } else if (this.pipeIndex.includes(i)) {
-        this.board.push(new Space(50, 50, UIConstants.pipeBackgroundColor, (i + 1).toString()));
+        this.board.push(new Space(50, 50, UiConstants.pipeBackgroundColor, (i + 1).toString()));
       } else {
         this.board.push(new Space(50, 50, spaceColors[i % 6], (i + 1).toString()));
       }

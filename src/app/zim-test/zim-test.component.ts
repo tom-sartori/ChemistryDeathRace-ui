@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Game} from "../classes/game";
-import {UIConstants} from "../constant/UIConstants";
+import {UiConstants} from "../constant/ui-constants";
 
 @Component({
   selector: 'app-zim-test',
@@ -16,6 +16,6 @@ export class ZimTestComponent implements OnInit {
   }
 
   ready(): void {
-    new Game(UIConstants.gameWidth, UIConstants.gameHeight);
+    new Game(UiConstants.gameWidth, UiConstants.gameHeight);
   }
 }

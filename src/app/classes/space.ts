@@ -1,5 +1,5 @@
 import {Pawn} from "./pawn";
-import {UIConstants} from "../constant/UIConstants";
+import {UiConstants} from "../constant/ui-constants";
 import GradientColor = zim.GradientColor;
 
 const isEqual = require('lodash/isEqual.js');
@@ -18,7 +18,7 @@ export class Space extends Rectangle {
       size: 10,
     }).center(this);
 
-    if (isEqual(color, UIConstants.pipeBackgroundColor)) {
+    if (isEqual(color, UiConstants.pipeBackgroundColor)) {
       new Label({
         text: "Tunnel",
         color: black,

@@ -2,8 +2,8 @@ import {Player} from "./player";
 import {Board} from "./board";
 import {Dice} from "./dice";
 import {Pawn} from "./pawn";
-import {GameConstants} from "../constant/GameConstants";
-import {UIConstants} from "../constant/UIConstants";
+import {GameConstants} from "../constant/game-constants";
+import {UiConstants} from "../constant/ui-constants";
 
 export class Game extends Container {
 
@@ -19,7 +19,7 @@ export class Game extends Container {
     // Pawns.
     let pawns: Pawn[] = [];
     for (let i: number = 0; i < 4; i++) { /// TODO : current number of players.
-      pawns.push(new Pawn(8, UIConstants.pawnColors[i]));
+      pawns.push(new Pawn(8, UiConstants.pawnColors[i]));
     }
 
     // Players.
