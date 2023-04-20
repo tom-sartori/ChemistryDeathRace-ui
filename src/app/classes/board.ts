@@ -1,70 +1,18 @@
 import { Space } from './space';
 import { Pawn } from "./pawn";
-import { pipeBackgroundColor, spaceColors, timeBetweenMove } from "../constant/ui-constants";
+import { pipeBackgroundColor, spaceColors } from "../constant/ui-constants";
 import { SpaceDisplay } from '../constant/space-display';
-import { boardCols, boardRows, numberOfSpaces } from '../constant/game-constants';
+import { Coil } from './coil';
 
 export class Board extends Container {
 
-  private readonly pawns: Pawn[];
-  private readonly tile: Tile;
+  private readonly coil: Coil;
 
   constructor(pawns: Pawn[]) {
     super();
 
-    this.tile = new Tile({
-      obj: series(this.generateBoard()),
-      cols: boardCols,
-      rows: boardRows,
-      align: 'center',
-      valign: 'top',
-      clone: false
-    }).center()
-
-    this.pawns = pawns;
-    this.pawns.forEach(pawn => this.addPawn(0, pawn));
-  }
-
-  public movePawn(pawn: Pawn, nbSpacesToMove: number): void {
-    let spaceIndex: number = this.getSpaces().findIndex(space => space.pawns.includes(pawn));
-    if (spaceIndex == -1) {
-      throw new Error("board.ts movePawn(...) : space not found. ");
-    }
-
-    this.movePawnAux(pawn, spaceIndex, nbSpacesToMove);
-
-    /// TODO : if pipe.
-    /// TODO : do action with question.
-  }
-
-  private movePawnAux(pawn: Pawn, spaceIndex: number, nbSpacesToMove: number): void {
-    if (nbSpacesToMove > 0) {
-      let newSpaceIndex: number = this.getNextSpaceIndex(spaceIndex);
-      if (newSpaceIndex < numberOfSpaces) {
-        // We move the pawn to the next space.
-        this.removePawn(spaceIndex, pawn);
-        this.addPawn(newSpaceIndex, pawn);
-        spaceIndex = newSpaceIndex;
-
-        setTimeout(() => this.movePawnAux(pawn, spaceIndex, nbSpacesToMove - 1), timeBetweenMove);
-      }
-    }
-  }
-
-  private getSpace(index: number): Space {
-    return this.tile.items[index] as Space;
-  }
-
-  private getSpaces(): Space[] {
-    return this.tile.items as Space[];
-  }
-
-  private addPawn(index: number, pawn: Pawn): void {
-    (this.tile.items[index] as Space).addPawn(pawn);
-  }
-
-  private removePawn(index: number, pawn: Pawn): void {
-    (this.tile.items[index] as Space).removePawn(pawn);
+    this.coil = new Coil(this.generateBoard()).center();
+    pawns.forEach(pawn => this.addPawn(0, pawn));
   }
 
   private generateBoard(): Space[] {
@@ -78,30 +26,11 @@ export class Board extends Container {
     ];
   }
 
-  private getNextSpaceIndex(index: number): number {
-    /// TODO : check lines.
-    /// TODO : Check end of board.
-    const line: number = Math.floor(index / boardCols);
-    const column: number = index % boardCols;
-    let nextIndex: number;
+  public movePawn(pawn: Pawn, nbSpacesToMove: number): void {
+    this.coil.movePawn(pawn, nbSpacesToMove);
+  }
 
-    if (line % 2 === 0) { // Pair line
-      if (column === boardCols - 1) { // Last column
-        nextIndex = index + boardCols; // Go down a line
-      }
-      else {
-        nextIndex = index + 1; // Go right
-      }
-    }
-    else { // Odd line
-      if (column === 0) { // First column
-        nextIndex = index + boardCols; // Go down a line
-      }
-      else {
-        nextIndex = index - 1; // Go left
-      }
-    }
-
-    return nextIndex;
+  private addPawn(index: number, pawn: Pawn): void {
+    this.coil.addPawn(index, pawn);
   }
 }
