@@ -14,3 +14,4 @@ export const pawnColors: GradientColor[] = ["#9d0000", "#76009d", "#229d00", "#0
 export const diceWidth: number = 50
 export const diceHeight: number = 50;
 export const pipeBackgroundColor: GradientColor = lighter;
+export const timeBetweenMove: number = 50;

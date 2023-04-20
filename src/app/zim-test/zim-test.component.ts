@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from "../classes/game";
 import { frameHeight, frameWidth, } from "../constant/ui-constants";
-import {StageService} from "../services/stage.service";
 
 @Component({
   selector: 'app-zim-test',
@@ -10,17 +9,13 @@ import {StageService} from "../services/stage.service";
 })
 export class ZimTestComponent implements OnInit {
 
-  frame!: Frame;
-  stageService : StageService = StageService.getInstance()
-
   constructor() { }
 
   ngOnInit(): void {
-    this.frame = new Frame(FILL, frameWidth, frameHeight, grey, grey, this.ready.bind(this));
+    new Frame(FILL, frameWidth, frameHeight, grey, grey, this.ready.bind(this));
   }
 
   ready(): void {
-    this.stageService.stage = this.frame.stage.stage;
     new Game();
   }
 }

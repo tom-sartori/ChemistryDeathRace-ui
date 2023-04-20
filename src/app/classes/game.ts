@@ -14,7 +14,6 @@ export class Game {
   private board: Board;
 
   constructor() {
-
     // Pawns.
     let pawns: Pawn[] = [];
     for (let i: number = 0; i < 4; i++) { /// TODO : current number of players.

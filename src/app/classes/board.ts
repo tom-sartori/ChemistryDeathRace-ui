@@ -1,8 +1,8 @@
 import { Space } from './space';
 import { Pawn } from "./pawn";
-import { spaceColors, backwardMove, forwardMove, pipeBackgroundColor } from "../constant/ui-constants";
+import { pipeBackgroundColor, spaceColors, timeBetweenMove } from "../constant/ui-constants";
 import { SpaceDisplay } from '../constant/space-display';
-import { boardCols, boardRows, numberOfSpaces, timeBetweenMove } from '../constant/game-constants';
+import { boardCols, boardRows, numberOfSpaces } from '../constant/game-constants';
 
 export class Board extends Container {
 
@@ -25,8 +25,38 @@ export class Board extends Container {
     this.pawns.forEach(pawn => this.addPawn(0, pawn));
   }
 
+  public movePawn(pawn: Pawn, nbSpacesToMove: number): void {
+    let spaceIndex: number = this.getSpaces().findIndex(space => space.pawns.includes(pawn));
+    if (spaceIndex == -1) {
+      throw new Error("board.ts movePawn(...) : space not found. ");
+    }
+
+    this.movePawnAux(pawn, spaceIndex, nbSpacesToMove);
+
+    /// TODO : if pipe.
+    /// TODO : do action with question.
+  }
+
+  private movePawnAux(pawn: Pawn, spaceIndex: number, nbSpacesToMove: number): void {
+    if (nbSpacesToMove > 0) {
+      let newSpaceIndex: number = this.getNextSpaceIndex(spaceIndex);
+      if (newSpaceIndex < numberOfSpaces) {
+        // We move the pawn to the next space.
+        this.removePawn(spaceIndex, pawn);
+        this.addPawn(newSpaceIndex, pawn);
+        spaceIndex = newSpaceIndex;
+
+        setTimeout(() => this.movePawnAux(pawn, spaceIndex, nbSpacesToMove - 1), timeBetweenMove);
+      }
+    }
+  }
+
   private getSpace(index: number): Space {
     return this.tile.items[index] as Space;
+  }
+
+  private getSpaces(): Space[] {
+    return this.tile.items as Space[];
   }
 
   private addPawn(index: number, pawn: Pawn): void {
@@ -51,56 +81,27 @@ export class Board extends Container {
   private getNextSpaceIndex(index: number): number {
     /// TODO : check lines.
     /// TODO : Check end of board.
-    /// TODO : Refactor english.
-    const ligne = Math.floor(index / boardCols);
-    const colonne = index % boardCols;
-    let indiceSuivant: number;
+    const line: number = Math.floor(index / boardCols);
+    const column: number = index % boardCols;
+    let nextIndex: number;
 
-    if (ligne % 2 === 0) { // Ligne paire
-      if (colonne === boardCols - 1) { // Dernière colonne
-        indiceSuivant = index + boardCols; // Descendre d'une ligne
-      } else {
-        indiceSuivant = index + 1; // Aller à droite
+    if (line % 2 === 0) { // Pair line
+      if (column === boardCols - 1) { // Last column
+        nextIndex = index + boardCols; // Go down a line
       }
-    } else { // Ligne impaire
-      if (colonne === 0) { // Première colonne
-        indiceSuivant = index + boardCols; // Descendre d'une ligne
-      } else {
-        indiceSuivant = index - 1; // Aller à gauche
+      else {
+        nextIndex = index + 1; // Go right
+      }
+    }
+    else { // Odd line
+      if (column === 0) { // First column
+        nextIndex = index + boardCols; // Go down a line
+      }
+      else {
+        nextIndex = index - 1; // Go left
       }
     }
 
-    return indiceSuivant;
-  }
-
-  public async movePawn(pawn: Pawn, spaces: number) {
-    let currentSpaceIndex: number = this.tile.items.findIndex(space => space.pawns.includes(pawn));
-    if (currentSpaceIndex == -1) {
-      throw new Error("board.ts movePawn(...) : space not found. ");
-    }
-
-    let newSpaceIndex = await this.animateMove(pawn, currentSpaceIndex, spaces, timeBetweenMove);
-
-    /// TODO : if pipe.
-    /// TODO : questions.
-  }
-
-  private async animateMove(pawn: Pawn, currentSpaceIndex: number, spaces: number, timeBetweenMoves: number) : Promise<number> {
-    let newSpaceIndex: number = currentSpaceIndex;
-    for (let i = 0; i < spaces; i++) {
-      newSpaceIndex = this.getNextSpaceIndex(newSpaceIndex);
-      if (newSpaceIndex >= numberOfSpaces) {
-        break;
-      }
-      this.removePawn(currentSpaceIndex, pawn);
-      this.addPawn(newSpaceIndex, pawn);
-      currentSpaceIndex = newSpaceIndex;
-      await this.wait(timeBetweenMoves);
-    }
-    return currentSpaceIndex;
-  }
-
-  private wait(ms: number) : Promise<void> {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return nextIndex;
   }
 }
