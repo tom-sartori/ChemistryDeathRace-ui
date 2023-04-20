@@ -14,7 +14,7 @@ export class Game {
   private board: Board;
 
   constructor() {
-    // super(width, height);
+
     // Pawns.
     let pawns: Pawn[] = [];
     for (let i: number = 0; i < 4; i++) { /// TODO : current number of players.
@@ -54,9 +54,9 @@ export class Game {
     button.on("mousedown", this.rollDice);
   }
 
-  private rollDice = (): void => {
+  private rollDice = async (): Promise<void> => {
     let result: number = this.dice.roll();
-    this.board.movePawn(this.players[this.currentPlayer.id].pawn, result);
+    await this.board.movePawn(this.players[this.currentPlayer.id].pawn, result);
     this.nextPlayer();
   }
 

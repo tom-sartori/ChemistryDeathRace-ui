@@ -2,12 +2,15 @@ import { Pawn } from "./pawn";
 import { SpaceDisplay } from '../constant/space-display';
 import { pipeBackgroundColor, spaceHeight, spaceMargin, spaceWidth } from '../constant/ui-constants';
 import GradientColor = zim.GradientColor;
+import {StageService} from "../services/stage.service";
 
 const isEqual = require('lodash/isEqual.js');
 
 export class Space extends Rectangle {
 
   public pawns: Pawn[];
+
+  private currentStage: createjs.Stage;
 
   constructor(color: GradientColor, text: string, spaceDisplay: SpaceDisplay = SpaceDisplay.HORIZONTAL) {
     if (isEqual(spaceDisplay, SpaceDisplay.HORIZONTAL)) {
@@ -17,6 +20,7 @@ export class Space extends Rectangle {
       super(spaceWidth, spaceHeight + spaceMargin, color, black);
     }
     this.pawns = [];
+    this.currentStage = StageService.getInstance().stage;
 
     new Label({
       text,
@@ -39,11 +43,14 @@ export class Space extends Rectangle {
     this.pawns.push(pawn);
     pawn.addTo(this);
     this.displayPawns();
+    this.currentStage.update();
   }
 
   public removePawn(pawn: Pawn): void {
     this.pawns = this.pawns.filter(p => !isEqual(p, pawn));
     pawn.removeFrom(this);
+    this.displayPawns();
+    this.currentStage.update();
   }
 
   public displayPawns(): void {
