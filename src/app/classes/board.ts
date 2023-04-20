@@ -11,7 +11,7 @@ export class Board extends Container {
   constructor(pawns: Pawn[]) {
     super();
 
-    this.coil = new Coil(this.generateBoard()).center();
+    this.coil = new Coil(this.generateBoard()).addTo(this);
     pawns.forEach(pawn => this.addPawn(0, pawn));
   }
 
