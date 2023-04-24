@@ -1,0 +1,33 @@
+<div class="params-wrapper" [formGroup]="mainForm">
+  <h1>Réglages de la partie</h1>
+  <div class="params">
+    <div class="param">
+      <label for="nbPlayers">Nombre de joueurs</label>
+      <div class="number-input">
+        <button (click)="decreasePlayersNumber()" >-</button>
+        <input type="number" id="nbPlayers" min="1" formControlName="playersNumber">
+        <button (click)="increasePlayersNumber()" >+</button>
+      </div>
+    </div>
+    <div class="param">
+      <label for="difficulty">Difficulté</label>
+      <div class="select-input">
+        <select id="difficulty" formControlName="difficulty">
+          <option *ngFor="let difficulty of difficulties" [value]="difficulty">{{difficulty}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="param">
+      <label for="diceSize">Taille du dé</label>
+      <div class="number-input">
+        <button (click)="decreaseDiceSize()">-</button>
+        <input type="number" id="diceSize" min="3" max="10" formControlName="diceSize">
+        <button (click)="increaseDiceSize()" >+</button>
+      </div>
+    </div>
+    <div class="params-footer">
+      <app-prev (click)="goToHome()"></app-prev>
+      <app-next (click)="goToPlayersName()"></app-next>
+    </div>
+  </div>
+</div>

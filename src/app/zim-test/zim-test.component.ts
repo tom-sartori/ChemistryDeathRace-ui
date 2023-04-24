@@ -3,6 +3,7 @@ import { Game } from "../classes/game";
 import { frameHeight, frameWidth, pawnColors, pawnRadius, } from "../constant/ui-constants";
 import { Player } from '../classes/player';
 import { Pawn } from '../classes/pawn';
+import { ParamsService } from '../services/params.service';
 
 @Component({
   selector: 'app-zim-test',
@@ -16,15 +17,15 @@ export class ZimTestComponent implements OnInit {
   private readonly difficulty : string;
   private readonly diceSize : number;
 
-  constructor() {
-    /// TODO: Get these information from the user
-    this.numberOfPlayers = 4;
-    this.players = [];
+  constructor(private paramsService: ParamsService) {
+    this.numberOfPlayers = paramsService.playersNumber;
+    let tmpPlayers : Player[] = [];
     for (let i = 0; i < this.numberOfPlayers; i++) {
-      this.players.push(new Player(i, "Player " + i, new Pawn(pawnRadius, pawnColors[i])));
+      tmpPlayers.push(new Player(i, paramsService.playersName[i], new Pawn(pawnRadius, pawnColors[i])));
     }
-    this.difficulty = "S7";
-    this.diceSize = 6;
+    this.players = tmpPlayers;
+    this.difficulty = paramsService.difficulty;
+    this.diceSize = paramsService.diceSize;
   }
 
   ngOnInit(): void {

@@ -1,0 +1,63 @@
+@import "src/assets/styles/colors.scss";
+
+.params-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.params-wrapper > h1 {
+  margin: 0;
+  border-bottom: none;
+  font-size: 4em;
+  text-align: center;
+}
+
+.params {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 90%;
+  background-color: $main-color;
+  border-radius: 10px;
+}
+
+.param {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  padding: 20px;
+  color: $accent-color;
+  font-size: 3em;
+}
+
+.param > label {
+  width: 50%;
+  text-align: center;
+}
+
+.param > input {
+  width: 50%;
+  font-size: 1.5em;
+  font-family: "Freckle Face", serif;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  background-color: $accent-color;
+  color: $main-color;
+}
+
+.params-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  padding: 20px;
+}

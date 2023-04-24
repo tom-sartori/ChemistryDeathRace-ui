@@ -1,0 +1,103 @@
+@import "src/assets/styles/colors.scss";
+
+.params-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.params-wrapper > h1 {
+  margin: 0;
+  border-bottom: none;
+  font-size: 4em;
+  text-align: center;
+}
+
+.params {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 90%;
+  background-color: $main-color;
+  border-radius: 10px;
+}
+
+.param {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  padding: 20px;
+  color: $accent-color;
+  font-size: 3em;
+}
+
+.number-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.number-input input[type=number] {
+  width: 20%;
+  font-size: 1.5em;
+  font-family: "Freckle Face", serif;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  background-color: $accent-color;
+  color: $main-color;
+}
+
+.number-input input[type=number]::-webkit-inner-spin-button,
+.number-input input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.number-input > button {
+  font-size: 1.2em;
+  font-family: "Freckle Face", serif;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  color: $accent-color;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.select-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.select-input > select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  text-align-last: center;
+  font-family: "Freckle Face", serif;
+  font-size: 1.5em;
+  width: 100%;
+  color: $main-color;
+  background-color: $accent-color;
+  border: none;
+}
+
+.params-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  padding: 20px;
+}
