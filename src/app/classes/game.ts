@@ -13,6 +13,7 @@ export class Game implements Observer {
 
   private _currentPlayer: Player;
   private leftSection: LeftSection;
+  private fullScreenButton: Button;
 
   constructor(players: Player[], difficulty: string, diceSize: number) {
 
@@ -41,12 +42,32 @@ export class Game implements Observer {
       spacingH:70,
       clone: false
     }).center();
+
+    let label = new Label({
+      text:"⛶",
+      size:50,
+      bold:true
+    });
+    this.fullScreenButton = new Button({
+      label: label,
+      width: 50,
+      backgroundColor: "rgba(0,0,0,0)",
+      color: "white",
+      height: 50,
+    });
+    label.addTo(this.fullScreenButton).center();
+    this.fullScreenButton.on("mousedown", this.fullScreenAction);
+    this.fullScreenButton.addTo(S)
   }
 
   update(subject: Observable): void {
     if (subject instanceof DiceGroup) {
       this.movePawn(this.currentPlayer.pawn, subject.diceResult);
     }
+  }
+
+  private fullScreenAction = (): void => {
+    F.fullscreen(true);
   }
 
   private async movePawn(pawn: Pawn, diceResult: number) {

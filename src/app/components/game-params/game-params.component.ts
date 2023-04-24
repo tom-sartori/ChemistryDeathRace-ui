@@ -23,12 +23,12 @@ export class GameParamsComponent implements OnInit {
   ngOnInit(): void {
     this.questionService.getDifficulties().subscribe(x => {
       this.difficulties = x;
-      this.paramsService.difficulty = this.difficulties[0];
+      this.paramsService.difficulty = x[0];
     });
     this.mainForm = this.formBuilder.group({
       playersNumber: [this.paramsService.playersNumber, Validators.required],
       diceSize: [this.paramsService.diceSize, Validators.required],
-      difficulty: [this.paramsService.difficulty, Validators.required]
+      difficulty: ['', Validators.required]
     });
   }
 

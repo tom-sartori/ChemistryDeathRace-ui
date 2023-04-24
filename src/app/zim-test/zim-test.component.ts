@@ -29,7 +29,7 @@ export class ZimTestComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    new Frame(FILL, frameWidth, frameHeight, grey, grey, this.ready.bind(this));
+    new Frame(FULL, frameWidth, frameHeight, grey, grey, this.ready.bind(this));
   }
 
   ready(): void {

@@ -5,14 +5,14 @@
       <label for="nbPlayers">Nombre de joueurs</label>
       <div class="number-input">
         <button (click)="decreasePlayersNumber()" >-</button>
-        <input type="number" id="nbPlayers" min="1" formControlName="playersNumber">
+        <input id="nbPlayers" formControlName="playersNumber">
         <button (click)="increasePlayersNumber()" >+</button>
       </div>
     </div>
     <div class="param">
       <label for="difficulty">Difficulté</label>
       <div class="select-input">
-        <select id="difficulty" formControlName="difficulty">
+        <select id="difficulty" formControlName="difficulty" aria-disabled="true">
           <option *ngFor="let difficulty of difficulties" [value]="difficulty">{{difficulty}}</option>
         </select>
       </div>
@@ -21,7 +21,7 @@
       <label for="diceSize">Taille du dé</label>
       <div class="number-input">
         <button (click)="decreaseDiceSize()">-</button>
-        <input type="number" id="diceSize" min="3" max="10" formControlName="diceSize">
+        <input id="diceSize" formControlName="diceSize" aria-disabled="true">
         <button (click)="increaseDiceSize()" >+</button>
       </div>
     </div>
