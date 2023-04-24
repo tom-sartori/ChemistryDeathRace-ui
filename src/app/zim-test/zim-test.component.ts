@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from "../classes/game";
-import { frameHeight, frameWidth, } from "../constant/ui-constants";
 
 @Component({
   selector: 'app-zim-test',
@@ -9,13 +8,14 @@ import { frameHeight, frameWidth, } from "../constant/ui-constants";
 })
 export class ZimTestComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-    new Frame(FILL, frameWidth, frameHeight, grey, grey, this.ready.bind(this));
+  constructor() {
+    new Frame(FULL, undefined, undefined, grey, grey, this.ready);
   }
 
-  ready(): void {
+  ngOnInit(): void {
+  }
+
+  private ready(): void {
     new Game();
   }
 }

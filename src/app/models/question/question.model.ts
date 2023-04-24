@@ -1,4 +1,3 @@
-import { Optional } from '@angular/core';
 import { Proposition } from './proposition.model';
 
 export class Question {
@@ -9,7 +8,7 @@ export class Question {
     public propositions: Proposition[],
     public category: string,
     public difficulty: string,
-    @Optional() public image: string
+    public image?: string
   ) {
   }
 }
