@@ -11,8 +11,9 @@
 .params-wrapper > h1 {
   margin: 0;
   border-bottom: none;
-  font-size: 4em;
+  font-size: 8vw;
   text-align: center;
+  line-height: 100%;
 }
 
 .params {
@@ -34,7 +35,7 @@
   width: 80%;
   padding: 20px;
   color: $accent-color;
-  font-size: 3em;
+  font-size: 4vw;
 }
 
 .number-input {

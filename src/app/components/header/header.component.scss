@@ -40,12 +40,14 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   flex-grow: 1;
   height: 100%;
 }
 
 .title {
   margin: 0;
+  font-size: 4vw;
 }
 
 .right-section {
@@ -70,4 +72,23 @@ li {
 .logo {
   margin: auto;
   height: 80%;
+}
+
+.menu-button {
+  color: white;
+  text-align: center;
+}
+
+/* --------------------- Media Queries --------------------- */
+
+@media (max-width: 800px) {
+  .menu-horizontal {
+    display: none;
+  }
+}
+
+@media (min-width: 800px) {
+  .menu-button {
+    display: none;
+  }
 }

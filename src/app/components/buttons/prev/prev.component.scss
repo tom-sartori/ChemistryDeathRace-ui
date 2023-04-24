@@ -1,14 +1,14 @@
 @import "src/assets/styles/colors.scss";
 
 .prev {
-  font-size: 3.5em;
+  font-size: 6vw;
   font-family: "Freckle Face", serif;
   text-align: center;
   border: none;
   color: $accent-color;
   border-radius: 10px;
   background-color: $red-color;
-  width: 75px;
-  height: 75px;
+  width: 8vw;
+  height: 8vw;
   cursor: pointer;
 }

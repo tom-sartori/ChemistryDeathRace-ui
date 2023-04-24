@@ -15,6 +15,11 @@ import { ParamsService } from './services/params.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NextComponent } from './components/buttons/next/next.component';
 import { PrevComponent } from './components/buttons/prev/prev.component';
+import { MatMenuModule } from "@angular/material/menu";
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -34,12 +39,17 @@ import { PrevComponent } from './components/buttons/prev/prev.component';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    NoopAnimationsModule,
+    MatTooltipModule
   ],
   exports: [
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     ParamsService

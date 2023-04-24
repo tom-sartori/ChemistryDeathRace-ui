@@ -13,14 +13,16 @@
 .title-wrapper > h1 {
   margin: 0;
   border-bottom: none;
-  font-size: 10em;
+  font-size: 14vh;
+  line-height: 100%;
   text-align: center;
 }
 
 .title-wrapper > h2 {
   margin: 0;
   border-bottom: none;
-  font-size: 3em;
+  font-size: 8vh;
+  line-height: 100%;
   text-align: center;
   color: $main-color;
 }
