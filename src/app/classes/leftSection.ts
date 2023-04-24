@@ -1,10 +1,10 @@
 import { DiceGroup } from './diceGroup';
 import { PlayerNameGroup } from './playerNameGroup';
+import { Observer } from '../interfaces/observer';
 
 export class LeftSection extends Tile {
 
-  public diceGroup: DiceGroup;
-
+  private diceGroup: DiceGroup;
   private playerNameGroup: PlayerNameGroup;
 
   constructor(currentPlayerName: string, diceSize: number) {
@@ -33,5 +33,17 @@ export class LeftSection extends Tile {
 
   updatePlayerName(name: string) {
     this.playerNameGroup.updatePlayerName(name);
+  }
+
+  subscribe(observer: Observer): void {
+    this.diceGroup.subscribe(observer);
+  }
+
+  disableDiceButton() {
+    this.diceGroup.disableDiceButton();
+  }
+
+  enableDiceButton() {
+    this.diceGroup.enableDiceButton();
   }
 }

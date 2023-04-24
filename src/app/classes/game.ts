@@ -5,6 +5,7 @@ import { LeftSection } from './leftSection';
 import { Observer } from '../interfaces/observer';
 import { Observable } from '../interfaces/observable';
 import { DiceGroup } from './diceGroup';
+import { Coil } from './coil';
 
 export class Game implements Observer {
 
@@ -29,10 +30,11 @@ export class Game implements Observer {
 
     // Board.
     this.board = new Board(pawns);
+    this.board.subscribe(this);
 
     // Left section.
     this.leftSection = new LeftSection(this.currentPlayer.name, diceSize);
-    this.leftSection.diceGroup.subscribe(this);
+    this.leftSection.subscribe(this);
 
     new Tile({
       obj: series([this.leftSection, this.board]),
@@ -63,6 +65,8 @@ export class Game implements Observer {
   update(subject: Observable): void {
     if (subject instanceof DiceGroup) {
       this.movePawn(this.currentPlayer.pawn, subject.diceResult);
+    } else if (subject instanceof Coil) {
+      this.leftSection.enableDiceButton();
     }
   }
 
@@ -70,8 +74,9 @@ export class Game implements Observer {
     F.fullscreen(true);
   }
 
-  private async movePawn(pawn: Pawn, diceResult: number) {
-    await this.board.movePawn(pawn, diceResult);
+  private movePawn(pawn: Pawn, diceResult: number) {
+    this.leftSection.disableDiceButton();
+    this.board.movePawn(pawn, diceResult);
     this.nextPlayer();
   }
 

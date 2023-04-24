@@ -3,6 +3,7 @@ import { Pawn } from "./pawn";
 import { pipeBackgroundColor, spaceColors } from "../constant/ui-constants";
 import { SpaceDisplay } from '../constant/space-display';
 import { Coil } from './coil';
+import { Observer } from '../interfaces/observer';
 
 export class Board extends Container {
 
@@ -32,5 +33,9 @@ export class Board extends Container {
 
   private addPawn(index: number, pawn: Pawn): void {
     this.coil.addPawn(index, pawn);
+  }
+
+  subscribe(observer: Observer): void {
+    this.coil.subscribe(observer);
   }
 }

@@ -8,6 +8,7 @@ export class DiceGroup extends Tile implements Observable {
 
   private readonly dice: Dice;
 
+  private button: Button;
   private observers: Observer[] = [];
 
   constructor(diceSize: number) {
@@ -21,7 +22,7 @@ export class DiceGroup extends Tile implements Observable {
       size:15,
       bold:true
     });
-    let button = new Button({
+    let tmpButton = new Button({
       label: label,
       backgroundColor: orange,
       rollBackgroundColor: green,
@@ -29,10 +30,10 @@ export class DiceGroup extends Tile implements Observable {
       height: 30,
       corner:10
     });
-    label.addTo(button).center();
+    label.addTo(tmpButton).center();
 
     super(
-      series([tmpDice, button]), // obj
+      series([tmpDice, tmpButton]), // obj
       1, 2,                             // cols, rows
       undefined, 10,                    // spacingH, spacingV
       undefined,                        // unique
@@ -46,10 +47,11 @@ export class DiceGroup extends Tile implements Observable {
     );
 
     // Button event.
-    button.on("mousedown", this.rollDice);
+    tmpButton.on("mousedown", this.rollDice);
 
     // Set properties.
     this.dice = tmpDice;
+    this.button = tmpButton;
 
   }
 
@@ -68,5 +70,13 @@ export class DiceGroup extends Tile implements Observable {
     if (!this.observers.includes(observer)) {
       this.observers.push(observer);
     }
+  }
+
+  disableDiceButton() {
+    this.button.enabled = false;
+  }
+
+  enableDiceButton() {
+    this.button.enabled = true;
   }
 }
