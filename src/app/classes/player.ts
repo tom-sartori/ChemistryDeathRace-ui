@@ -3,7 +3,7 @@ import { Pawn } from "./pawn";
 export class Player {
 
   public readonly id: number;
-  private name: string;
+  public readonly name: string;
   public pawn: Pawn;
 
   constructor(id: number, name: string, pawn: Pawn) {

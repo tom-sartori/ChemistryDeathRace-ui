@@ -1,0 +1,102 @@
+@import "src/assets/styles/colors.scss";
+
+.params-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.params-wrapper > h1 {
+  margin: 0;
+  border-bottom: none;
+  font-size: 8vw;
+  text-align: center;
+  line-height: 100%;
+}
+
+.params {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 90%;
+  background-color: $main-color;
+  border-radius: 10px;
+}
+
+.param {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  padding: 20px;
+  color: $accent-color;
+  font-size: 4vw;
+}
+
+.number-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.number-input input {
+  width: 10vw;
+  font-size: 4vw;
+  font-family: "Freckle Face", serif;
+  text-align: center;
+  border: none;
+  border-radius: 4vw;
+  background-color: $accent-color;
+  color: $main-color;
+  cursor: default;
+}
+
+.number-input > button {
+  font-size: 4vw;
+  font-family: "Freckle Face", serif;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  color: $accent-color;
+  background-color: transparent;
+  cursor: pointer;
+  width: 5vw;
+}
+
+.select-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.select-input > select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  text-align-last: center;
+  font-family: "Freckle Face", serif;
+  font-size: 4vw;
+  width: 30vw;
+  color: $main-color;
+  background-color: $accent-color;
+  border: none;
+  border-radius: 4vw;
+}
+
+.params-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  padding: 20px;
+}

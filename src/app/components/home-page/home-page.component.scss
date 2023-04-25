@@ -1,0 +1,28 @@
+@import "src/assets/styles/colors.scss";
+
+
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-top: 20vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-wrapper > h1 {
+  margin: 0;
+  border-bottom: none;
+  font-size: 10vh;
+  line-height: 100%;
+  text-align: center;
+}
+
+.title-wrapper > h2 {
+  margin: 0;
+  border-bottom: none;
+  font-size: 6vh;
+  line-height: 100%;
+  text-align: center;
+  color: $main-color;
+}

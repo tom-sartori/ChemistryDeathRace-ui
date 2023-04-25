@@ -1,0 +1,36 @@
+<div class="header">
+  <div class="toolbar-row">
+    <div class="left-section">
+      <a routerLink="/home" class="home-link"><img class="logo" src="assets/images/logo.png" alt="logo"></a>
+    </div>
+    <div class="center-section">
+      <a routerLink="/home" class="home-link"><h1 class="title">Chemical Pursuit</h1></a>
+    </div>
+    <div class="right-section">
+      <ul class="menu-horizontal">
+        <li><a routerLink="/about">À propos</a></li>
+        <li><a routerLink="/game-params">Jouer</a></li>
+      </ul>
+
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu" matTooltip="Menu" class="menu-button">
+        <a routerLink="/about">
+          <button mat-menu-item>
+            <mat-icon>info</mat-icon>
+            <span>À propos</span>
+          </button>
+        </a>
+
+        <a routerLink="/game-params">
+          <button mat-menu-item>
+            <mat-icon>sports_esports</mat-icon>
+            <span>Jouer</span>
+          </button>
+        </a>
+      </mat-menu>
+    </div>
+  </div>
+</div>
