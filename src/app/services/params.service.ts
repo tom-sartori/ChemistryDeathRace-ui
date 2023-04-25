@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { defaultDiceSize, defaultNumberOfPlayer } from '../constant/game-constants';
+import { defaultDiceSize, defaultNumberOfPlayer } from '@constants/game-constants';
 
 @Injectable({
   providedIn: 'root'

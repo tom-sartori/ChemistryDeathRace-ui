@@ -1,6 +1,6 @@
-import { DiceGroup } from './diceGroup';
-import { PlayerNameGroup } from './playerNameGroup';
-import { Observer } from '../interfaces/observer';
+import { DiceGroup } from '@classes/diceGroup';
+import { PlayerNameGroup } from '@classes/playerNameGroup';
+import { Observer } from '@interfaces/observer';
 
 export class LeftSection extends Tile {
 
@@ -9,8 +9,8 @@ export class LeftSection extends Tile {
 
   constructor(currentPlayerName: string, diceSize: number) {
 
-    const diceGroup = new DiceGroup(diceSize);
-    const playerNameGroup = new PlayerNameGroup(currentPlayerName);
+    const diceGroup: DiceGroup = new DiceGroup(diceSize);
+    const playerNameGroup: PlayerNameGroup = new PlayerNameGroup(currentPlayerName);
 
     super(
       series([playerNameGroup, diceGroup]), // obj
@@ -31,7 +31,7 @@ export class LeftSection extends Tile {
     this.diceGroup = diceGroup;
   }
 
-  public updatePlayerName(name: string) {
+  public updatePlayerName(name: string): void {
     this.playerNameGroup.updatePlayerName(name);
   }
 
@@ -39,11 +39,11 @@ export class LeftSection extends Tile {
     this.diceGroup.subscribe(observer);
   }
 
-  public disableDiceButton() {
+  public disableDiceButton(): void {
     this.diceGroup.disableRollButton();
   }
 
-  public enableDiceButton() {
+  public enableDiceButton(): void {
     this.diceGroup.enableRollButton();
   }
 }

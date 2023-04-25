@@ -1,6 +1,6 @@
-import { Question } from '../models/question/question.model';
-import { QuestionPanel } from './question-panel';
-import { QuestionPanelClassic } from './question-panel-classic';
+import { Question } from '@models/question/question.model';
+import { QuestionPanel } from '@classes/question-panel';
+import { QuestionPanelClassic } from '@classes/question-panel-classic';
 
 export class QuestionPanelShowQuestion extends QuestionPanel {
 
@@ -12,7 +12,7 @@ export class QuestionPanelShowQuestion extends QuestionPanel {
         // {label, color, rollColor, backgroundColor, rollBackgroundColor, call}
         {
           label: label,
-          width: label.width + 10,  /// TODO : margin constant.
+          width: label.width + 10,  /// TODO : margin constants.
           call: () => {
             /// TODO : function to switch to the question panel.
             new QuestionPanelClassic(question).center();

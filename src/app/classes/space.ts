@@ -1,7 +1,6 @@
-import { Pawn } from "./pawn";
-import { SpaceDisplay } from '../constant/space-display';
-import { pipeBackgroundColor, spaceHeight, spaceMargin, spaceWidth } from '../constant/ui-constants';
-import GradientColor = zim.GradientColor;
+import { Pawn } from "@classes/pawn";
+import { SpaceDisplay } from '@constants/space-display';
+import { pipeBackgroundColor, spaceCornerRadius, spaceHeight, spaceMargin, spaceWidth } from '@constants/ui-constants';
 
 const isEqual = require('lodash/isEqual.js');
 
@@ -10,13 +9,32 @@ export class Space extends Rectangle {
   public pawns: Pawn[];
 
   constructor(color: GradientColor, text: string, spaceDisplay: SpaceDisplay = SpaceDisplay.HORIZONTAL) {
-    /// TODO : Refactor.
-    if (isEqual(spaceDisplay, SpaceDisplay.HORIZONTAL)) {
-      super(spaceWidth, spaceHeight, color, black);
+    let height: number = spaceHeight;
+    let corner: number[];   // [topLeft, topRight, bottomRight, bottomLeft]
+    switch (spaceDisplay) {
+      case SpaceDisplay.CORNER_TOP_LEFT:
+        corner = [spaceCornerRadius, 0, 0, 0];
+        height += spaceMargin;
+        break;
+      case SpaceDisplay.CORNER_TOP_RIGHT:
+        corner = [0, spaceCornerRadius, 0, 0];
+        height += spaceMargin;
+        break;
+      case SpaceDisplay.CORNER_BOTTOM_RIGHT:
+        corner = [0, 0, spaceCornerRadius, 0];
+        break;
+      case SpaceDisplay.CORNER_BOTTOM_LEFT:
+        corner = [0, 0, 0, spaceCornerRadius];
+        break;
+      case SpaceDisplay.CORNER_LEFT:
+        corner = [spaceCornerRadius, 0, 0, spaceCornerRadius];
+        break;
+      default:
+        corner = [0, 0, 0, 0];
+        break;
     }
-    else {
-      super(spaceWidth, spaceHeight + spaceMargin, color, black);
-    }
+    super(spaceWidth, height, color, undefined, undefined, corner);
+
     this.pawns = [];
 
     new Label({
@@ -30,10 +48,9 @@ export class Space extends Rectangle {
         text: "Tunnel",
         color: black,
         size: 10,
-        width: spaceWidth,
-
+        width: spaceWidth
       }).center(this)
-        .mov(0, spaceHeight/2 - 15);
+        .mov(0, spaceHeight / 2 - 15);
     }
   }
 

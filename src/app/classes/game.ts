@@ -1,11 +1,11 @@
-import { Player } from "./player";
-import { Board } from "./board";
-import { Pawn } from "./pawn";
-import { LeftSection } from './leftSection';
-import { Observer } from '../interfaces/observer';
-import { Observable } from '../interfaces/observable';
-import { DiceGroup } from './diceGroup';
-import { Coil } from './coil';
+import { Player } from "@classes/player";
+import { Board } from "@classes/board";
+import { Pawn } from "@classes/pawn";
+import { LeftSection } from '@classes/leftSection';
+import { Observer } from '@interfaces/observer';
+import { Observable } from '@interfaces/observable';
+import { DiceGroup } from '@classes/diceGroup';
+import { Coil } from '@classes/coil';
 
 export class Game implements Observer {
 
@@ -37,7 +37,7 @@ export class Game implements Observer {
 
     new Tile({
       obj: series([this.leftSection, this.board]),
-      cols:2, rows:1,
+      cols: 2, rows: 1,
       align: 'center',
       valign: 'center',
       spacingH: 70,
@@ -74,17 +74,19 @@ export class Game implements Observer {
     F.fullscreen(true);
   }
 
-  private movePawn(pawn: Pawn, diceResult: number) {
+  private movePawn(pawn: Pawn, diceResult: number): void {
     this.leftSection.disableDiceButton();
     this.board.movePawn(pawn, diceResult);
   }
 
   private nextPlayer(): void {
-    let nextPlayerId = this.currentPlayer.id + 1;
-    if (nextPlayerId >= this.players.length) {
-      nextPlayerId = 0;
+    let currentPlayerIndex = this.players.indexOf(this.currentPlayer);
+    if (currentPlayerIndex === this.players.length - 1) {
+      this.currentPlayer = this.players[0];
     }
-    this.currentPlayer = this.players[nextPlayerId];
+    else {
+      this.currentPlayer = this.players[currentPlayerIndex + 1];
+    }
   }
 
   private getFirstPlayer(): Player {

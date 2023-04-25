@@ -1,10 +1,5 @@
-import { Question } from '../models/question/question.model';
-import {
-  framePadding,
-  questionPanelBackgroundColor,
-  questionPanelPadding,
-} from '../constant/ui-constants';
-import GradientColor = zim.GradientColor;
+import { Question } from '@models/question/question.model';
+import { framePadding, questionPanelBackgroundColor, questionPanelPadding, } from '@constants/ui-constants';
 
 export abstract class QuestionPanel extends Panel {
 

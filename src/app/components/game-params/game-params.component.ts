@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ParamsService } from '../../services/params.service';
-import { QuestionService } from '../../services/question.service';
+import { ParamsService } from '@services/params.service';
+import { QuestionService } from '@services/question.service';
 import { Router } from '@angular/router';
-import { maxNumberOfPlayer } from '../../constant/game-constants';
+import { maxNumberOfPlayer } from '@constants/game-constants';
 
 @Component({
   selector: 'app-game-params',

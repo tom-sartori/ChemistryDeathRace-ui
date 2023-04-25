@@ -1,6 +1,6 @@
-import { Observable } from '../interfaces/observable';
-import { Dice } from './dice';
-import { Observer } from '../interfaces/observer';
+import { Observable } from '@interfaces/observable';
+import { Dice } from '@classes/dice';
+import { Observer } from '@interfaces/observer';
 
 export class DiceGroup extends Tile implements Observable {
 
@@ -14,15 +14,15 @@ export class DiceGroup extends Tile implements Observable {
   constructor(diceSize: number) {
 
     // Dice.
-    const dice = new Dice(diceSize);
+    const dice: Dice = new Dice(diceSize);
 
     // Button.
-    let label = new Label({
+    let label: Label = new Label({
       text: "Lancer le dé",
       size: 15,
       bold: true
     });
-    let rollButton = new Button({
+    let rollButton: Button = new Button({
       label,
       backgroundColor: orange,
       rollBackgroundColor: green,
@@ -72,11 +72,11 @@ export class DiceGroup extends Tile implements Observable {
     }
   }
 
-  public disableRollButton() {
+  public disableRollButton(): void {
     this.rollButton.enabled = false;
   }
 
-  public enableRollButton() {
+  public enableRollButton(): void {
     this.rollButton.enabled = true;
   }
 }

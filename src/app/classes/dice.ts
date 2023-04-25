@@ -1,4 +1,4 @@
-import { diceHeight, diceWidth } from '../constant/ui-constants';
+import { diceHeight, diceWidth } from '@constants/ui-constants';
 
 const random = require('lodash/random.js')
 
@@ -14,7 +14,7 @@ export class Dice extends Container {
     this.diceSize = diceSize;
 
     for (let i: number = 1; i <= diceSize; i++) {
-      let side: Rectangle = new Rectangle(diceWidth, diceHeight, white);
+      let side: Rectangle = new Rectangle(diceWidth, diceHeight, white, undefined, undefined, 10);
       let text: Label = new Label({
         text: i.toString(),
         color: black,

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Question } from '../models/question/question.model';
+import { Question } from '@models/question/question.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
