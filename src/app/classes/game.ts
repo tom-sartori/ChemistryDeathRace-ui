@@ -74,7 +74,7 @@ export class Game implements Observer {
     F.fullscreen(true);
   }
 
-  private movePawn(pawn: Pawn, diceResult: number) {
+  private movePawn(pawn: Pawn, diceResult: number): void {
     this.leftSection.disableDiceButton();
     this.board.movePawn(pawn, diceResult);
   }
