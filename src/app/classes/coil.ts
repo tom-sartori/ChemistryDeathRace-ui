@@ -2,8 +2,13 @@ import { boardCols, boardRows, numberOfSpaces } from '../constant/game-constants
 import { Space } from './space';
 import { Pawn } from './pawn';
 import { timeBetweenMove } from '../constant/ui-constants';
+import { Observable } from '../interfaces/observable';
+import { Observer } from '../interfaces/observer';
 
-export class Coil extends Tile {
+export class Coil extends Tile implements Observable {
+
+  private _isMoving: boolean = false;
+  private observers: Observer[] = [];
 
   constructor(spaces: Space[]) {
     super(
@@ -19,6 +24,18 @@ export class Coil extends Tile {
       undefined, undefined, undefined,  // mirrorH, mirrorV, snapToPixel
       false                             // clone
     );
+  }
+
+  notify(): void {
+    for (const observer of this.observers) {
+      observer.update(this);
+    }
+  }
+
+  subscribe(observer: Observer): void {
+    if (!this.observers.includes(observer)) {
+      this.observers.push(observer);
+    }
   }
 
   public movePawn(pawn: Pawn, nbSpacesToMove: number): void {
@@ -44,6 +61,8 @@ export class Coil extends Tile {
 
         setTimeout(() => this.movePawnAux(pawn, spaceIndex, nbSpacesToMove - 1), timeBetweenMove);
       }
+    } else {
+      this.notify(); // Notify observers that the pawn has moved.
     }
   }
 
@@ -88,5 +107,14 @@ export class Coil extends Tile {
 
   public removePawn(index: number, pawn: Pawn): void {
     (this.items[index] as Space).removePawn(pawn);
+  }
+
+
+  get isMoving(): boolean {
+    return this._isMoving;
+  }
+
+  set isMoving(value: boolean) {
+    this._isMoving = value;
   }
 }

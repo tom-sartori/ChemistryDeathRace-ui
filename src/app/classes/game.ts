@@ -1,69 +1,99 @@
 import { Player } from "./player";
 import { Board } from "./board";
-import { Dice } from "./dice";
 import { Pawn } from "./pawn";
-import { pawnColors } from '../constant/ui-constants';
-import { maxNumberOfPlayer } from '../constant/game-constants';
+import { LeftSection } from './leftSection';
+import { Observer } from '../interfaces/observer';
+import { Observable } from '../interfaces/observable';
+import { DiceGroup } from './diceGroup';
+import { Coil } from './coil';
 
-export class Game {
+export class Game implements Observer {
 
-  private readonly dice: Dice;
+  private readonly board: Board;
   private readonly players: Player[];
 
-  private currentPlayer: Player;
-  private board: Board;
+  private _currentPlayer: Player;
+  private leftSection: LeftSection;
+  private fullScreenButton: Button;
 
-  constructor() {
-    // Pawns.
-    let pawns: Pawn[] = [];
-    for (let i: number = 0; i < 4; i++) { /// TODO : current number of players.
-      pawns.push(new Pawn(8, pawnColors[i]));
-    }
+  constructor(players: Player[], difficulty: string, diceSize: number) {
 
     // Players.
-    this.players = [];
-    for (let i = 0; i < 4; i++) {
-      this.players.push(new Player(i, "Player " + i, pawns[i]));
+    this.players = players;
+    this._currentPlayer = this.players[0];
+
+    // Pawns.
+    let pawns: Pawn[] = [];
+    for (let i = 0; i < players.length; i++) {
+      pawns.push(players[i].pawn);
     }
-    this.currentPlayer = this.players[0];
 
     // Board.
     this.board = new Board(pawns);
-    this.board.center();
+    this.board.subscribe(this);
 
-    // Dice.
-    this.dice = new Dice();
-    this.dice.pos(200, 400);
+    // Left section.
+    this.leftSection = new LeftSection(this.currentPlayer.name, diceSize);
+    this.leftSection.subscribe(this);
+
+    new Tile({
+      obj: series([this.leftSection, this.board]),
+      cols:2, rows:1,
+      align: 'center',
+      valign: 'center',
+      spacingH:70,
+      clone: false
+    }).center();
 
     let label = new Label({
-      text:"Lancer le dé",
-      size:15,
+      text:"⛶",
+      size:50,
       bold:true
     });
-    let button = new Button({
+    this.fullScreenButton = new Button({
       label: label,
-      backgroundColor: orange,
-      rollBackgroundColor: green,
-      width: 100,
-      height: 30,
-      corner:10
+      width: 50,
+      backgroundColor: "rgba(0,0,0,0)",
+      color: "white",
+      height: 50,
     });
-    button.pos(175,475)
-    button.addTo(this.dice);
-    button.on("mousedown", this.rollDice);
+    label.addTo(this.fullScreenButton).center();
+    this.fullScreenButton.on("mousedown", this.fullScreenAction);
+    this.fullScreenButton.addTo(S)
   }
 
-  private rollDice = async (): Promise<void> => {
-    let result: number = this.dice.roll();
-    await this.board.movePawn(this.players[this.currentPlayer.id].pawn, result);
+  update(subject: Observable): void {
+    if (subject instanceof DiceGroup) {
+      this.movePawn(this.currentPlayer.pawn, subject.diceResult);
+    } else if (subject instanceof Coil) {
+      this.leftSection.enableDiceButton();
+    }
+  }
+
+  private fullScreenAction = (): void => {
+    F.fullscreen(true);
+  }
+
+  private movePawn(pawn: Pawn, diceResult: number) {
+    this.leftSection.disableDiceButton();
+    this.board.movePawn(pawn, diceResult);
     this.nextPlayer();
   }
 
   private nextPlayer(): void {
     let nextPlayerId = this.currentPlayer.id + 1;
-    if (nextPlayerId >= maxNumberOfPlayer) {
+    if (nextPlayerId >= this.players.length) {
       nextPlayerId = 0;
     }
     this.currentPlayer = this.players[nextPlayerId];
+  }
+
+  get currentPlayer(): Player {
+    return this._currentPlayer;
+  }
+
+  set currentPlayer(value: Player) {
+    this._currentPlayer = value;
+    this.leftSection.updatePlayerName(this.currentPlayer.name);
   }
 }

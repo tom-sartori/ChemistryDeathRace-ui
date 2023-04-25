@@ -1,0 +1,13 @@
+<div class="params-wrapper" [formGroup]="mainForm">
+  <h1>Nom des joueurs</h1>
+  <div class="params">
+    <div *ngFor="let name of playersName; let i = index" class="param">
+      <label for="player{{i+1}}">Joueur {{i+1}}</label>
+      <input id="player{{i+1}}" formControlName="player{{i+1}}">
+    </div>
+    <div class="params-footer">
+      <app-prev (click)="goToParams()"></app-prev>
+      <app-next (click)="goToGame()"></app-next>
+    </div>
+  </div>
+</div>
