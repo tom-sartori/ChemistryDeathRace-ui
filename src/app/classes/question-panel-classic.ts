@@ -1,8 +1,8 @@
-import { QuestionPanel } from './question-panel';
-import { Question } from '../models/question/question.model';
-import { framePadding } from '../constant/ui-constants';
-import { Proposition } from '../models/question/proposition.model';
-import { QuestionPanelResult } from './question-panel-result';
+import { QuestionPanel } from '@classes/question-panel';
+import { Question } from '@models/question/question.model';
+import { framePadding } from '@constants/ui-constants';
+import { Proposition } from '@models/question/proposition.model';
+import { QuestionPanelResult } from '@classes/question-panel-result';
 
 export class QuestionPanelClassic extends QuestionPanel {
 

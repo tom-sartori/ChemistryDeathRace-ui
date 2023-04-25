@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
-import { ParamsService } from '../../services/params.service';
+import { ParamsService } from '@services/params.service';
 import { Router } from '@angular/router';
 
 @Component({

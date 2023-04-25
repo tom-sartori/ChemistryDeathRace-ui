@@ -1,9 +1,9 @@
-import { Space } from './space';
-import { Pawn } from "./pawn";
-import { pipeBackgroundColor, spaceColors } from "../constant/ui-constants";
-import { SpaceDisplay } from '../constant/space-display';
-import { Coil } from './coil';
-import { Observer } from '../interfaces/observer';
+import { Space } from '@classes/space';
+import { Pawn } from "@classes/pawn";
+import { pipeBackgroundColor, spaceColors } from "@constants/ui-constants";
+import { SpaceDisplay } from '@constants/space-display';
+import { Coil } from '@classes/coil';
+import { Observer } from '@interfaces/observer';
 
 export class Board extends Container {
 

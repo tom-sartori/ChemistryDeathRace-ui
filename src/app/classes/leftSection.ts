@@ -1,6 +1,6 @@
-import { DiceGroup } from './diceGroup';
-import { PlayerNameGroup } from './playerNameGroup';
-import { Observer } from '../interfaces/observer';
+import { DiceGroup } from '@classes/diceGroup';
+import { PlayerNameGroup } from '@classes/playerNameGroup';
+import { Observer } from '@interfaces/observer';
 
 export class LeftSection extends Tile {
 

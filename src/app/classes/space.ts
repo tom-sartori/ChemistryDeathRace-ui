@@ -1,7 +1,6 @@
-import { Pawn } from "./pawn";
-import { SpaceDisplay } from '../constant/space-display';
-import { pipeBackgroundColor, spaceCornerRadius, spaceHeight, spaceMargin, spaceWidth } from '../constant/ui-constants';
-import GradientColor = zim.GradientColor;
+import { Pawn } from "@classes/pawn";
+import { SpaceDisplay } from '@constants/space-display';
+import { pipeBackgroundColor, spaceCornerRadius, spaceHeight, spaceMargin, spaceWidth } from '@constants/ui-constants';
 
 const isEqual = require('lodash/isEqual.js');
 

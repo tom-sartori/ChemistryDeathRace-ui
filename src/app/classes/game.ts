@@ -1,11 +1,11 @@
-import { Player } from "./player";
-import { Board } from "./board";
-import { Pawn } from "./pawn";
-import { LeftSection } from './leftSection';
-import { Observer } from '../interfaces/observer';
-import { Observable } from '../interfaces/observable';
-import { DiceGroup } from './diceGroup';
-import { Coil } from './coil';
+import { Player } from "@classes/player";
+import { Board } from "@classes/board";
+import { Pawn } from "@classes/pawn";
+import { LeftSection } from '@classes/leftSection';
+import { Observer } from '@interfaces/observer';
+import { Observable } from '@interfaces/observable';
+import { DiceGroup } from '@classes/diceGroup';
+import { Coil } from '@classes/coil';
 
 export class Game implements Observer {
 

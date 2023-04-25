@@ -1,4 +1,4 @@
-import { diceHeight, diceWidth } from '../constant/ui-constants';
+import { diceHeight, diceWidth } from '@constants/ui-constants';
 
 const random = require('lodash/random.js')
 

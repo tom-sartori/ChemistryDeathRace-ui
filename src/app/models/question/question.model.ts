@@ -1,4 +1,4 @@
-import { Proposition } from './proposition.model';
+import { Proposition } from '@models/question/proposition.model';
 
 export class Question {
 

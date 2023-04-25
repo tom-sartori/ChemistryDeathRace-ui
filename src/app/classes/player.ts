@@ -1,4 +1,4 @@
-import { Pawn } from "./pawn";
+import { Pawn } from "@classes/pawn";
 
 export class Player {
 
