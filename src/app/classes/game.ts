@@ -5,6 +5,14 @@ import { LeftSection } from '@classes/leftSection';
 import { Observer } from '@interfaces/observer';
 import { Observable } from '@interfaces/observable';
 import { Coil } from '@classes/coil';
+import {
+  boardWidthProportion,
+  framePaddingProportion,
+  pawnColors,
+  pawnDiameterProportion,
+  spaceMargin
+} from '@constants/ui-constants';
+import { boardCols, boardRows } from '@constants/game-constants';
 import { Dice } from '@classes/dice';
 
 export class Game implements Observer {
@@ -15,20 +23,28 @@ export class Game implements Observer {
 
   private _currentPlayer: Player;
 
-  constructor(players: Player[], difficulty: string, diceSize: number) {
+  constructor(playerNames: string[], difficulty: string, diceSize: number) {
+    // W < H ? Portrait : Landscape.
+    const cols: number = W < H ? 1 : 2;
+    const rows: number = W < H ? 2 : 1;
+    const boardWidth: number = W < H ? W - (W * framePaddingProportion * 2) : W * boardWidthProportion;
+    let boardHeight: number = H - ((boardRows - 1) * spaceMargin);
+    boardHeight = boardHeight - (boardHeight * framePaddingProportion * 2);
 
+    const spaceSideSize: number = Math.floor(Math.min(boardWidth / boardCols, boardHeight / boardRows))
+    const pawnRadius: number = Math.floor((spaceSideSize * pawnDiameterProportion) / 2);
     // Players.
-    this.players = players;
+    this.players = [];
+    const pawns: Pawn[] = [];
+    playerNames.forEach((playerName: string, index: number): void => {
+      const pawn: Pawn = new Pawn(pawnRadius, pawnColors[ index ]);
+      pawns.push(pawn);
+      this.players.push(new Player(playerName, pawn));
+    })
     this._currentPlayer = this.getFirstPlayer();
 
-    // Pawns.
-    let pawns: Pawn[] = [];
-    for (let i = 0; i < players.length; i++) {
-      pawns.push(players[i].pawn);
-    }
-
     // Board.
-    this.board = new Board(pawns);
+    this.board = new Board(spaceSideSize, pawns);
     this.board.subscribe(this);
 
     // Left section.
@@ -37,26 +53,26 @@ export class Game implements Observer {
 
     new Tile({
       obj: series([this.leftSection, this.board]),
-      cols: 2, rows: 1,
+      cols, rows,
       align: 'center',
       valign: 'center',
       spacingH: 70,
+      spacingV: 40,
       clone: false
     }).center();
 
-    let label = new Label({
+    const label: Label = new Label({
       text: "⛶",
       size: 50,
-      bold: true
     });
-    let fullScreenButton = new Button({
+    const fullScreenButton: Button = new Button({
       label,
       width: 50,
       backgroundColor: "rgba(0,0,0,0)",
       color: "white",
       height: 50,
     });
-    fullScreenButton.tap(this.fullScreenAction);
+    fullScreenButton.tap(() => F.fullscreen(true));
     fullScreenButton.addTo(S)
   }
 
@@ -70,10 +86,6 @@ export class Game implements Observer {
     }
   }
 
-  private fullScreenAction = (): void => {
-    F.fullscreen(true);
-  }
-
   private movePawn(pawn: Pawn, diceResult: number): void {
     this.leftSection.disableDiceButton();
     this.board.movePawn(pawn, diceResult);
@@ -82,15 +94,15 @@ export class Game implements Observer {
   private nextPlayer(): void {
     let currentPlayerIndex = this.players.indexOf(this.currentPlayer);
     if (currentPlayerIndex === this.players.length - 1) {
-      this.currentPlayer = this.players[0];
+      this.currentPlayer = this.players[ 0 ];
     }
     else {
-      this.currentPlayer = this.players[currentPlayerIndex + 1];
+      this.currentPlayer = this.players[ currentPlayerIndex + 1 ];
     }
   }
 
   private getFirstPlayer(): Player {
-    return this.players[0];
+    return this.players[ 0 ];
   }
 
   get currentPlayer(): Player {
