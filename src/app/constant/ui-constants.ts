@@ -16,4 +16,7 @@ export const diceWidth: number = 50
 export const diceHeight: number = 50;
 export const backgroundColor: GradientColor = "#13005A";
 export const pipeBackgroundColor: GradientColor = lighter;
+export const framePadding: number = 60;
+export const questionPanelBackgroundColor: GradientColor = lighter;
+export const questionPanelPadding: number = 10;
 export const timeBetweenMove: number = 250;

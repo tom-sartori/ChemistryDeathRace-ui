@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from "../classes/game";
-import { backgroundColor, frameHeight, frameWidth, pawnColors, pawnRadius, } from "../constant/ui-constants";
+import { backgroundColor, pawnColors, pawnRadius, } from "../constant/ui-constants";
 import { Player } from '../classes/player';
 import { Pawn } from '../classes/pawn';
 import { ParamsService } from '../services/params.service';
@@ -26,13 +26,14 @@ export class ZimTestComponent implements OnInit {
     this.players = tmpPlayers;
     this.difficulty = paramsService.difficulty;
     this.diceSize = paramsService.diceSize;
+
+    new Frame(FULL, undefined, undefined, backgroundColor, backgroundColor, this.ready);
   }
 
   ngOnInit(): void {
-    new Frame(FULL, frameWidth, frameHeight, backgroundColor, backgroundColor, this.ready.bind(this));
   }
 
-  ready(): void {
+  private ready(): void {
     new Game(this.players, this.difficulty, this.diceSize);
   }
 }
