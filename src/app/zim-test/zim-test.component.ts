@@ -26,13 +26,14 @@ export class ZimTestComponent implements OnInit {
     this.players = tmpPlayers;
     this.difficulty = paramsService.difficulty;
     this.diceSize = paramsService.diceSize;
+    
+    new Frame(FULL, undefined, undefined, backgroundColor, backgroundColor, this.ready);
   }
 
   ngOnInit(): void {
-    new Frame(FULL, frameWidth, frameHeight, backgroundColor, backgroundColor, this.ready.bind(this));
   }
 
-  ready(): void {
+  private ready(): void {
     new Game(this.players, this.difficulty, this.diceSize);
   }
 }
