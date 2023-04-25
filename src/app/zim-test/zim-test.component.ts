@@ -20,14 +20,20 @@ export class ZimTestComponent implements OnInit {
   constructor(private paramsService: ParamsService) {
     this.numberOfPlayers = paramsService.playersNumber;
     let tmpPlayers : Player[] = [];
-    for (let i = 0; i < this.numberOfPlayers; i++) {
+    for (let i: number = 0; i < this.numberOfPlayers; i++) {
       tmpPlayers.push(new Player(i, paramsService.playersName[i], new Pawn(pawnRadius, pawnColors[i])));
     }
     this.players = tmpPlayers;
     this.difficulty = paramsService.difficulty;
     this.diceSize = paramsService.diceSize;
 
-    new Frame(FULL, undefined, undefined, backgroundColor, backgroundColor, this.ready);
+    new Frame({
+      scaling: FULL,
+      color: backgroundColor,
+      outerColor: backgroundColor,
+      ready: this.ready.bind(this)
+      // backgroundColor: backgroundColor,
+    })
   }
 
   ngOnInit(): void {
