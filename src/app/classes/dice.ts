@@ -53,7 +53,6 @@ export class Dice extends Rectangle implements Observable {
 
   private animateDice(numberOfRoll: number): void {
     if (numberOfRoll === 0) {
-      this.currentFace = random(1, this.diceSize);
       this.notifyAll();
     }
     else {
