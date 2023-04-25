@@ -9,21 +9,21 @@ export class Board extends Container {
 
   private readonly coil: Coil;
 
-  constructor(pawns: Pawn[]) {
+  constructor(spaceSideSize: number, pawns: Pawn[]) {
     super();
 
-    this.coil = new Coil(this.generateBoard()).addTo(this);
+    this.coil = new Coil(this.generateBoard(spaceSideSize)).addTo(this);
     pawns.forEach(pawn => this.addPawn(0, pawn));
   }
 
-  private generateBoard(): Space[] {
+  private generateBoard(spaceSideSize: number): Space[] {
     return [
-      new Space(spaceColors[ 6 ], '1', SpaceDisplay.CORNER_LEFT), new Space(spaceColors[ 0 ], '2'), new Space(spaceColors[ 1 ], '3'), new Space(spaceColors[ 2 ], '4'), new Space(spaceColors[ 3 ], '5'), new Space(spaceColors[ 4 ], '6'), new Space(spaceColors[ 5 ], '7', SpaceDisplay.CORNER_TOP_RIGHT),
-      new Space(spaceColors[ 5 ], '14', SpaceDisplay.CORNER_TOP_LEFT), new Space(spaceColors[ 4 ], '13'), new Space(spaceColors[ 3 ], '12'), new Space(spaceColors[ 2 ], '11'), new Space(spaceColors[ 1 ], '10'), new Space(pipeBackgroundColor, '9'), new Space(spaceColors[ 0 ], '8', SpaceDisplay.CORNER_BOTTOM_RIGHT),
-      new Space(pipeBackgroundColor, '15', SpaceDisplay.CORNER_BOTTOM_LEFT), new Space(spaceColors[ 0 ], '16'), new Space(spaceColors[ 1 ], '17'), new Space(spaceColors[ 2 ], '18'), new Space(spaceColors[ 3 ], '19'), new Space(spaceColors[ 4 ], '20'), new Space(spaceColors[ 5 ], '21', SpaceDisplay.CORNER_TOP_RIGHT),
-      new Space(spaceColors[ 5 ], '28', SpaceDisplay.CORNER_TOP_LEFT), new Space(spaceColors[ 4 ], '27'), new Space(spaceColors[ 3 ], '26'), new Space(spaceColors[ 2 ], '25'), new Space(pipeBackgroundColor, '24'), new Space(spaceColors[ 1 ], '23'), new Space(spaceColors[ 0 ], '22', SpaceDisplay.CORNER_BOTTOM_RIGHT),
-      new Space(spaceColors[ 0 ], '29', SpaceDisplay.CORNER_BOTTOM_LEFT), new Space(spaceColors[ 1 ], '30'), new Space(spaceColors[ 2 ], '31'), new Space(spaceColors[ 3 ], '32'), new Space(spaceColors[ 4 ], '33'), new Space(spaceColors[ 5 ], '34'), new Space(spaceColors[ 0 ], '35', SpaceDisplay.CORNER_TOP_RIGHT),
-      new Space(spaceColors[ 6 ], '42', SpaceDisplay.CORNER_LEFT), new Space(spaceColors[ 5 ], '41'), new Space(spaceColors[ 4 ], '40'), new Space(spaceColors[ 3 ], '39'), new Space(spaceColors[ 2 ], '38'), new Space(spaceColors[ 1 ], '37'), new Space(pipeBackgroundColor, '36', SpaceDisplay.CORNER_BOTTOM_RIGHT),
+      new Space(spaceColors[ 6 ], '1', spaceSideSize, SpaceDisplay.CORNER_LEFT), new Space(spaceColors[ 0 ], '2', spaceSideSize), new Space(spaceColors[ 1 ], '3', spaceSideSize), new Space(spaceColors[ 2 ], '4', spaceSideSize), new Space(spaceColors[ 3 ], '5', spaceSideSize), new Space(spaceColors[ 4 ], '6', spaceSideSize), new Space(spaceColors[ 5 ], '7', spaceSideSize, SpaceDisplay.CORNER_TOP_RIGHT),
+      new Space(spaceColors[ 5 ], '14', spaceSideSize, SpaceDisplay.CORNER_TOP_LEFT), new Space(spaceColors[ 4 ], '13', spaceSideSize), new Space(spaceColors[ 3 ], '12', spaceSideSize), new Space(spaceColors[ 2 ], '11', spaceSideSize), new Space(spaceColors[ 1 ], '10', spaceSideSize), new Space(pipeBackgroundColor, '9', spaceSideSize), new Space(spaceColors[ 0 ], '8', spaceSideSize, SpaceDisplay.CORNER_BOTTOM_RIGHT),
+      new Space(pipeBackgroundColor, '15', spaceSideSize, SpaceDisplay.CORNER_BOTTOM_LEFT), new Space(spaceColors[ 0 ], '16', spaceSideSize), new Space(spaceColors[ 1 ], '17', spaceSideSize), new Space(spaceColors[ 2 ], '18', spaceSideSize), new Space(spaceColors[ 3 ], '19', spaceSideSize), new Space(spaceColors[ 4 ], '20', spaceSideSize), new Space(spaceColors[ 5 ], '21', spaceSideSize, SpaceDisplay.CORNER_TOP_RIGHT),
+      new Space(spaceColors[ 5 ], '28', spaceSideSize, SpaceDisplay.CORNER_TOP_LEFT), new Space(spaceColors[ 4 ], '27', spaceSideSize), new Space(spaceColors[ 3 ], '26', spaceSideSize), new Space(spaceColors[ 2 ], '25', spaceSideSize), new Space(pipeBackgroundColor, '24', spaceSideSize), new Space(spaceColors[ 1 ], '23', spaceSideSize), new Space(spaceColors[ 0 ], '22', spaceSideSize, SpaceDisplay.CORNER_BOTTOM_RIGHT),
+      new Space(spaceColors[ 0 ], '29', spaceSideSize, SpaceDisplay.CORNER_BOTTOM_LEFT), new Space(spaceColors[ 1 ], '30', spaceSideSize), new Space(spaceColors[ 2 ], '31', spaceSideSize), new Space(spaceColors[ 3 ], '32', spaceSideSize), new Space(spaceColors[ 4 ], '33', spaceSideSize), new Space(spaceColors[ 5 ], '34', spaceSideSize), new Space(spaceColors[ 0 ], '35', spaceSideSize, SpaceDisplay.CORNER_TOP_RIGHT),
+      new Space(spaceColors[ 6 ], '42', spaceSideSize, SpaceDisplay.CORNER_LEFT), new Space(spaceColors[ 5 ], '41', spaceSideSize), new Space(spaceColors[ 4 ], '40', spaceSideSize), new Space(spaceColors[ 3 ], '39', spaceSideSize), new Space(spaceColors[ 2 ], '38', spaceSideSize), new Space(spaceColors[ 1 ], '37', spaceSideSize), new Space(pipeBackgroundColor, '36', spaceSideSize, SpaceDisplay.CORNER_BOTTOM_RIGHT),
     ];
   }
 

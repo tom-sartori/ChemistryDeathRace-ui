@@ -7,12 +7,12 @@ import { defaultDiceSize, defaultNumberOfPlayer } from '@constants/game-constant
 export class ParamsService {
 
   public playersNumber: number;
-  public playersName: string[];
+  public playerNames: string[];
   public diceSize: number;
   public difficulty: string;
 
   constructor() {
-    this.playersName = [];
+    this.playerNames = [];
     this.playersNumber = defaultNumberOfPlayer;
     this.diceSize = defaultDiceSize;
     this.difficulty = '';

@@ -1,6 +1,6 @@
 import { Pawn } from "@classes/pawn";
 import { SpaceDisplay } from '@constants/space-display';
-import { pipeBackgroundColor, spaceCornerRadius, spaceHeight, spaceMargin, spaceWidth } from '@constants/ui-constants';
+import { pipeBackgroundColor, spaceMargin } from '@constants/ui-constants';
 
 const isEqual = require('lodash/isEqual.js');
 
@@ -8,9 +8,11 @@ export class Space extends Rectangle {
 
   public pawns: Pawn[];
 
-  constructor(color: GradientColor, text: string, spaceDisplay: SpaceDisplay = SpaceDisplay.HORIZONTAL) {
-    let height: number = spaceHeight;
+  constructor(color: GradientColor, text: string, sideSize: number, spaceDisplay: SpaceDisplay = SpaceDisplay.HORIZONTAL) {
+    const width: number = sideSize;
+    let height: number = sideSize;
     let corner: number[];   // [topLeft, topRight, bottomRight, bottomLeft]
+    const spaceCornerRadius: number = width / 2;
     switch (spaceDisplay) {
       case SpaceDisplay.CORNER_TOP_LEFT:
         corner = [spaceCornerRadius, 0, 0, 0];
@@ -33,7 +35,7 @@ export class Space extends Rectangle {
         corner = [0, 0, 0, 0];
         break;
     }
-    super(spaceWidth, height, color, undefined, undefined, corner);
+    super(width, height, color, undefined, undefined, corner);
 
     this.pawns = [];
 
@@ -48,9 +50,9 @@ export class Space extends Rectangle {
         text: "Tunnel",
         color: black,
         size: 10,
-        width: spaceWidth
+        width: undefined
       }).center(this)
-        .mov(0, spaceHeight / 2 - 15);
+        .mov(0, 0 / 2 - 15);
     }
   }
 

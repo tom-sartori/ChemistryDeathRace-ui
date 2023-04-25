@@ -60,7 +60,7 @@ export class PlayersNameComponent implements OnInit {
     for (let i = 0; i < this.playersNumber; i++) {
       this.playersName[i] = this.mainForm.get(`player${i + 1}`)!.value;
     }
-    this.paramsService.playersName = this.playersName;
+    this.paramsService.playerNames = this.playersName;
     this.router.navigate(['/game']);
   }
 

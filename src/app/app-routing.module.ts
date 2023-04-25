@@ -12,6 +12,7 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'game-params', component: GameParamsComponent},
   {path: 'players-name', component: PlayersNameComponent},
+  {path: 'game-test', component: ZimTestComponent},
   {path: 'game', component: ZimTestComponent},
   {path: 'error404', component: ErrorComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
