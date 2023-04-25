@@ -54,7 +54,6 @@ export class DiceGroup extends Tile {
 
   private rollDice = (): void => {
     this.dice.roll();
-    // this.notifyAll();
   }
 
   public subscribe(observer: Observer): void {
