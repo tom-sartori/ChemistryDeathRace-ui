@@ -7,33 +7,32 @@ export class DiceGroup extends Tile implements Observable {
   public diceResult: number = 1;
 
   private readonly dice: Dice;
+  private readonly observers: Observer[];
 
-  private button: Button;
-  private observers: Observer[] = [];
+  private rollButton: Button;
 
   constructor(diceSize: number) {
 
     // Dice.
-    const tmpDice = new Dice(diceSize);
+    const dice = new Dice(diceSize);
 
     // Button.
     let label = new Label({
-      text:"Lancer le dé",
-      size:15,
-      bold:true
+      text: "Lancer le dé",
+      size: 15,
+      bold: true
     });
-    let tmpButton = new Button({
-      label: label,
+    let rollButton = new Button({
+      label,
       backgroundColor: orange,
       rollBackgroundColor: green,
       width: 100,
       height: 30,
-      corner:10
+      corner: 10
     });
-    label.addTo(tmpButton).center();
 
     super(
-      series([tmpDice, tmpButton]), // obj
+      series([dice, rollButton]), // obj
       1, 2,                             // cols, rows
       undefined, 10,                    // spacingH, spacingV
       undefined,                        // unique
@@ -47,36 +46,36 @@ export class DiceGroup extends Tile implements Observable {
     );
 
     // Button event.
-    tmpButton.on("mousedown", this.rollDice);
+    rollButton.tap(this.rollDice);
 
     // Set properties.
-    this.dice = tmpDice;
-    this.button = tmpButton;
-
+    this.dice = dice;
+    this.rollButton = rollButton;
+    this.observers = [];
   }
 
-  private rollDice = async (): Promise<void> => {
+  private rollDice = (): void => {
     this.diceResult = this.dice.roll();
-    this.notify();
+    this.notifyAll();
   }
 
-  notify(): void {
+  public notifyAll(): void {
     for (const observer of this.observers) {
       observer.update(this);
     }
   }
 
-  subscribe(observer: Observer): void {
+  public subscribe(observer: Observer): void {
     if (!this.observers.includes(observer)) {
       this.observers.push(observer);
     }
   }
 
-  disableDiceButton() {
-    this.button.enabled = false;
+  public disableRollButton() {
+    this.rollButton.enabled = false;
   }
 
-  enableDiceButton() {
-    this.button.enabled = true;
+  public enableRollButton() {
+    this.rollButton.enabled = true;
   }
 }

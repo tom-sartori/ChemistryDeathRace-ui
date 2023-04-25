@@ -13,6 +13,7 @@
       <label for="difficulty">Difficulté</label>
       <div class="select-input">
         <select id="difficulty" formControlName="difficulty" aria-disabled="true">
+          <option value="" disabled selected>Choisir</option>
           <option *ngFor="let difficulty of difficulties" [value]="difficulty">{{difficulty}}</option>
         </select>
       </div>
@@ -27,7 +28,7 @@
     </div>
     <div class="params-footer">
       <app-prev (click)="goToHome()"></app-prev>
-      <app-next (click)="goToPlayersName()"></app-next>
+      <app-next (click)="goToPlayersName()" [disabled]="!mainForm.valid"></app-next>
     </div>
   </div>
 </div>

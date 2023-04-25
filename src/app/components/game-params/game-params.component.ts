@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ParamsService } from '../../services/params.service';
 import { QuestionService } from '../../services/question.service';
 import { Router } from '@angular/router';
+import { maxNumberOfPlayer } from '../../constant/game-constants';
 
 @Component({
   selector: 'app-game-params',
@@ -26,7 +27,7 @@ export class GameParamsComponent implements OnInit {
       this.paramsService.difficulty = x[0];
     });
     this.mainForm = this.formBuilder.group({
-      playersNumber: [this.paramsService.playersNumber, Validators.required],
+      playersNumber: [this.paramsService.playersNumber, [Validators.required, Validators.max(maxNumberOfPlayer), Validators.min(1)]],
       diceSize: [this.paramsService.diceSize, Validators.required],
       difficulty: ['', Validators.required]
     });

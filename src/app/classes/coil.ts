@@ -7,8 +7,7 @@ import { Observer } from '../interfaces/observer';
 
 export class Coil extends Tile implements Observable {
 
-  private _isMoving: boolean = false;
-  private observers: Observer[] = [];
+  private readonly observers: Observer[];
 
   constructor(spaces: Space[]) {
     super(
@@ -24,15 +23,17 @@ export class Coil extends Tile implements Observable {
       undefined, undefined, undefined,  // mirrorH, mirrorV, snapToPixel
       false                             // clone
     );
+
+    this.observers = [];
   }
 
-  notify(): void {
+  public notifyAll(): void {
     for (const observer of this.observers) {
       observer.update(this);
     }
   }
 
-  subscribe(observer: Observer): void {
+  public subscribe(observer: Observer): void {
     if (!this.observers.includes(observer)) {
       this.observers.push(observer);
     }
@@ -62,7 +63,7 @@ export class Coil extends Tile implements Observable {
         setTimeout(() => this.movePawnAux(pawn, spaceIndex, nbSpacesToMove - 1), timeBetweenMove);
       }
     } else {
-      this.notify(); // Notify observers that the pawn has moved.
+      this.notifyAll(); // Notify observers that the pawn has moved.
     }
   }
 
@@ -107,14 +108,5 @@ export class Coil extends Tile implements Observable {
 
   public removePawn(index: number, pawn: Pawn): void {
     (this.items[index] as Space).removePawn(pawn);
-  }
-
-
-  get isMoving(): boolean {
-    return this._isMoving;
-  }
-
-  set isMoving(value: boolean) {
-    this._isMoving = value;
   }
 }

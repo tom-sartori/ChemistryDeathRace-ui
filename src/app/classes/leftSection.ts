@@ -9,11 +9,11 @@ export class LeftSection extends Tile {
 
   constructor(currentPlayerName: string, diceSize: number) {
 
-    const tmpDiceGroup = new DiceGroup(diceSize);
-    const tmpPlayerNameGroup = new PlayerNameGroup(currentPlayerName);
+    const diceGroup = new DiceGroup(diceSize);
+    const playerNameGroup = new PlayerNameGroup(currentPlayerName);
 
     super(
-      series([tmpPlayerNameGroup, tmpDiceGroup]), // obj
+      series([playerNameGroup, diceGroup]), // obj
       1, 2,                             // cols, rows
       undefined, 60,                    // spacingH, spacingV
       undefined,                        // unique
@@ -27,23 +27,23 @@ export class LeftSection extends Tile {
     );
 
     // Set properties.
-    this.playerNameGroup = tmpPlayerNameGroup;
-    this.diceGroup = tmpDiceGroup;
+    this.playerNameGroup = playerNameGroup;
+    this.diceGroup = diceGroup;
   }
 
-  updatePlayerName(name: string) {
+  public updatePlayerName(name: string) {
     this.playerNameGroup.updatePlayerName(name);
   }
 
-  subscribe(observer: Observer): void {
+  public subscribe(observer: Observer): void {
     this.diceGroup.subscribe(observer);
   }
 
-  disableDiceButton() {
-    this.diceGroup.disableDiceButton();
+  public disableDiceButton() {
+    this.diceGroup.disableRollButton();
   }
 
-  enableDiceButton() {
-    this.diceGroup.enableDiceButton();
+  public enableDiceButton() {
+    this.diceGroup.enableRollButton();
   }
 }

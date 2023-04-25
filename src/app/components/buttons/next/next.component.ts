@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-next',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NextComponent implements OnInit {
 
-  constructor() { }
+  @Input() disabled!: boolean;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

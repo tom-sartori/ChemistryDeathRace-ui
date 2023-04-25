@@ -1,6 +1,5 @@
 export class PlayerNameGroup extends Tile {
 
-  private playerName: string;
   private playerNameLabel: Label;
 
   constructor(playerName: string) {
@@ -14,7 +13,7 @@ export class PlayerNameGroup extends Tile {
     });
 
     // Player name label.
-    const tmpPlayerNameLabel = new Label({
+    const playerNameLabel = new Label({
       text: playerName,
       size: 15,
       bold: false,
@@ -22,7 +21,7 @@ export class PlayerNameGroup extends Tile {
     });
 
     super(
-      series([text, tmpPlayerNameLabel]), // obj
+      series([text, playerNameLabel]), // obj
       1, 2,                             // cols, rows
       undefined, 10,                    // spacingH, spacingV
       undefined,                        // unique
@@ -35,12 +34,11 @@ export class PlayerNameGroup extends Tile {
       false                             // clone
     );
 
-    this.playerName = playerName;
-    this.playerNameLabel = tmpPlayerNameLabel;
+    this.playerNameLabel = playerNameLabel;
   }
 
   public updatePlayerName(playerName: string) {
-    this.playerName = playerName;
-    this.playerNameLabel.text = this.playerName;
+    this.playerNameLabel.text = playerName;
+    S.update();
   }
 }

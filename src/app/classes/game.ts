@@ -10,17 +10,16 @@ import { Coil } from './coil';
 export class Game implements Observer {
 
   private readonly board: Board;
+  private readonly leftSection: LeftSection;
   private readonly players: Player[];
 
   private _currentPlayer: Player;
-  private leftSection: LeftSection;
-  private fullScreenButton: Button;
 
   constructor(players: Player[], difficulty: string, diceSize: number) {
 
     // Players.
     this.players = players;
-    this._currentPlayer = this.players[0];
+    this._currentPlayer = this.getFirstPlayer();
 
     // Pawns.
     let pawns: Pawn[] = [];
@@ -41,32 +40,33 @@ export class Game implements Observer {
       cols:2, rows:1,
       align: 'center',
       valign: 'center',
-      spacingH:70,
+      spacingH: 70,
       clone: false
     }).center();
 
     let label = new Label({
-      text:"⛶",
-      size:50,
-      bold:true
+      text: "⛶",
+      size: 50,
+      bold: true
     });
-    this.fullScreenButton = new Button({
-      label: label,
+    let fullScreenButton = new Button({
+      label,
       width: 50,
       backgroundColor: "rgba(0,0,0,0)",
       color: "white",
       height: 50,
     });
-    label.addTo(this.fullScreenButton).center();
-    this.fullScreenButton.on("mousedown", this.fullScreenAction);
-    this.fullScreenButton.addTo(S)
+    fullScreenButton.tap(this.fullScreenAction);
+    fullScreenButton.addTo(S)
   }
 
-  update(subject: Observable): void {
+  public update(subject: Observable): void {
     if (subject instanceof DiceGroup) {
       this.movePawn(this.currentPlayer.pawn, subject.diceResult);
-    } else if (subject instanceof Coil) {
+    }
+    else if (subject instanceof Coil) {
       this.leftSection.enableDiceButton();
+      this.nextPlayer();
     }
   }
 
@@ -77,7 +77,6 @@ export class Game implements Observer {
   private movePawn(pawn: Pawn, diceResult: number) {
     this.leftSection.disableDiceButton();
     this.board.movePawn(pawn, diceResult);
-    this.nextPlayer();
   }
 
   private nextPlayer(): void {
@@ -86,6 +85,10 @@ export class Game implements Observer {
       nextPlayerId = 0;
     }
     this.currentPlayer = this.players[nextPlayerId];
+  }
+
+  private getFirstPlayer(): Player {
+    return this.players[0];
   }
 
   get currentPlayer(): Player {

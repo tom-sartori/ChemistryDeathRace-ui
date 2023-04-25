@@ -8,18 +8,19 @@ import { ZimTestComponent } from './zim-test/zim-test.component';
 import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomePageComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'game-params', component: GameParamsComponent },
-  { path: 'players-name', component: PlayersNameComponent },
-  { path: 'game', component: ZimTestComponent },
-  { path: 'error404', component: ErrorComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'error404' }
+  {path: 'home', component: HomePageComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'game-params', component: GameParamsComponent},
+  {path: 'players-name', component: PlayersNameComponent},
+  {path: 'game', component: ZimTestComponent},
+  {path: 'error404', component: ErrorComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '**', redirectTo: 'error404'}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

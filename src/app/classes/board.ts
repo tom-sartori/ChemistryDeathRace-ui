@@ -35,7 +35,7 @@ export class Board extends Container {
     this.coil.addPawn(index, pawn);
   }
 
-  subscribe(observer: Observer): void {
+  public subscribe(observer: Observer): void {
     this.coil.subscribe(observer);
   }
 }

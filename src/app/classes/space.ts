@@ -41,18 +41,14 @@ export class Space extends Rectangle {
     this.pawns.push(pawn);
     pawn.addTo(this);
     this.displayPawns();
-    if (this.stage !== null) {
-      this.stage.update();
-    }
+    S.update();
   }
 
   public removePawn(pawn: Pawn): void {
     this.pawns = this.pawns.filter(p => !isEqual(p, pawn));
     pawn.removeFrom(this);
     this.displayPawns();
-    if (this.stage !== null) {
-      this.stage.update();
-    }
+    S.update();
   }
 
   public displayPawns(): void {
