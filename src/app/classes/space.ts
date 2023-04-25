@@ -30,9 +30,10 @@ export class Space extends Rectangle {
         text: "Tunnel",
         color: black,
         size: 10,
-      })
-        .pos(10, 37)
-        .addTo(this);
+        width: spaceWidth,
+
+      }).center(this)
+        .mov(0, spaceHeight/2 - 15);
     }
   }
 
@@ -40,14 +41,14 @@ export class Space extends Rectangle {
     this.pawns.push(pawn);
     pawn.addTo(this);
     this.displayPawns();
-    this.stage.update();
+    S.update();
   }
 
   public removePawn(pawn: Pawn): void {
     this.pawns = this.pawns.filter(p => !isEqual(p, pawn));
     pawn.removeFrom(this);
     this.displayPawns();
-    this.stage.update();
+    S.update();
   }
 
   public displayPawns(): void {
@@ -61,14 +62,14 @@ export class Space extends Rectangle {
         break;
       case 3:
         this.pawns[0].pos((this.width / 2) - this.pawns[0].radius, this.pawns[0].radius)
-        this.pawns[1].pos(this.pawns[1].radius, this.height / 2)
-        this.pawns[2].pos(this.width / 2, this.height / 2)
+        this.pawns[1].pos(this.pawns[1].radius, this.height - 3 * this.pawns[1].radius)
+        this.pawns[2].pos(this.width - 3 * this.pawns[1].radius, this.height - 3 * this.pawns[1].radius)
         break;
       case 4:
         this.pawns[0].pos(this.pawns[0].radius, this.pawns[0].radius)
-        this.pawns[1].pos(this.width / 2, this.pawns[1].radius)
-        this.pawns[2].pos(this.pawns[2].radius, this.height / 2)
-        this.pawns[3].pos(this.width / 2, this.height / 2)
+        this.pawns[1].pos(this.width - 3 * this.pawns[1].radius, this.pawns[1].radius)
+        this.pawns[2].pos(this.pawns[2].radius, this.height - 3 * this.pawns[1].radius)
+        this.pawns[3].pos(this.width - 3 * this.pawns[1].radius, this.height - 3 * this.pawns[1].radius)
         break;
     }
   }

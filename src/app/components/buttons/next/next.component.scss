@@ -1,0 +1,14 @@
+@import "src/assets/styles/colors.scss";
+
+.next {
+  font-size: 6vw;
+  font-family: "Freckle Face", serif;
+  text-align: center;
+  border: none;
+  color: $accent-color;
+  border-radius: 10px;
+  background-color: $warn-color;
+  width: 8vw;
+  height: 8vw;
+  cursor: pointer;
+}

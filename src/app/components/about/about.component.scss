@@ -1,0 +1,26 @@
+@import "src/assets/styles/colors.scss";
+
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-top: 10%;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-wrapper > h1 {
+  border-bottom: none;
+  font-size: 4em;
+  text-align: center;
+  margin: 0 0 50px;
+}
+
+.about-wrapper > p {
+  border-bottom: none;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0 0 50px;
+  color: $main-color;
+  max-width: 1000px;
+}
