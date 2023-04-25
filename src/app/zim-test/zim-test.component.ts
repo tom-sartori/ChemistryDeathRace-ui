@@ -19,11 +19,11 @@ export class ZimTestComponent implements OnInit {
 
   constructor(private paramsService: ParamsService) {
     this.numberOfPlayers = paramsService.playersNumber;
-    let tmpPlayers: Player[] = [];
+    let players: Player[] = [];
     for (let i: number = 0; i < this.numberOfPlayers; i++) {
-      tmpPlayers.push(new Player(paramsService.playersName[i], new Pawn(pawnRadius, pawnColors[i])));
+      players.push(new Player(paramsService.playersName[i], new Pawn(pawnRadius, pawnColors[i])));
     }
-    this.players = tmpPlayers;
+    this.players = players;
     this.difficulty = paramsService.difficulty;
     this.diceSize = paramsService.diceSize;
 
@@ -32,7 +32,6 @@ export class ZimTestComponent implements OnInit {
       color: backgroundColor,
       outerColor: backgroundColor,
       ready: this.ready.bind(this)
-      // backgroundColor: backgroundColor,
     })
   }
 
