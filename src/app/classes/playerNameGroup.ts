@@ -13,7 +13,7 @@ export class PlayerNameGroup extends Tile {
     });
 
     // Player name label.
-    const playerNameLabel = new Label({
+    const playerNameLabel: Label = new Label({
       text: playerName,
       size: 15,
       bold: false,
@@ -37,7 +37,7 @@ export class PlayerNameGroup extends Tile {
     this.playerNameLabel = playerNameLabel;
   }
 
-  public updatePlayerName(playerName: string) {
+  public updatePlayerName(playerName: string): void {
     this.playerNameLabel.text = playerName;
     S.update();
   }

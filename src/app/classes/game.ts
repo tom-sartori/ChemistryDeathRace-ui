@@ -74,17 +74,19 @@ export class Game implements Observer {
     F.fullscreen(true);
   }
 
-  private movePawn(pawn: Pawn, diceResult: number) {
+  private movePawn(pawn: Pawn, diceResult: number): void {
     this.leftSection.disableDiceButton();
     this.board.movePawn(pawn, diceResult);
   }
 
   private nextPlayer(): void {
-    let nextPlayerId = this.currentPlayer.id + 1;
-    if (nextPlayerId >= this.players.length) {
-      nextPlayerId = 0;
+    let currentPlayerIndex = this.players.indexOf(this.currentPlayer);
+    if (currentPlayerIndex === this.players.length - 1) {
+      this.currentPlayer = this.players[0];
     }
-    this.currentPlayer = this.players[nextPlayerId];
+    else {
+      this.currentPlayer = this.players[currentPlayerIndex + 1];
+    }
   }
 
   private getFirstPlayer(): Player {

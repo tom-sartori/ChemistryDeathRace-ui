@@ -7,6 +7,7 @@
     </div>
     <div class="params-footer">
       <app-prev (click)="goToParams()"></app-prev>
+      <p class="error">{{ getErrorMessage() }}</p>
       <app-next (click)="goToGame()" [disabled]="!mainForm.valid"></app-next>
     </div>
   </div>
