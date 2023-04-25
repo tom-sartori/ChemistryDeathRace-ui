@@ -4,7 +4,6 @@ import { Pawn } from "@classes/pawn";
 import { LeftSection } from '@classes/leftSection';
 import { Observer } from '@interfaces/observer';
 import { Observable } from '@interfaces/observable';
-import { DiceGroup } from '@classes/diceGroup';
 import { Coil } from '@classes/coil';
 import {
   boardWidthProportion,
@@ -14,6 +13,7 @@ import {
   spaceMargin
 } from '@constants/ui-constants';
 import { boardCols, boardRows } from '@constants/game-constants';
+import { Dice } from '@classes/dice';
 
 export class Game implements Observer {
 
@@ -77,8 +77,8 @@ export class Game implements Observer {
   }
 
   public update(subject: Observable): void {
-    if (subject instanceof DiceGroup) {
-      this.movePawn(this.currentPlayer.pawn, subject.diceResult);
+    if (subject instanceof Dice) {
+      this.movePawn(this.currentPlayer.pawn, subject.currentFace);
     }
     else if (subject instanceof Coil) {
       this.leftSection.enableDiceButton();
