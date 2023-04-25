@@ -26,3 +26,20 @@
   text-align: center;
   color: $main-color;
 }
+
+.play-button {
+  margin-top: 10vh;
+  width: 25vh;
+  height: 10vh;
+  border-radius: 20px;
+  border: $main-color 1px solid;
+  background-color: transparent;
+  color: $main-color;
+  font-family: "Freckle Face", cursive;
+  font-size: 5vh;
+}
+
+.play-button:hover {
+  background-color: $main-color;
+  color: white;
+}

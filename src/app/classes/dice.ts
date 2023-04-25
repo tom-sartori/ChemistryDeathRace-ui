@@ -1,45 +1,66 @@
-import { diceHeight, diceWidth } from '@constants/ui-constants';
+import { diceHeight, diceWidth, numberOfRoll, timeBetweenRoll } from '@constants/ui-constants';
+import { Observable } from '@interfaces/observable';
+import { Observer } from '@interfaces/observer';
 
 const random = require('lodash/random.js')
 
-export class Dice extends Container {
+export class Dice extends Rectangle implements Observable {
 
   private readonly diceSize: number;
 
   private _currentFace: number;
+  private label: Label;
+  private observers: Observer[];
 
   constructor(diceSize: number) {
-    super();
+    super(diceWidth, diceHeight, white, undefined, undefined, 10);
+
     this._currentFace = 1;
     this.diceSize = diceSize;
+    this.label = new Label({
+      text: this.currentFace.toString(),
+      color: black,
+      size: diceWidth - diceWidth / 2,
+    }).center(this);
+    this.observers = [];
+  }
 
-    for (let i: number = 1; i <= diceSize; i++) {
-      let side: Rectangle = new Rectangle(diceWidth, diceHeight, white, undefined, undefined, 10);
-      let text: Label = new Label({
-        text: i.toString(),
-        color: black,
-      });
-      text.center(side);
-      side.pos(0, 0)
-      side.addTo(this);
-      side.visible = (i === 1);
+  public notifyAll(): void {
+    this.observers.forEach(observer => observer.update(this));
+  }
+
+  public subscribe(observer: Observer): void {
+    if (!this.observers.includes(observer)) {
+      this.observers.push(observer);
     }
   }
 
-  public roll(): number {
-    this.currentFace = random(1, this.diceSize);
-    return this.currentFace;
+  public roll(): void {
+    this.animateDice(numberOfRoll);
   }
 
-  private get currentFace(): number {
+  get currentFace(): number {
     return this._currentFace;
   }
 
   private set currentFace(value: number) {
     if (0 < value && value <= this.diceSize) {
-      this.getChildAt(this.currentFace - 1).visible = false;
-      this.getChildAt(value - 1).visible = true;
+      this.label.text = value.toString();
       this._currentFace = value;
+      S.update();
+    }
+  }
+
+  private animateDice(numberOfRoll: number): void {
+    if (numberOfRoll === 0) {
+      this.currentFace = random(1, this.diceSize);
+      this.notifyAll();
+    }
+    else {
+      this.currentFace = random(1, this.diceSize);
+      setTimeout(() => {
+        this.animateDice(numberOfRoll - 1);
+      }, timeBetweenRoll / numberOfRoll);
     }
   }
 }
