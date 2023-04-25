@@ -4,7 +4,7 @@ import { Observer } from '../interfaces/observer';
 
 export class DiceGroup extends Tile implements Observable {
 
-  public diceResult: number = 1;
+  public diceResult: number;
 
   private readonly dice: Dice;
   private readonly observers: Observer[];
@@ -50,6 +50,7 @@ export class DiceGroup extends Tile implements Observable {
 
     // Set properties.
     this.dice = dice;
+    this.diceResult = 1;
     this.rollButton = rollButton;
     this.observers = [];
   }
