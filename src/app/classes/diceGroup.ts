@@ -1,6 +1,6 @@
 import { Observable } from '@interfaces/observable';
-import { Dice } from '@classes/dice';
 import { Observer } from '@interfaces/observer';
+import { Dice } from '@classes/dice';
 
 export class DiceGroup extends Tile implements Observable {
 
