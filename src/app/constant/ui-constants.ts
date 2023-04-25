@@ -1,17 +1,10 @@
-import GradientColor = zim.GradientColor;
-
-export const frameWidth: number = 1000;
-export const frameHeight: number = 1000;
-export const spaceWidth: number = 70;
-export const spaceHeight: number = 70;
+export const spaceWidth: number = 120;
+export const spaceHeight: number = 120;
 export const spaceMargin: number = 15;
-// export const boardWidth: number = spaceWidth * boardCols;
-// export const boardHeight: number = spaceHeight * boardRows;
-export const spaceColors: GradientColor[] = [pink, green, orange, blue, yellow, brown, darker];
-export const forwardMove: number = 1;
-export const backwardMove: number = -1;
+export const spaceColors: GradientColor[] = ["#885053", "#fe5f55", "#777da7", "#94c9a9", "#c6ecae", "#F59CA9", darker];
+export const spaceCornerRadius: number = 50;
 export const pawnColors: GradientColor[] = ["#9d0000", "#76009d", "#229d00", "#00259d"]
-export const pawnRadius: number = 8;
+export const pawnRadius: number = spaceWidth / 8;
 export const diceWidth: number = 50
 export const diceHeight: number = 50;
 export const backgroundColor: GradientColor = "#13005A";

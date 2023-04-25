@@ -37,7 +37,7 @@ export class Game implements Observer {
 
     new Tile({
       obj: series([this.leftSection, this.board]),
-      cols:2, rows:1,
+      cols: 2, rows: 1,
       align: 'center',
       valign: 'center',
       spacingH: 70,
