@@ -1,13 +1,11 @@
-import { Observable } from '@interfaces/observable';
 import { Observer } from '@interfaces/observer';
 import { Dice } from '@classes/dice';
 
-export class DiceGroup extends Tile implements Observable {
+export class DiceGroup extends Tile {
 
   public diceResult: number;
 
   private readonly dice: Dice;
-  private readonly observers: Observer[];
 
   private rollButton: Button;
 
@@ -52,24 +50,14 @@ export class DiceGroup extends Tile implements Observable {
     this.dice = dice;
     this.diceResult = 1;
     this.rollButton = rollButton;
-    this.observers = [];
   }
 
   private rollDice = (): void => {
-    this.diceResult = this.dice.roll();
-    this.notifyAll();
-  }
-
-  public notifyAll(): void {
-    for (const observer of this.observers) {
-      observer.update(this);
-    }
+    this.dice.roll();
   }
 
   public subscribe(observer: Observer): void {
-    if (!this.observers.includes(observer)) {
-      this.observers.push(observer);
-    }
+    this.dice.subscribe(observer);
   }
 
   public disableRollButton(): void {
