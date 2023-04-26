@@ -3,8 +3,6 @@ import { Board } from "@classes/board";
 import { Pawn } from "@classes/pawn";
 import { LeftSection } from '@classes/leftSection';
 import { Observer } from '@interfaces/observer';
-import { Observable } from '@interfaces/observable';
-import { Coil } from '@classes/coil';
 import {
   boardWidthProportion,
   framePaddingProportion,
@@ -13,7 +11,9 @@ import {
   spaceMargin
 } from '@constants/ui-constants';
 import { boardCols, boardRows } from '@constants/game-constants';
-import { Dice } from '@classes/dice';
+import { QuestionPanelShowQuestion } from '@classes/question-panel-show-question';
+import { Question } from '@models/question/question.model';
+import { ObservableSubject, ObservableSubjectKind } from '@classes/ObservableSubject';
 import { EndOfGame } from '@classes/end-of-game';
 
 export class Game implements Observer {
@@ -23,8 +23,9 @@ export class Game implements Observer {
   private readonly players: Player[];
 
   private _currentPlayer: Player;
+  private questions: Question[];
 
-  constructor(playerNames: string[], difficulty: string, diceSize: number) {
+  constructor(playerNames: string[], questions: Question[], diceSize: number) {
     // W < H ? Portrait : Landscape.
     const cols: number = W < H ? 1 : 2;
     const rows: number = W < H ? 2 : 1;
@@ -38,14 +39,17 @@ export class Game implements Observer {
     this.players = [];
     const pawns: Pawn[] = [];
     playerNames.forEach((playerName: string, index: number): void => {
-      const pawn: Pawn = new Pawn(pawnRadius, pawnColors[ index ]);
+      const pawn: Pawn = new Pawn(pawnRadius, pawnColors[index]);
       pawns.push(pawn);
       this.players.push(new Player(playerName, pawn));
     })
     this._currentPlayer = this.getFirstPlayer();
 
+    // Questions.
+    this.questions = questions;
+
     // Board.
-    this.board = new Board(spaceSideSize, pawns);
+    this.board = new Board(spaceSideSize, pawns, this.getCategories());
     this.board.subscribe(this);
 
     // Left section.
@@ -62,6 +66,7 @@ export class Game implements Observer {
       clone: false
     }).center();
 
+    // Fullscreen button.
     const label: Label = new Label({
       text: "⛶",
       size: 50,
@@ -77,22 +82,51 @@ export class Game implements Observer {
     fullScreenButton.addTo(S);
   }
 
-  public update(subject: Observable): void {
-    if (subject instanceof Dice) {
-      this.movePawn(this.currentPlayer.pawn, subject.currentFace);
+  public update(observableSubject: ObservableSubject): void {
+    switch (observableSubject.kind) {
+      case ObservableSubjectKind.diceChanged:
+        this.onDiceChanged(observableSubject.diceValue)
+        break;
+      case ObservableSubjectKind.PawnMoved:
+        this.onPawnMoved(observableSubject.category);
+        break;
+      case ObservableSubjectKind.PlayerAnswered:
+        this.onPlayerAnswered(observableSubject.isAnswerCorrect);
     }
-    else if (subject instanceof Coil) {
-      // We check if a player arrived at the end of the board.
-      if (this.isEndOfBoard(this.currentPlayer.pawn)) {
-        S.removeAllChildren();
-        new EndOfGame(this.getRanking()).center(S);
-        S.update();
-      }
-      else {
-        this.leftSection.enableDiceButton();
-        this.nextPlayer();
-      }
+  }
+
+  private onDiceChanged(diceValue: number): void {
+    this.movePawn(this.currentPlayer.pawn, diceValue);
+  }
+
+  private onPawnMoved(category?: string): void {
+    if (this.isEndOfBoard(this.currentPlayer.pawn)) {
+      S.removeAllChildren();
+      new EndOfGame(this.getRanking()).center(S);
     }
+    else if (category) {
+      new QuestionPanelShowQuestion(this.getNextQuestion(category), this).center();
+    }
+    else {
+      /// TODO : pipe.
+    }
+    S.update();
+  }
+
+  private onPlayerAnswered(isAnswerCorrect: boolean): void {
+    this.leftSection.enableDiceButton();
+    if (!isAnswerCorrect) {
+      this.setNextPlayer();
+    }
+  }
+
+  private getNextQuestion(category: string): Question {
+    const question: Question = this.questions.find((question: Question): boolean => {
+      return question.category === category;
+    })!;
+    console.log(question, category);
+    this.questions.push(this.questions.shift()!);
+    return question;
   }
 
   private movePawn(pawn: Pawn, diceResult: number): void {
@@ -100,18 +134,13 @@ export class Game implements Observer {
     this.board.movePawn(pawn, diceResult);
   }
 
-  private nextPlayer(): void {
-    let currentPlayerIndex = this.players.indexOf(this.currentPlayer);
-    if (currentPlayerIndex === this.players.length - 1) {
-      this.currentPlayer = this.players[ 0 ];
-    }
-    else {
-      this.currentPlayer = this.players[ currentPlayerIndex + 1 ];
-    }
+  private setNextPlayer(): void {
+    let currentPlayerIndex: number = this.players.indexOf(this.currentPlayer);
+    this.currentPlayer = this.players[(currentPlayerIndex + 1) % this.players.length];
   }
 
   private getFirstPlayer(): Player {
-    return this.players[ 0 ];
+    return this.players[0];
   }
 
   get currentPlayer(): Player {
@@ -141,5 +170,11 @@ export class Game implements Observer {
       return player.pawn === pawn;
     });
     return player!;
+  }
+
+  private getCategories(): string[] {
+    return [...new Set(this.questions.map((question: Question): string => {
+      return question.category;
+    }))];
   }
 }

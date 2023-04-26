@@ -6,9 +6,11 @@ const isEqual = require('lodash/isEqual.js');
 
 export class Space extends Rectangle {
 
+  public readonly category?: string;
+
   public pawns: Pawn[];
 
-  constructor(color: GradientColor, text: string, sideSize: number, spaceDisplay: SpaceDisplay = SpaceDisplay.HORIZONTAL) {
+  constructor(color: GradientColor, text: string, sideSize: number, spaceDisplay: SpaceDisplay = SpaceDisplay.HORIZONTAL, category?: string) {
     const width: number = sideSize;
     let height: number = sideSize;
     let corner: number[];   // [topLeft, topRight, bottomRight, bottomLeft]
@@ -37,6 +39,7 @@ export class Space extends Rectangle {
     }
     super(width, height, color, undefined, undefined, corner);
 
+    this.category = category;
     this.pawns = [];
 
     new Label({

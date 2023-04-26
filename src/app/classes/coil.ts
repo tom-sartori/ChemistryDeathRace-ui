@@ -4,6 +4,7 @@ import { Pawn } from '@classes/pawn';
 import { timeBetweenMove } from '@constants/ui-constants';
 import { Observable } from '@interfaces/observable';
 import { Observer } from '@interfaces/observer';
+import { ObservableSubjectPawnMoved } from '@classes/ObservableSubject';
 
 export class Coil extends Tile implements Observable {
 
@@ -27,10 +28,8 @@ export class Coil extends Tile implements Observable {
     this.observers = [];
   }
 
-  public notifyAll(): void {
-    for (const observer of this.observers) {
-      observer.update(this);
-    }
+  public notifyAll(space: Space): void {
+    this.observers.forEach((observer: Observer) => observer.update(new ObservableSubjectPawnMoved(space.category)));
   }
 
   public subscribe(observer: Observer): void {
@@ -64,10 +63,11 @@ export class Coil extends Tile implements Observable {
       }
       else {
         // Pawn arrived at the end of the board.
-        this.notifyAll(); // Notify observers that the pawn has arrived at the end of the board.
+        this.notifyAll(this.getSpace(spaceIndex)); // Notify observers that the pawn has moved.
       }
-    } else {
-      this.notifyAll(); // Notify observers that the pawn has moved.
+    }
+    else {
+      this.notifyAll(this.getSpace(spaceIndex)); // Notify observers that the pawn has moved.
     }
   }
 
@@ -107,23 +107,23 @@ export class Coil extends Tile implements Observable {
   }
 
   public addPawn(index: number, pawn: Pawn): void {
-    (this.items[ index ] as Space).addPawn(pawn);
+    (this.items[index] as Space).addPawn(pawn);
   }
 
   public removePawn(index: number, pawn: Pawn): void {
-    (this.items[ index ] as Space).removePawn(pawn);
+    (this.items[index] as Space).removePawn(pawn);
   }
 
   public isEndOfBoard(pawn: Pawn): boolean {
-    return this.items[ numberOfSpaces - boardCols ].pawns.includes(pawn);
+    return this.items[numberOfSpaces - boardCols].pawns.includes(pawn);
   }
 
   public getPawnRanking(): Pawn[] {
     let pawnRanking: Pawn[] = [];
     for (let i = 0; i < numberOfSpaces; i = this.getNextSpaceIndex(i)) {
-      if (this.items[ i ].pawns.length > 0) {
-        for (let j = 0; j < this.items[ i ].pawns.length; j++) {
-          pawnRanking.unshift(this.items[ i ].pawns[ j ]);
+      if (this.items[i].pawns.length > 0) {
+        for (let j = 0; j < this.items[i].pawns.length; j++) {
+          pawnRanking.unshift(this.items[i].pawns[j]);
         }
       }
     }

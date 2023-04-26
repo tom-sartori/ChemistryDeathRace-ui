@@ -15,6 +15,7 @@ export class GameParamsComponent implements OnInit {
   mainForm!: FormGroup;
 
   difficulties: string[] = [];
+  loading: boolean = false;
 
   constructor(private formBuilder: FormBuilder,
               private paramsService: ParamsService,
@@ -22,9 +23,11 @@ export class GameParamsComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.questionService.getDifficulties().subscribe(x => {
       this.difficulties = x;
       this.paramsService.difficulty = x[0];
+      this.loading = false;
     });
     this.mainForm = this.formBuilder.group({
       playersNumber: [this.paramsService.playersNumber, [Validators.required, Validators.max(maxNumberOfPlayer), Validators.min(1)]],
@@ -37,7 +40,10 @@ export class GameParamsComponent implements OnInit {
     this.paramsService.playersNumber = this.mainForm.get("playersNumber")!.value;
     this.paramsService.diceSize = this.mainForm.get("diceSize")!.value;
     this.paramsService.difficulty = this.mainForm.get("difficulty")!.value;
-    this.router.navigate(['/players-name']);
+    this.questionService.getQuestionsByDifficulty(this.mainForm.get("difficulty")!.value).subscribe(x => {
+      this.paramsService.questions = x;
+      this.router.navigate(['/players-name']);
+    });
   }
 
   increasePlayersNumber() {

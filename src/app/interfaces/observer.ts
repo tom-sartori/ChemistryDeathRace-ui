@@ -1,6 +1,6 @@
-import { Observable } from './observable';
+import { ObservableSubject } from '@classes/ObservableSubject';
 
 export interface Observer {
 
-  update(subject: Observable): void;
+  update(observableSubject: ObservableSubject): void;
 }

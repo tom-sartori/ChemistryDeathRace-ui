@@ -18,11 +18,11 @@ export class QuestionService {
     this.serviceUrl = `${this.apiUrl}/question`
   }
 
-  public get(): Observable<Question> {
-    return this.http.get<Question>(this.serviceUrl);
-  }
-
   public getDifficulties(): Observable<string[]> {
     return this.http.get<string[]>(`${this.serviceUrl}/difficulty`);
+  }
+
+  public getQuestionsByDifficulty(difficulty: string): Observable<Question[]> {
+    return this.http.get<Question[]>(`${this.serviceUrl}/difficulty/${difficulty}`);
   }
 }
