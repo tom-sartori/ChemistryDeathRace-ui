@@ -21,7 +21,9 @@ export class Dice extends Rectangle implements Observable {
       text: this.currentFace.toString(),
       color: black,
       size: diceWidth - diceWidth / 2,
-      font: "Freckle Face"
+      font: "Freckle Face",
+      labelWidth: diceWidth,
+      align: 'center',
     }).center(this);
     this.observers = [];
   }

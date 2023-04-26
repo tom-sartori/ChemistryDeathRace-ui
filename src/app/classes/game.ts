@@ -49,7 +49,7 @@ export class Game implements Observer {
     this.board.subscribe(this);
 
     // Left section.
-    this.leftSection = new LeftSection(this.currentPlayer.name, diceSize);
+    this.leftSection = new LeftSection(this.currentPlayer, diceSize);
     this.leftSection.subscribe(this);
 
     new Tile({
@@ -120,7 +120,7 @@ export class Game implements Observer {
 
   set currentPlayer(value: Player) {
     this._currentPlayer = value;
-    this.leftSection.updatePlayerName(this.currentPlayer.name);
+    this.leftSection.updatePlayerName(this.currentPlayer);
   }
 
   private isEndOfBoard(pawn: Pawn): boolean {

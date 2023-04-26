@@ -39,6 +39,7 @@ export class EndOfGame extends Tile {
       spacingH: 60,
       align: 'center',
       valign: 'bottom',
+      clone: false
     });
 
     super(

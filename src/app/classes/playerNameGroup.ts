@@ -2,7 +2,7 @@ export class PlayerNameGroup extends Tile {
 
   private playerNameLabel: Label;
 
-  constructor(playerName: string) {
+  constructor(playerName: string, playerColor: GradientColor) {
 
     // Player label.
     let text: Label = new Label({
@@ -17,9 +17,10 @@ export class PlayerNameGroup extends Tile {
     const playerNameLabel: Label = new Label({
       text: playerName,
       size: 20,
-      bold: false,
-      color: white,
-      font: "Freckle Face"
+      bold: true,
+      color: playerColor,
+      font: "Freckle Face",
+      align: 'center',
     });
 
     super(
@@ -39,8 +40,9 @@ export class PlayerNameGroup extends Tile {
     this.playerNameLabel = playerNameLabel;
   }
 
-  public updatePlayerName(playerName: string): void {
+  public updatePlayerName(playerName: string, playerColor: GradientColor): void {
     this.playerNameLabel.text = playerName;
+    this.playerNameLabel.color = playerColor;
     S.update();
   }
 }
