@@ -19,7 +19,8 @@ export class QuestionService {
   }
 
   public get(): Observable<Question> {
-    return this.http.get<Question>(this.serviceUrl);
+    return this.http.get<Question>('./assets/data/questions.json');
+    // return this.http.get<Question>(this.serviceUrl);
   }
 
   public getDifficulties(): Observable<string[]> {
