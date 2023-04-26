@@ -3,10 +3,11 @@ import { Question } from '@models/question/question.model';
 import { framePadding } from '@constants/ui-constants';
 import { Proposition } from '@models/question/proposition.model';
 import { QuestionPanelResult } from '@classes/question-panel-result';
+import { Game } from '@classes/game';
 
 export class QuestionPanelClassic extends QuestionPanel {
 
-  constructor(question: Question) {
+  constructor(question: Question, observer: Game) {
     const width: number = W - (framePadding * 2);
     const height: number = H - (framePadding * 2);
 
@@ -30,7 +31,7 @@ export class QuestionPanelClassic extends QuestionPanel {
       data.push(
         new Button({label: label, width: labelWidth, height: labelHeight})
           .tap(() => {
-            new QuestionPanelResult(question, proposition).center();
+            new QuestionPanelResult(question, proposition).center().subscribe(observer);
             this.removeFrom(S);
             S.update();
           })
