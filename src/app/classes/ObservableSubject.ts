@@ -17,7 +17,7 @@ export class ObservableSubjectPawnMoved {
   public kind: ObservableSubjectKind.PawnMoved = ObservableSubjectKind.PawnMoved;
 
   constructor(
-    public category: string
+    public category?: string
   ) {
   }
 }

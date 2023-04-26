@@ -16,7 +16,10 @@ export class QuestionPanelResult extends QuestionPanel implements Observable {
     const width: number = W - (framePadding * 2);
     const height: number = H - (framePadding * 2);
     const answer: Proposition = question.propositions.find(proposition => proposition.answer)!;
-    const labelGoNext: Label = new Label('Passer à la suite');
+    const labelGoNext: Label = new Label({
+      text: 'Passer à la suite',
+      color: white
+    });
 
     const content = {
       header: new Label({

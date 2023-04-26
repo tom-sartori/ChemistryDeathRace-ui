@@ -29,8 +29,7 @@ export class Coil extends Tile implements Observable {
   }
 
   public notifyAll(space: Space): void {
-    // this.observers.forEach((observer: Observer) => observer.update(new ObservableSubjectPawnMoved(space.category)));
-    this.observers.forEach((observer: Observer) => observer.update(new ObservableSubjectPawnMoved('Chimie & culture générale')));   /// TODO
+    this.observers.forEach((observer: Observer) => observer.update(new ObservableSubjectPawnMoved(space.category)));
   }
 
   public subscribe(observer: Observer): void {

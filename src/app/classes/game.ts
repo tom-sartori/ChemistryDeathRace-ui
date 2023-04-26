@@ -45,8 +45,11 @@ export class Game implements Observer {
     })
     this._currentPlayer = this.getFirstPlayer();
 
+    // Questions.
+    this.questions = questions;
+
     // Board.
-    this.board = new Board(spaceSideSize, pawns);
+    this.board = new Board(spaceSideSize, pawns, this.getCategories());
     this.board.subscribe(this);
 
     // Left section.
@@ -77,9 +80,6 @@ export class Game implements Observer {
     });
     fullScreenButton.tap(() => F.fullscreen(true));
     fullScreenButton.addTo(S);
-
-    // Questions.
-    this.questions = questions;
   }
 
   public update(observableSubject: ObservableSubject): void {
@@ -99,13 +99,16 @@ export class Game implements Observer {
     this.movePawn(this.currentPlayer.pawn, diceValue);
   }
 
-  private onPawnMoved(category: string): void {
+  private onPawnMoved(category?: string): void {
     if (this.isEndOfBoard(this.currentPlayer.pawn)) {
       S.removeAllChildren();
       new EndOfGame(this.getRanking()).center(S);
     }
-    else {
+    else if (category) {
       new QuestionPanelShowQuestion(this.getNextQuestion(category), this).center();
+    }
+    else {
+      /// TODO : pipe.
     }
     S.update();
   }
@@ -167,5 +170,11 @@ export class Game implements Observer {
       return player.pawn === pawn;
     });
     return player!;
+  }
+
+  private getCategories(): string[] {
+    return [...new Set(this.questions.map((question: Question): string => {
+      return question.category;
+    }))];
   }
 }

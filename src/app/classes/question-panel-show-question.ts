@@ -6,7 +6,10 @@ import { Game } from '@classes/game';
 export class QuestionPanelShowQuestion extends QuestionPanel {
 
   constructor(question: Question, observer: Game) {
-    const label: Label = new Label('Montrer la question');
+    const label: Label = new Label({
+      text: 'Montrer la question',
+      color: white
+    });
 
     const content = {
       buttons: [
