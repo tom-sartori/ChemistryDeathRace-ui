@@ -23,12 +23,15 @@
       <div class="number-input">
         <button (click)="decreaseDiceSize()">-</button>
         <input id="diceSize" formControlName="diceSize" aria-disabled="true">
-        <button (click)="increaseDiceSize()" >+</button>
+        <button (click)="increaseDiceSize()">+</button>
       </div>
     </div>
     <div class="params-footer">
       <app-prev (click)="goToHome()"></app-prev>
       <app-next (click)="goToPlayersName()" [disabled]="!mainForm.valid"></app-next>
     </div>
+  </div>
+  <div class="spinner" *ngIf="loading">
+    <img src="./assets/images/logo.png" alt="spinner" class="spinner-image">
   </div>
 </div>

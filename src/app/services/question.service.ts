@@ -26,4 +26,8 @@ export class QuestionService {
   public getDifficulties(): Observable<string[]> {
     return this.http.get<string[]>(`${this.serviceUrl}/difficulty`);
   }
+
+  public getQuestionsByDifficulty(difficulty: string): Observable<Question[]> {
+    return this.http.get<Question[]>(`${this.serviceUrl}/difficulty/${difficulty}`);
+  }
 }

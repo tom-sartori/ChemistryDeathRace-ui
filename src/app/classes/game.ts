@@ -13,7 +13,6 @@ import {
 import { boardCols, boardRows } from '@constants/game-constants';
 import { QuestionPanelShowQuestion } from '@classes/question-panel-show-question';
 import { Question } from '@models/question/question.model';
-import { Proposition } from '@models/question/proposition.model';
 import { ObservableSubject, ObservableSubjectKind } from '@classes/ObservableSubject';
 import { EndOfGame } from '@classes/end-of-game';
 
@@ -24,8 +23,9 @@ export class Game implements Observer {
   private readonly players: Player[];
 
   private _currentPlayer: Player;
+  private questions: Question[];
 
-  constructor(playerNames: string[], difficulty: string, diceSize: number) {
+  constructor(playerNames: string[], questions: Question[], diceSize: number) {
     // W < H ? Portrait : Landscape.
     const cols: number = W < H ? 1 : 2;
     const rows: number = W < H ? 2 : 1;
@@ -63,6 +63,7 @@ export class Game implements Observer {
       clone: false
     }).center();
 
+    // Fullscreen button.
     const label: Label = new Label({
       text: "⛶",
       size: 50,
@@ -76,6 +77,9 @@ export class Game implements Observer {
     });
     fullScreenButton.tap(() => F.fullscreen(true));
     fullScreenButton.addTo(S);
+
+    // Questions.
+    this.questions = questions;
   }
 
   public update(observableSubject: ObservableSubject): void {
@@ -114,7 +118,12 @@ export class Game implements Observer {
   }
 
   private getNextQuestion(category: string): Question {
-    return new Question('6437a5479a161d5b7c5283af', 'Sous quelle forme connait-on également la soude caustique ?', [new Proposition('Oui', true), new Proposition('Non', false), new Proposition('Peut-être', false)], category, 'S7')
+    const question: Question = this.questions.find((question: Question): boolean => {
+      return question.category === category;
+    })!;
+    console.log(question, category);
+    this.questions.push(this.questions.shift()!);
+    return question;
   }
 
   private movePawn(pawn: Pawn, diceResult: number): void {
