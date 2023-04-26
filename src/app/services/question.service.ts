@@ -18,11 +18,6 @@ export class QuestionService {
     this.serviceUrl = `${this.apiUrl}/question`
   }
 
-  public get(): Observable<Question> {
-    return this.http.get<Question>('./assets/data/questions.json');
-    // return this.http.get<Question>(this.serviceUrl);
-  }
-
   public getDifficulties(): Observable<string[]> {
     return this.http.get<string[]>(`${this.serviceUrl}/difficulty`);
   }
