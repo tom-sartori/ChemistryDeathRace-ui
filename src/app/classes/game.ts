@@ -3,8 +3,6 @@ import { Board } from "@classes/board";
 import { Pawn } from "@classes/pawn";
 import { LeftSection } from '@classes/leftSection';
 import { Observer } from '@interfaces/observer';
-import { Observable } from '@interfaces/observable';
-import { Coil } from '@classes/coil';
 import {
   boardWidthProportion,
   framePaddingProportion,
@@ -13,7 +11,10 @@ import {
   spaceMargin
 } from '@constants/ui-constants';
 import { boardCols, boardRows } from '@constants/game-constants';
-import { Dice } from '@classes/dice';
+import { QuestionPanelShowQuestion } from '@classes/question-panel-show-question';
+import { Question } from '@models/question/question.model';
+import { Proposition } from '@models/question/proposition.model';
+import { ObservableSubject, ObservableSubjectKind } from '@classes/ObservableSubject';
 import { EndOfGame } from '@classes/end-of-game';
 
 export class Game implements Observer {
@@ -38,7 +39,7 @@ export class Game implements Observer {
     this.players = [];
     const pawns: Pawn[] = [];
     playerNames.forEach((playerName: string, index: number): void => {
-      const pawn: Pawn = new Pawn(pawnRadius, pawnColors[ index ]);
+      const pawn: Pawn = new Pawn(pawnRadius, pawnColors[index]);
       pawns.push(pawn);
       this.players.push(new Player(playerName, pawn));
     })
@@ -77,22 +78,43 @@ export class Game implements Observer {
     fullScreenButton.addTo(S);
   }
 
-  public update(subject: Observable): void {
-    if (subject instanceof Dice) {
-      this.movePawn(this.currentPlayer.pawn, subject.currentFace);
+  public update(observableSubject: ObservableSubject): void {
+    switch (observableSubject.kind) {
+      case ObservableSubjectKind.diceChanged:
+        this.onDiceChanged(observableSubject.diceValue)
+        break;
+      case ObservableSubjectKind.PawnMoved:
+        this.onPawnMoved(observableSubject.category);
+        break;
+      case ObservableSubjectKind.PlayerAnswered:
+        this.onPlayerAnswered(observableSubject.isAnswerCorrect);
     }
-    else if (subject instanceof Coil) {
-      // We check if a player arrived at the end of the board.
-      if (this.isEndOfBoard(this.currentPlayer.pawn)) {
-        S.removeAllChildren();
-        new EndOfGame(this.getRanking()).center(S);
-        S.update();
-      }
-      else {
-        this.leftSection.enableDiceButton();
-        this.nextPlayer();
-      }
+  }
+
+  private onDiceChanged(diceValue: number): void {
+    this.movePawn(this.currentPlayer.pawn, diceValue);
+  }
+
+  private onPawnMoved(category: string): void {
+    if (this.isEndOfBoard(this.currentPlayer.pawn)) {
+      S.removeAllChildren();
+      new EndOfGame(this.getRanking()).center(S);
     }
+    else {
+      new QuestionPanelShowQuestion(this.getNextQuestion(category), this).center();
+    }
+    S.update();
+  }
+
+  private onPlayerAnswered(isAnswerCorrect: boolean): void {
+    this.leftSection.enableDiceButton();
+    if (!isAnswerCorrect) {
+      this.setNextPlayer();
+    }
+  }
+
+  private getNextQuestion(category: string): Question {
+    return new Question('6437a5479a161d5b7c5283af', 'Sous quelle forme connait-on également la soude caustique ?', [new Proposition('Oui', true), new Proposition('Non', false), new Proposition('Peut-être', false)], category, 'S7')
   }
 
   private movePawn(pawn: Pawn, diceResult: number): void {
@@ -100,18 +122,13 @@ export class Game implements Observer {
     this.board.movePawn(pawn, diceResult);
   }
 
-  private nextPlayer(): void {
-    let currentPlayerIndex = this.players.indexOf(this.currentPlayer);
-    if (currentPlayerIndex === this.players.length - 1) {
-      this.currentPlayer = this.players[ 0 ];
-    }
-    else {
-      this.currentPlayer = this.players[ currentPlayerIndex + 1 ];
-    }
+  private setNextPlayer(): void {
+    let currentPlayerIndex: number = this.players.indexOf(this.currentPlayer);
+    this.currentPlayer = this.players[(currentPlayerIndex + 1) % this.players.length];
   }
 
   private getFirstPlayer(): Player {
-    return this.players[ 0 ];
+    return this.players[0];
   }
 
   get currentPlayer(): Player {

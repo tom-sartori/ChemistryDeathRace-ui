@@ -1,6 +1,7 @@
 import { diceHeight, diceWidth, numberOfRoll, timeBetweenRoll } from '@constants/ui-constants';
 import { Observable } from '@interfaces/observable';
 import { Observer } from '@interfaces/observer';
+import { ObservableSubjectDiceChanged } from '@classes/ObservableSubject';
 
 const random = require('lodash/random.js')
 
@@ -29,7 +30,7 @@ export class Dice extends Rectangle implements Observable {
   }
 
   public notifyAll(): void {
-    this.observers.forEach(observer => observer.update(this));
+    this.observers.forEach((observer: Observer) => observer.update(new ObservableSubjectDiceChanged(this.currentFace)));
   }
 
   public subscribe(observer: Observer): void {
