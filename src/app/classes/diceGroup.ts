@@ -18,7 +18,8 @@ export class DiceGroup extends Tile {
     let label: Label = new Label({
       text: "Lancer le dé",
       size: 15,
-      bold: true
+      bold: true,
+      font: "Freckle Face"
     });
     let rollButton: Button = new Button({
       label,

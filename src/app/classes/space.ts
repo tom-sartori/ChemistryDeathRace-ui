@@ -42,15 +42,17 @@ export class Space extends Rectangle {
     new Label({
       text,
       color: black,
-      size: 10,
+      size: 15,
+      font: "Freckle Face"
     }).center(this);
 
     if (isEqual(color, pipeBackgroundColor)) {
       new Label({
         text: "Tunnel",
         color: black,
-        size: 10,
-        width: undefined
+        size: 15,
+        width: undefined,
+        font: "Freckle Face"
       }).center(this)
         .mov(0, 0 / 2 - 15);
     }

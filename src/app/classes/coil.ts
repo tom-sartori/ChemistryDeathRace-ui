@@ -62,6 +62,10 @@ export class Coil extends Tile implements Observable {
 
         setTimeout(() => this.movePawnAux(pawn, spaceIndex, nbSpacesToMove - 1), timeBetweenMove);
       }
+      else {
+        // Pawn arrived at the end of the board.
+        this.notifyAll(); // Notify observers that the pawn has arrived at the end of the board.
+      }
     } else {
       this.notifyAll(); // Notify observers that the pawn has moved.
     }
@@ -103,10 +107,26 @@ export class Coil extends Tile implements Observable {
   }
 
   public addPawn(index: number, pawn: Pawn): void {
-    (this.items[index] as Space).addPawn(pawn);
+    (this.items[ index ] as Space).addPawn(pawn);
   }
 
   public removePawn(index: number, pawn: Pawn): void {
-    (this.items[index] as Space).removePawn(pawn);
+    (this.items[ index ] as Space).removePawn(pawn);
+  }
+
+  public isEndOfBoard(pawn: Pawn): boolean {
+    return this.items[ numberOfSpaces - boardCols ].pawns.includes(pawn);
+  }
+
+  public getPawnRanking(): Pawn[] {
+    let pawnRanking: Pawn[] = [];
+    for (let i = 0; i < numberOfSpaces; i = this.getNextSpaceIndex(i)) {
+      if (this.items[ i ].pawns.length > 0) {
+        for (let j = 0; j < this.items[ i ].pawns.length; j++) {
+          pawnRanking.unshift(this.items[ i ].pawns[ j ]);
+        }
+      }
+    }
+    return pawnRanking;
   }
 }

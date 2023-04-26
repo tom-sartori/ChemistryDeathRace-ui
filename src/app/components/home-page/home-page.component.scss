@@ -29,14 +29,15 @@
 
 .play-button {
   margin-top: 10vh;
-  width: 25vh;
+  width: 25vw;
   height: 10vh;
   border-radius: 20px;
   border: $main-color 1px solid;
+  box-shadow: $main-color 0 0 100px;
   background-color: transparent;
   color: $main-color;
   font-family: "Freckle Face", cursive;
-  font-size: 5vh;
+  font-size: 5vw;
 }
 
 .play-button:hover {

@@ -14,6 +14,7 @@ import {
 } from '@constants/ui-constants';
 import { boardCols, boardRows } from '@constants/game-constants';
 import { Dice } from '@classes/dice';
+import { EndOfGame } from '@classes/end-of-game';
 
 export class Game implements Observer {
 
@@ -73,7 +74,7 @@ export class Game implements Observer {
       height: 50,
     });
     fullScreenButton.tap(() => F.fullscreen(true));
-    fullScreenButton.addTo(S)
+    fullScreenButton.addTo(S);
   }
 
   public update(subject: Observable): void {
@@ -81,8 +82,16 @@ export class Game implements Observer {
       this.movePawn(this.currentPlayer.pawn, subject.currentFace);
     }
     else if (subject instanceof Coil) {
-      this.leftSection.enableDiceButton();
-      this.nextPlayer();
+      // We check if a player arrived at the end of the board.
+      if (this.isEndOfBoard(this.currentPlayer.pawn)) {
+        S.removeAllChildren();
+        new EndOfGame(this.getRanking()).center(S);
+        S.update();
+      }
+      else {
+        this.leftSection.enableDiceButton();
+        this.nextPlayer();
+      }
     }
   }
 
@@ -112,5 +121,25 @@ export class Game implements Observer {
   set currentPlayer(value: Player) {
     this._currentPlayer = value;
     this.leftSection.updatePlayerName(this.currentPlayer.name);
+  }
+
+  private isEndOfBoard(pawn: Pawn): boolean {
+    return this.board.isEndOfBoard(pawn);
+  }
+
+  private getRanking(): Player[] {
+    const pawnRanking: Pawn[] = this.board.getPawnRanking();
+    const playerRanking: Player[] = [];
+    pawnRanking.forEach((pawn: Pawn): void => {
+      playerRanking.push(this.getPlayerByPawn(pawn));
+    });
+    return playerRanking;
+  }
+
+  private getPlayerByPawn(pawn: Pawn): Player {
+    let player = this.players.find((player: Player): boolean => {
+      return player.pawn === pawn;
+    });
+    return player!;
   }
 }

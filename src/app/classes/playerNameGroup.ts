@@ -7,17 +7,19 @@ export class PlayerNameGroup extends Tile {
     // Player label.
     let text: Label = new Label({
       text: "Joueur actuel",
-      size: 15,
+      size: 20,
       bold: true,
-      color: white
+      color: white,
+      font: "Freckle Face"
     });
 
     // Player name label.
     const playerNameLabel: Label = new Label({
       text: playerName,
-      size: 15,
+      size: 20,
       bold: false,
-      color: white
+      color: white,
+      font: "Freckle Face"
     });
 
     super(

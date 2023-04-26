@@ -38,4 +38,12 @@ export class Board extends Container {
   public subscribe(observer: Observer): void {
     this.coil.subscribe(observer);
   }
+
+  public isEndOfBoard(pawn: Pawn): boolean {
+    return this.coil.isEndOfBoard(pawn);
+  }
+
+  public getPawnRanking(): Pawn[] {
+    return this.coil.getPawnRanking();
+  }
 }

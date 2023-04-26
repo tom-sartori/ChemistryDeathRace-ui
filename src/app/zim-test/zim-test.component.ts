@@ -21,6 +21,7 @@ export class ZimTestComponent implements OnInit {
         scaling: FULL,
         color: backgroundColor,
         outerColor: backgroundColor,
+        assets: {font: "Freckle Face", image: "src/assets/fonts/Freckle_Face/FreckleFace-Regular.ttf"},
         ready: (): void => {
           new Game(['Jean', 'Michel', 'Denis', 'Henry'], 'S7', 6);
         }
