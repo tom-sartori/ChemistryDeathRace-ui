@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { ParamsService } from '@services/params.service';
 import { Router } from '@angular/router';
+import { AppConstants } from '@app/app.constants';
 
 @Component({
   selector: 'app-game-players',
@@ -64,10 +65,10 @@ export class GamePlayersComponent implements OnInit {
       this.playersName[i] = this.mainForm.get(`player${i + 1}`)!.value;
     }
     this.paramsService.playerNames = this.playersName;
-    this.router.navigate(['/game']);
+    this.router.navigateByUrl(AppConstants.ROUTES.GAME_PLAY);
   }
 
   goToParams() {
-    this.router.navigate(['/game-params']);
+    this.router.navigateByUrl(AppConstants.ROUTES.GAME_PARAMS)
   }
 }

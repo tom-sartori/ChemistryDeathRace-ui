@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppConstants } from '@app/app.constants';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  public gameParamsLink: string = `./${AppConstants.ROUTES.GAME_PARAMS}`;
 
   constructor() {
   }

@@ -6,14 +6,15 @@ import { GamePlayComponent } from '@pages/game/game-play/game-play.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GamePlayersComponent } from '@pages/game/game-players/game-players.component';
 import { SharedModule } from '@shared/shared.module';
+import { AppConstants } from '@app/app.constants';
 
 
 const routes: Routes = [
-  {path: 'params', component: GameParamsComponent, pathMatch: 'full'},
-  {path: 'players', component: GamePlayersComponent, pathMatch: 'full'},
-  {path: 'play', component: GamePlayComponent, pathMatch: 'full'},
-  {path: 'test', component: GamePlayComponent, pathMatch: 'full'},
-  {path: '', redirectTo: 'params', pathMatch: 'full'}
+  {path: AppConstants.ROUTES.PARAMS, component: GameParamsComponent, pathMatch: 'full'},
+  {path: AppConstants.ROUTES.PLAYERS, component: GamePlayersComponent, pathMatch: 'full'},
+  {path: AppConstants.ROUTES.PLAY, component: GamePlayComponent, pathMatch: 'full'},
+  {path: AppConstants.ROUTES.TEST, component: GamePlayComponent, pathMatch: 'full'},
+  {path: '', redirectTo: AppConstants.ROUTES.PARAMS, pathMatch: 'full'}
 ];
 
 @NgModule({
