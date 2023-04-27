@@ -1,7 +1,7 @@
 import { labelSizeProportion, numberOfRoll, timeBetweenRoll } from '@constants/ui-constants';
-import { Observable } from '@interfaces/observable';
-import { Observer } from '@interfaces/observer';
-import { ObservableSubjectDiceChanged } from '@classes/ObservableSubject';
+import { Observable } from '@observers/observable';
+import { Observer } from '@observers/observer';
+import { ObservableSubjectDiceChanged } from '@observers/observable-subject';
 
 const random = require('lodash/random.js')
 

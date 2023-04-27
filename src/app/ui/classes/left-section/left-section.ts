@@ -1,3 +1,9 @@
+import { DiceGroup } from '@classes/left-section/dice-group/dice-group';
+import { PlayerNameGroup } from '@classes/left-section/player-group/player-name-group';
+import { Player } from '@classes/player/player';
+import { labelSizeProportion } from '@constants/ui-constants';
+import { Observer } from '@observers/observer';
+
 export class LeftSection extends Tile {
 
   private diceGroup: DiceGroup;
