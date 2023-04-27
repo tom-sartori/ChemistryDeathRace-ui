@@ -109,6 +109,7 @@ export class Game implements Observer {
     }
     else {
       /// TODO : pipe.
+      this.leftSection.enableDiceButton();
     }
     S.update();
   }
@@ -124,7 +125,6 @@ export class Game implements Observer {
     const question: Question = this.questions.find((question: Question): boolean => {
       return question.category === category;
     })!;
-    console.log(question, category);
     this.questions.push(this.questions.shift()!);
     return question;
   }
