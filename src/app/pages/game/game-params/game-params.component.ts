@@ -25,7 +25,7 @@ export class GameParamsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading = true;
-    this.questionService.getDifficulties().subscribe(x => {
+    this.questionService.getAvailableDifficulties().subscribe(x => {
       this.difficulties = x;
       this.paramsService.difficulty = x[0];
       this.loading = false;

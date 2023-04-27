@@ -18,8 +18,8 @@ export class QuestionService {
     this.serviceUrl = `${this.apiUrl}/question`
   }
 
-  public getDifficulties(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.serviceUrl}/difficulty`);
+  public getAvailableDifficulties(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.serviceUrl}/difficulty/available`);
   }
 
   public getQuestionsByDifficulty(difficulty: string): Observable<Question[]> {
