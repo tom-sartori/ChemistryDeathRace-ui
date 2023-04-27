@@ -2,6 +2,7 @@ import { DiceGroup } from '@classes/diceGroup';
 import { PlayerNameGroup } from '@classes/playerNameGroup';
 import { Observer } from '@interfaces/observer';
 import { Player } from '@classes/player';
+import { labelSizeProportion } from '@constants/ui-constants';
 
 export class LeftSection extends Tile {
 
@@ -16,7 +17,7 @@ export class LeftSection extends Tile {
     super(
       series([playerNameGroup, diceGroup]), // obj
       1, 2,                             // cols, rows
-      undefined, 60,                    // spacingH, spacingV
+      undefined, H * labelSizeProportion, // spacingH, spacingV
       undefined,                        // unique
       undefined, undefined,             // width, height
       undefined, undefined,             // squeezeH, squeezeV
@@ -38,10 +39,6 @@ export class LeftSection extends Tile {
 
   public subscribe(observer: Observer): void {
     this.diceGroup.subscribe(observer);
-  }
-
-  public disableDiceButton(): void {
-    this.diceGroup.disableRollButton();
   }
 
   public enableDiceButton(): void {
