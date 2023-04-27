@@ -3,6 +3,8 @@ import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from
 import { ParamsService } from '@services/params.service';
 import { Router } from '@angular/router';
 import { AppConstants } from '@app/app.constants';
+import { pawnColors } from '@constants/ui-constants';
+import { forEach } from 'lodash';
 
 @Component({
   selector: 'app-game-players',
@@ -11,16 +13,22 @@ import { AppConstants } from '@app/app.constants';
 })
 export class GamePlayersComponent implements OnInit {
 
-  mainForm!: FormGroup;
+  public mainForm!: FormGroup;
+  public playersName: string[];
+  public playersColor: string[];
 
   private playersNumber!: number;
-  playersName: string[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
     private paramsService: ParamsService,
     private router: Router
   ) {
+    this.playersName = [];
+    this.playersColor = [];
+    forEach(pawnColors, (value: GradientColor) => {
+      this.playersColor.push(value.toString());
+    });
   }
 
   ngOnInit(): void {
