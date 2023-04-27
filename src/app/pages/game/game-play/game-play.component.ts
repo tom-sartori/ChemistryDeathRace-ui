@@ -61,7 +61,7 @@ export class GamePlayComponent implements OnInit {
         outerColor: backgroundColor,
         assets: {font: "Freckle Face", image: "src/assets/fonts/Freckle_Face/FreckleFace-Regular.ttf"},
         ready: (): void => {
-          new Game(['Jean', 'Michel', 'Denis', 'Henry'], questions, 6);
+          new Game(['Jean', 'Michel', 'Denis', 'Henry'], questions, 9);
         }
       });
     }

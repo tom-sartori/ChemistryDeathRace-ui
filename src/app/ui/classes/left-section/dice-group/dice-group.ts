@@ -1,5 +1,3 @@
-import { Observer } from '@app/ui/observers/observer';
-import { Dice } from '@classes/left-section/dice-group/dice';
 
 export class DiceGroup extends Tile {
 
@@ -17,7 +15,7 @@ export class DiceGroup extends Tile {
     // Button.
     let label: Label = new Label({
       text: "Lancer le dé",
-      size: 15,
+      size: W * labelSizeProportion,
       bold: true,
       font: "Freckle Face"
     });
@@ -25,15 +23,15 @@ export class DiceGroup extends Tile {
       label,
       backgroundColor: orange,
       rollBackgroundColor: green,
-      width: 100,
-      height: 30,
+      width: label.width + 20,
+      height: label.height + 20,
       corner: 10
     });
 
     super(
       series([dice, rollButton]), // obj
       1, 2,                             // cols, rows
-      undefined, 10,                    // spacingH, spacingV
+      undefined, H * labelSizeProportion, // spacingH, spacingV
       undefined,                        // unique
       undefined, undefined,             // width, height
       undefined, undefined,             // squeezeH, squeezeV
@@ -54,6 +52,7 @@ export class DiceGroup extends Tile {
   }
 
   private rollDice = (): void => {
+    this.disableRollButton();
     this.dice.roll();
   }
 
@@ -61,7 +60,7 @@ export class DiceGroup extends Tile {
     this.dice.subscribe(observer);
   }
 
-  public disableRollButton(): void {
+  private disableRollButton(): void {
     this.rollButton.enabled = false;
   }
 

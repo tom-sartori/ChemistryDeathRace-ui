@@ -1,22 +1,27 @@
+import { labelSizeProportion } from '@constants/ui-constants';
+
 export class PlayerNameGroup extends Tile {
 
   private playerNameLabel: Label;
 
   constructor(playerName: string, playerColor: GradientColor) {
 
+    const labelSize: number = W * labelSizeProportion;
+
     // Player label.
     let text: Label = new Label({
       text: "Joueur actuel",
-      size: 20,
+      size: labelSize,
       bold: true,
       color: white,
-      font: "Freckle Face"
+      font: "Freckle Face",
+      align: 'center',
     });
 
     // Player name label.
     const playerNameLabel: Label = new Label({
       text: playerName,
-      size: 20,
+      size: labelSize,
       bold: true,
       color: playerColor,
       font: "Freckle Face",

@@ -1,7 +1,7 @@
-import { diceHeight, diceWidth, numberOfRoll, timeBetweenRoll } from '@constants/ui-constants';
-import { Observable } from '@app/ui/observers/observable';
-import { Observer } from '@app/ui/observers/observer';
-import { ObservableSubjectDiceChanged } from '@observers/observable-subject';
+import { labelSizeProportion, numberOfRoll, timeBetweenRoll } from '@constants/ui-constants';
+import { Observable } from '@interfaces/observable';
+import { Observer } from '@interfaces/observer';
+import { ObservableSubjectDiceChanged } from '@classes/ObservableSubject';
 
 const random = require('lodash/random.js')
 
@@ -14,18 +14,26 @@ export class Dice extends Rectangle implements Observable {
   private observers: Observer[];
 
   constructor(diceSize: number) {
-    super(diceWidth, diceHeight, white, undefined, undefined, 10);
 
-    this._currentFace = 1;
-    this.diceSize = diceSize;
-    this.label = new Label({
-      text: this.currentFace.toString(),
+    const labelSize: number = W * labelSizeProportion;
+
+    const currentFace: number = random(1, 6);
+
+    const label: Label = new Label({
+      text: currentFace.toString(),
       color: black,
-      size: diceWidth - diceWidth / 2,
       font: "Freckle Face",
-      labelWidth: diceWidth,
+      labelWidth: labelSize,
+      labelHeight: labelSize,
       align: 'center',
-    }).center(this);
+      valign: 'center'
+    })
+
+    super(2 * labelSize, 2 * labelSize, white, undefined, undefined, 10);
+
+    this._currentFace = currentFace;
+    this.diceSize = diceSize;
+    this.label = label.center(this);
     this.observers = [];
   }
 

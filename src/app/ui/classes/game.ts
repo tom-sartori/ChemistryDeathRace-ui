@@ -120,6 +120,7 @@ export class Game implements Observer {
     if (!isAnswerCorrect) {
       this.setNextPlayer();
     }
+    this.showPopUpCurrentPlayer();
   }
 
   private getNextQuestion(category: string): Question {
@@ -131,7 +132,6 @@ export class Game implements Observer {
   }
 
   private movePawn(pawn: Pawn, diceResult: number): void {
-    this.leftSection.disableDiceButton();
     this.board.movePawn(pawn, diceResult);
   }
 
@@ -177,5 +177,25 @@ export class Game implements Observer {
     return [...new Set(this.questions.map((question: Question): string => {
       return question.category;
     }))];
+  }
+
+  private showPopUpCurrentPlayer(): void {
+    new Label({
+      text: 'C\'est au tour de ' + this.currentPlayer.name + ' de jouer !',
+      labelWidth: W / 3,
+      labelHeight: H / 3,
+      align: CENTER,
+      backgroundColor: this.currentPlayer.pawn.color,
+      corner: 5,
+      font: "Freckle Face",
+      color: white
+    })
+      .center()
+      .animate({
+        props: {scale: 0},
+        time: 1.5,
+        rewind: true,
+        from: true
+      });
   }
 }

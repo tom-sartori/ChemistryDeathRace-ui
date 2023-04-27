@@ -1,6 +1,4 @@
 import { framePaddingProportion } from '@constants/ui-constants';
-import { Player } from '@classes/player/player';
-import { Podium } from '@classes/end-of-game/podium';
 
 export class EndOfGame extends Tile {
 
@@ -42,6 +40,17 @@ export class EndOfGame extends Tile {
       clone: false
     });
 
+    const emitter: Emitter = new Emitter({
+      obj: new Circle({
+        radius: 10,
+        color: backgroundColorLighter,
+      }),
+      width: W,
+      height: H,
+      force: 20,
+      num: 4
+    });
+
     super(
       series([new Podium(ranking), buttonContainer]), // obj
       1, 2,                             // cols, rows
@@ -55,5 +64,7 @@ export class EndOfGame extends Tile {
       undefined, undefined, undefined,  // mirrorH, mirrorV, snapToPixel
       false                             // clone
     );
+
+    emitter.centerReg();
   }
 }
