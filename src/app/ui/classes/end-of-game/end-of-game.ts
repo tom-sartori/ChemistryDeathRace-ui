@@ -1,6 +1,7 @@
 import { backgroundColorLighter, framePaddingProportion } from '@constants/ui-constants';
 import { Podium } from '@classes/end-of-game/podium';
 import { Player } from '@classes/player/player';
+import { min } from 'lodash';
 
 export class EndOfGame extends Tile {
 
@@ -49,7 +50,7 @@ export class EndOfGame extends Tile {
       }),
       width: W,
       height: H,
-      force: 20,
+      force: min([W / 75, H / 75]),
       num: 4
     });
 
