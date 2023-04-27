@@ -131,7 +131,6 @@ export class Game implements Observer {
   }
 
   private movePawn(pawn: Pawn, diceResult: number): void {
-    this.leftSection.disableDiceButton();
     this.board.movePawn(pawn, diceResult);
   }
 
