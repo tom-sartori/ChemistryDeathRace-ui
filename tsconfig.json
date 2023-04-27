@@ -26,23 +26,26 @@
       "@app/*": [
         "src/app/*"
       ],
-      "@components/*": [
-        "src/app/components/*"
-      ],
       "@models/*": [
         "src/app/models/*"
+      ],
+      "@pages/*": [
+        "src/app/pages/*"
       ],
       "@services/*": [
         "src/app/services/*"
       ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
       "@classes/*": [
-        "src/app/classes/*"
+        "src/app/ui/classes/*"
       ],
       "@constants/*": [
-        "src/app/constants/*"
+        "src/app/ui/constants/*"
       ],
-      "@interfaces/*": [
-        "src/app/interfaces/*"
+      "@observers/*": [
+        "src/app/ui/observers/*"
       ]
     }
   },
