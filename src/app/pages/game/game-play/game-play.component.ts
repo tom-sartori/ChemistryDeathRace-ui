@@ -54,7 +54,7 @@ export class GamePlayComponent implements OnInit {
       "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
     }]
 
-    if (this.router.url === '/test') {
+    if (this.router.url === '/game/test') {
       new Frame({
         scaling: FULL,
         color: backgroundColor,

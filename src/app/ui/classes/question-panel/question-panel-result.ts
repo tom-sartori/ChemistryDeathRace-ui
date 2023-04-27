@@ -5,8 +5,7 @@ import { Observable } from '@app/ui/observers/observable';
 import { Observer } from '@app/ui/observers/observer';
 import { QuestionPanel } from '@classes/question-panel/question-panel';
 import { ObservableSubjectPlayerAnswered } from '@observers/observable-subject';
-
-export const isEqual = require('lodash/isEqual.js');
+import { isEqual } from 'lodash';
 
 export class QuestionPanelResult extends QuestionPanel implements Observable {
 

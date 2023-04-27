@@ -1,8 +1,7 @@
 import { pipeBackgroundColor, spaceMargin } from '@constants/ui-constants';
 import { Pawn } from '@classes/player/pawn';
 import { SpaceDisplay } from '@classes/board/space/space-display';
-
-const isEqual = require('lodash/isEqual.js');
+import { isEqual } from 'lodash';
 
 export class Space extends Rectangle {
 

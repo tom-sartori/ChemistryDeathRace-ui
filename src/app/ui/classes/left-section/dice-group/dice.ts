@@ -2,8 +2,7 @@ import { labelSizeProportion, numberOfRoll, timeBetweenRoll } from '@constants/u
 import { Observable } from '@observers/observable';
 import { Observer } from '@observers/observer';
 import { ObservableSubjectDiceChanged } from '@observers/observable-subject';
-
-const random = require('lodash/random.js')
+import { random } from 'lodash';
 
 export class Dice extends Rectangle implements Observable {
 
