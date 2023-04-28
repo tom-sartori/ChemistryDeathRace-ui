@@ -2,7 +2,10 @@
   <h1>Nom des joueurs</h1>
   <div class="params">
     <div *ngFor="let name of playersName; let i = index" class="param">
-      <label for="player{{i+1}}">Joueur {{i + 1}}</label>
+      <div class="name">
+        <div class="player{{i+1}}"></div>
+        <label for="player{{i+1}}">Joueur {{i + 1}}</label>
+      </div>
       <input id="player{{i+1}}" formControlName="player{{i+1}}">
     </div>
     <div class="params-footer">
