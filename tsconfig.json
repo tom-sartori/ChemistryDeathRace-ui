@@ -41,6 +41,9 @@
       "@classes/*": [
         "src/app/ui/classes/*"
       ],
+      "@ui-components/*": [
+        "src/app/ui/components/*"
+      ],
       "@constants/*": [
         "src/app/ui/constants/*"
       ],
