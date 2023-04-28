@@ -4,6 +4,7 @@ import { ParamsService } from '@services/params.service';
 import { QuestionService } from '@services/question.service';
 import { Router } from '@angular/router';
 import { maxNumberOfPlayer } from '@constants/game-constants';
+import { AppConstants } from '@app/app.constants';
 
 @Component({
   selector: 'app-game-params',
@@ -24,7 +25,7 @@ export class GameParamsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading = true;
-    this.questionService.getDifficulties().subscribe(x => {
+    this.questionService.getAvailableDifficulties().subscribe(x => {
       this.difficulties = x;
       this.paramsService.difficulty = x[0];
       this.loading = false;
@@ -42,7 +43,7 @@ export class GameParamsComponent implements OnInit {
     this.paramsService.difficulty = this.mainForm.get("difficulty")!.value;
     this.questionService.getQuestionsByDifficulty(this.mainForm.get("difficulty")!.value).subscribe(x => {
       this.paramsService.questions = x;
-      this.router.navigate(['/players-name']);
+      this.router.navigateByUrl(AppConstants.ROUTES.GAME_PLAYERS)
     });
   }
 
@@ -71,6 +72,6 @@ export class GameParamsComponent implements OnInit {
   }
 
   goToHome() {
-    this.router.navigate(['/home']);
+    this.router.navigateByUrl(AppConstants.ROUTES.HOME)
   }
 }

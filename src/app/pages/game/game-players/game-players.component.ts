@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { ParamsService } from '@services/params.service';
 import { Router } from '@angular/router';
+import { AppConstants } from '@app/app.constants';
+import { pawnColors } from '@constants/ui-constants';
+import { forEach } from 'lodash';
 
 @Component({
   selector: 'app-game-players',
@@ -10,16 +13,22 @@ import { Router } from '@angular/router';
 })
 export class GamePlayersComponent implements OnInit {
 
-  mainForm!: FormGroup;
+  public mainForm!: FormGroup;
+  public playersName: string[];
+  public playersColor: string[];
 
   private playersNumber!: number;
-  playersName: string[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
     private paramsService: ParamsService,
     private router: Router
   ) {
+    this.playersName = [];
+    this.playersColor = [];
+    forEach(pawnColors, (value: GradientColor) => {
+      this.playersColor.push(value.toString());
+    });
   }
 
   ngOnInit(): void {
@@ -64,10 +73,10 @@ export class GamePlayersComponent implements OnInit {
       this.playersName[i] = this.mainForm.get(`player${i + 1}`)!.value;
     }
     this.paramsService.playerNames = this.playersName;
-    this.router.navigate(['/game']);
+    this.router.navigateByUrl(AppConstants.ROUTES.GAME_PLAY);
   }
 
   goToParams() {
-    this.router.navigate(['/game-params']);
+    this.router.navigateByUrl(AppConstants.ROUTES.GAME_PARAMS)
   }
 }
