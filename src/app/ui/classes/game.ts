@@ -23,6 +23,7 @@ export class Game implements Observer {
   private readonly leftSection: LeftSection;
   private readonly players: Player[];
 
+  private fullScreenButton: Button;
   private _currentPlayer: Player;
   private questions: Question[];
 
@@ -79,8 +80,13 @@ export class Game implements Observer {
       color: "white",
       height: 50,
     });
-    fullScreenButton.tap(() => F.fullscreen(true));
+    fullScreenButton.tap(() => {
+      this.toggleFullScreen();
+    });
     fullScreenButton.addTo(S);
+    this.fullScreenButton = fullScreenButton;
+
+    fullScreenButton.visible = !(window.navigator as any).standalone;
   }
 
   public update(observableSubject: ObservableSubject): void {
@@ -93,6 +99,56 @@ export class Game implements Observer {
         break;
       case ObservableSubjectKind.PlayerAnswered:
         this.onPlayerAnswered(observableSubject.isAnswerCorrect);
+    }
+  }
+
+  private toggleFullScreen(): void {
+    if (!document.fullscreenElement &&
+      !(document as any).webkitFullscreenElement && // Chrome, Safari et Opera
+      !(document as any).mozFullScreenElement && // Firefox
+      !(document as any).msFullscreenElement) { // IE et Edge
+      this.requestFullscreen(document.documentElement);
+    }
+    else {
+      this.exitFullscreen();
+    }
+  }
+
+  private requestFullscreen(element: HTMLElement) {
+    const methodName = (
+      element.requestFullscreen ||
+      (element as any).webkitRequestFullscreen || // Chrome, Safari et Opera
+      (element as any).mozRequestFullScreen || // Firefox
+      (element as any).msRequestFullscreen // IE et Edge
+    );
+
+    if (methodName) {
+      methodName.call(element);
+    }
+    else {
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+      if (isIOS) {
+        alert("Pour utiliser ce site en mode plein écran, veuillez l'ajouter à votre écran d'accueil en cliquant sur l'icône de partage et en sélectionnant \"Ajouter à l'écran d'accueil\".");
+      }
+      else {
+        alert("Le mode plein écran n'est pas pris en charge par ce navigateur.");
+      }
+    }
+  }
+
+  private exitFullscreen() {
+    const methodName = (
+      document.exitFullscreen ||
+      (document as any).webkitExitFullscreen || // Chrome, Safari et Opera
+      (document as any).mozCancelFullScreen || // Firefox
+      (document as any).msExitFullscreen // IE et Edge
+    );
+
+    if (methodName) {
+      methodName.call(document);
+    }
+    else {
+      alert("Le mode plein écran n'est pas pris en charge par ce navigateur.");
     }
   }
 
