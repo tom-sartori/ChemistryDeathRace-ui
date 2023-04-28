@@ -1,55 +1,37 @@
 import { Question } from '@models/question/question.model';
-import { framePadding } from '@constants/ui-constants';
 import { Proposition } from '@models/question/proposition.model';
 import { Observable } from '@app/ui/observers/observable';
 import { Observer } from '@app/ui/observers/observer';
-import { QuestionPanel } from '@classes/question-panel/question-panel';
+import { Panel } from '@ui-components/panel';
 import { ObservableSubjectPlayerAnswered } from '@observers/observable-subject';
 import { isEqual } from 'lodash';
+import { Game } from '@classes/game';
 
-export class QuestionPanelResult extends QuestionPanel implements Observable {
+export class QuestionPanelResult extends Panel implements Observable {
 
   private observers: Observer[];
 
-  constructor(question: Question, proposition: Proposition) {
-    const width: number = W - (framePadding * 2);
-    const height: number = H - (framePadding * 2);
+  constructor(question: Question, proposition: Proposition, observer: Game) {
     const answer: Proposition = question.propositions.find(proposition => proposition.answer)!;
-    const labelGoNext: Label = new Label({
-      text: 'Passer à la suite',
-      color: white
-    });
 
-    const content = {
-      header: new Label({
-        text: question.name, labelWidth: width, labelHeight: height / 4, align: CENTER, maxSize: 40
-      }),
-      display: new Label({
-        text: 'La bonne réponse était : \n' + answer.name,
-        labelWidth: width,
-        labelHeight: height / 4,
-        align: CENTER,
-        color: white,
-        maxSize: 30
-      }),
+    super({
+      titleBar: question.category,
+      header: question.name,
+      message: 'La bonne réponse était : \n' + answer.name,
+      backgroundColor: isEqual(proposition, answer) ? green : red,
       buttons: [
-        // {label, color, rollColor, backgroundColor, rollBackgroundColor, call}
         {
-          label: labelGoNext,
-          width: labelGoNext.width + 10,  /// TODO : margin constants.
-          call: () => {
+          text: 'Passer à la suite',
+          function: (): void => {
             this.notifyAll(isEqual(proposition, answer));
-            this.removeFrom(S);
-            S.update();
+            this.switchTo();
           }
         }
       ]
-    }
-
-    const backgroundColor: GradientColor = isEqual(proposition, answer) ? green : red;
-    super(question, content, backgroundColor);
+    });
 
     this.observers = [];
+    this.subscribe(observer);
   }
 
   public subscribe = (observer: Observer): void => {

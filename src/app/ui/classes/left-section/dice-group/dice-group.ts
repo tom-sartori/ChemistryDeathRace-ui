@@ -1,6 +1,7 @@
 import { Dice } from '@classes/left-section/dice-group/dice';
 import { Observer } from '@observers/observer';
 import { labelSizeProportion } from '@constants/ui-constants';
+import { Button } from '@ui-components/button';
 
 export class DiceGroup extends Tile {
 
@@ -16,19 +17,10 @@ export class DiceGroup extends Tile {
     const dice: Dice = new Dice(diceSize);
 
     // Button.
-    let label: Label = new Label({
+    const rollButton: Button = new Button({
       text: "Lancer le dé",
-      size: W * labelSizeProportion,
-      bold: true,
-      font: "Freckle Face"
-    });
-    let rollButton: Button = new Button({
-      label,
       backgroundColor: orange,
-      rollBackgroundColor: green,
-      width: label.width + 20,
-      height: label.height + 20,
-      corner: 10
+      rollBackgroundColor: green
     });
 
     super(

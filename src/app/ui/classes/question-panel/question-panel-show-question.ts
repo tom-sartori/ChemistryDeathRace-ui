@@ -1,32 +1,19 @@
 import { Question } from '@models/question/question.model';
 import { Game } from '@classes/game';
-import { QuestionPanel } from '@classes/question-panel/question-panel';
+import { Panel } from '@ui-components/panel';
 import { QuestionPanelClassic } from '@classes/question-panel/question-panel-classic';
 
-export class QuestionPanelShowQuestion extends QuestionPanel {
+export class QuestionPanelShowQuestion extends Panel {
 
   constructor(question: Question, observer: Game) {
-    const label: Label = new Label({
-      text: 'Montrer la question',
-      color: white
-    });
-
-    const content = {
+    super({
+      titleBar: question.category,
       buttons: [
-        // {label, color, rollColor, backgroundColor, rollBackgroundColor, call}
         {
-          label: label,
-          width: label.width + 10,  /// TODO : margin constants.
-          call: () => {
-            /// TODO : function to switch to the question panel.
-            new QuestionPanelClassic(question, observer).center();
-            this.removeFrom(S);
-            S.update();
-          }
+          text: 'Montrer la question',
+          function: (): void => this.switchTo(new QuestionPanelClassic(question, observer))
         }
       ]
-    }
-
-    super(question, content);
+    });
   }
 }
