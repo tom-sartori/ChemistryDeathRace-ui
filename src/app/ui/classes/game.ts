@@ -16,6 +16,17 @@ import { ObservableSubject, ObservableSubjectKind } from '@observers/observable-
 import { EndOfGame } from '@classes/end-of-game/end-of-game';
 import { QuestionPanelShowQuestion } from '@classes/question-panel/question-panel-show-question';
 
+const originalAddEventListener = EventTarget.prototype.addEventListener;
+
+EventTarget.prototype.addEventListener = function (type, listener, options) {
+  if (typeof options === 'object' && options !== null) {
+    options.passive = options.passive || false;
+  }
+  else {
+    options = {passive: false, capture: options};
+  }
+  originalAddEventListener.call(this, type, listener, options);
+};
 
 export class Game implements Observer {
 
