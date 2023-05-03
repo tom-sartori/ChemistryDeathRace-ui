@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ParamsService } from '@services/params.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Question } from '@models/question/question.model';
 import { backgroundColor } from '@constants/ui-constants';
 import { Game } from '@classes/game';
@@ -14,7 +14,8 @@ export class GamePlayComponent implements OnInit {
 
   constructor(
     private paramsService: ParamsService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     const questions: Question[] = [{
       "id": "64490e28b152c1016a10b16e",
@@ -54,18 +55,7 @@ export class GamePlayComponent implements OnInit {
       "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
     }]
 
-    if (this.router.url === '/game/test') {
-      new Frame({
-        scaling: FULL,
-        color: backgroundColor,
-        outerColor: backgroundColor,
-        assets: {font: "Freckle Face", image: "src/assets/fonts/Freckle_Face/FreckleFace-Regular.ttf"},
-        ready: (): void => {
-          new Game(['Jean', 'Michel', 'Denis', 'Henry'], questions, 99);
-        }
-      });
-    }
-    else {
+    if (this.router.url === '/game') {
       new Frame({
         scaling: FULL,
         color: backgroundColor,
@@ -73,6 +63,21 @@ export class GamePlayComponent implements OnInit {
         assets: {font: "Freckle Face", image: "src/assets/fonts/Freckle_Face/FreckleFace-Regular.ttf"},
         ready: (): void => {
           new Game(paramsService.playerNames, paramsService.questions, paramsService.diceSize);
+        }
+      });
+    }
+    else {
+      let firstMove: number | undefined = parseInt(this.route.snapshot.paramMap.get('firstMove')!);
+      new Frame({
+        scaling: FULL,
+        color: backgroundColor,
+        outerColor: backgroundColor,
+        assets: {font: "Freckle Face", image: "src/assets/fonts/Freckle_Face/FreckleFace-Regular.ttf"},
+        ready: (): void => {
+          let game = new Game(['Jean', 'Michel', 'Denis', 'Henry'], questions, 99);
+          if (firstMove) {
+            game.onDiceChanged(firstMove);
+          }
         }
       });
     }
