@@ -1,3 +1,5 @@
+import { Space } from '@classes/board/space/space';
+
 export enum ObservableSubjectKind {
   diceChanged,
   PawnMoved,
@@ -17,7 +19,7 @@ export class ObservableSubjectPawnMoved {
   public kind: ObservableSubjectKind.PawnMoved = ObservableSubjectKind.PawnMoved;
 
   constructor(
-    public category?: string
+    public space: Space
   ) {
   }
 }

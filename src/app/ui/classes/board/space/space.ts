@@ -1,7 +1,8 @@
-import { pipeBackgroundColor, spaceMargin } from '@constants/ui-constants';
+import { spaceMargin } from '@constants/ui-constants';
 import { Pawn } from '@classes/player/pawn';
 import { SpaceDisplay } from '@classes/board/space/space-display';
 import { isEqual } from 'lodash';
+import { Label } from '@ui-components/label';
 
 export class Space extends Rectangle {
 
@@ -44,20 +45,8 @@ export class Space extends Rectangle {
     new Label({
       text,
       color: black,
-      size: 15,
-      font: "Freckle Face"
+      size: 15
     }).center(this);
-
-    if (isEqual(color, pipeBackgroundColor)) {
-      new Label({
-        text: "Tunnel",
-        color: black,
-        size: 15,
-        width: undefined,
-        font: "Freckle Face"
-      }).center(this)
-        .mov(0, 0 / 2 - 15);
-    }
   }
 
   public addPawn(pawn: Pawn): void {

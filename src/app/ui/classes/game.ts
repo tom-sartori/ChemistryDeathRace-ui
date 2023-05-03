@@ -15,6 +15,8 @@ import { Pawn } from '@classes/player/pawn';
 import { ObservableSubject, ObservableSubjectKind } from '@observers/observable-subject';
 import { EndOfGame } from '@classes/end-of-game/end-of-game';
 import { QuestionPanelShowQuestion } from '@classes/question-panel/question-panel-show-question';
+import { Space } from '@classes/board/space/space';
+import { SpacePipe } from '@classes/board/space/space-pipe';
 
 const originalAddEventListener = EventTarget.prototype.addEventListener;
 
@@ -106,7 +108,7 @@ export class Game implements Observer {
         this.onDiceChanged(observableSubject.diceValue)
         break;
       case ObservableSubjectKind.PawnMoved:
-        this.onPawnMoved(observableSubject.category);
+        this.onPawnMoved(observableSubject.space);
         break;
       case ObservableSubjectKind.PlayerAnswered:
         this.onPlayerAnswered(observableSubject.isAnswerCorrect);
@@ -163,21 +165,21 @@ export class Game implements Observer {
     }
   }
 
-  private onDiceChanged(diceValue: number): void {
+  public onDiceChanged(diceValue: number): void {
     this.movePawn(this.currentPlayer.pawn, diceValue);
   }
 
-  private onPawnMoved(category?: string): void {
+  private onPawnMoved(space: Space): void {
     if (this.isEndOfBoard(this.currentPlayer.pawn)) {
       S.removeAllChildren();
       new EndOfGame(this.getRanking()).center(S);
     }
-    else if (category) {
-      new QuestionPanelShowQuestion(this.getNextQuestion(category), this).center();
+    else if (space instanceof SpacePipe) {
+      this.movePawn(this.currentPlayer.pawn, space.length);
     }
     else {
-      /// TODO : pipe.
-      this.leftSection.enableDiceButton();
+      /// TODO : SpaceClassic class.
+      new QuestionPanelShowQuestion(this.getNextQuestion(space.category!), this).center();
     }
     S.update();
   }
@@ -198,6 +200,7 @@ export class Game implements Observer {
     return question;
   }
 
+  /// TODO : Rename to Move player.
   private movePawn(pawn: Pawn, diceResult: number): void {
     this.board.movePawn(pawn, diceResult);
   }
