@@ -4,6 +4,7 @@ export class Label extends zim.Label {
 
   constructor(config: {
     text: string,
+    size?: number,
     color?: GradientColor,
     width?: number,
     height?: number
@@ -11,7 +12,7 @@ export class Label extends zim.Label {
 
     super({
       text: config.text,
-      size: W * labelSizeProportion,
+      size: config.size ?? W * labelSizeProportion,
       font,
       color: config.color ?? white,
       align: CENTER,
