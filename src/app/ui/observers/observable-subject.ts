@@ -1,9 +1,11 @@
 import { Space } from '@classes/board/space/space';
+import { Player } from '@classes/player/player';
 
 export enum ObservableSubjectKind {
   diceChanged,
   PawnMoved,
-  PlayerAnswered
+  PlayerAnswered,
+  ChallengeAnswered
 }
 
 export class ObservableSubjectDiceChanged {
@@ -33,7 +35,17 @@ export class ObservableSubjectPlayerAnswered {
   }
 }
 
+export class ObservableSubjectChallengeAnswered {
+  public kind: ObservableSubjectKind.ChallengeAnswered = ObservableSubjectKind.ChallengeAnswered;
+
+  constructor(
+    public player: Player
+  ) {
+  }
+}
+
 export type ObservableSubject =
   ObservableSubjectDiceChanged
   | ObservableSubjectPawnMoved
-  | ObservableSubjectPlayerAnswered;
+  | ObservableSubjectPlayerAnswered
+  | ObservableSubjectChallengeAnswered;

@@ -18,6 +18,7 @@ import { QuestionPanelShowQuestion } from '@classes/question-panel/question-pane
 import { Space } from '@classes/board/space/space';
 import { SpacePipe } from '@classes/board/space/space-pipe';
 import { SpaceClassic } from '@classes/board/space/space-classic';
+import { SpaceChallenge } from '@classes/board/space/space-challenge';
 
 const originalAddEventListener = EventTarget.prototype.addEventListener;
 
@@ -35,7 +36,7 @@ export class Game implements Observer {
 
   private readonly board: Board;
   private readonly leftSection: LeftSection;
-  private readonly players: Player[];
+  public readonly players: Player[];
 
   private fullScreenButton: Button;
   private _currentPlayer: Player;
@@ -113,6 +114,10 @@ export class Game implements Observer {
         break;
       case ObservableSubjectKind.PlayerAnswered:
         this.onPlayerAnswered(observableSubject.isAnswerCorrect);
+        break;
+      case ObservableSubjectKind.ChallengeAnswered:
+        this.onChallengeAnswered(observableSubject.player);
+        break;
     }
   }
 
@@ -175,11 +180,14 @@ export class Game implements Observer {
       S.removeAllChildren();
       new EndOfGame(this.getRanking()).center(S);
     }
+    else if (space instanceof SpaceClassic) {
+      new QuestionPanelShowQuestion(this.getNextQuestion(space.category), this, SpaceClassic).center();
+    }
     else if (space instanceof SpacePipe) {
       this.movePawn(this.currentPlayer.pawn, space.length);
     }
-    else if (space instanceof SpaceClassic) {
-      new QuestionPanelShowQuestion(this.getNextQuestion(space.category), this).center();
+    else if (space instanceof SpaceChallenge) {
+      new QuestionPanelShowQuestion(this.getNextQuestion(space.category), this, SpaceChallenge).center();
     }
     S.update();
   }
@@ -189,6 +197,12 @@ export class Game implements Observer {
     if (!isAnswerCorrect) {
       this.setNextPlayer();
     }
+    this.showPopUpCurrentPlayer();
+  }
+
+  private onChallengeAnswered(player: Player): void {
+    this.leftSection.enableDiceButton();
+    this.setNextPlayer(player);
     this.showPopUpCurrentPlayer();
   }
 
@@ -205,9 +219,14 @@ export class Game implements Observer {
     this.board.movePawn(pawn, diceResult);
   }
 
-  private setNextPlayer(): void {
-    let currentPlayerIndex: number = this.players.indexOf(this.currentPlayer);
-    this.currentPlayer = this.players[(currentPlayerIndex + 1) % this.players.length];
+  private setNextPlayer(player?: Player): void {
+    if (player) {
+      this.currentPlayer = player
+    }
+    else {
+      let currentPlayerIndex: number = this.players.indexOf(this.currentPlayer);
+      this.currentPlayer = this.players[(currentPlayerIndex + 1) % this.players.length];
+    }
   }
 
   private getFirstPlayer(): Player {
