@@ -23,3 +23,4 @@ export const labelPadding: number = 15;
 export const labelMaxSize: number = 35;
 export const buttonCorner: number = 10;
 export const buttonPadding: number = 20;
+export const onStopOnSpaceAnimationTimeout: number = 500;

@@ -1,4 +1,4 @@
-import { spaceMargin } from '@constants/ui-constants';
+import { onStopOnSpaceAnimationTimeout, spaceMargin } from '@constants/ui-constants';
 import { Pawn } from '@classes/player/pawn';
 import { SpaceDisplay } from '@classes/board/space/space-display';
 import { isEqual } from 'lodash';
@@ -81,5 +81,15 @@ export abstract class Space extends Rectangle {
         this.pawns[3].pos(this.width - 3 * this.pawns[1].radius, this.height - 3 * this.pawns[1].radius)
         break;
     }
+  }
+
+  public onStopOnSpace(): void {
+    const oldColor: GradientColor = this.color;
+    this.color = white;
+    S.update();
+    setTimeout((): void => {
+      this.color = oldColor;
+      S.update();
+    }, onStopOnSpaceAnimationTimeout);
   }
 }

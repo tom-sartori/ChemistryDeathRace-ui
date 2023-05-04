@@ -6,6 +6,7 @@ import { Question } from '@models/question/question.model';
 import {
   boardWidthProportion,
   framePaddingProportion,
+  onStopOnSpaceAnimationTimeout,
   pawnColors,
   pawnDiameterProportion,
   spaceMargin
@@ -176,20 +177,23 @@ export class Game implements Observer {
   }
 
   private onPawnMoved(space: Space): void {
-    if (this.isEndOfBoard(this.currentPlayer.pawn)) {
-      S.removeAllChildren();
-      new EndOfGame(this.getRanking()).center(S);
-    }
-    else if (space instanceof SpaceClassic) {
-      new QuestionPanelShowQuestion(this.getNextQuestion(space.category), this, SpaceClassic).center();
-    }
-    else if (space instanceof SpacePipe) {
-      this.movePawn(this.currentPlayer.pawn, space.length);
-    }
-    else if (space instanceof SpaceChallenge) {
-      new QuestionPanelShowQuestion(this.getNextQuestion(space.category), this, SpaceChallenge).center();
-    }
-    S.update();
+    space.onStopOnSpace();
+    setTimeout((): void => {
+      if (this.isEndOfBoard(this.currentPlayer.pawn)) {
+        S.removeAllChildren();
+        new EndOfGame(this.getRanking()).center(S);
+      }
+      else if (space instanceof SpaceClassic) {
+        new QuestionPanelShowQuestion(this.getNextQuestion(space.category), this, SpaceClassic).center();
+      }
+      else if (space instanceof SpacePipe) {
+        this.movePawn(this.currentPlayer.pawn, space.length);
+      }
+      else if (space instanceof SpaceChallenge) {
+        new QuestionPanelShowQuestion(this.getNextQuestion(space.category), this, SpaceChallenge).center();
+      }
+      S.update();
+    }, onStopOnSpaceAnimationTimeout + 100);
   }
 
   private onPlayerAnswered(isAnswerCorrect: boolean): void {
