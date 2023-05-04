@@ -17,6 +17,7 @@ import { EndOfGame } from '@classes/end-of-game/end-of-game';
 import { QuestionPanelShowQuestion } from '@classes/question-panel/question-panel-show-question';
 import { Space } from '@classes/board/space/space';
 import { SpacePipe } from '@classes/board/space/space-pipe';
+import { SpaceClassic } from '@classes/board/space/space-classic';
 
 const originalAddEventListener = EventTarget.prototype.addEventListener;
 
@@ -177,9 +178,8 @@ export class Game implements Observer {
     else if (space instanceof SpacePipe) {
       this.movePawn(this.currentPlayer.pawn, space.length);
     }
-    else {
-      /// TODO : SpaceClassic class.
-      new QuestionPanelShowQuestion(this.getNextQuestion(space.category!), this).center();
+    else if (space instanceof SpaceClassic) {
+      new QuestionPanelShowQuestion(this.getNextQuestion(space.category), this).center();
     }
     S.update();
   }

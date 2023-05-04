@@ -4,13 +4,11 @@ import { SpaceDisplay } from '@classes/board/space/space-display';
 import { isEqual } from 'lodash';
 import { Label } from '@ui-components/label';
 
-export class Space extends Rectangle {
-
-  public readonly category?: string;
+export abstract class Space extends Rectangle {
 
   public pawns: Pawn[];
 
-  constructor(color: GradientColor, text: string, sideSize: number, spaceDisplay: SpaceDisplay = SpaceDisplay.HORIZONTAL, category?: string) {
+  protected constructor(color: GradientColor, text: string, sideSize: number, spaceDisplay: SpaceDisplay = SpaceDisplay.HORIZONTAL) {
     const width: number = sideSize;
     let height: number = sideSize;
     let corner: number[];   // [topLeft, topRight, bottomRight, bottomLeft]
@@ -39,7 +37,6 @@ export class Space extends Rectangle {
     }
     super(width, height, color, undefined, undefined, corner);
 
-    this.category = category;
     this.pawns = [];
 
     new Label({
