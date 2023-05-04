@@ -8,7 +8,7 @@ export abstract class Panel extends zim.Panel {
     titleBar: string,
     header?: string,
     message?: string,
-    buttons?: { text: string, function: Function }[],
+    buttons?: { text: string, function: Function, backgroundColor?: GradientColor }[],
     backgroundColor?: GradientColor
   }) {
     const width: number = W - (framePadding * 2);
@@ -33,6 +33,7 @@ export abstract class Panel extends zim.Panel {
     config.buttons?.forEach(button => {
       content.push(new Button({
           text: button.text,
+          backgroundColor: button.backgroundColor,
           width: labelWidth,
           height: labelHeight
         }).tap(button.function)
