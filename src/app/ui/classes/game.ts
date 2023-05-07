@@ -15,6 +15,7 @@ import { Pawn } from '@classes/player/pawn';
 import { ObservableSubject, ObservableSubjectKind } from '@observers/observable-subject';
 import { EndOfGame } from '@classes/end-of-game/end-of-game';
 import { QuestionPanelShowQuestion } from '@classes/question-panel/question-panel-show-question';
+import { AnimatePopup } from '@ui-components/animate-popup';
 
 const originalAddEventListener = EventTarget.prototype.addEventListener;
 
@@ -247,22 +248,6 @@ export class Game implements Observer {
   }
 
   private showPopUpCurrentPlayer(): void {
-    new Label({
-      text: 'C\'est au tour de ' + this.currentPlayer.name + ' de jouer !',
-      labelWidth: W / 3,
-      labelHeight: H / 3,
-      align: CENTER,
-      backgroundColor: this.currentPlayer.pawn.color,
-      corner: 5,
-      font: "Freckle Face",
-      color: white
-    })
-      .center()
-      .animate({
-        props: {scale: 0},
-        time: 1.5,
-        rewind: true,
-        from: true
-      });
+    new AnimatePopup(this.currentPlayer.name, this.currentPlayer.pawn.color).makeAnimation();
   }
 }
