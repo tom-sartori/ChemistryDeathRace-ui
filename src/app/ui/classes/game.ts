@@ -15,6 +15,7 @@ import { Pawn } from '@classes/player/pawn';
 import { ObservableSubject, ObservableSubjectKind } from '@observers/observable-subject';
 import { EndOfGame } from '@classes/end-of-game/end-of-game';
 import { QuestionPanelShowQuestion } from '@classes/question-panel/question-panel-show-question';
+import { Pause } from '@classes/pause/pause';
 import { AnimatePopup } from '@ui-components/animate-popup';
 
 const originalAddEventListener = EventTarget.prototype.addEventListener;
@@ -37,6 +38,8 @@ export class Game implements Observer {
 
   private fullScreenButton: Button;
   private _currentPlayer: Player;
+  private pauseButton: Button;
+  private pause: Pause;
   private questions: Question[];
 
   constructor(playerNames: string[], questions: Question[], diceSize: number) {
@@ -81,12 +84,12 @@ export class Game implements Observer {
     }).center();
 
     // Fullscreen button.
-    const label: Label = new Label({
+    const fullscreenLabel: Label = new Label({
       text: "⛶",
       size: 50,
     });
     const fullScreenButton: Button = new Button({
-      label,
+      label: fullscreenLabel,
       width: 50,
       backgroundColor: "rgba(0,0,0,0)",
       color: "white",
@@ -99,6 +102,28 @@ export class Game implements Observer {
     this.fullScreenButton = fullScreenButton;
 
     fullScreenButton.visible = !(window.navigator as any).standalone;
+
+
+    // Pause button.
+    const label: Label = new Label({
+      text: "⏸︎",
+      size: 50,
+    });
+    const pauseButton: Button = new Button({
+      label,
+      width: 50,
+      backgroundColor: "rgba(0,0,0,0)",
+      color: "white",
+      height: 50,
+    });
+    pauseButton.tap(() => {
+      this.pause.toggle();
+    });
+    pauseButton.addTo(S).pos(W - pauseButton.width, 0);
+    this.pauseButton = pauseButton;
+
+    // Pause
+    this.pause = new Pause(this.getCategories()); // Categories are used to display a help message with the legend of the board.
   }
 
   public update(observableSubject: ObservableSubject): void {
