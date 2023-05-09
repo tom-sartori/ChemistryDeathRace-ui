@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ParamsService } from '@services/params.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Question } from '@models/question/question.model';
 import { backgroundColor } from '@ui-constants/ui-constants';
 import { Game } from '@ui-classes/game';
+import { AppConstants } from '@app/app.constants';
 
 @Component({
   selector: 'app-game-play',
@@ -13,7 +13,6 @@ import { Game } from '@ui-classes/game';
 export class GamePlayComponent implements OnInit {
 
   constructor(
-    private paramsService: ParamsService,
     private router: Router,
     private route: ActivatedRoute
   ) {
@@ -55,16 +54,27 @@ export class GamePlayComponent implements OnInit {
       "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
     }]
 
-    if (this.router.url === '/game') {
-      new Frame({
-        scaling: FULL,
-        color: backgroundColor,
-        outerColor: backgroundColor,
-        assets: {font: "Freckle Face", image: "src/assets/fonts/Freckle_Face/FreckleFace-Regular.ttf"},
-        ready: (): void => {
-          new Game(paramsService.playerNames, paramsService.questions, paramsService.diceSize);
+    if (this.router.url === '/game/play') {
+
+      if (localStorage.getItem(AppConstants.LOCAL_STORAGE.GAME_PARAMS)) {
+        try {
+          const params = JSON.parse(localStorage.getItem(AppConstants.LOCAL_STORAGE.GAME_PARAMS)!);
+          new Frame({
+            scaling: FULL,
+            color: backgroundColor,
+            outerColor: backgroundColor,
+            assets: {font: "Freckle Face", image: "src/assets/fonts/Freckle_Face/FreckleFace-Regular.ttf"},
+            ready: (): void => {
+              new Game(params.playerNames, params.questions, params.diceSize);
+            }
+          });
+        } catch (e) {
+          this.router.navigate(['/game/params']);
         }
-      });
+      }
+      else {
+        this.router.navigate(['/game/params']);
+      }
     }
     else {
       let firstMove: number | undefined = parseInt(this.route.snapshot.paramMap.get('firstMove')!);

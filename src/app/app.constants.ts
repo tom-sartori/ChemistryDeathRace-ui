@@ -15,4 +15,8 @@ export class AppConstants {
     public static readonly GAME_PLAY = this.GAME + '/' + this.PLAY;
     public static readonly GAME_TEST = this.GAME + '/' + this.TEST;
   }
+
+  static LOCAL_STORAGE = class {
+    public static readonly GAME_PARAMS = 'game-params';
+  }
 }

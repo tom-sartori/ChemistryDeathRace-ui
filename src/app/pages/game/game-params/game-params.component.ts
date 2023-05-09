@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ParamsService } from '@services/params.service';
 import { QuestionService } from '@services/question.service';
 import { Router } from '@angular/router';
-import { maxNumberOfPlayer } from '@ui-constants/game-constants';
+import { defaultDiceSize, defaultNumberOfPlayer, maxNumberOfPlayer } from '@ui-constants/game-constants';
 import { AppConstants } from '@app/app.constants';
 
 @Component({
@@ -18,7 +17,6 @@ export class GameParamsComponent implements OnInit {
   loading: boolean = false;
 
   constructor(private formBuilder: FormBuilder,
-              private paramsService: ParamsService,
               private questionService: QuestionService,
               private router: Router) {
   }
@@ -27,23 +25,24 @@ export class GameParamsComponent implements OnInit {
     this.loading = true;
     this.questionService.getAvailableDifficulties().subscribe(x => {
       this.difficulties = x;
-      this.paramsService.difficulty = x[0];
       this.loading = false;
     });
     this.mainForm = this.formBuilder.group({
-      playersNumber: [this.paramsService.playersNumber, [Validators.required, Validators.max(maxNumberOfPlayer), Validators.min(1)]],
-      diceSize: [this.paramsService.diceSize, Validators.required],
+      playersNumber: [defaultNumberOfPlayer, [Validators.required, Validators.max(maxNumberOfPlayer), Validators.min(1)]],
+      diceSize: [defaultDiceSize, Validators.required],
       difficulty: ['', Validators.required]
     });
   }
 
   goToPlayersName() {
-    this.paramsService.playersNumber = this.mainForm.get("playersNumber")!.value;
-    this.paramsService.diceSize = this.mainForm.get("diceSize")!.value;
-    this.paramsService.difficulty = this.mainForm.get("difficulty")!.value;
     this.questionService.getQuestionsByDifficulty(this.mainForm.get("difficulty")!.value).subscribe(x => {
-      this.paramsService.questions = x;
-      this.router.navigateByUrl(AppConstants.ROUTES.GAME_PLAYERS)
+      localStorage.setItem(AppConstants.LOCAL_STORAGE.GAME_PARAMS, JSON.stringify({
+        playersNumber: this.mainForm.get("playersNumber")!.value,
+        diceSize: this.mainForm.get("diceSize")!.value,
+        difficulty: this.mainForm.get("difficulty")!.value,
+        questions: x
+      }));
+      this.router.navigateByUrl(AppConstants.ROUTES.GAME_PLAYERS);
     });
   }
 
