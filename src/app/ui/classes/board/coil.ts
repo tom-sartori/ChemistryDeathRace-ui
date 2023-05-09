@@ -29,7 +29,7 @@ export class Coil extends Tile implements Observable {
   }
 
   public notifyAll(space: Space): void {
-    this.observers.forEach((observer: Observer) => observer.update(new ObservableSubjectPawnMoved(space.category)));
+    this.observers.forEach((observer: Observer) => observer.update(new ObservableSubjectPawnMoved(space)));
   }
 
   public subscribe(observer: Observer): void {
@@ -45,33 +45,40 @@ export class Coil extends Tile implements Observable {
     }
 
     this.movePawnAux(pawn, spaceIndex, nbSpacesToMove);
-
-    /// TODO : if pipe.
-    /// TODO : do action with question.
   }
 
+  /**
+   * Recursive function to move a pawn.
+   *
+   * @param pawn the pawn to move.
+   * @param spaceIndex the index of the space where the pawn is.
+   * @param nbSpacesToMove Can be negative if the pawn is going backward.
+   */
   private movePawnAux(pawn: Pawn, spaceIndex: number, nbSpacesToMove: number): void {
-    if (nbSpacesToMove > 0) {
-      let newSpaceIndex: number = this.getNextSpaceIndex(spaceIndex);
-      if (newSpaceIndex < numberOfSpaces) {
-        // We move the pawn to the next space.
-        this.removePawn(spaceIndex, pawn);
-        this.addPawn(newSpaceIndex, pawn);
-        spaceIndex = newSpaceIndex;
+    if (nbSpacesToMove === 0) {
+      this.notifyAll(this.getSpace(spaceIndex)); // Notify observers that the pawn has moved.
+      return; // Stop the recursion.
+    }
 
-        setTimeout(() => this.movePawnAux(pawn, spaceIndex, nbSpacesToMove - 1), timeBetweenMove);
-      }
-      else {
-        // Pawn arrived at the end of the board.
-        this.notifyAll(this.getSpace(spaceIndex)); // Notify observers that the pawn has moved.
-      }
+    const newSpaceIndex: number = nbSpacesToMove > 0 ? this.getNextSpaceIndexForward(spaceIndex) : this.getNextSpaceIndexBackward(spaceIndex);
+    if (newSpaceIndex === 0 || newSpaceIndex === numberOfSpaces - boardCols) {
+      // We move the pawn to the first or last space. So it can not move anymore.
+      nbSpacesToMove = 0;
     }
     else {
-      this.notifyAll(this.getSpace(spaceIndex)); // Notify observers that the pawn has moved.
+      nbSpacesToMove = nbSpacesToMove > 0 ? nbSpacesToMove - 1 : nbSpacesToMove + 1;
     }
+
+    this.switchPawn(pawn, spaceIndex, newSpaceIndex);
+    setTimeout(() => this.movePawnAux(pawn, newSpaceIndex, nbSpacesToMove), timeBetweenMove);
   }
 
-  public getNextSpaceIndex(index: number): number {
+  private switchPawn(pawn: Pawn, oldSpaceIndex: number, newSpaceIndex: number) {
+    this.removePawn(oldSpaceIndex, pawn);
+    this.addPawn(newSpaceIndex, pawn);
+  }
+
+  private getNextSpaceIndexForward(index: number): number {
     /// TODO : check lines.
     /// TODO : Check end of board.
     const line: number = Math.floor(index / boardCols);
@@ -92,6 +99,33 @@ export class Coil extends Tile implements Observable {
       }
       else {
         nextIndex = index - 1; // Go left
+      }
+    }
+
+    return nextIndex;
+  }
+
+  private getNextSpaceIndexBackward(index: number): number {
+    /// TODO : check lines.
+    /// TODO : Check end of board.
+    const line: number = Math.floor(index / boardCols);
+    const column: number = index % boardCols;
+    let nextIndex: number;
+
+    if (line % 2 === 0) { // Pair line
+      if (column === 0) { // First column
+        nextIndex = index - boardCols; // Go up a line
+      }
+      else {
+        nextIndex = index - 1; // Go left
+      }
+    }
+    else { // Odd line
+      if (column === boardCols - 1) { // Last column
+        nextIndex = index - boardCols; // Go up a line
+      }
+      else {
+        nextIndex = index + 1; // Go right
       }
     }
 
@@ -120,7 +154,7 @@ export class Coil extends Tile implements Observable {
 
   public getPawnRanking(): Pawn[] {
     let pawnRanking: Pawn[] = [];
-    for (let i = 0; i < numberOfSpaces; i = this.getNextSpaceIndex(i)) {
+    for (let i = 0; i < numberOfSpaces; i = this.getNextSpaceIndexForward(i)) {
       if (this.items[i].pawns.length > 0) {
         for (let j = 0; j < this.items[i].pawns.length; j++) {
           pawnRanking.unshift(this.items[i].pawns[j]);

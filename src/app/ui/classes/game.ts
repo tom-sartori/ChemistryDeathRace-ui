@@ -6,6 +6,7 @@ import { Question } from '@models/question/question.model';
 import {
   boardWidthProportion,
   framePaddingProportion,
+  onStopOnSpaceAnimationTimeout,
   pawnColors,
   pawnDiameterProportion,
   spaceMargin
@@ -15,6 +16,10 @@ import { Pawn } from '@classes/player/pawn';
 import { ObservableSubject, ObservableSubjectKind } from '@observers/observable-subject';
 import { EndOfGame } from '@classes/end-of-game/end-of-game';
 import { QuestionPanelShowQuestion } from '@classes/question-panel/question-panel-show-question';
+import { Space } from '@classes/board/space/space';
+import { SpacePipe } from '@classes/board/space/space-pipe';
+import { SpaceClassic } from '@classes/board/space/space-classic';
+import { SpaceChallenge } from '@classes/board/space/space-challenge';
 import { Pause } from '@classes/pause/pause';
 import { AnimatePopup } from '@ui-components/animate-popup';
 
@@ -34,7 +39,7 @@ export class Game implements Observer {
 
   private readonly board: Board;
   private readonly leftSection: LeftSection;
-  private readonly players: Player[];
+  public readonly players: Player[];
 
   private fullScreenButton: Button;
   private _currentPlayer: Player;
@@ -132,10 +137,14 @@ export class Game implements Observer {
         this.onDiceChanged(observableSubject.diceValue)
         break;
       case ObservableSubjectKind.PawnMoved:
-        this.onPawnMoved(observableSubject.category);
+        this.onPawnMoved(observableSubject.space);
         break;
       case ObservableSubjectKind.PlayerAnswered:
         this.onPlayerAnswered(observableSubject.isAnswerCorrect);
+        break;
+      case ObservableSubjectKind.ChallengeAnswered:
+        this.onChallengeAnswered(observableSubject.player);
+        break;
     }
   }
 
@@ -189,23 +198,28 @@ export class Game implements Observer {
     }
   }
 
-  private onDiceChanged(diceValue: number): void {
+  public onDiceChanged(diceValue: number): void {
     this.movePawn(this.currentPlayer.pawn, diceValue);
   }
 
-  private onPawnMoved(category?: string): void {
-    if (this.isEndOfBoard(this.currentPlayer.pawn)) {
-      S.removeAllChildren();
-      new EndOfGame(this.getRanking()).center(S);
-    }
-    else if (category) {
-      new QuestionPanelShowQuestion(this.getNextQuestion(category), this).center();
-    }
-    else {
-      /// TODO : pipe.
-      this.leftSection.enableDiceButton();
-    }
-    S.update();
+  private onPawnMoved(space: Space): void {
+    space.onStopOnSpace();
+    setTimeout((): void => {
+      if (this.isEndOfBoard(this.currentPlayer.pawn)) {
+        S.removeAllChildren();
+        new EndOfGame(this.getRanking()).center(S);
+      }
+      else if (space instanceof SpaceClassic) {
+        new QuestionPanelShowQuestion(this.getNextQuestion(space.category), this, SpaceClassic).center();
+      }
+      else if (space instanceof SpacePipe) {
+        this.movePawn(this.currentPlayer.pawn, space.length);
+      }
+      else if (space instanceof SpaceChallenge) {
+        new QuestionPanelShowQuestion(this.getNextQuestion(space.category), this, SpaceChallenge).center();
+      }
+      S.update();
+    }, onStopOnSpaceAnimationTimeout + 100);
   }
 
   private onPlayerAnswered(isAnswerCorrect: boolean): void {
@@ -213,6 +227,12 @@ export class Game implements Observer {
     if (!isAnswerCorrect) {
       this.setNextPlayer();
     }
+    this.showPopUpCurrentPlayer();
+  }
+
+  private onChallengeAnswered(player: Player): void {
+    this.leftSection.enableDiceButton();
+    this.setNextPlayer(player);
     this.showPopUpCurrentPlayer();
   }
 
@@ -224,13 +244,19 @@ export class Game implements Observer {
     return question;
   }
 
+  /// TODO : Rename to Move player.
   private movePawn(pawn: Pawn, diceResult: number): void {
     this.board.movePawn(pawn, diceResult);
   }
 
-  private setNextPlayer(): void {
-    let currentPlayerIndex: number = this.players.indexOf(this.currentPlayer);
-    this.currentPlayer = this.players[(currentPlayerIndex + 1) % this.players.length];
+  private setNextPlayer(player?: Player): void {
+    if (player) {
+      this.currentPlayer = player
+    }
+    else {
+      let currentPlayerIndex: number = this.players.indexOf(this.currentPlayer);
+      this.currentPlayer = this.players[(currentPlayerIndex + 1) % this.players.length];
+    }
   }
 
   private getFirstPlayer(): Player {

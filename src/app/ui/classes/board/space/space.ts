@@ -1,15 +1,14 @@
-import { pipeBackgroundColor, spaceMargin } from '@constants/ui-constants';
+import { onStopOnSpaceAnimationTimeout, spaceMargin } from '@constants/ui-constants';
 import { Pawn } from '@classes/player/pawn';
 import { SpaceDisplay } from '@classes/board/space/space-display';
 import { isEqual } from 'lodash';
+import { Label } from '@ui-components/label';
 
-export class Space extends Rectangle {
-
-  public readonly category?: string;
+export abstract class Space extends Rectangle {
 
   public pawns: Pawn[];
 
-  constructor(color: GradientColor, text: string, sideSize: number, spaceDisplay: SpaceDisplay = SpaceDisplay.HORIZONTAL, category?: string) {
+  protected constructor(color: GradientColor, text: string, sideSize: number, spaceDisplay: SpaceDisplay = SpaceDisplay.HORIZONTAL) {
     const width: number = sideSize;
     let height: number = sideSize;
     let corner: number[];   // [topLeft, topRight, bottomRight, bottomLeft]
@@ -38,26 +37,13 @@ export class Space extends Rectangle {
     }
     super(width, height, color, undefined, undefined, corner);
 
-    this.category = category;
     this.pawns = [];
 
     new Label({
       text,
       color: black,
-      size: 15,
-      font: "Freckle Face"
+      size: 15
     }).center(this);
-
-    if (isEqual(color, pipeBackgroundColor)) {
-      new Label({
-        text: "Tunnel",
-        color: black,
-        size: 15,
-        width: undefined,
-        font: "Freckle Face"
-      }).center(this)
-        .mov(0, 0 / 2 - 15);
-    }
   }
 
   public addPawn(pawn: Pawn): void {
@@ -95,5 +81,15 @@ export class Space extends Rectangle {
         this.pawns[3].pos(this.width - 3 * this.pawns[1].radius, this.height - 3 * this.pawns[1].radius)
         break;
     }
+  }
+
+  public onStopOnSpace(): void {
+    const oldColor: GradientColor = this.color;
+    this.color = white;
+    S.update();
+    setTimeout((): void => {
+      this.color = oldColor;
+      S.update();
+    }, onStopOnSpaceAnimationTimeout);
   }
 }
