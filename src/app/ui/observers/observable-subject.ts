@@ -39,6 +39,7 @@ export class ObservableSubjectChallengeAnswered {
   public kind: ObservableSubjectKind.ChallengeAnswered = ObservableSubjectKind.ChallengeAnswered;
 
   constructor(
+    public isAnswerCorrect: boolean,
     public player: Player
   ) {
   }
