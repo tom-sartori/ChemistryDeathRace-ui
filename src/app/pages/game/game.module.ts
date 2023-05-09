@@ -14,6 +14,7 @@ const routes: Routes = [
   {path: AppConstants.ROUTES.PLAYERS, component: GamePlayersComponent, pathMatch: 'full'},
   {path: AppConstants.ROUTES.PLAY, component: GamePlayComponent, pathMatch: 'full'},
   {path: AppConstants.ROUTES.TEST, component: GamePlayComponent, pathMatch: 'full'},
+  {path: AppConstants.ROUTES.TEST + '/:firstMove', component: GamePlayComponent, pathMatch: 'full'},
   {path: '', redirectTo: AppConstants.ROUTES.PARAMS, pathMatch: 'full'}
 ];
 

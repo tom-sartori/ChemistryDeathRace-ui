@@ -11,7 +11,7 @@ export class QuestionPanelClassic extends Panel {
     question.propositions.forEach((proposition: Proposition): void => {
       buttons.push({
         text: proposition.name,
-        function: () => this.switchTo(new QuestionPanelResult(question, proposition, observer))
+        function: () => this.switchTo(new QuestionPanelResult(question, observer, proposition.answer))
       });
     });
 
