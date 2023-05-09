@@ -7,7 +7,9 @@ export class Label extends zim.Label {
     size?: number,
     color?: GradientColor,
     width?: number,
-    height?: number
+    height?: number,
+    backgroundColor?: GradientColor,
+    corner?: number,
   }) {
 
     super({
@@ -18,10 +20,11 @@ export class Label extends zim.Label {
       align: CENTER,
       valign: CENTER,
       padding: labelPadding,
-      backgroundColor: "#0000",
+      backgroundColor: config.backgroundColor ?? "#0000",
       labelWidth: config.width,
       labelHeight: config.height,
       maxSize: labelMaxSize,
+      corner: config.corner ?? 0,
     });
   }
 }

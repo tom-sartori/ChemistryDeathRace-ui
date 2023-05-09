@@ -20,6 +20,8 @@ import { Space } from '@classes/board/space/space';
 import { SpacePipe } from '@classes/board/space/space-pipe';
 import { SpaceClassic } from '@classes/board/space/space-classic';
 import { SpaceChallenge } from '@classes/board/space/space-challenge';
+import { Pause } from '@classes/pause/pause';
+import { AnimatePopup } from '@ui-components/animate-popup';
 
 const originalAddEventListener = EventTarget.prototype.addEventListener;
 
@@ -41,6 +43,8 @@ export class Game implements Observer {
 
   private fullScreenButton: Button;
   private _currentPlayer: Player;
+  private pauseButton: Button;
+  private pause: Pause;
   private questions: Question[];
 
   constructor(playerNames: string[], questions: Question[], diceSize: number) {
@@ -85,12 +89,12 @@ export class Game implements Observer {
     }).center();
 
     // Fullscreen button.
-    const label: Label = new Label({
+    const fullscreenLabel: Label = new Label({
       text: "⛶",
       size: 50,
     });
     const fullScreenButton: Button = new Button({
-      label,
+      label: fullscreenLabel,
       width: 50,
       backgroundColor: "rgba(0,0,0,0)",
       color: "white",
@@ -103,6 +107,28 @@ export class Game implements Observer {
     this.fullScreenButton = fullScreenButton;
 
     fullScreenButton.visible = !(window.navigator as any).standalone;
+
+
+    // Pause button.
+    const label: Label = new Label({
+      text: "⏸︎",
+      size: 50,
+    });
+    const pauseButton: Button = new Button({
+      label,
+      width: 50,
+      backgroundColor: "rgba(0,0,0,0)",
+      color: "white",
+      height: 50,
+    });
+    pauseButton.tap(() => {
+      this.pause.toggle();
+    });
+    pauseButton.addTo(S).pos(W - pauseButton.width, 0);
+    this.pauseButton = pauseButton;
+
+    // Pause
+    this.pause = new Pause(this.getCategories()); // Categories are used to display a help message with the legend of the board.
   }
 
   public update(observableSubject: ObservableSubject): void {
@@ -273,22 +299,6 @@ export class Game implements Observer {
   }
 
   private showPopUpCurrentPlayer(): void {
-    new Label({
-      text: 'C\'est au tour de ' + this.currentPlayer.name + ' de jouer !',
-      labelWidth: W / 3,
-      labelHeight: H / 3,
-      align: CENTER,
-      backgroundColor: this.currentPlayer.pawn.color,
-      corner: 5,
-      font: "Freckle Face",
-      color: white
-    })
-      .center()
-      .animate({
-        props: {scale: 0},
-        time: 1.5,
-        rewind: true,
-        from: true
-      });
+    new AnimatePopup(this.currentPlayer.name, this.currentPlayer.pawn.color).makeAnimation();
   }
 }
