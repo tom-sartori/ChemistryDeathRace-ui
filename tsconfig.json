@@ -38,16 +38,16 @@
       "@shared/*": [
         "src/app/shared/*"
       ],
-      "@classes/*": [
+      "@ui-classes/*": [
         "src/app/ui/classes/*"
       ],
       "@ui-components/*": [
         "src/app/ui/components/*"
       ],
-      "@constants/*": [
+      "@ui-constants/*": [
         "src/app/ui/constants/*"
       ],
-      "@observers/*": [
+      "@ui-observers/*": [
         "src/app/ui/observers/*"
       ]
     }

@@ -1,4 +1,4 @@
-import { Pawn } from '@classes/player/pawn';
+import { Pawn } from '@ui-classes/player/pawn';
 
 export class Player {
 

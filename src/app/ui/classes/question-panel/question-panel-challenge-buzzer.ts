@@ -1,8 +1,8 @@
 import { Panel } from '@ui-components/panel';
 import { Question } from '@models/question/question.model';
-import { Game } from '@classes/game';
-import { QuestionPanelChallengeAnswer } from '@classes/question-panel/question-panel-challenge-answer';
-import { Player } from '@classes/player/player';
+import { Game } from '@ui-classes/game';
+import { QuestionPanelChallengeAnswer } from '@ui-classes/question-panel/question-panel-challenge-answer';
+import { Player } from '@ui-classes/player/player';
 
 export class QuestionPanelChallengeBuzzer extends Panel {
 

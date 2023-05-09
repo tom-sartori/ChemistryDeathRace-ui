@@ -1,8 +1,8 @@
 import { Question } from '@models/question/question.model';
 import { Proposition } from '@models/question/proposition.model';
-import { Game } from '@classes/game';
+import { Game } from '@ui-classes/game';
 import { Panel } from '@ui-components/panel';
-import { QuestionPanelResult } from '@classes/question-panel/question-panel-result';
+import { QuestionPanelResult } from '@ui-classes/question-panel/question-panel-result';
 
 export class QuestionPanelClassic extends Panel {
 

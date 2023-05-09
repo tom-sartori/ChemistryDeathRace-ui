@@ -1,5 +1,5 @@
-import { framePaddingProportion, podiumColors, podiumLabelColors } from '@constants/ui-constants';
-import { Player } from '@classes/player/player';
+import { framePaddingProportion, podiumColors, podiumLabelColors } from '@ui-constants/ui-constants';
+import { Player } from '@ui-classes/player/player';
 
 export class Step extends Tile {
 

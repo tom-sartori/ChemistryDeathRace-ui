@@ -1,4 +1,4 @@
-import { framePadding, panelMargin, questionPanelBackgroundColor, } from '@constants/ui-constants';
+import { framePadding, panelMargin, questionPanelBackgroundColor, } from '@ui-constants/ui-constants';
 import { Label } from '@ui-components/label';
 import { Button } from '@ui-components/button';
 

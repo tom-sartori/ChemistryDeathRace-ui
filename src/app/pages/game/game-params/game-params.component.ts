@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ParamsService } from '@services/params.service';
 import { QuestionService } from '@services/question.service';
 import { Router } from '@angular/router';
-import { maxNumberOfPlayer } from '@constants/game-constants';
+import { maxNumberOfPlayer } from '@ui-constants/game-constants';
 import { AppConstants } from '@app/app.constants';
 
 @Component({

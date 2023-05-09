@@ -1,9 +1,9 @@
 import { Panel } from '@ui-components/panel';
-import { Game } from '@classes/game';
+import { Game } from '@ui-classes/game';
 import { Question } from '@models/question/question.model';
 import { Proposition } from '@models/question/proposition.model';
-import { Player } from '@classes/player/player';
-import { QuestionPanelResult } from '@classes/question-panel/question-panel-result';
+import { Player } from '@ui-classes/player/player';
+import { QuestionPanelResult } from '@ui-classes/question-panel/question-panel-result';
 
 export class QuestionPanelValidation extends Panel {
 

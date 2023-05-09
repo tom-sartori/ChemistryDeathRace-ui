@@ -1,5 +1,5 @@
-import { Player } from '@classes/player/player';
-import { Step } from '@classes/end-of-game/step';
+import { Player } from '@ui-classes/player/player';
+import { Step } from '@ui-classes/end-of-game/step';
 
 export class Podium extends Tile {
 

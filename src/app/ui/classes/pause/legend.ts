@@ -1,5 +1,5 @@
 import { Label } from '@ui-components/label';
-import { spaceColors } from '@constants/ui-constants';
+import { spaceColors } from '@ui-constants/ui-constants';
 
 
 export class Legend extends Tile {

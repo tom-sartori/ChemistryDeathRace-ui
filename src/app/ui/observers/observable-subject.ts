@@ -1,5 +1,5 @@
-import { Space } from '@classes/board/space/space';
-import { Player } from '@classes/player/player';
+import { Space } from '@ui-classes/board/space/space';
+import { Player } from '@ui-classes/player/player';
 
 export enum ObservableSubjectKind {
   diceChanged,

@@ -1,5 +1,5 @@
-import { Space } from '@classes/board/space/space';
-import { SpaceDisplay } from '@classes/board/space/space-display';
+import { Space } from '@ui-classes/board/space/space';
+import { SpaceDisplay } from '@ui-classes/board/space/space-display';
 import { Label } from '@ui-components/label';
 
 export class SpaceChallenge extends Space {

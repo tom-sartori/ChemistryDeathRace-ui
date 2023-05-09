@@ -1,5 +1,5 @@
 import { Label } from '@ui-components/label';
-import { buttonCorner, buttonPadding } from '@constants/ui-constants';
+import { buttonCorner, buttonPadding } from '@ui-constants/ui-constants';
 
 export class Button extends zim.Button {
 

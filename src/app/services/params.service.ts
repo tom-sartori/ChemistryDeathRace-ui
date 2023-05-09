@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { defaultDiceSize, defaultNumberOfPlayer } from '@constants/game-constants';
+import { defaultDiceSize, defaultNumberOfPlayer } from '@ui-constants/game-constants';
 import { Question } from '@models/question/question.model';
 
 @Injectable({

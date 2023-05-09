@@ -1,6 +1,6 @@
-import { Dice } from '@classes/left-section/dice-group/dice';
-import { Observer } from '@observers/observer';
-import { labelSizeProportion } from '@constants/ui-constants';
+import { Dice } from '@ui-classes/left-section/dice-group/dice';
+import { Observer } from '@ui-observers/observer';
+import { labelSizeProportion } from '@ui-constants/ui-constants';
 import { Button } from '@ui-components/button';
 
 export class DiceGroup extends Tile {

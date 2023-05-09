@@ -1,7 +1,7 @@
-import { labelSizeProportion, numberOfRoll, timeBetweenRoll } from '@constants/ui-constants';
-import { Observable } from '@observers/observable';
-import { Observer } from '@observers/observer';
-import { ObservableSubjectDiceChanged } from '@observers/observable-subject';
+import { labelSizeProportion, numberOfRoll, timeBetweenRoll } from '@ui-constants/ui-constants';
+import { Observable } from '@ui-observers/observable';
+import { Observer } from '@ui-observers/observer';
+import { ObservableSubjectDiceChanged } from '@ui-observers/observable-subject';
 import { random } from 'lodash';
 
 export class Dice extends Rectangle implements Observable {

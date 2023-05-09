@@ -3,7 +3,7 @@ import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from
 import { ParamsService } from '@services/params.service';
 import { Router } from '@angular/router';
 import { AppConstants } from '@app/app.constants';
-import { pawnColors } from '@constants/ui-constants';
+import { pawnColors } from '@ui-constants/ui-constants';
 import { forEach } from 'lodash';
 
 @Component({

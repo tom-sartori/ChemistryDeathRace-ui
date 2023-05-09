@@ -1,8 +1,8 @@
-import { Observer } from '@observers/observer';
-import { Board } from '@classes/board/board';
-import { LeftSection } from '@classes/left-section/left-section';
-import { Player } from '@classes/player/player';
 import { Question } from '@models/question/question.model';
+import { AnimatePopup } from '@ui-components/animate-popup';
+import { Board } from '@ui-classes/board/board';
+import { Pawn } from '@ui-classes/player/pawn';
+import { Player } from '@ui-classes/player/player';
 import {
   boardWidthProportion,
   framePaddingProportion,
@@ -10,18 +10,18 @@ import {
   pawnColors,
   pawnDiameterProportion,
   spaceMargin
-} from '@constants/ui-constants';
-import { boardCols, boardRows } from '@constants/game-constants';
-import { Pawn } from '@classes/player/pawn';
-import { ObservableSubject, ObservableSubjectKind } from '@observers/observable-subject';
-import { EndOfGame } from '@classes/end-of-game/end-of-game';
-import { QuestionPanelShowQuestion } from '@classes/question-panel/question-panel-show-question';
-import { Space } from '@classes/board/space/space';
-import { SpacePipe } from '@classes/board/space/space-pipe';
-import { SpaceClassic } from '@classes/board/space/space-classic';
-import { SpaceChallenge } from '@classes/board/space/space-challenge';
-import { Pause } from '@classes/pause/pause';
-import { AnimatePopup } from '@ui-components/animate-popup';
+} from '@ui-constants/ui-constants';
+import { boardCols, boardRows } from '@ui-constants/game-constants';
+import { Pause } from '@ui-classes/pause/pause';
+import { LeftSection } from '@ui-classes/left-section/left-section';
+import { ObservableSubject, ObservableSubjectKind } from '@ui-observers/observable-subject';
+import { Space } from '@ui-classes/board/space/space';
+import { EndOfGame } from '@ui-classes/end-of-game/end-of-game';
+import { SpaceClassic } from '@ui-classes/board/space/space-classic';
+import { QuestionPanelShowQuestion } from '@ui-classes/question-panel/question-panel-show-question';
+import { SpacePipe } from '@ui-classes/board/space/space-pipe';
+import { SpaceChallenge } from '@ui-classes/board/space/space-challenge';
+import { Observer } from '@ui-observers/observer';
 
 const originalAddEventListener = EventTarget.prototype.addEventListener;
 

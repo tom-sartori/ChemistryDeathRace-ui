@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ParamsService } from '@services/params.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Question } from '@models/question/question.model';
-import { backgroundColor } from '@constants/ui-constants';
-import { Game } from '@classes/game';
+import { backgroundColor } from '@ui-constants/ui-constants';
+import { Game } from '@ui-classes/game';
 
 @Component({
   selector: 'app-game-play',

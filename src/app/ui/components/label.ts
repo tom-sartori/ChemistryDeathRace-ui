@@ -1,4 +1,4 @@
-import { font, labelMaxSize, labelPadding, labelSizeProportion } from '@constants/ui-constants';
+import { font, labelMaxSize, labelPadding, labelSizeProportion } from '@ui-constants/ui-constants';
 
 export class Label extends zim.Label {
 

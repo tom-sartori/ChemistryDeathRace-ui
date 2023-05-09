@@ -1,12 +1,12 @@
-import { spaceColors } from "@constants/ui-constants";
+import { spaceColors } from "@ui-constants/ui-constants";
 import { Observer } from '@app/ui/observers/observer';
-import { Coil } from '@classes/board/coil';
-import { Pawn } from '@classes/player/pawn';
-import { Space } from '@classes/board/space/space';
-import { SpaceDisplay } from '@classes/board/space/space-display';
-import { SpacePipe } from '@classes/board/space/space-pipe';
-import { SpaceClassic } from '@classes/board/space/space-classic';
-import { SpaceChallenge } from '@classes/board/space/space-challenge';
+import { Coil } from '@ui-classes/board/coil';
+import { Pawn } from '@ui-classes/player/pawn';
+import { Space } from '@ui-classes/board/space/space';
+import { SpaceDisplay } from '@ui-classes/board/space/space-display';
+import { SpacePipe } from '@ui-classes/board/space/space-pipe';
+import { SpaceClassic } from '@ui-classes/board/space/space-classic';
+import { SpaceChallenge } from '@ui-classes/board/space/space-challenge';
 
 export class Board extends Container {
 

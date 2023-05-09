@@ -1,6 +1,6 @@
-import { Legend } from '@classes/pause/legend';
+import { Legend } from '@ui-classes/pause/legend';
 import { Button } from '@ui-components/button';
-import { framePadding } from '@constants/ui-constants';
+import { framePadding } from '@ui-constants/ui-constants';
 import { Label } from '@ui-components/label';
 
 export class Pause extends Pane {

@@ -1,4 +1,4 @@
-import { labelSizeProportion } from '@constants/ui-constants';
+import { labelSizeProportion } from '@ui-constants/ui-constants';
 
 export class PlayerNameGroup extends Tile {
 

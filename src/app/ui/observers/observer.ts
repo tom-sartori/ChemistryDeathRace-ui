@@ -1,4 +1,4 @@
-import { ObservableSubject } from '@observers/observable-subject';
+import { ObservableSubject } from '@ui-observers/observable-subject';
 
 export interface Observer {
 

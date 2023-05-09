@@ -1,6 +1,6 @@
-import { Space } from '@classes/board/space/space';
-import { SpaceDisplay } from '@classes/board/space/space-display';
-import { pipeBackgroundColor } from '@constants/ui-constants';
+import { Space } from '@ui-classes/board/space/space';
+import { SpaceDisplay } from '@ui-classes/board/space/space-display';
+import { pipeBackgroundColor } from '@ui-constants/ui-constants';
 import { Label } from '@ui-components/label';
 
 export class SpacePipe extends Space {

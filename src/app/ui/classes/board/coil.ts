@@ -1,10 +1,10 @@
-import { boardCols, boardRows, numberOfSpaces } from '@constants/game-constants';
-import { timeBetweenMove } from '@constants/ui-constants';
+import { boardCols, boardRows, numberOfSpaces } from '@ui-constants/game-constants';
+import { timeBetweenMove } from '@ui-constants/ui-constants';
 import { Observable } from '@app/ui/observers/observable';
 import { Observer } from '@app/ui/observers/observer';
-import { Space } from '@classes/board/space/space';
-import { ObservableSubjectPawnMoved } from '@observers/observable-subject';
-import { Pawn } from '@classes/player/pawn';
+import { Space } from '@ui-classes/board/space/space';
+import { ObservableSubjectPawnMoved } from '@ui-observers/observable-subject';
+import { Pawn } from '@ui-classes/player/pawn';
 
 export class Coil extends Tile implements Observable {
 

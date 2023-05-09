@@ -3,9 +3,9 @@ import { Proposition } from '@models/question/proposition.model';
 import { Observable } from '@app/ui/observers/observable';
 import { Observer } from '@app/ui/observers/observer';
 import { Panel } from '@ui-components/panel';
-import { ObservableSubjectChallengeAnswered, ObservableSubjectPlayerAnswered } from '@observers/observable-subject';
-import { Game } from '@classes/game';
-import { Player } from '@classes/player/player';
+import { ObservableSubjectChallengeAnswered, ObservableSubjectPlayerAnswered } from '@ui-observers/observable-subject';
+import { Game } from '@ui-classes/game';
+import { Player } from '@ui-classes/player/player';
 
 export class QuestionPanelResult extends Panel implements Observable {
 

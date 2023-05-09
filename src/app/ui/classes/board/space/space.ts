@@ -1,6 +1,6 @@
-import { onStopOnSpaceAnimationTimeout, spaceMargin } from '@constants/ui-constants';
-import { Pawn } from '@classes/player/pawn';
-import { SpaceDisplay } from '@classes/board/space/space-display';
+import { onStopOnSpaceAnimationTimeout, spaceMargin } from '@ui-constants/ui-constants';
+import { Pawn } from '@ui-classes/player/pawn';
+import { SpaceDisplay } from '@ui-classes/board/space/space-display';
 import { isEqual } from 'lodash';
 import { Label } from '@ui-components/label';
 

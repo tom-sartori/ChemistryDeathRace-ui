@@ -1,6 +1,6 @@
-import { backgroundColorLighter, framePaddingProportion } from '@constants/ui-constants';
-import { Podium } from '@classes/end-of-game/podium';
-import { Player } from '@classes/player/player';
+import { backgroundColorLighter, framePaddingProportion } from '@ui-constants/ui-constants';
+import { Podium } from '@ui-classes/end-of-game/podium';
+import { Player } from '@ui-classes/player/player';
 import { min } from 'lodash';
 
 export class EndOfGame extends Tile {

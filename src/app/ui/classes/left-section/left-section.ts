@@ -1,8 +1,8 @@
-import { DiceGroup } from '@classes/left-section/dice-group/dice-group';
-import { PlayerNameGroup } from '@classes/left-section/player-group/player-name-group';
-import { Player } from '@classes/player/player';
-import { labelSizeProportion } from '@constants/ui-constants';
-import { Observer } from '@observers/observer';
+import { DiceGroup } from '@ui-classes/left-section/dice-group/dice-group';
+import { PlayerNameGroup } from '@ui-classes/left-section/player-group/player-name-group';
+import { Player } from '@ui-classes/player/player';
+import { labelSizeProportion } from '@ui-constants/ui-constants';
+import { Observer } from '@ui-observers/observer';
 
 export class LeftSection extends Tile {
 

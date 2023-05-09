@@ -1,10 +1,10 @@
 import { Question } from '@models/question/question.model';
-import { Game } from '@classes/game';
+import { Game } from '@ui-classes/game';
 import { Panel } from '@ui-components/panel';
-import { QuestionPanelClassic } from '@classes/question-panel/question-panel-classic';
-import { SpaceClassic } from '@classes/board/space/space-classic';
-import { SpaceChallenge } from '@classes/board/space/space-challenge';
-import { QuestionPanelChallengeBuzzer } from '@classes/question-panel/question-panel-challenge-buzzer';
+import { QuestionPanelClassic } from '@ui-classes/question-panel/question-panel-classic';
+import { SpaceClassic } from '@ui-classes/board/space/space-classic';
+import { SpaceChallenge } from '@ui-classes/board/space/space-challenge';
+import { QuestionPanelChallengeBuzzer } from '@ui-classes/question-panel/question-panel-challenge-buzzer';
 
 export class QuestionPanelShowQuestion extends Panel {
 
