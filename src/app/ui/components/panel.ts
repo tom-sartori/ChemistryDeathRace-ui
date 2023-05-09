@@ -1,4 +1,4 @@
-import { framePadding, panelMargin, } from '@constants/ui-constants';
+import { framePadding, panelMargin, questionPanelBackgroundColor, } from '@constants/ui-constants';
 import { Label } from '@ui-components/label';
 import { Button } from '@ui-components/button';
 
@@ -55,7 +55,7 @@ export abstract class Panel extends zim.Panel {
     super({
       width, height,
       titleBar: config.titleBar,
-      backgroundColor: config.backgroundColor,
+      backgroundColor: config.backgroundColor ?? questionPanelBackgroundColor,
       draggable: false,
       boundary: new Boundary(0, 0, W, H).contract(panelMargin, panelMargin, width + panelMargin, height + panelMargin),
       content: {
