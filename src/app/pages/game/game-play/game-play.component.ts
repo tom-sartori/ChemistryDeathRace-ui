@@ -59,11 +59,18 @@ export class GamePlayComponent implements OnInit {
       if (localStorage.getItem(AppConstants.LOCAL_STORAGE.GAME_PARAMS)) {
         try {
           const params = JSON.parse(localStorage.getItem(AppConstants.LOCAL_STORAGE.GAME_PARAMS)!);
+
+          const assets = [
+            // {font: "Freckle Face", src: "assets/fonts/Freckle_Face/FreckleFace-Regular.ttf"},
+            "category1.png"
+          ]
+
           new Frame({
             scaling: FULL,
             color: backgroundColor,
             outerColor: backgroundColor,
-            assets: {font: "Freckle Face", image: "src/assets/fonts/Freckle_Face/FreckleFace-Regular.ttf"},
+            assets,
+            path: "assets/images/",
             ready: (): void => {
               new Game(params.playerNames, params.questions, params.diceSize);
             }
@@ -78,11 +85,25 @@ export class GamePlayComponent implements OnInit {
     }
     else {
       let firstMove: number | undefined = parseInt(this.route.snapshot.paramMap.get('firstMove')!);
+      const assets = [
+        // {font: "Freckle Face", src: "assets/fonts/Freckle_Face/FreckleFace-Regular.ttf"},
+        "category1.png",
+        "category2.png",
+        "category3.png",
+        "category4.png",
+        "category5.png",
+        "category6.png",
+        "start.png",
+        "end.png",
+        "pipe-plus.png",
+        "pipe-minus.png"
+      ]
       new Frame({
         scaling: FULL,
         color: backgroundColor,
         outerColor: backgroundColor,
-        assets: {font: "Freckle Face", image: "src/assets/fonts/Freckle_Face/FreckleFace-Regular.ttf"},
+        assets,
+        path: "assets/images/",
         ready: (): void => {
           let game = new Game(['Jean', 'Michel', 'Denis', 'Henry'], questions, 99);
           if (firstMove) {

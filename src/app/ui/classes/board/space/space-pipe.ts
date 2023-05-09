@@ -8,7 +8,7 @@ export class SpacePipe extends Space {
   public readonly length: number;
 
   constructor(text: string, sideSize: number, length: number, spaceDisplay?: SpaceDisplay) {
-    super(pipeBackgroundColor, text, sideSize, spaceDisplay);
+    super(pipeBackgroundColor, text, sideSize, spaceDisplay, length > 0 ? 'pipe-plus.png' : 'pipe-minus.png');
 
     this.length = length;
 
@@ -17,6 +17,6 @@ export class SpacePipe extends Space {
       color: black,
       size: 15
     }).center(this)
-      .mov(0, 0 / 2 - 15);
+      .mov(0, this.height / 2 - 15);
   }
 }
