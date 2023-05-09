@@ -4,11 +4,11 @@ import { SpaceDisplay } from '@ui-classes/board/space/space-display';
 import { isEqual } from 'lodash';
 import { Label } from '@ui-components/label';
 
-export abstract class Space extends Rectangle {
+export class Space extends Rectangle {
 
   public pawns: Pawn[];
 
-  protected constructor(color: GradientColor, text: string, sideSize: number, spaceDisplay: SpaceDisplay = SpaceDisplay.HORIZONTAL) {
+  constructor(color: GradientColor, text: string, sideSize: number, spaceDisplay: SpaceDisplay = SpaceDisplay.HORIZONTAL) {
     const width: number = sideSize;
     let height: number = sideSize;
     let corner: number[];   // [topLeft, topRight, bottomRight, bottomLeft]

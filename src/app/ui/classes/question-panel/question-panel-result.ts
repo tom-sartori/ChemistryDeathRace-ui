@@ -41,7 +41,6 @@ export class QuestionPanelResult extends Panel implements Observable {
   }
 
   public notifyAll = (config: { isAnswerCorrect: boolean, overrideNextPlayer?: Player }): void => {
-    console.log(config);
     if (config.overrideNextPlayer) {
       // Player answered at a challenge. We override the next player.
       this.observers.forEach((observer: Observer) => observer.update(new ObservableSubjectChallengeAnswered(config.isAnswerCorrect, config.overrideNextPlayer!)));
