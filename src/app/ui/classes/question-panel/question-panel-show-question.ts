@@ -5,6 +5,7 @@ import { QuestionPanelClassic } from '@ui-classes/question-panel/question-panel-
 import { SpaceClassic } from '@ui-classes/board/space/space-classic';
 import { SpaceChallenge } from '@ui-classes/board/space/space-challenge';
 import { QuestionPanelChallengeBuzzer } from '@ui-classes/question-panel/question-panel-challenge-buzzer';
+import { QuestionPanelSingle } from '@ui-classes/question-panel/question-panel-single';
 
 export class QuestionPanelShowQuestion extends Panel {
 
@@ -30,7 +31,9 @@ export class QuestionPanelShowQuestion extends Panel {
           function: (): void => {
             switch (questionType) {
               case SpaceClassic:
-                this.switchTo(new QuestionPanelClassic(question, observer));
+                question.propositions.length == 1 ?
+                  this.switchTo(new QuestionPanelSingle(question, observer)) :
+                  this.switchTo(new QuestionPanelClassic(question, observer));
                 break;
               case SpaceChallenge:
                 this.switchTo(new QuestionPanelChallengeBuzzer(question, observer));

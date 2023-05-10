@@ -1,4 +1,9 @@
-import { framePadding, panelMargin, questionPanelBackgroundColor, } from '@ui-constants/ui-constants';
+import {
+  boardWidthProportion,
+  framePaddingProportion,
+  panelMargin,
+  questionPanelBackgroundColor,
+} from '@ui-constants/ui-constants';
 import { Label } from '@ui-components/label';
 import { Button } from '@ui-components/button';
 
@@ -11,8 +16,9 @@ export abstract class Panel extends zim.Panel {
     buttons?: { text: string, function: Function, backgroundColor?: GradientColor }[],
     backgroundColor?: GradientColor
   }) {
-    const width: number = W - (framePadding * 2);
-    const height: number = H - (framePadding * 2);
+    // W < H ? Portrait : Landscape.
+    const width: number = W < H ? W - (W * framePaddingProportion * 2) : W * boardWidthProportion;
+    const height: number = W < H ? H - (H * framePaddingProportion * 2) : H * boardWidthProportion;
 
     const tileWidth: number = width;
     const tileHeight: number = height / 2;

@@ -34,7 +34,7 @@ export class GamePlayComponent implements OnInit {
       "category": "Catégorie 3",
       "difficulty": "Test",
       "name": "Question 3",
-      "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
+      "propositions": [{"answer": true, "name": "Oui"}]
     }, {
       "id": "64490e7d03f23863160746bb",
       "category": "Catégorie 4",
