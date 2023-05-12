@@ -24,14 +24,15 @@ export class GamePlayersComponent implements OnInit {
   ) {
     this.playersName = [];
     this.playersColor = [];
-    forEach(pawnColors, (value: GradientColor) => {
+    forEach(pawnColors, (value: GradientColor) => { // Get the colors of each pawn from the constants
       this.playersColor.push(value.toString());
     });
   }
 
+  // Init the page
   ngOnInit(): void {
     this.localStorage = JSON.parse(localStorage.getItem(AppConstants.LOCAL_STORAGE.GAME_PARAMS) || '{}');
-    if (!this.localStorage.playersNumber) {
+    if (!this.localStorage.playersNumber) { // If the user try to access the page without set the number of players before
       this.router.navigateByUrl(AppConstants.ROUTES.GAME_PARAMS);
     }
     else {
@@ -39,6 +40,7 @@ export class GamePlayersComponent implements OnInit {
     }
   }
 
+  // Function to init the form
   private initMainForm() {
     this.mainForm = this.formBuilder.group({});
     for (let i = 0; i < this.localStorage.playersNumber; i++) {
@@ -48,6 +50,7 @@ export class GamePlayersComponent implements OnInit {
     this.mainForm.setValidators(this.differentNamesValidator());
   }
 
+  // Validator to check if the players name are different
   differentNamesValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
       let names: string[] = [];
@@ -59,6 +62,7 @@ export class GamePlayersComponent implements OnInit {
     };
   }
 
+  // Function to get the error message from the form
   getErrorMessage(): string {
     if (this.mainForm.hasError('differentNames') && this.mainForm.dirty) {
       return 'Les noms des joueurs doivent être différents';
@@ -71,6 +75,7 @@ export class GamePlayersComponent implements OnInit {
     }
   }
 
+  // Function save the players name and launch the game
   goToGame() {
     for (let i = 0; i < this.localStorage.playersNumber; i++) {
       this.playersName[i] = this.mainForm.get(`player${i + 1}`)!.value;
@@ -82,6 +87,7 @@ export class GamePlayersComponent implements OnInit {
     this.router.navigateByUrl(AppConstants.ROUTES.GAME_PLAY);
   }
 
+  // Function to go back to game params
   goToParams() {
     this.router.navigateByUrl(AppConstants.ROUTES.GAME_PARAMS)
   }

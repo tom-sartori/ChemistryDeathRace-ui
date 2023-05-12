@@ -44,7 +44,7 @@ export class FullscreenButton extends Button {
     else {
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
       if (isIOS) {
-        alert("Pour utiliser ce site en mode plein écran, veuillez l'ajouter à votre écran d'accueil en cliquant sur l'icône de partage et en sélectionnant \"Ajouter à l'écran d'accueil\".");
+        alert("Pour utiliser ce site en mode plein écran, veuillez l'ajouter à votre écran d'accueil. Pour ce faire, depuis l'écran d'accueil du jeu, cliquer sur l'icône de partage et en sélectionner \"Ajouter à l'écran d'accueil\".");
       }
       else {
         alert("Le mode plein écran n'est pas pris en charge par ce navigateur.");

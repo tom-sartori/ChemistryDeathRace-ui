@@ -19,4 +19,6 @@ export class AppConstants {
   static LOCAL_STORAGE = class {
     public static readonly GAME_PARAMS = 'game-params';
   }
+
+  static FONT: string = "Ink Free";
 }

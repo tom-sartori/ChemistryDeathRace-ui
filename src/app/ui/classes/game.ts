@@ -25,6 +25,7 @@ import { Observer } from '@ui-observers/observer';
 import { FullscreenButton } from '@ui-components/fullscreen-button';
 import { Button } from '@ui-components/button';
 import { EventManager } from '@ui-classes/EventManager';
+import { shuffle } from 'lodash';
 
 new EventManager(); // Used to set default event listeners with passive: false.
 
@@ -58,7 +59,7 @@ export class Game implements Observer {
     this._currentPlayer = this.getFirstPlayer();
 
     // Questions.
-    this.questions = questions;
+    this.questions = shuffle(questions);
 
     // Board.
     this.board = new Board(spaceSideSize, pawns, this.getCategories());

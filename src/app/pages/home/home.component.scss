@@ -1,5 +1,5 @@
 @import "src/assets/styles/colors.scss";
-
+@import "src/assets/styles/font.scss";
 
 .title-wrapper {
   display: flex;
@@ -37,7 +37,7 @@
   box-shadow: $main-color 0 0 100px;
   background-color: transparent;
   color: $main-color;
-  font-family: "Freckle Face", cursive;
+  font-family: $app-font;
   font-size: min(5vw, 5vh);
 }
 

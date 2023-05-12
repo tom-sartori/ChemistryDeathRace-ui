@@ -3,6 +3,7 @@ import { Observable } from '@ui-observers/observable';
 import { Observer } from '@ui-observers/observer';
 import { ObservableSubjectDiceChanged } from '@ui-observers/observable-subject';
 import { random } from 'lodash';
+import { Label } from '@ui-components/label';
 
 export class Dice extends Rectangle implements Observable {
 
@@ -21,11 +22,6 @@ export class Dice extends Rectangle implements Observable {
     const label: Label = new Label({
       text: currentFace.toString(),
       color: black,
-      font: "Freckle Face",
-      labelWidth: labelSize,
-      labelHeight: labelSize,
-      align: 'center',
-      valign: 'center'
     })
 
     super(2 * labelSize, 2 * labelSize, white, undefined, undefined, 10);

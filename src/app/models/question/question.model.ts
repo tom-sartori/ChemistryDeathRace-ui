@@ -4,7 +4,7 @@ export class Question {
 
   constructor(
     public id: string,
-    public name: string,
+    public name: string, // The question itself
     public propositions: Proposition[],
     public category: string,
     public difficulty: string,

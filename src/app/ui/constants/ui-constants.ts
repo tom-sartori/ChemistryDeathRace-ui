@@ -1,3 +1,5 @@
+import { AppConstants } from '@app/app.constants';
+
 export const diceWidth: number = 100;
 export const diceHeight: number = 100;
 export const backgroundColor: GradientColor = "#13005A";
@@ -18,7 +20,7 @@ export const spaceMargin: number = 15;
 export const timeBetweenMove: number = 250;
 export const numberOfRoll: number = 40;
 export const timeBetweenRoll: number = 500;
-export const font: string = "Freckle Face";
+export const font: string = AppConstants.FONT;
 export const labelPadding: number = 15;
 export const labelMaxSize: number = 35;
 export const buttonCorner: number = 10;
