@@ -1,4 +1,5 @@
 import { Button } from '@ui-components/button';
+import { blue_enscm, turquoise_enscm } from '@ui-constants/ui-constants';
 
 export class FullscreenButton extends Button {
 
@@ -9,6 +10,8 @@ export class FullscreenButton extends Button {
       width: size,
       height: size,
       backgroundColor: "rgba(0,0,0,0)",
+      textColor: blue_enscm,
+      rollBackgroundColor: turquoise_enscm
     });
 
     this.tap(() => {

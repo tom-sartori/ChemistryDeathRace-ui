@@ -4,12 +4,14 @@ import { Board } from '@ui-classes/board/board';
 import { Pawn } from '@ui-classes/player/pawn';
 import { Player } from '@ui-classes/player/player';
 import {
+  blue_enscm,
   boardWidthProportion,
   framePaddingProportion,
   onStopOnSpaceAnimationTimeout,
   pawnColors,
   pawnDiameterProportion,
-  spaceMargin
+  spaceMargin,
+  turquoise_enscm
 } from '@ui-constants/ui-constants';
 import { boardCols, boardRows } from '@ui-constants/game-constants';
 import { Pause } from '@ui-classes/pause/pause';
@@ -76,13 +78,15 @@ export class Game implements Observer {
   }
 
   private initTopButtons(): void {
-    const size: number = 50;
-    new FullscreenButton(size).addTo(S);
+    const size: number = 175;
+    new FullscreenButton(size / 3).addTo(S);
     new Button({
-      text: "⏸︎",
+      text: "Catégories",
       width: size,
-      height: size,
+      height: size / 3,
       backgroundColor: "rgba(0,0,0,0)",
+      textColor: blue_enscm,
+      rollBackgroundColor: turquoise_enscm
     }).tap(() => {
       this.pause.toggle();
     }).addTo(S).pos(W - size, 0);

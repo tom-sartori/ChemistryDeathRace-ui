@@ -1,6 +1,6 @@
 import { Dice } from '@ui-classes/left-section/dice-group/dice';
 import { Observer } from '@ui-observers/observer';
-import { labelSizeProportion } from '@ui-constants/ui-constants';
+import { blue_enscm, labelSizeProportion, turquoise_enscm } from '@ui-constants/ui-constants';
 import { Button } from '@ui-components/button';
 
 export class DiceGroup extends Tile {
@@ -19,8 +19,8 @@ export class DiceGroup extends Tile {
     // Button.
     const rollButton: Button = new Button({
       text: "Lancer le dé",
-      backgroundColor: orange,
-      rollBackgroundColor: green
+      backgroundColor: turquoise_enscm,
+      rollBackgroundColor: blue_enscm
     });
 
     super(

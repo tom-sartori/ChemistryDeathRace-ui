@@ -3,19 +3,25 @@
 
 .title-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 20px;
   margin-top: 20vh;
   align-items: center;
   justify-content: center;
 }
 
-.title-wrapper > h1 {
+.title-wrapper > img {
+  width: 25vh;
+  margin-right: 20vh;
+}
+
+.content-wrapper > h1 {
   margin: 0;
   border-bottom: none;
   font-size: 10vh;
   line-height: 100%;
   text-align: center;
+  color: $blue-enscm;
 }
 
 .title-wrapper > h2 {
@@ -24,7 +30,7 @@
   font-size: 6vh;
   line-height: 100%;
   text-align: center;
-  color: $main-color;
+  color: $blue-enscm;
 }
 
 .play-button {
@@ -33,15 +39,15 @@
   height: 10vh;
   border-radius: 20px;
   cursor: pointer;
-  border: $main-color 1px solid;
-  box-shadow: $main-color 0 0 100px;
-  background-color: transparent;
-  color: $main-color;
+  border: $blue-enscm 1px solid;
+  box-shadow: $blue-enscm 0 0 100px;
+  background-color: $turquoise-enscm;
   font-family: $app-font;
+  color: white;
   font-size: min(5vw, 5vh);
 }
 
 .play-button:hover {
-  background-color: $main-color;
+  background-color: $blue-enscm;
   color: white;
 }

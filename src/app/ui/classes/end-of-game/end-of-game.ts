@@ -1,4 +1,4 @@
-import { backgroundColorLighter } from '@ui-constants/ui-constants';
+import { blue_enscm } from '@ui-constants/ui-constants';
 import { Podium } from '@ui-classes/end-of-game/podium';
 import { Player } from '@ui-classes/player/player';
 import { min } from 'lodash';
@@ -48,7 +48,7 @@ export class EndOfGame extends Tile {
     const emitter: Emitter = new Emitter({
       obj: new Circle({
         radius: 10,
-        color: backgroundColorLighter,
+        color: blue_enscm,
       }),
       width: W,
       height: H,

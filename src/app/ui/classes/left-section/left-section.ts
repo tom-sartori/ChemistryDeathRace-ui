@@ -13,10 +13,28 @@ export class LeftSection extends Tile {
 
     const diceGroup: DiceGroup = new DiceGroup(diceSize);
     const playerNameGroup: PlayerNameGroup = new PlayerNameGroup(currentPlayer.name, currentPlayer.pawn.color);
+    const gameLogo: Pic = new Pic("logos/logo_game.png").siz(playerNameGroup.height);
+    const umLogo: Pic = new Pic("logos/logo_um.png").siz(playerNameGroup.height * 2 / 3);
+    const enscmLogo: Pic = new Pic("logos/logo_enscm.png").siz(playerNameGroup.height * 2 / 3);
+
+    const institutionGroup: Tile = new Tile(
+      series([umLogo, enscmLogo]),
+      2, 1,
+      umLogo.width / 4, undefined,
+      undefined,
+      undefined, undefined,
+      undefined, undefined,
+      undefined, undefined,
+      "center", "center",
+      undefined,
+      undefined, undefined, undefined,
+      false
+    );
+
 
     super(
-      series([playerNameGroup, diceGroup]), // obj
-      1, 2,                             // cols, rows
+      series([institutionGroup, playerNameGroup, diceGroup, gameLogo]), // obj
+      1, 4,                             // cols, rows
       undefined, H * labelSizeProportion, // spacingH, spacingV
       undefined,                        // unique
       undefined, undefined,             // width, height

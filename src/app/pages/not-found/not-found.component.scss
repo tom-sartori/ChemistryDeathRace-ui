@@ -1,3 +1,5 @@
+@import "src/assets/styles/colors.scss";
+
 .img-wrapper {
   display: flex;
   flex-direction: column;
@@ -7,9 +9,9 @@
   max-width: 100%;
 }
 
-.img-wrapper > p {
+.img-wrapper > h1 {
   margin: 30px;
-  color: white;
+  color: $blue-enscm;
   font-size: x-large;
 }
 

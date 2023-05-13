@@ -1,4 +1,4 @@
-import { labelSizeProportion } from '@ui-constants/ui-constants';
+import { blue_enscm, labelSizeProportion } from '@ui-constants/ui-constants';
 import { Label } from '@ui-components/label';
 
 export class PlayerNameGroup extends Tile {
@@ -13,7 +13,7 @@ export class PlayerNameGroup extends Tile {
     let text: Label = new Label({
       text: "Joueur actuel",
       size: labelSize,
-      color: white,
+      color: blue_enscm,
     });
 
     // Player name label.

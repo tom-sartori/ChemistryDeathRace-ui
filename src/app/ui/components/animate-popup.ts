@@ -1,3 +1,5 @@
+import { font } from '@ui-constants/ui-constants';
+
 export class AnimatePopup {
 
   private readonly HORIZONTAL_CENTER: number;
@@ -30,7 +32,7 @@ export class AnimatePopup {
       align: CENTER,
       backgroundColor: currentPlayerColor,
       corner: 10,
-      font: "Freckle Face",
+      font,
       color: white,
     });
 

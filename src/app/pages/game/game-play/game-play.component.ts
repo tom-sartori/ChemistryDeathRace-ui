@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Question } from '@models/question/question.model';
-import { backgroundColor } from '@ui-constants/ui-constants';
+import { backgroundColor, images } from '@ui-constants/ui-constants';
 import { Game } from '@ui-classes/game';
 import { AppConstants } from '@app/app.constants';
 
@@ -54,16 +54,16 @@ export class GamePlayComponent implements OnInit {
       "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
     }]
 
+    const assets = [
+      {font: AppConstants.FONT.NAME, src: AppConstants.FONT.PATH},
+      "logos/logo_game.png", "logos/logo_enscm.png", "logos/logo_um.png",
+    ].concat(images);
+
     if (this.router.url === '/game/play') {
 
       if (localStorage.getItem(AppConstants.LOCAL_STORAGE.GAME_PARAMS)) {
         try {
           const params = JSON.parse(localStorage.getItem(AppConstants.LOCAL_STORAGE.GAME_PARAMS)!);
-
-          const assets = [
-            // {font: "Freckle Face", src: "assets/fonts/Freckle_Face/FreckleFace-Regular.ttf"},
-            "category1.png"
-          ]
 
           new Frame({
             scaling: FULL,
@@ -85,19 +85,6 @@ export class GamePlayComponent implements OnInit {
     }
     else {
       let firstMove: number | undefined = parseInt(this.route.snapshot.paramMap.get('firstMove')!);
-      const assets = [
-        // {font: "Freckle Face", src: "assets/fonts/Freckle_Face/FreckleFace-Regular.ttf"},
-        "category1.png",
-        "category2.png",
-        "category3.png",
-        "category4.png",
-        "category5.png",
-        "category6.png",
-        "start.png",
-        "end.png",
-        "pipe-plus.png",
-        "pipe-minus.png"
-      ]
       new Frame({
         scaling: FULL,
         color: backgroundColor,

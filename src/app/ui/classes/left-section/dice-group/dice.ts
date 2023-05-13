@@ -1,4 +1,10 @@
-import { labelSizeProportion, numberOfRoll, timeBetweenRoll } from '@ui-constants/ui-constants';
+import {
+  blue_enscm,
+  labelSizeProportion,
+  numberOfRoll,
+  timeBetweenRoll,
+  turquoise_enscm
+} from '@ui-constants/ui-constants';
 import { Observable } from '@ui-observers/observable';
 import { Observer } from '@ui-observers/observer';
 import { ObservableSubjectDiceChanged } from '@ui-observers/observable-subject';
@@ -21,10 +27,11 @@ export class Dice extends Rectangle implements Observable {
 
     const label: Label = new Label({
       text: currentFace.toString(),
-      color: black,
+      color: white,
+
     })
 
-    super(2 * labelSize, 2 * labelSize, white, undefined, undefined, 10);
+    super(2 * labelSize, 2 * labelSize, blue_enscm, turquoise_enscm, undefined, 10);
 
     this._currentFace = currentFace;
     this.diceSize = diceSize;

@@ -16,6 +16,7 @@
   font-size: 8vw;
   text-align: center;
   line-height: 100%;
+  color: $blue-enscm;
 }
 
 .params {
@@ -25,7 +26,7 @@
   justify-content: space-between;
   margin-top: 50px;
   width: 90%;
-  background-color: $main-color;
+  background-color: $blue-enscm;
   border-radius: 10px;
 }
 
@@ -36,7 +37,7 @@
   justify-content: space-between;
   width: 80%;
   padding: 20px;
-  color: $accent-color;
+  color: $background-color;
   font-size: 4vw;
 }
 
@@ -55,8 +56,8 @@
   text-align: center;
   border: none;
   border-radius: 4vw;
-  background-color: $accent-color;
-  color: $main-color;
+  background-color: $background-color;
+  color: $blue-enscm;
   cursor: default;
 }
 
@@ -66,7 +67,7 @@
   text-align: center;
   border: none;
   border-radius: 10px;
-  color: $accent-color;
+  color: $background-color;
   background-color: transparent;
   cursor: pointer;
   width: 5vw;
@@ -88,8 +89,8 @@
   font-family: $app-font;
   font-size: 4vw;
   width: 30vw;
-  color: $main-color;
-  background-color: $accent-color;
+  color: $blue-enscm;
+  background-color: $background-color;
   border: none;
   border-radius: 4vw;
 }
