@@ -5,7 +5,8 @@ export enum ObservableSubjectKind {
   diceChanged,
   PawnMoved,
   PlayerAnswered,
-  ChallengeAnswered
+  ChallengeAnswered,
+  GameEnded
 }
 
 export class ObservableSubjectDiceChanged {
@@ -30,7 +31,8 @@ export class ObservableSubjectPlayerAnswered {
   public kind: ObservableSubjectKind.PlayerAnswered = ObservableSubjectKind.PlayerAnswered;
 
   constructor(
-    public isAnswerCorrect: boolean
+    public isAnswerCorrect: boolean,
+    public questionId: string
   ) {
   }
 }
@@ -44,8 +46,16 @@ export class ObservableSubjectChallengeAnswered {
   }
 }
 
+export class ObservableSubjectGameEnded {
+  public kind: ObservableSubjectKind.GameEnded = ObservableSubjectKind.GameEnded;
+
+  constructor() {
+  }
+}
+
 export type ObservableSubject =
   ObservableSubjectDiceChanged
   | ObservableSubjectPawnMoved
   | ObservableSubjectPlayerAnswered
-  | ObservableSubjectChallengeAnswered;
+  | ObservableSubjectChallengeAnswered
+  | ObservableSubjectGameEnded;

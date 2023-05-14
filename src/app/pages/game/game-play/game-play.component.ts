@@ -3,57 +3,28 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Question } from '@models/question/question.model';
 import { backgroundColor, images } from '@ui-constants/ui-constants';
 import { Game } from '@ui-classes/game';
+import { Game as GameModel } from '@models/game/game.model';
 import { AppConstants } from '@app/app.constants';
+import { GameService } from '@services/game.service';
+import { Observer } from '@ui-observers/observer';
+import {
+  ObservableSubject,
+  ObservableSubjectGameEnded,
+  ObservableSubjectPlayerAnswered
+} from '@ui-observers/observable-subject';
 
 @Component({
   selector: 'app-game-play',
   templateUrl: './game-play.component.html',
   styleUrls: ['./game-play.component.scss']
 })
-export class GamePlayComponent implements OnInit {
+export class GamePlayComponent implements OnInit, Observer {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private gameService: GameService,
   ) {
-    const questions: Question[] = [{
-      "id": "64490e28b152c1016a10b16e",
-      "category": "Catégorie 1",
-      "difficulty": "Test",
-      "name": "Question 1",
-      "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-    }, {
-      "id": "64490e4e40e7dc4817d27f8c",
-      "category": "Catégorie 2",
-      "difficulty": "Test",
-      "name": "Question 2",
-      "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-    }, {
-      "id": "64490e6903f23863160746ba",
-      "category": "Catégorie 3",
-      "difficulty": "Test",
-      "name": "Question 3",
-      "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-    }, {
-      "id": "64490e7d03f23863160746bb",
-      "category": "Catégorie 4",
-      "difficulty": "Test",
-      "name": "Question 4",
-      "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-    }, {
-      "id": "64491265b89cfe0f175c4423",
-      "category": "Catégorie 5",
-      "difficulty": "Test",
-      "name": "Question 5",
-      "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-    }, {
-      "id": "64491288bde5e51b206dafaa",
-      "category": "Catégorie 6",
-      "difficulty": "Test",
-      "name": "Question 6",
-      "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-    }]
-
     const assets = [
       {font: AppConstants.FONT.NAME, src: AppConstants.FONT.PATH},
       "logos/logo_game.png", "logos/logo_enscm.png", "logos/logo_um.png",
@@ -64,7 +35,6 @@ export class GamePlayComponent implements OnInit {
       if (localStorage.getItem(AppConstants.LOCAL_STORAGE.GAME_PARAMS)) {
         try {
           const params = JSON.parse(localStorage.getItem(AppConstants.LOCAL_STORAGE.GAME_PARAMS)!);
-
           new Frame({
             scaling: FULL,
             color: backgroundColor,
@@ -72,7 +42,8 @@ export class GamePlayComponent implements OnInit {
             assets,
             path: "assets/images/",
             ready: (): void => {
-              new Game(params.playerNames, params.questions, params.diceSize);
+              const game: Game = new Game(params.playerNames, params.questions, params.diceSize);
+              game.subscribe(this);
             }
           });
         } catch (e) {
@@ -85,6 +56,43 @@ export class GamePlayComponent implements OnInit {
     }
     else {
       let firstMove: number | undefined = parseInt(this.route.snapshot.paramMap.get('firstMove')!);
+      const questions: Question[] = [{
+        "id": "64490e28b152c1016a10b16e",
+        "category": "Catégorie 1",
+        "difficulty": "Test",
+        "name": "Question 1",
+        "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
+      }, {
+        "id": "64490e4e40e7dc4817d27f8c",
+        "category": "Catégorie 2",
+        "difficulty": "Test",
+        "name": "Question 2",
+        "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
+      }, {
+        "id": "64490e6903f23863160746ba",
+        "category": "Catégorie 3",
+        "difficulty": "Test",
+        "name": "Question 3",
+        "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
+      }, {
+        "id": "64490e7d03f23863160746bb",
+        "category": "Catégorie 4",
+        "difficulty": "Test",
+        "name": "Question 4",
+        "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
+      }, {
+        "id": "64491265b89cfe0f175c4423",
+        "category": "Catégorie 5",
+        "difficulty": "Test",
+        "name": "Question 5",
+        "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
+      }, {
+        "id": "64491288bde5e51b206dafaa",
+        "category": "Catégorie 6",
+        "difficulty": "Test",
+        "name": "Question 6",
+        "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
+      }]
       new Frame({
         scaling: FULL,
         color: backgroundColor,
@@ -102,5 +110,19 @@ export class GamePlayComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  update(observableSubject: ObservableSubject): void {
+    const game: GameModel = localStorage.getItem(AppConstants.LOCAL_STORAGE.GAME) ? JSON.parse(localStorage.getItem(AppConstants.LOCAL_STORAGE.GAME)!) : null;
+    if (!game) {
+      return;
+    }
+    if (observableSubject instanceof ObservableSubjectPlayerAnswered) {
+      this.gameService.sendResult(game.id, observableSubject.questionId, observableSubject.isAnswerCorrect).subscribe();
+    }
+    else if (observableSubject instanceof ObservableSubjectGameEnded) {
+      this.gameService.endGame(game.id).subscribe();
+      localStorage.removeItem(AppConstants.LOCAL_STORAGE.GAME);
+    }
   }
 }

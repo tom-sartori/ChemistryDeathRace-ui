@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AppConstants } from '@app/app.constants';
 import { pawnColors } from '@ui-constants/ui-constants';
 import { forEach } from 'lodash';
+import { GameService } from '@services/game.service';
 
 @Component({
   selector: 'app-game-players',
@@ -15,15 +16,18 @@ export class GamePlayersComponent implements OnInit {
   public mainForm!: FormGroup;
   public playersName: string[];
   public playersColor: string[];
+  public loading: boolean;
 
   private localStorage: any;
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private gameService: GameService
   ) {
     this.playersName = [];
     this.playersColor = [];
+    this.loading = false;
     forEach(pawnColors, (value: GradientColor) => { // Get the colors of each pawn from the constants
       this.playersColor.push(value.toString());
     });
@@ -84,7 +88,12 @@ export class GamePlayersComponent implements OnInit {
     this.localStorage.playerNames = this.playersName;
     localStorage.setItem(AppConstants.LOCAL_STORAGE.GAME_PARAMS, JSON.stringify(this.localStorage));
 
-    this.router.navigateByUrl(AppConstants.ROUTES.GAME_PLAY);
+    this.loading = true;
+    this.gameService.createNewGame(this.localStorage.playersNumber, this.localStorage.difficulty, this.localStorage.diceSize).subscribe((game) => {
+      localStorage.setItem(AppConstants.LOCAL_STORAGE.GAME, JSON.stringify(game));
+      this.loading = false;
+      this.router.navigateByUrl(AppConstants.ROUTES.GAME_PLAY);
+    });
   }
 
   // Function to go back to game params

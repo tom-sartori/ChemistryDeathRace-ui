@@ -10,6 +10,7 @@ import { Player } from '@ui-classes/player/player';
 export class QuestionPanelResult extends Panel implements Observable {
 
   private observers: Observer[];
+  private question: Question;
 
   constructor(question: Question, observer: Game, isAnswerCorrect: boolean, overrideNextPlayer?: Player) {
     const answer: Proposition = question.propositions.find(proposition => proposition.answer)!;
@@ -30,6 +31,7 @@ export class QuestionPanelResult extends Panel implements Observable {
       ]
     });
 
+    this.question = question;
     this.observers = [];
     this.subscribe(observer);
   }
@@ -47,7 +49,7 @@ export class QuestionPanelResult extends Panel implements Observable {
     }
     else {
       // Player answered at a classic question. We do not override the next player.
-      this.observers.forEach((observer: Observer) => observer.update(new ObservableSubjectPlayerAnswered(value)));
+      this.observers.forEach((observer: Observer) => observer.update(new ObservableSubjectPlayerAnswered(value, this.question.id)));
     }
   }
 }

@@ -16,7 +16,12 @@ import {
 import { boardCols, boardRows } from '@ui-constants/game-constants';
 import { Pause } from '@ui-classes/pause/pause';
 import { LeftSection } from '@ui-classes/left-section/left-section';
-import { ObservableSubject, ObservableSubjectKind } from '@ui-observers/observable-subject';
+import {
+  ObservableSubject,
+  ObservableSubjectGameEnded,
+  ObservableSubjectKind,
+  ObservableSubjectPlayerAnswered
+} from '@ui-observers/observable-subject';
 import { Space } from '@ui-classes/board/space/space';
 import { EndOfGame } from '@ui-classes/end-of-game/end-of-game';
 import { SpaceClassic } from '@ui-classes/board/space/space-classic';
@@ -28,10 +33,11 @@ import { FullscreenButton } from '@ui-components/fullscreen-button';
 import { Button } from '@ui-components/button';
 import { EventManager } from '@ui-classes/EventManager';
 import { shuffle } from 'lodash';
+import { Observable } from '@ui-observers/observable';
 
 new EventManager(); // Used to set default event listeners with passive: false.
 
-export class Game implements Observer {
+export class Game implements Observer, Observable {
 
   private board: Board;
   private leftSection: LeftSection;
@@ -40,6 +46,8 @@ export class Game implements Observer {
   private _currentPlayer: Player;
   private pause: Pause;
   private questions: Question[];
+
+  private observers: Observer[];
 
   constructor(playerNames: string[], questions: Question[], diceSize: number) {
     // W < H ? Portrait : Landscape.
@@ -75,6 +83,7 @@ export class Game implements Observer {
 
     this.initTopButtons();
     this.initUI();
+    this.observers = [];
   }
 
   private initTopButtons(): void {
@@ -116,7 +125,7 @@ export class Game implements Observer {
         this.onPawnMoved(observableSubject.space);
         break;
       case ObservableSubjectKind.PlayerAnswered:
-        this.onPlayerAnswered(observableSubject.isAnswerCorrect);
+        this.onPlayerAnswered(observableSubject.isAnswerCorrect, observableSubject.questionId);
         break;
       case ObservableSubjectKind.ChallengeAnswered:
         this.onChallengeAnswered(observableSubject.player);
@@ -134,6 +143,7 @@ export class Game implements Observer {
       if (this.isEndOfBoard(this.currentPlayer.pawn)) {
         S.removeAllChildren();
         new EndOfGame(this.getRanking()).center(S);
+        this.notifyAll(new ObservableSubjectGameEnded())
       }
       else if (space instanceof SpaceClassic) {
         new QuestionPanelShowQuestion(this.getNextQuestion(space.category), this, SpaceClassic).center();
@@ -148,12 +158,13 @@ export class Game implements Observer {
     }, onStopOnSpaceAnimationTimeout + 100);
   }
 
-  private onPlayerAnswered(isAnswerCorrect: boolean): void {
+  private onPlayerAnswered(isAnswerCorrect: boolean, questionId: string): void {
     this.leftSection.enableDiceButton();
     if (!isAnswerCorrect) {
       this.setNextPlayer();
     }
     this.showPopUpCurrentPlayer();
+    this.notifyAll(new ObservableSubjectPlayerAnswered(isAnswerCorrect, questionId));
   }
 
   private onChallengeAnswered(player: Player): void {
@@ -226,5 +237,15 @@ export class Game implements Observer {
 
   private showPopUpCurrentPlayer(): void {
     new AnimatePopup(this.currentPlayer.name, this.currentPlayer.pawn.color).makeAnimation();
+  }
+
+  public notifyAll(data?: any): void {
+    this.observers.forEach((observer: Observer) => observer.update(data));
+  }
+
+  public subscribe(observer: Observer): void {
+    if (!this.observers.includes(observer)) {
+      this.observers.push(observer);
+    }
   }
 }
