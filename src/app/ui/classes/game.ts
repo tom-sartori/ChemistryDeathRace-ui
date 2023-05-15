@@ -128,7 +128,7 @@ export class Game implements Observer, Observable {
         this.onPlayerAnswered(observableSubject.isAnswerCorrect, observableSubject.questionId);
         break;
       case ObservableSubjectKind.ChallengeAnswered:
-        this.onChallengeAnswered(observableSubject.player);
+        this.onChallengeAnswered(observableSubject.isAnswerCorrect, observableSubject.player);
         break;
     }
   }
@@ -167,9 +167,12 @@ export class Game implements Observer, Observable {
     this.notifyAll(new ObservableSubjectPlayerAnswered(isAnswerCorrect, questionId));
   }
 
-  private onChallengeAnswered(player: Player): void {
-    this.leftSection.enableDiceButton();
+  private onChallengeAnswered(isAnswerCorrect: boolean, player: Player): void {
     this.setNextPlayer(player);
+    if (!isAnswerCorrect) {
+      this.setNextPlayer();
+    }
+    this.leftSection.enableDiceButton();
     this.showPopUpCurrentPlayer();
   }
 

@@ -24,7 +24,7 @@ export class QuestionPanelResult extends Panel implements Observable {
         {
           text: 'Passer à la suite',
           function: (): void => {
-            this.notifyAll(overrideNextPlayer ?? isAnswerCorrect);  // If overrideNextPlayer is set, we come from a challenge question. Otherwise, it's a classic question and we send isAnswerCorrect.
+            this.notifyAll({isAnswerCorrect, overrideNextPlayer});  // If overrideNextPlayer is set, we come from a challenge question. Otherwise, it's a classic question and we send isAnswerCorrect.
             this.switchTo();
           }
         }
@@ -42,14 +42,14 @@ export class QuestionPanelResult extends Panel implements Observable {
     }
   }
 
-  public notifyAll = (value: boolean | Player): void => {
-    if (value instanceof Player) {
+  public notifyAll = (config: { isAnswerCorrect: boolean, overrideNextPlayer?: Player }): void => {
+    if (config.overrideNextPlayer) {
       // Player answered at a challenge. We override the next player.
-      this.observers.forEach((observer: Observer) => observer.update(new ObservableSubjectChallengeAnswered(value)));
+      this.observers.forEach((observer: Observer) => observer.update(new ObservableSubjectChallengeAnswered(config.isAnswerCorrect, config.overrideNextPlayer!)));
     }
     else {
       // Player answered at a classic question. We do not override the next player.
-      this.observers.forEach((observer: Observer) => observer.update(new ObservableSubjectPlayerAnswered(value, this.question.id)));
+      this.observers.forEach((observer: Observer) => observer.update(new ObservableSubjectPlayerAnswered(config.isAnswerCorrect, this.question.id)));
     }
   }
 }

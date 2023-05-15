@@ -22,7 +22,7 @@ export class QuestionPanelValidation extends Panel {
         },
         {
           text: `${player.name} a mal répondu`,
-          function: (): void => this.switchTo(new QuestionPanelResult(question, game, false)),
+          function: (): void => this.switchTo(new QuestionPanelResult(question, game, false, player)),
           backgroundColor: red
         }
       ]
