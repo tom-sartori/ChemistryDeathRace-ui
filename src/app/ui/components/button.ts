@@ -9,9 +9,10 @@ export class Button extends zim.Button {
     backgroundColor?: GradientColor,
     rollBackgroundColor?: GradientColor,
     width?: number,
-    height?: number
+    height?: number,
+    textColor?: GradientColor,
   }) {
-    const label: Label = new Label({text: config.text});
+    const label: Label = new Label({text: config.text, color: config.textColor});
 
     super({
       label,

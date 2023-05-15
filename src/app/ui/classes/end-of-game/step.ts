@@ -1,5 +1,6 @@
 import { framePaddingProportion, podiumColors, podiumLabelColors } from '@ui-constants/ui-constants';
 import { Player } from '@ui-classes/player/player';
+import { Label } from '@ui-components/label';
 
 export class Step extends Tile {
 
@@ -10,8 +11,7 @@ export class Step extends Tile {
     const playerNameLabel: Label = new Label({
       text: playerName,
       color: rankingColor,
-      size: W * framePaddingProportion,
-      font: "Freckle Face"
+      size: W * framePaddingProportion
     });
     const rectangle: Rectangle = new Rectangle({
       width: (W / 3) - (W / 3) * framePaddingProportion,
@@ -21,8 +21,7 @@ export class Step extends Tile {
     const rectangleLabel: Label = new Label({
       text: pos.toString(),
       color: rectangleLabelColor,
-      size: W * framePaddingProportion * 2 / pos,
-      font: "Freckle Face"
+      size: W * framePaddingProportion * 2 / pos
     });
     rectangleLabel.center(rectangle);
 

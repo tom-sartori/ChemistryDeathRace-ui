@@ -25,6 +25,7 @@ export class Label extends zim.Label {
       labelHeight: config.height,
       maxSize: labelMaxSize,
       corner: config.corner ?? 0,
+      bold: true
     });
   }
 }

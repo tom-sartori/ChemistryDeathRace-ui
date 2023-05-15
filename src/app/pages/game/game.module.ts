@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GamePlayersComponent } from '@pages/game/game-players/game-players.component';
 import { SharedModule } from '@shared/shared.module';
 import { AppConstants } from '@app/app.constants';
+import { GameService } from '@services/game.service';
 
 
 const routes: Routes = [
@@ -33,6 +34,9 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule
+  ],
+  providers: [
+    GameService
   ]
 })
 export class GameModule {

@@ -8,12 +8,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
+import { SpinnerComponent } from '@shared/spinner/spinner.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     PrevComponent,
-    NextComponent
+    NextComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { RouterModule } from '@angular/router';
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    SpinnerComponent
   ]
 })
 export class SharedModule {
