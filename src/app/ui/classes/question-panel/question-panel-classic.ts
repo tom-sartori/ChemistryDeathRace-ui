@@ -3,6 +3,7 @@ import { Proposition } from '@models/question/proposition.model';
 import { Game } from '@ui-classes/game';
 import { Panel } from '@ui-components/panel';
 import { QuestionPanelResult } from '@ui-classes/question-panel/question-panel-result';
+import { shuffle } from 'lodash';
 
 export class QuestionPanelClassic extends Panel {
 
@@ -18,7 +19,7 @@ export class QuestionPanelClassic extends Panel {
     super({
       titleBar: question.category,
       header: question.name,
-      buttons: buttons
+      buttons: shuffle(buttons)
     });
   }
 }

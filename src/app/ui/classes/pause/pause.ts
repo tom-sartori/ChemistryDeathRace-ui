@@ -49,7 +49,7 @@ export class Pause extends Pane {
       rows: 3,
       align: 'center',
       valign: 'center',
-      spacingV: 50,
+      spacingV: H / 50,
       clone: false,
     });
 

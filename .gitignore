@@ -42,5 +42,8 @@ testem.log
 Thumbs.db
 /.vscode/
 
+# Environment
+src/environments/
+
 # Firebase
 .firebase/

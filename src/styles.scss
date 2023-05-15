@@ -4,13 +4,10 @@
 // Plus imports for other components in your app.
 
 @import "src/assets/styles/colors.scss";
-@font-face {
-  font-family: 'Freckle Face';
-  src: url(assets/fonts/Freckle_Face/FreckleFace-Regular.ttf) format('truetype');
-}
+@import "src/assets/styles/font.scss";
 
 $game-typography: mat.define-typography-config(
-  $font-family: "Freckle Face",
+  $font-family: $app-font,
 );
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -42,8 +39,15 @@ $ChemicalPursuit-ui-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($ChemicalPursuit-ui-theme);
 
-html, body { height: 100%; }
-body { margin: 0; font-family: "Freckle Face", sans-serif; background-color: $accent-color;}
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $app-font;
+  background-color: $background-color;
+}
 
 a {
   color: white;
@@ -57,32 +61,4 @@ a {
 
 h1 {
   color: white;
-}
-
-.spinner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  z-index: 9999;
-}
-
-.spinner-image {
-  max-width: 30%;
-  max-height: 30%;
-  animation: 1s spinner infinite;
-}
-
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }

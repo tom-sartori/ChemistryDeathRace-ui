@@ -15,6 +15,7 @@ export class Legend extends Tile {
         corner: 10,
         width: W / 3 - 5 * spacing,
         height: H / 3 - 5 * spacing,
+        color: black,
       });
 
     });

@@ -31,7 +31,5 @@
       <app-next (click)="goToPlayersName()" [disabled]="!mainForm.valid"></app-next>
     </div>
   </div>
-  <div class="spinner" *ngIf="loading">
-    <img src="./assets/images/logo.png" alt="spinner" class="spinner-image">
-  </div>
+  <app-spinner *ngIf="loading"></app-spinner>
 </div>

@@ -1,41 +1,43 @@
-import { backgroundColorLighter, framePaddingProportion } from '@ui-constants/ui-constants';
+import { blue_enscm } from '@ui-constants/ui-constants';
 import { Podium } from '@ui-classes/end-of-game/podium';
 import { Player } from '@ui-classes/player/player';
 import { min } from 'lodash';
+import { Button } from '@ui-components/button';
+import { AppConstants } from '@app/app.constants';
 
 export class EndOfGame extends Tile {
 
   constructor(ranking: Player[]) {
 
-    const backButtonLabel: Label = new Label({
-      text: 'Quitter',
-      color: white,
-      size: (W / 3) * framePaddingProportion,
-      font: "Freckle Face"
-    });
     const backButton: Button = new Button({
-      label: backButtonLabel,
+      text: 'Quitter',
       backgroundColor: 'red',
     }).tap(() => {
       window.location.href = '/';
     });
 
-    const newGameButtonLabel: Label = new Label({
-      text: 'Nouvelle partie',
-      color: white,
-      size: (W / 3) * framePaddingProportion,
-      font: "Freckle Face"
-    });
     const newGameButton: Button = new Button({
-      label: newGameButtonLabel,
+      text: 'Nouvelle partie',
       backgroundColor: 'green',
     }).tap(() => {
-      window.location.href = '/game-test';
+      window.location.href = '/game/params';
+    });
+
+    const restartGameButton: Button = new Button({
+      text: 'Rejouer',
+      backgroundColor: 'green',
+    }).tap(() => {
+      if (localStorage.getItem(AppConstants.LOCAL_STORAGE.GAME_PARAMS)) {
+        window.location.href = '/game/play';
+      }
+      else {
+        window.location.href = '/game/params';
+      }
     });
 
     const buttonContainer: Tile = new Tile({
-      obj: series([backButton, newGameButton]),
-      cols: 2,
+      obj: series([backButton, newGameButton, restartGameButton]),
+      cols: 3,
       rows: 1,
       spacingH: 60,
       align: 'center',
@@ -46,7 +48,7 @@ export class EndOfGame extends Tile {
     const emitter: Emitter = new Emitter({
       obj: new Circle({
         radius: 10,
-        color: backgroundColorLighter,
+        color: blue_enscm,
       }),
       width: W,
       height: H,

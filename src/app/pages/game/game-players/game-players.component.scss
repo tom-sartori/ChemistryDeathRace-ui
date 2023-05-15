@@ -1,4 +1,5 @@
 @import "src/assets/styles/colors.scss";
+@import "src/assets/styles/font.scss";
 
 .params-wrapper {
   display: flex;
@@ -15,6 +16,7 @@
   font-size: 8vw;
   text-align: center;
   line-height: 100%;
+  color: $blue-enscm;
 }
 
 .params {
@@ -24,7 +26,7 @@
   justify-content: space-between;
   margin-top: 50px;
   width: 90%;
-  background-color: $main-color;
+  background-color: $blue-enscm;
   border-radius: 10px;
 }
 
@@ -35,7 +37,7 @@
   justify-content: space-between;
   width: 80%;
   padding: 20px;
-  color: $accent-color;
+  color: $background-color;
   font-size: 4vw;
 }
 
@@ -47,12 +49,12 @@
 .param > input {
   width: 50vw;
   font-size: 4vw;
-  font-family: "Freckle Face", serif;
+  font-family: $app-font;
   text-align: center;
   border: none;
   border-radius: 4vw;
-  background-color: $accent-color;
-  color: $main-color;
+  background-color: $background-color;
+  color: $blue-enscm;
 }
 
 .name {
