@@ -41,5 +41,5 @@ export const images: string[] = [
   "spaces-icons/31.png", "spaces-icons/32.png", "spaces-icons/33.png",
   "spaces-icons/34.png", "spaces-icons/35.png", "spaces-icons/36.png",
   "spaces-icons/37.png", "spaces-icons/38.png", "spaces-icons/39.png",
-  "spaces-icons/40.png", "spaces-icons/41.png", "spaces-icons/42.png"
+  "spaces-icons/40.png", "spaces-icons/41.png"
 ]
