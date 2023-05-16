@@ -8,6 +8,9 @@ import { GamePlayersComponent } from '@pages/game/game-players/game-players.comp
 import { SharedModule } from '@shared/shared.module';
 import { AppConstants } from '@app/app.constants';
 import { GameService } from '@services/game.service';
+import { QuestionService } from '@services/question.service';
+import { SnackBarService } from '@services/snack-bar.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 const routes: Routes = [
@@ -30,13 +33,16 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   exports: [
     RouterModule
   ],
   providers: [
-    GameService
+    GameService,
+    QuestionService,
+    SnackBarService
   ]
 })
 export class GameModule {

@@ -12,6 +12,7 @@ import {
   ObservableSubjectGameEnded,
   ObservableSubjectPlayerAnswered
 } from '@ui-observers/observable-subject';
+import { SnackBarService } from '@services/snack-bar.service';
 
 @Component({
   selector: 'app-game-play',
@@ -24,12 +25,13 @@ export class GamePlayComponent implements OnInit, Observer {
     private router: Router,
     private route: ActivatedRoute,
     private gameService: GameService,
+    private snackBarService: SnackBarService
   ) {
     const assets = [
       {font: AppConstants.FONT.NAME, src: AppConstants.FONT.PATH},
       "logos/logo_game.png", "logos/logo_enscm.png", "logos/logo_um.png",
     ].concat(images);
-      
+
     const questions: Question[] = [{
       "id": "64490e28b152c1016a10b16e",
       "category": "Catégorie 1",
@@ -156,11 +158,23 @@ export class GamePlayComponent implements OnInit, Observer {
       return;
     }
     if (observableSubject instanceof ObservableSubjectPlayerAnswered) {
-      this.gameService.sendResult(game.id, observableSubject.questionId, observableSubject.isAnswerCorrect).subscribe();
+      this.gameService.sendResult(game.id, observableSubject.questionId, observableSubject.isAnswerCorrect).subscribe({
+        next: () => {
+        },
+        error: () => {
+          this.snackBarService.openError('Erreur lors de l\'envoi de la réponse');
+        }
+      });
     }
     else if (observableSubject instanceof ObservableSubjectGameEnded) {
-      this.gameService.endGame(game.id).subscribe();
-      localStorage.removeItem(AppConstants.LOCAL_STORAGE.GAME);
+      this.gameService.endGame(game.id).subscribe({
+        next: () => {
+          localStorage.removeItem(AppConstants.LOCAL_STORAGE.GAME);
+        },
+        error: () => {
+          this.snackBarService.openError('Erreur lors de l\'envoi des statistiques de la partie.');
+        }
+      });
     }
   }
 }

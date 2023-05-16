@@ -54,6 +54,7 @@ a {
   text-decoration: none;
   font-weight: normal;
   font-size: x-large;
+
   &:hover {
     border-bottom: white thin solid;
   }
@@ -61,4 +62,18 @@ a {
 
 h1 {
   color: white;
+}
+
+.success {
+  background-color: green;
+  color: $background-color;
+}
+
+.error {
+  background-color: red;
+  color: $background-color;
+}
+
+.mat-simple-snackbar-action {
+  color: $background-color;
 }

@@ -4,6 +4,8 @@ import { QuestionService } from '@services/question.service';
 import { Router } from '@angular/router';
 import { defaultDiceSize, defaultNumberOfPlayer, maxNumberOfPlayer } from '@ui-constants/game-constants';
 import { AppConstants } from '@app/app.constants';
+import { SnackBarService } from '@services/snack-bar.service';
+import { Question } from '@models/question/question.model';
 
 @Component({
   selector: 'app-game-params',
@@ -18,15 +20,22 @@ export class GameParamsComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private questionService: QuestionService,
-              private router: Router) {
+              private router: Router,
+              private snackBarService: SnackBarService) {
   }
 
   // Init the page
   ngOnInit(): void {
     this.loading = true;
-    this.questionService.getAvailableDifficulties().subscribe(x => { // Get the difficulties from the API
-      this.difficulties = x;
-      this.loading = false;
+    this.questionService.getAvailableDifficulties().subscribe({
+      next: x => {
+        this.difficulties = x;
+        this.loading = false;
+      },
+      error: () => {
+        this.loading = false;
+        this.snackBarService.openError('Impossible de récupérer les difficultés')
+      }
     });
     this.mainForm = this.formBuilder.group({ // Init the form
       playersNumber: [defaultNumberOfPlayer, [Validators.required, Validators.max(maxNumberOfPlayer), Validators.min(1)]],
@@ -37,14 +46,19 @@ export class GameParamsComponent implements OnInit {
 
   // Function to get information from the form and go to the next page
   goToPlayersName() {
-    this.questionService.getQuestionsByDifficulty(this.mainForm.get("difficulty")!.value).subscribe(x => {
-      localStorage.setItem(AppConstants.LOCAL_STORAGE.GAME_PARAMS, JSON.stringify({
-        playersNumber: this.mainForm.get("playersNumber")!.value,
-        diceSize: this.mainForm.get("diceSize")!.value,
-        difficulty: this.mainForm.get("difficulty")!.value,
-        questions: x
-      }));
-      this.router.navigateByUrl(AppConstants.ROUTES.GAME_PLAYERS);
+    this.questionService.getQuestionsByDifficulty(this.mainForm.get("difficulty")!.value).subscribe({
+      next: (x: Question[]) => {
+        localStorage.setItem(AppConstants.LOCAL_STORAGE.GAME_PARAMS, JSON.stringify({
+          playersNumber: this.mainForm.get("playersNumber")!.value,
+          diceSize: this.mainForm.get("diceSize")!.value,
+          difficulty: this.mainForm.get("difficulty")!.value,
+          questions: x
+        }));
+        this.router.navigateByUrl(AppConstants.ROUTES.GAME_PLAYERS);
+      },
+      error: () => {
+        this.snackBarService.openError('Impossible de récupérer les questions de cette difficulté');
+      }
     });
   }
 

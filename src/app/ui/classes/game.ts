@@ -87,12 +87,12 @@ export class Game implements Observer, Observable {
   }
 
   private initTopButtons(): void {
-    const size: number = 175;
-    new FullscreenButton(size / 3).addTo(S);
+    const size: number = 50;
+    new FullscreenButton(size).addTo(S);
     new Button({
-      text: "Catégories",
+      text: "⏸",
       width: size,
-      height: size / 3,
+      height: size,
       backgroundColor: "rgba(0,0,0,0)",
       textColor: blue_enscm,
       rollBackgroundColor: turquoise_enscm

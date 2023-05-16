@@ -5,6 +5,7 @@ import { AppConstants } from '@app/app.constants';
 import { pawnColors } from '@ui-constants/ui-constants';
 import { forEach } from 'lodash';
 import { GameService } from '@services/game.service';
+import { SnackBarService } from '@services/snack-bar.service';
 
 @Component({
   selector: 'app-game-players',
@@ -23,7 +24,8 @@ export class GamePlayersComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private gameService: GameService
+    private gameService: GameService,
+    private snackBarService: SnackBarService
   ) {
     this.playersName = [];
     this.playersColor = [];
@@ -89,10 +91,16 @@ export class GamePlayersComponent implements OnInit {
     localStorage.setItem(AppConstants.LOCAL_STORAGE.GAME_PARAMS, JSON.stringify(this.localStorage));
 
     this.loading = true;
-    this.gameService.createNewGame(this.localStorage.playersNumber, this.localStorage.difficulty, this.localStorage.diceSize).subscribe((game) => {
-      localStorage.setItem(AppConstants.LOCAL_STORAGE.GAME, JSON.stringify(game));
-      this.loading = false;
-      this.router.navigateByUrl(AppConstants.ROUTES.GAME_PLAY);
+    this.gameService.createNewGame(this.localStorage.playersNumber, this.localStorage.difficulty, this.localStorage.diceSize).subscribe({
+      next: (game) => {
+        localStorage.setItem(AppConstants.LOCAL_STORAGE.GAME, JSON.stringify(game));
+        this.loading = false;
+        this.router.navigateByUrl(AppConstants.ROUTES.GAME_PLAY);
+      },
+      error: (error) => {
+        this.loading = false;
+        this.snackBarService.openError('Une erreur est survenue lors de la création de la partie')
+      }
     });
   }
 
