@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/ChemicalPursuit-ui",
+    "public": "dist/ChemistryDeathRace-ui",
     "ignore": [
       "firebase.json",
       "**/.*",
