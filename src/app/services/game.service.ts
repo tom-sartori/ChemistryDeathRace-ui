@@ -21,7 +21,10 @@ export class GameService {
   }
 
   public sendResult(gameId: string, questionId: string, isAnswerCorrect: boolean): Observable<Answer> {
-    return this.http.post<Answer>(`${this.serviceUrl}/answer/`, {isAnswerCorrect});
+    return this.http.put<Answer>(`${this.serviceUrl}/answer/${gameId}`, {
+      "questionId": questionId,
+      "correct": isAnswerCorrect
+    });
   }
 
   public endGame(id: string): Observable<any> {
