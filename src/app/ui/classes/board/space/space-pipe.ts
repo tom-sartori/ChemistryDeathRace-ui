@@ -6,7 +6,7 @@ export class SpacePipe extends Space {
 
   public readonly length: number;
 
-  constructor(text: string, sideSize: number, length: number, spaceDisplay?: SpaceDisplay, image?: string) {
+  constructor(text: string | undefined, sideSize: number, length: number, spaceDisplay?: SpaceDisplay, image?: string) {
     super(pipeBackgroundColor, text, sideSize, spaceDisplay, image);
 
     this.length = length;

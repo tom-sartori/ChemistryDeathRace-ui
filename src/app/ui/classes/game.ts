@@ -90,7 +90,7 @@ export class Game implements Observer, Observable {
     const size: number = 50;
     new FullscreenButton(size).addTo(S);
     new Button({
-      text: "⏸",
+      text: "\u23f8", // Pause symbol. ⏸
       width: size,
       height: size,
       backgroundColor: "rgba(0,0,0,0)",

@@ -56,7 +56,7 @@ export class Space extends Rectangle {
       }).center(this);
     }
     else if (image) {
-      new Pic(image).siz(width / 2).center(this);
+      new Pic(image).siz(width / 1.3).center(this);
     }
   }
 
