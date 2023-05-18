@@ -180,7 +180,8 @@ export class Game implements Observer, Observable {
     const question: Question = this.questions.find((question: Question): boolean => {
       return question.category === category;
     })!;
-    this.questions.push(this.questions.shift()!);
+    this.questions.splice(this.questions.indexOf(question), 1);
+    this.questions.push(question);
     return question;
   }
 
