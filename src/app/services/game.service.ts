@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, retry } from 'rxjs';
 import { Game } from '@models/game/game.model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
@@ -17,17 +17,23 @@ export class GameService {
   }
 
   public createNewGame(numberOfPlayers: number, difficulty: string, diceSize: number): Observable<Game> {
-    return this.http.post<Game>(`${this.serviceUrl}`, {numberOfPlayers, difficulty, diceSize});
+    return this.http.post<Game>(`${this.serviceUrl}`, {numberOfPlayers, difficulty, diceSize}).pipe(
+      retry(3)
+    );
   }
 
   public sendResult(gameId: string, questionId: string, isAnswerCorrect: boolean): Observable<Answer> {
     return this.http.put<Answer>(`${this.serviceUrl}/answer/${gameId}`, {
       "questionId": questionId,
       "correct": isAnswerCorrect
-    });
+    }).pipe(
+      retry(3)
+    );
   }
 
   public endGame(id: string): Observable<any> {
-    return this.http.put<any>(`${this.serviceUrl}/close/${id}`, {});
+    return this.http.put<any>(`${this.serviceUrl}/close/${id}`, {}).pipe(
+      retry(3)
+    );
   }
 }

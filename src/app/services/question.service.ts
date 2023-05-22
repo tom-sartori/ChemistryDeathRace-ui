@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Question } from '@models/question/question.model';
-import { Observable } from 'rxjs';
+import { Observable, retry } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -19,11 +19,15 @@ export class QuestionService {
 
   // Get all playable difficulties from the API
   public getAvailableDifficulties(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.serviceUrl}/difficulty/available`);
+    return this.http.get<string[]>(`${this.serviceUrl}/difficulty/available`).pipe(
+      retry(3)
+    );
   }
 
   // Get all the questions of a difficulty from the API
   public getQuestionsByDifficulty(difficulty: string): Observable<Question[]> {
-    return this.http.get<Question[]>(`${this.serviceUrl}/difficulty/${difficulty}`);
+    return this.http.get<Question[]>(`${this.serviceUrl}/difficulty/${difficulty}`).pipe(
+      retry(3)
+    );
   }
 }
