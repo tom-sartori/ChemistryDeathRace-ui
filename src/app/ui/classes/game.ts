@@ -60,10 +60,8 @@ export class Game implements Observer, Observable {
 
     // Players.
     this.players = [];
-    const pawns: Pawn[] = [];
     playerNames.forEach((playerName: string, index: number): void => {
       const pawn: Pawn = new Pawn(pawnRadius, pawnColors[index]);
-      pawns.push(pawn);
       this.players.push(new Player(playerName, pawn));
     })
     this._currentPlayer = this.getFirstPlayer();
@@ -72,7 +70,7 @@ export class Game implements Observer, Observable {
     this.questions = shuffle(questions);
 
     // Board.
-    this.board = new Board(spaceSideSize, pawns, this.getCategories());
+    this.board = new Board(spaceSideSize, this.players.map(player => player.pawn), this.getCategories());
     this.board.subscribe(this);
 
     // Left section.
