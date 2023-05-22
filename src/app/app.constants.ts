@@ -23,12 +23,12 @@ export class AppConstants {
 
   static FONT = class {
     public static readonly NAME: string = 'Ink Free';
-    public static readonly PATH: string = 'assets/fonts/Ink_Free/Inkfree.ttf';
-    // public static readonly PATH: string = 'assets/fonts/Freckle_Face/FreckleFace-Regular.ttf';
+    // public static readonly PATH: string = 'assets/fonts/Ink_Free/Inkfree.ttf';
+    public static readonly PATH: string = 'assets/fonts/Freckle_Face/FreckleFace-Regular.ttf';
   }
 
   static COLORS = class {
-    public static readonly BACKGROUND: GradientColor = '#eff9ff';
+    public static readonly BACKGROUND: GradientColor = '#93b8c9';
     public static readonly BLUE: GradientColor = '#0066a9';
     public static readonly TURQUOISE: GradientColor = '#8acbc1';
     public static readonly RED: GradientColor = '#d64e50';

@@ -5,8 +5,8 @@ export class SpaceClassic extends Space {
 
   public readonly category: string;
 
-  constructor(color: GradientColor, text: string | undefined, sideSize: number, category: string, spaceDisplay?: SpaceDisplay, image?: string) {
-    super(color, text, sideSize, spaceDisplay, image);
+  constructor(color: GradientColor, sideSize: number, category: string, image: string, spaceDisplay?: SpaceDisplay) {
+    super(color, undefined, sideSize, image, spaceDisplay);
 
     this.category = category;
   }

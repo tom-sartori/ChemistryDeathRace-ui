@@ -6,16 +6,9 @@ export class SpacePipe extends Space {
 
   public readonly length: number;
 
-  constructor(text: string, sideSize: number, length: number, spaceDisplay?: SpaceDisplay, image?: string) {
-    super(pipeBackgroundColor, text, sideSize, spaceDisplay, image);
+  constructor(sideSize: number, length: number, image: string, spaceDisplay?: SpaceDisplay) {
+    super(pipeBackgroundColor, undefined, sideSize, image, spaceDisplay);
 
     this.length = length;
-
-    // new Label({
-    //   text: `Tunnel ${length}`, /// TODO : toString.
-    //   color: black,
-    //   size: 15
-    // }).center(this)
-    //   .mov(0, this.height / 2 - 15);
   }
 }

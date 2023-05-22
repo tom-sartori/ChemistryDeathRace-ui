@@ -5,16 +5,9 @@ export class SpaceChallenge extends Space {
 
   public readonly category: string;
 
-  constructor(color: GradientColor, sideSize: number, category: string, spaceDisplay?: SpaceDisplay, image?: string) {
-    super(color, "Défi", sideSize, spaceDisplay, image);
+  constructor(color: GradientColor, sideSize: number, category: string, image: string, spaceDisplay?: SpaceDisplay) {
+    super(color, "Défi", sideSize, image, spaceDisplay);
 
     this.category = category;
-
-    // new Label({
-    //   text: 'Défi',
-    //   color: black,
-    //   size: 15
-    // }).center(this)
-    //   .mov(0, 0 / 2 - 15);
   }
 }

@@ -29,46 +29,8 @@ export class GamePlayComponent implements OnInit, Observer {
   ) {
     const assets = [
       {font: AppConstants.FONT.NAME, src: AppConstants.FONT.PATH},
-      "logos/logo_game.png", "logos/logo_enscm.png", "logos/logo_um.png",
+      "logos/game_logo_freckle.png", "logos/logo_enscm_bleu.png", "logos/logo_um.png",
     ].concat(images);
-
-    const questions: Question[] = [{
-      "id": "64490e28b152c1016a10b16e",
-      "category": "Catégorie 1",
-      "difficulty": "Test",
-      "name": "Question 1",
-      "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-    }, {
-      "id": "64490e4e40e7dc4817d27f8c",
-      "category": "Catégorie 2",
-      "difficulty": "Test",
-      "name": "Question 2",
-      "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-    }, {
-      "id": "64490e6903f23863160746ba",
-      "category": "Catégorie 3",
-      "difficulty": "Test",
-      "name": "Question 3",
-      "propositions": [{"answer": true, "name": "Oui"}]
-    }, {
-      "id": "64490e7d03f23863160746bb",
-      "category": "Catégorie 4",
-      "difficulty": "Test",
-      "name": "Question 4",
-      "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-    }, {
-      "id": "64491265b89cfe0f175c4423",
-      "category": "Catégorie 5",
-      "difficulty": "Test",
-      "name": "Question 5",
-      "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-    }, {
-      "id": "64491288bde5e51b206dafaa",
-      "category": "Catégorie 6",
-      "difficulty": "Test",
-      "name": "Question 6",
-      "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-    }]
 
     if (this.router.url === '/game/play') {
 

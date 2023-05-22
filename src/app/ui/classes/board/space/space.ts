@@ -8,7 +8,7 @@ export class Space extends Rectangle {
 
   public pawns: Pawn[];
 
-  constructor(color: GradientColor, text: string | undefined, sideSize: number, spaceDisplay: SpaceDisplay = SpaceDisplay.HORIZONTAL, image?: string) {
+  constructor(color: GradientColor, text: string | undefined, sideSize: number, image: string | undefined = undefined, spaceDisplay: SpaceDisplay = SpaceDisplay.HORIZONTAL) {
     const width: number = sideSize;
     let height: number = sideSize;
     let corner: number[];   // [topLeft, topRight, bottomRight, bottomLeft]
@@ -56,7 +56,7 @@ export class Space extends Rectangle {
       }).center(this);
     }
     else if (image) {
-      new Pic(image).siz(width / 2).center(this);
+      new Pic(image).siz(width / 1.3).center(this);
     }
   }
 

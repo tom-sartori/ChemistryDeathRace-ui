@@ -60,10 +60,8 @@ export class Game implements Observer, Observable {
 
     // Players.
     this.players = [];
-    const pawns: Pawn[] = [];
     playerNames.forEach((playerName: string, index: number): void => {
       const pawn: Pawn = new Pawn(pawnRadius, pawnColors[index]);
-      pawns.push(pawn);
       this.players.push(new Player(playerName, pawn));
     })
     this._currentPlayer = this.getFirstPlayer();
@@ -72,7 +70,7 @@ export class Game implements Observer, Observable {
     this.questions = shuffle(questions);
 
     // Board.
-    this.board = new Board(spaceSideSize, pawns, this.getCategories());
+    this.board = new Board(spaceSideSize, this.players.map(player => player.pawn), this.getCategories());
     this.board.subscribe(this);
 
     // Left section.
@@ -90,7 +88,7 @@ export class Game implements Observer, Observable {
     const size: number = 50;
     new FullscreenButton(size).addTo(S);
     new Button({
-      text: "⏸",
+      text: "\u23f8", // Pause symbol. ⏸
       width: size,
       height: size,
       backgroundColor: "rgba(0,0,0,0)",
@@ -180,7 +178,8 @@ export class Game implements Observer, Observable {
     const question: Question = this.questions.find((question: Question): boolean => {
       return question.category === category;
     })!;
-    this.questions.push(this.questions.shift()!);
+    this.questions.splice(this.questions.indexOf(question), 1);
+    this.questions.push(question);
     return question;
   }
 
