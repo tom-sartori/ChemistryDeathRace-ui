@@ -13,6 +13,7 @@ import {
   ObservableSubjectPlayerAnswered
 } from '@ui-observers/observable-subject';
 import { SnackBarService } from '@services/snack-bar.service';
+import { QuestionService } from '@services/question.service';
 
 @Component({
   selector: 'app-game-play',
@@ -25,7 +26,8 @@ export class GamePlayComponent implements OnInit, Observer {
     private router: Router,
     private route: ActivatedRoute,
     private gameService: GameService,
-    private snackBarService: SnackBarService
+    private snackBarService: SnackBarService,
+    private questionService: QuestionService
   ) {
     const assets = [
       {font: AppConstants.FONT.NAME, src: AppConstants.FONT.PATH},
@@ -58,43 +60,52 @@ export class GamePlayComponent implements OnInit, Observer {
     }
     else {
       let firstMove: number | undefined = parseInt(this.route.snapshot.paramMap.get('firstMove')!);
-      const questions: Question[] = [{
-        "id": "64490e28b152c1016a10b16e",
-        "category": "Catégorie 1",
-        "difficulty": "Test",
-        "name": "Question 1",
-        "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-      }, {
-        "id": "64490e4e40e7dc4817d27f8c",
-        "category": "Catégorie 2",
-        "difficulty": "Test",
-        "name": "Question 2",
-        "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-      }, {
-        "id": "64490e6903f23863160746ba",
-        "category": "Catégorie 3",
-        "difficulty": "Test",
-        "name": "Question 3",
-        "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-      }, {
-        "id": "64490e7d03f23863160746bb",
-        "category": "Catégorie 4",
-        "difficulty": "Test",
-        "name": "Question 4",
-        "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-      }, {
-        "id": "64491265b89cfe0f175c4423",
-        "category": "Catégorie 5",
-        "difficulty": "Test",
-        "name": "Question 5",
-        "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-      }, {
-        "id": "64491288bde5e51b206dafaa",
-        "category": "Catégorie 6",
-        "difficulty": "Test",
-        "name": "Question 6",
-        "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
-      }]
+      // const questions: Question[] = [{
+      //   "id": "64490e28b152c1016a10b16e",
+      //   "category": "Catégorie 1",
+      //   "difficulty": "Test",
+      //   "name": "Question 1",
+      //   "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
+      // }, {
+      //   "id": "64490e4e40e7dc4817d27f8c",
+      //   "category": "Catégorie 2",
+      //   "difficulty": "Test",
+      //   "name": "Question 2",
+      //   "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
+      // }, {
+      //   "id": "64490e6903f23863160746ba",
+      //   "category": "Catégorie 3",
+      //   "difficulty": "Test",
+      //   "name": "Question 3",
+      //   "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
+      // }, {
+      //   "id": "64490e7d03f23863160746bb",
+      //   "category": "Catégorie 4",
+      //   "difficulty": "Test",
+      //   "name": "Question 4",
+      //   "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
+      // }, {
+      //   "id": "64491265b89cfe0f175c4423",
+      //   "category": "Catégorie 5",
+      //   "difficulty": "Test",
+      //   "name": "Question 5",
+      //   "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
+      // }, {
+      //   "id": "64491288bde5e51b206dafaa",
+      //   "category": "Catégorie 6",
+      //   "difficulty": "Test",
+      //   "name": "Question 6",
+      //   "propositions": [{"answer": true, "name": "Oui"}, {"answer": false, "name": "Non"}]
+      // }]
+      let data: Question[];
+      this.questionService.getTestQuestions().subscribe({
+        next: (questions: Question[]) => {
+          data = questions;
+        },
+        error: () => {
+          this.snackBarService.openError('Erreur lors du chargement des questions');
+        }
+      });
       new Frame({
         scaling: FULL,
         color: backgroundColor,
@@ -102,7 +113,7 @@ export class GamePlayComponent implements OnInit, Observer {
         assets,
         path: "assets/images/",
         ready: (): void => {
-          let game = new Game(['Jean', 'Michel', 'Denis', 'Henry'], questions, 99);
+          let game = new Game(['Jean', 'Michel', 'Denis', 'Henry'], data, 6);
           if (firstMove) {
             game.onDiceChanged(firstMove);
           }

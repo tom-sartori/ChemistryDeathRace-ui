@@ -12,7 +12,12 @@ export class Button extends zim.Button {
     height?: number,
     textColor?: GradientColor,
   }) {
-    const label: Label = new Label({text: config.text, color: config.textColor});
+    const label: Label = new Label({
+      text: config.text,
+      color: config.textColor,
+      width: config.width,
+      height: config.height
+    });
 
     super({
       label,
@@ -20,7 +25,7 @@ export class Button extends zim.Button {
       rollBackgroundColor: config.rollBackgroundColor,
       width: config.width ?? label.width + buttonPadding,
       height: config.height ?? label.height + buttonPadding,
-      corner: buttonCorner
+      corner: buttonCorner,
     });
   }
 }

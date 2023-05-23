@@ -21,7 +21,7 @@ export class Label extends zim.Label {
       valign: CENTER,
       padding: labelPadding,
       backgroundColor: config.backgroundColor ?? "#0000",
-      labelWidth: config.width,
+      lineWidth: config.width,
       labelHeight: config.height,
       maxSize: labelMaxSize,
       corner: config.corner ?? 0,

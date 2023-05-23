@@ -1,0 +1,6710 @@
+[
+  {
+    "_id": {
+      "$oid": "645a49bffec2bf5b80507e48"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Une solution contenant 8 produits dans le pentane est analysée en chromatographie gazeuse (gaz vecteur dihydrogène, détecteur FID). Combien de pics sont attendus si tous les produits sont bien séparés ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "7"
+      },
+      {
+        "answer": false,
+        "name": "8"
+      },
+      {
+        "answer": true,
+        "name": "9"
+      },
+      {
+        "answer": false,
+        "name": "10"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645a4a3c094aba2d33f0c071"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Que signifie le terme \"split-splitless\" pour les injecteurs utilisés en chromatographie gazeuse ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Avec ou sans gradient de température"
+      },
+      {
+        "answer": false,
+        "name": "Avec oui sans variateur de pression"
+      },
+      {
+        "answer": false,
+        "name": "Avec ou sans balayage de gaz vecteur"
+      },
+      {
+        "answer": true,
+        "name": "Avec ou sans division d'entrée de l'échantillon "
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645a4a8e094aba2d33f0c072"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En chromatographie en phase gazeuse, deux pics d′élution voisins sont considérés comme bien séparés lorsque leur résolution est ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "> 1"
+      },
+      {
+        "answer": true,
+        "name": "> 1,5"
+      },
+      {
+        "answer": false,
+        "name": "< 1,5"
+      },
+      {
+        "answer": false,
+        "name": "< 1"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645a4c38115d6268433196ac"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Les ondes électromagnétiques les plus énergétiques sont celles appartenant au domaine :",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "des rayons X"
+      },
+      {
+        "answer": false,
+        "name": "de l'infrarouge"
+      },
+      {
+        "answer": false,
+        "name": "de l'ultraviolet"
+      },
+      {
+        "answer": false,
+        "name": "des micro-ondes"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645a4c86a510be676ff43327"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Parmi ces techniques analytiques laquelle est une méthode spectroscopique ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "la conductimétrie"
+      },
+      {
+        "answer": false,
+        "name": "la pH-métrie"
+      },
+      {
+        "answer": true,
+        "name": "la résonnance magnétique nucléaire (RMN)"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645a4cd77c00125cdd806497"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En RMN, le déplacement chimique est exprirmé ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "en joules (J)"
+      },
+      {
+        "answer": true,
+        "name": "en parties par million (ppm)"
+      },
+      {
+        "answer": false,
+        "name": "en nanomètres (nm)"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645a4e85c2ee9a78216f7d39"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Que mesure-t-on en spectrophotométrie d’émission de flamme ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Une absorption de photon"
+      },
+      {
+        "answer": true,
+        "name": "Une émission de photon"
+      },
+      {
+        "answer": false,
+        "name": "Un temps de rétention"
+      },
+      {
+        "answer": false,
+        "name": "Un volume de rétention"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645a4efec2ee9a78216f7d3a"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Parmi les éléments suivants, lequel peut être dosé par spectrophotométrie d'émission de flamme ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "le cuivre"
+      },
+      {
+        "answer": false,
+        "name": "le plomb"
+      },
+      {
+        "answer": true,
+        "name": "Le sodium"
+      },
+      {
+        "answer": false,
+        "name": "le zinc"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645a4fd77c00125cdd806498"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En chromatographie en phase gazeuse, quel paramètre faut−il faire varier pour tracer la courbe de Van Deemter ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "le ratio de split"
+      },
+      {
+        "answer": false,
+        "name": "la température du détecteur"
+      },
+      {
+        "answer": true,
+        "name": "la pression du gaz vecteur"
+      },
+      {
+        "answer": false,
+        "name": "le volume d′injection"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645a50efda05821426017f00"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "En ajoutant du sel à de l′eau, on augmente sa température d′ébullition.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "vrai"
+      },
+      {
+        "answer": false,
+        "name": "faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645b88ff492d22618102fe37"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Dans un réseaux cristallin cubique à faces centrées, combien y a−t−il d'atomes par mailles ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "4 atomes par maille"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645b8c55492d22618102fe39"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Sous quel formule connait-on également la soude caustique ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "NaOH"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645b8cca53ed0976a90edc18"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quel acide provoque le \"pétillement\" dans les boissons gazeuses ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "L'acide carbonique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645b8ce253ed0976a90edc19"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quel est l'acide très dilué qui constitue le vinaigre ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "L'acide acétique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645b8d55492d22618102fe3a"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Sous quel formule connait-on également l'huile de vitriol ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "H2SO4"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645b8d737a92826f86e54b93"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quelle est la formule chimique de la potasse ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "KOH"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645b8e3c7a92826f86e54b94"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Lequel de ces gaz est de couleur verte ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Le chlore"
+      },
+      {
+        "answer": false,
+        "name": "Le krypton"
+      },
+      {
+        "answer": false,
+        "name": "L'hydrogène"
+      },
+      {
+        "answer": false,
+        "name": "Le néon"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645b8f82492d22618102fe3b"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En chromatographie liquide, travailler en mode isocratique signifie travailler à ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "température constante"
+      },
+      {
+        "answer": false,
+        "name": "débit constant"
+      },
+      {
+        "answer": true,
+        "name": "composition de la phase mobile constante"
+      },
+      {
+        "answer": false,
+        "name": "composition variable de la phase mobile"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645b93e68cc2c2059651d652"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Quelle est l’équation d’état du gaz parfait ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "PV = nRT"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645b96eb0922607d8f6f764e"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "L'aldolisation est une réaction de formation d'une liaison carbone-carbone. ",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "vrai"
+      },
+      {
+        "answer": false,
+        "name": "faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645b97759c61637b51f3f01a"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Quel est le pH de l'eau distillée ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "7"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "645b97da98d7de31999a977e"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Une base est-elle connue comme donneur ou comme accepteur de protons ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "accepteur d'électron"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464ce59e5f38f7b4b19244b"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "La  conductivité électrique est plus élevée pour ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "les métaux"
+      },
+      {
+        "answer": false,
+        "name": "les alliages"
+      },
+      {
+        "answer": false,
+        "name": "les verres"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464cee40a2927045158c3ef"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Lorsque la température augmente, la conductivité électrique des métaux ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "augmente"
+      },
+      {
+        "answer": true,
+        "name": "diminue"
+      },
+      {
+        "answer": false,
+        "name": "ne change pas"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464cf5ae5f38f7b4b19244c"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Comment est qualifiée la structure des verres ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "De structure amorphe"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464cfca0a2927045158c3f0"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "La conductivité thermique du graphite est plus élevée dans la direction parallèle aux feuillets ou perpendiculaire aux feuillets ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Dans la direction parallèle aux feuillets"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464cff9e5f38f7b4b19244d"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Quelle type de dopage augmente le nombre d′électrons libres dans un semi−conducteur ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Le dopage de type N"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464d06e0a2927045158c3f1"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Dans un matériau, quel nom donne−t−on à la bande d′énergie comprise entre la bande de valence et celle de conduction ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "La bande interdite ou le gap"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464d10a453e5f07490e9191"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Pour un système cristallin de type cubique, combien de paramètres  de maille faut−il donner au minimum pour le définir ? ",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "1∶ une longueur"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464dcae1f68fc0adc93f998"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Pour un système cristallin de type quadratique, combien de paramètres de maille faut−il donner au minimum pour le définir ? ",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "2∶ 2 longueurs"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464dd4d9131391a68f8a9d7"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Pour un système cristallin de type orthorhombique, combien de paramètres de maille faut−il donner au minimum pour le définir ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "3∶ 3 longueurs"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464dda39131391a68f8a9d8"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Pour un système cristallin de type monoclinique, combien de paramètres de maille faut−il donner au minimum pour le définir ? ",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "4∶ 3 longueurs et un angle"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464de939131391a68f8a9d9"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Pour un système cristallin de type hexagonal, combien de paramètres de maille faut−il donner au minimum pour le définir ? ",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "3∶ 2 longueurs et 1 angle"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464dec41f68fc0adc93f999"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Pour un système cristallin de type rhomboédrique, combien de paramètres de maille faut−il donner au minimum pour le définir ? ",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "2∶ 1 longueur et 1 angle"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464deeb9131391a68f8a9da"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Pour un système cristallin de type triclinique, combien de paramètres de maille faut−il donner au minimum pour le définir ? ",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "5∶ 3 longueurs et 2 angles"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464fb702a987952ad15d27f"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En quels éléments se décompose le carbonate de calcium lorsqu il est chauffé à une température supérieure à 500 degrés Celsius ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "En CaO et CO₂"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464fd0f2a987952ad15d280"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "En quels éléments se décompose le carbonate de calcium lorsqu il est chauffé à une température supérieure à 500 degrés Celsius ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "En CaO et CO₂"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464fd6b83002006d420ba70"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Que signifie le terme \"m\" en cristallographie géométrique ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "miroir"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464fd9f2a987952ad15d281"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "De quelle nature sont les liaisons dans des cristaux de NaCl ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Ioniques"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464fdfa83002006d420ba71"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Le carbone diamant est ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "un solide métallique"
+      },
+      {
+        "answer": true,
+        "name": "un solide covalent"
+      },
+      {
+        "answer": false,
+        "name": "un solide ionique"
+      },
+      {
+        "answer": false,
+        "name": "un solide moléculaire"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464fe742a987952ad15d282"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Quelle est l expression de la formule de Bragg ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "2.d.𝑠in (𝜃) = n.𝜆"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464fef583002006d420ba72"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Comment appelle−t−on un solide constitué d'empilements réguliers d'entités chimiques ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Un solide cristallin"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464ff3c2a987952ad15d283"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Comment appelle−t−on un solide constitué d'entités chimiques non ordonnées ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Un solide amorphe"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6464ffc683002006d420ba73"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Parmi ces matériaux, quel est le meilleur conducteur électrique ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "la porcelaine"
+      },
+      {
+        "answer": true,
+        "name": "le graphite"
+      },
+      {
+        "answer": false,
+        "name": "le polystyrène expansé"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6465024283002006d420ba74"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Les polymères sont obtenus par répétition ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "d′un motif"
+      },
+      {
+        "answer": false,
+        "name": "d′un oligomère"
+      },
+      {
+        "answer": true,
+        "name": "d′un monomère"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646792a0c704ae0d459a6233"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Un polymère dont les substituants sont du même côté du plan défini par la chaîne carbonée est qualifié de ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "atactique"
+      },
+      {
+        "answer": true,
+        "name": "isotactique"
+      },
+      {
+        "answer": false,
+        "name": "syndiotactique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646792ff8fe1101e756472d3"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "L′amidon est un polymère ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "synthétique"
+      },
+      {
+        "answer": true,
+        "name": "naturel"
+      },
+      {
+        "answer": false,
+        "name": "artificiel"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64679358c704ae0d459a6234"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "L′acétate de cellulose est un polymère ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "synthétique"
+      },
+      {
+        "answer": false,
+        "name": "naturel"
+      },
+      {
+        "answer": true,
+        "name": "artificiel"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646793b98fe1101e756472d4"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Le polyamide 6,6 est un polymère ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "synthétique"
+      },
+      {
+        "answer": false,
+        "name": "naturel"
+      },
+      {
+        "answer": false,
+        "name": "artificiel"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467942ec704ae0d459a6235"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "La polymérisation de deux monomères différents donne un copolymère si l′enchainement AABBAAABAAABAAAABBBBBAAB correspond à un copolymère dit ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "à bloc"
+      },
+      {
+        "answer": false,
+        "name": "alterné"
+      },
+      {
+        "answer": false,
+        "name": "greffé"
+      },
+      {
+        "answer": true,
+        "name": "statistique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646794fa8fe1101e756472d5"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "La polymérisation d un diacide avec un diol donne un copolymère de type ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "à bloc"
+      },
+      {
+        "answer": true,
+        "name": "alterné"
+      },
+      {
+        "answer": false,
+        "name": "greffé"
+      },
+      {
+        "answer": false,
+        "name": "statistique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646796488fe1101e756472d6"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Le polyamide 6,6 est un polymère issus de la polymérisation des monomères ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "en chaîne"
+      },
+      {
+        "answer": true,
+        "name": "par étape"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467968d8fe1101e756472d7"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Le PVC est un polymère issus de la polymérisation des monomères ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "en chaîne"
+      },
+      {
+        "answer": false,
+        "name": "par étape"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646796ebc704ae0d459a6236"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Le degré de polymérisation correspond au nombre de chaîne de polymères.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646797148fe1101e756472d8"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Le degré de polymérisation correspond au nombre de monomère \r\ndans la chaîne de polymères.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646798358fe1101e756472d9"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "L′expression du degré de polymérisation X est ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "X =  M × m₀"
+      },
+      {
+        "answer": true,
+        "name": " X =  𝑓rac{M}{m₀}"
+      },
+      {
+        "answer": false,
+        "name": " X =  𝑓rac{m₀}{M}"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64679907c704ae0d459a6237"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Pour un polymère, la masse molaire moyenne en nombre est ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Mₙ = M₀ × Xₙ"
+      },
+      {
+        "answer": false,
+        "name": "Mₙ = 𝑓rac{Xₙ}{M₀}"
+      },
+      {
+        "answer": false,
+        "name": "Mₙ = 𝑓rac{M₀}{Xₙ}"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646799788fe1101e756472da"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "La masse molaire moyenne en nombre Mₙ est supérieur à la masse molaire moyenne en masse M_w.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      },
+      {
+        "answer": false,
+        "name": "Ca dépend des cas"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646799fbc704ae0d459a6238"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "L′indice de polydispersité est ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "le rapport de 𝑓rac{Mₙ}{M_w}"
+      },
+      {
+        "answer": true,
+        "name": " le rapport de 𝑓rac{M_w}{Mₙ} "
+      },
+      {
+        "answer": false,
+        "name": "ça dépend des cas"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64679a328fe1101e756472db"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Tous les polymères sont cristallins.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64679a51c704ae0d459a6239"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Tous les polymères ont une température de fusion.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64679a7a8fe1101e756472dc"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Tous les polymères ont une température de transition vitreuse.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64679ae88fe1101e756472dd"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "Lorsque la masse molaire d un polymère augmente sa température de transition vitreuse ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "augmente"
+      },
+      {
+        "answer": false,
+        "name": "diminue"
+      },
+      {
+        "answer": false,
+        "name": "ça dépende des cas"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64679b5ac704ae0d459a623a"
+    },
+    "category": "Matériaux inorganiques & polymères",
+    "difficulty": "S5",
+    "name": "L addition d un plastifiant diminue la température de transition vitreuse d un polymère.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      },
+      {
+        "answer": false,
+        "name": "Ca dépend des cas"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64679e4a8fe1101e756472de"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Parmi les détecteurs proposés, lequel est le plus utilisé en chromatographie en phase liquide ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "le catharomètre"
+      },
+      {
+        "answer": true,
+        "name": "le détecteur UV−Visible"
+      },
+      {
+        "answer": false,
+        "name": "le détecteur à capture d électrons"
+      },
+      {
+        "answer": false,
+        "name": "le détecteur à ionisation de flamme"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64679f744295a76669df0d04"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En chromatographie liquide, l échantillon liquide est souvent introduit grâce à une boucle d injection. Sur quelle position doit être cette boucle lorsque l échantillon est introduit avec la seringue ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "load"
+      },
+      {
+        "answer": false,
+        "name": "inject"
+      },
+      {
+        "answer": false,
+        "name": "start"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64679fdce05c1315be6a25e3"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En HPLC, un technicien travaille sur une colonne RP 18 avec une phase mobile eau/méthanol. De quel type de chromatographie s agit−il ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "chromatographie en phase normale"
+      },
+      {
+        "answer": true,
+        "name": "chromatographie en phase inversée"
+      },
+      {
+        "answer": false,
+        "name": "chromatographie en phase chirale"
+      },
+      {
+        "answer": false,
+        "name": "chromatographie en phase neutre"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a08c4295a76669df0d05"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En chromatographie liquide à phase inversée, deux solutés A et B sont séparés tels que A est plus polaire que B. Laquelle des quatre propositions suivantes est vraie ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "A est plus soluble dans l éluant que B, il élue après B."
+      },
+      {
+        "answer": false,
+        "name": "A est moins soluble dans l éluant que B, il élue avant B."
+      },
+      {
+        "answer": false,
+        "name": "A est moins soluble dans l éluant que B, il élue après B."
+      },
+      {
+        "answer": true,
+        "name": "A est plus soluble dans l éluant que B, il élue avant B."
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a13d992d5d0095e912f7"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "La spectroscopie infra−rouge permet d′identifier ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "la présence de certains types de liaisons"
+      },
+      {
+        "answer": false,
+        "name": "la nature de toutes les liaisons d une molécule"
+      },
+      {
+        "answer": false,
+        "name": "le nombre d atomes de carbone présents dans une molécule"
+      },
+      {
+        "answer": false,
+        "name": "la composition atomique d un échantillon"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a1c84295a76669df0d06"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "L abscisse d un spectre infra−rouge est généralement le nombre d onde. A quoi correspond ce nombre d onde ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "𝜆"
+      },
+      {
+        "answer": false,
+        "name": "𝑓rac{c}{𝜆}"
+      },
+      {
+        "answer": false,
+        "name": "la fréquence"
+      },
+      {
+        "answer": true,
+        "name": "𝑓rac{1}{𝜆}"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a21e992d5d0095e912f8"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En RMN, quelle étape permet de passer du signal FID à un spectre ayant pour abscisse le déplacement chimique ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "La transformée de Fourier"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a2454295a76669df0d07"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Pourquoi utilise−t−on souvent des solvants deutérés en RMN du proton ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Pour ne pas observer les protons du solvant"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a28a992d5d0095e912f9"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Quels types d atomes peut−on analyser en RMN ? Donner 2 exemples.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "H, C, Si, P, F, Li, N, B"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a2d74295a76669df0d08"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Que mesure un spectrophotomètre UV−visible ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "L intensité lumineuse transmise par la solution"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a2f7992d5d0095e912fa"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Que signifie RMN ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Résonance Magnétique Nucléaire"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a32e4295a76669df0d09"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Sur quelle loi l analyse quantitative en colorimétrie repose−t−elle ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "La loi de Beer−Lambert"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a353992d5d0095e912fb"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Que signifie CCM ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Chromatographie sur Couche Mince"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a4044295a76669df0d0a"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En absorption atomique, l ajout de chlorure de strontium et d acide chlorhydrique aux solutions étalons à doser a pour but ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "de colorer la flamme en orange pour être dans le domaine du visible"
+      },
+      {
+        "answer": false,
+        "name": "d introduire un étalon interne"
+      },
+      {
+        "answer": false,
+        "name": "d empêcher les atomes de passer à un état excité"
+      },
+      {
+        "answer": true,
+        "name": "d éviter des interactions chimiques"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a475992d5d0095e912fc"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En absorption atomique, la longueur d onde de détection à laquelle est placé le monochromateur est choisie en fonction ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "de la concentration de l élément à doser"
+      },
+      {
+        "answer": true,
+        "name": "de la nature de l élément à doser"
+      },
+      {
+        "answer": false,
+        "name": "du mélange gazeux qui alimente le brûleur"
+      },
+      {
+        "answer": false,
+        "name": "de la lampe à cathode creuse utilisée"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a4d44295a76669df0d0b"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En émission atomique, les atomes peuvent être excités et généralement ionisés grâce à ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "un faisceau de photons"
+      },
+      {
+        "answer": false,
+        "name": "un plasma de gaz"
+      },
+      {
+        "answer": false,
+        "name": "une flamme air/propane"
+      },
+      {
+        "answer": true,
+        "name": "une flamme air/acétylène"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a720992d5d0095e912fd"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Les températures atteintes en émission atomique sont ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "identiques à celles atteintes en émission de flamme"
+      },
+      {
+        "answer": true,
+        "name": "très supérieures à celles atteintes en émission de flamme"
+      },
+      {
+        "answer": false,
+        "name": "très inférieures à celles atteintes en émission de flamme"
+      },
+      {
+        "answer": false,
+        "name": "très proches de celles atteintes en émission de flamme"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a75c449782612e547bf7"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Selon quel facteur la séparation s effectue−t−elle en chromatographie d exclusion stérique ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "La taille des espèces à séparer"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a7bc992d5d0095e912fe"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En chromatographie d exclusion stérique, les premières molécules à être éluées sont toujours ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "celles qui possèdent le moins d atomes de carbone"
+      },
+      {
+        "answer": false,
+        "name": "celles qui sont le plus adsorbées sur la phase stationnaire"
+      },
+      {
+        "answer": false,
+        "name": "celles qui possèdent le plus petit volume hydrodynamique"
+      },
+      {
+        "answer": true,
+        "name": "celles qui possèdent le plus grand volume hydrodynamique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a859449782612e547bf8"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En chromatographie ionique, le suppresseur d ions permet ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "d atténuer le signal de tous les ions pour ne pas saturer le détecteur"
+      },
+      {
+        "answer": false,
+        "name": "de supprimer le signal de l eau"
+      },
+      {
+        "answer": true,
+        "name": "de supprimer les ions présents dans l néluant pour qu ils ne soient pas détectés"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a89e449782612e547bf9"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En chromatographie ionique, quel type de détecteur est le plus couramment employé ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Un détecteur IR"
+      },
+      {
+        "answer": false,
+        "name": "Un réfractomètre"
+      },
+      {
+        "answer": false,
+        "name": "Un détecteur à ionisation de flamme"
+      },
+      {
+        "answer": true,
+        "name": "Un conductimètre"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a915449782612e547bfa"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En fluorimétrie, la longueur d onde du maximum d émission est ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "égale à la longueur d onde d excitation"
+      },
+      {
+        "answer": false,
+        "name": "plus petite que la longueur d onde d excitation"
+      },
+      {
+        "answer": true,
+        "name": "plus grande que la longueur d onde d excitation"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467a972992d5d0095e912ff"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Sous quel angle d observation, par rapport au rayonnement incident, la lumière émise est−elle détectée en fluorimétrie ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "45 degrés"
+      },
+      {
+        "answer": true,
+        "name": "90 degrés"
+      },
+      {
+        "answer": false,
+        "name": "180 degrés"
+      },
+      {
+        "answer": false,
+        "name": "360 degrés"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467aa67449782612e547bfb"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Parmi les propositions suivantes concernant la fluorimétrie, une seule proposition est fausse. Laquelle ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "La longueur d onde du maximum de fluorescence est plus élevée que la longueur d onde du maximum d absorption."
+      },
+      {
+        "answer": false,
+        "name": "Pour fluorescer, les molécules doivent absorber dans l UV/visible."
+      },
+      {
+        "answer": false,
+        "name": "La fluorescence a pour origine l existence d électrons excités singulet."
+      },
+      {
+        "answer": true,
+        "name": "La fluorescence est un phénomène dont la durée est de l ordre de la seconde."
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467aae8992d5d0095e91300"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Quelle grandeur est en abscisse d un spectre de masse ? On note ∶ m = masse, C = concentration, z = charge, I = intensité, n = quantité de matière.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "𝑓rac{m}{z}"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467ab0d449782612e547bfc"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Que signifie le sigle GC−MS ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Gas Chromatography−Mass Spectrometry"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467abaf449782612e547bfd"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En spectrométrie de masse, quand la valeur maximale de l axe des ordonnées est de 100, que représentent les valeurs en ordonnée ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "l abondance absolue"
+      },
+      {
+        "answer": false,
+        "name": "l absorbance relative"
+      },
+      {
+        "answer": false,
+        "name": "l absorbance absolue"
+      },
+      {
+        "answer": true,
+        "name": "l abondance relative"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467abe5992d5d0095e91301"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Quelle est la formule qui permet de calculer le coefficient de variation (écart−type relatif) ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "𝑓rac{écart−type}{moyenne}"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467ac94449782612e547bfe"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Quelle expression correspond à la loi de Beer Lambert ? Avec A l absorbance, 𝜀 le coefficient d extinction molaire, 𝜆 la longueur de la cuve et C la concentration.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "A = 𝜀 × l × C "
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b1e8f6290144d02450c8"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En analyse quantitative par chromatographie et dans des conditions d analyses données, le coefficient de réponse k d un soluté dépend ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "de la largeur à mi−hauteur"
+      },
+      {
+        "answer": false,
+        "name": "de la concentration du soluté"
+      },
+      {
+        "answer": true,
+        "name": "du temps de retention"
+      },
+      {
+        "answer": false,
+        "name": "de la nature du soluté"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b2371325c01907275cfd"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En chromatographie, la concentration des composés est proportionnelle à ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "la hauteur des pics"
+      },
+      {
+        "answer": false,
+        "name": "le temps de rétention des pics"
+      },
+      {
+        "answer": false,
+        "name": "la largeur à mi−hauteur des pics"
+      },
+      {
+        "answer": true,
+        "name": "l ^{}aire des pics"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b2a8f6290144d02450c9"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En chromatographie, dans quel ordre se déroule généralement une analyse quantitative ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Optimisation des conditions d analyse – Identification des composés – Etalonnage grâce aux solutions standards – Analyse des échantillons"
+      },
+      {
+        "answer": true,
+        "name": "Identification des composés − Optimisation des conditions d analyse − Etalonnage grâce aux solutions standards – Analyse des échantillons"
+      },
+      {
+        "answer": false,
+        "name": "Etalonnage grâce aux solutions standards − Identification des composés − Optimisation des conditions d analyse − Analyse des échantillons"
+      },
+      {
+        "answer": false,
+        "name": "Analyse des échantillons − Identification des composés − Optimisation des conditions d analyse – Etalonnage grâce aux solutions standards"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b3341325c01907275cfe"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Pour déterminer la concentration en ions Cu^{2+ }dans un échantillon, un étalonnage externe a été fait grâce à différentes solutions étalon. La droite d étalonnage a pour équation A = 0,2 × C (A = absorbance et C = concentration en mg/L). Quelle est la concentration de la solution inconnue sachant que son absorbance, mesurée dans les mêmes conditions, est de 0,5 ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "2,5 mg/L"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b392f6290144d02450ca"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Que mesure−t−on en spectrométrie de masse ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Le rapport masse/charge"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b3d31325c01907275cff"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "En spectroscopie UV−visible, le coefficient d𝑝rime extinction molaire (𝜀) est calculé à partir de ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "la loi de Beer−Lambert"
+      },
+      {
+        "answer": false,
+        "name": "la loi de Biot"
+      },
+      {
+        "answer": false,
+        "name": "La loi de Hooke"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b43ef6290144d02450cb"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Quel spectre exprime la transmittance (en pourcentage)  en fonction de la valeur du nombre d onde ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Un spectre UV−visible"
+      },
+      {
+        "answer": true,
+        "name": "Un spectre IR"
+      },
+      {
+        "answer": false,
+        "name": "Un spectre RMN"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b4781325c01907275d00"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Pour observer la résonnance magnétique nucléaire, il faut un champ magnétique et un rayonnement magnétique du domaine ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "des micro−ondes"
+      },
+      {
+        "answer": false,
+        "name": "des rayons gamma"
+      },
+      {
+        "answer": true,
+        "name": "des radiofréquences"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b4abf6290144d02450cc"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "TMS signifie en RMN ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "triméthylsulfure"
+      },
+      {
+        "answer": false,
+        "name": "triméthylsilyle"
+      },
+      {
+        "answer": true,
+        "name": "tétraméthylsilane"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b5261325c01907275d01"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Un solide est caractérisé par ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "son indice de réfraction"
+      },
+      {
+        "answer": true,
+        "name": "sa température de fusion"
+      },
+      {
+        "answer": false,
+        "name": "sa température d ébullition"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b5681325c01907275d02"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Un rayonnement de longueur d′onde 𝜆= 500 nm appartient à quel domaine du spectre électromagnétique ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Domaine du visible"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b5aa1325c01907275d03"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "L absorbance UV−visible d une substance en solution est proportionnelle à ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "sa concentration"
+      },
+      {
+        "answer": false,
+        "name": "son pouvoir rotatoire"
+      },
+      {
+        "answer": false,
+        "name": "sa valeur de pKa"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b5db1325c01907275d04"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Quelle molécule réagit avec la liqueur de Fehling pour former un précipité rouge brique d oxyde de cuivre (Cu₂O) ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Le glu𝑐ose"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b65ef6290144d02450cd"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Lors d une chromatographie sur couche mince sur silice avec un éluant donné, plus un composé est polaire ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "plus son rapport frontal est petit"
+      },
+      {
+        "answer": true,
+        "name": "plus son rapport frontal est élevé"
+      },
+      {
+        "answer": false,
+        "name": "plus sa température d'ébullition est élevée"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b6d71325c01907275d05"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Quelle méthode ne permet pas de purifier un solide ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "La recristallisation"
+      },
+      {
+        "answer": true,
+        "name": "La distillation"
+      },
+      {
+        "answer": false,
+        "name": "La chromatographie sur colonne"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b71bf6290144d02450ce"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "L acétone (propan−2−one) est un solvant ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "polaire protique"
+      },
+      {
+        "answer": true,
+        "name": "polaire aprotique"
+      },
+      {
+        "answer": false,
+        "name": "apolaire aprotique"
+      },
+      {
+        "answer": false,
+        "name": "apolaire protique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b75e1325c01907275d06"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Parmi les matériels suivants, lequel ne permet pas de mesurer un volume ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "la fiole jaugée"
+      },
+      {
+        "answer": false,
+        "name": "la pipette graduée"
+      },
+      {
+        "answer": true,
+        "name": "la pipette pasteur"
+      },
+      {
+        "answer": false,
+        "name": "l éprouvette"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b7991325c01907275d07"
+    },
+    "category": "Analyses & caractérisations",
+    "difficulty": "S5",
+    "name": "Pour mesurer précisément un volume quel est le matériel le mieux adapté ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "une pipette graduée"
+      },
+      {
+        "answer": false,
+        "name": "un bécher gradué"
+      },
+      {
+        "answer": false,
+        "name": "une fiole Erlenmeyer graduée"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b9ba1325c01907275d08"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Quel acide est utilisé dans la fabrication des batteries pour voitures ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "L acide sulfurique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b9ddf6290144d02450cf"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Qu'est ce qu'une transformation physique ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Un changement d état / une transition de phase"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467b9fe1325c01907275d09"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Comment s'appelle le changement d'état du solide vers le liquide ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "La fusion"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467ba1df6290144d02450d0"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Comment s'appelle le changement d'état du liquide vers le solide ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "La solidification"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467ba4a1325c01907275d0a"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Comment s'appelle le changement d'état du gaz vers le liquide ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "La liquéfaction"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467ba6df6290144d02450d1"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Comment s'appelle le changement d'état du liquide vers le gaz ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "La vaporisation"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467ba921325c01907275d0b"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Comment s'appelle le changement d'état du solide vers le gaz ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "La sublimation"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467baba1325c01907275d0c"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Comment s'appelle le changement d'état du gaz vers le solide ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "La condensation"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467bb27f6290144d02450d2"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Laquelle de ces propositions n est pas une transformation physique ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "La précipitation"
+      },
+      {
+        "answer": false,
+        "name": "La distillation"
+      },
+      {
+        "answer": true,
+        "name": "L oxydation"
+      },
+      {
+        "answer": false,
+        "name": "La décantation"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467bb92f6290144d02450d3"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Laquelle de ces propositions est une transformation chimique ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "L ébullition de l eau"
+      },
+      {
+        "answer": false,
+        "name": "La congélation de l eau"
+      },
+      {
+        "answer": false,
+        "name": "La dissolution du sel dans l eau"
+      },
+      {
+        "answer": true,
+        "name": "L enrouillement de fer"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467bbde1325c01907275d0d"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "La combinaison d une substance avec l oxygène est connu sous le nom de ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "oxydation"
+      },
+      {
+        "answer": false,
+        "name": "combustion"
+      },
+      {
+        "answer": false,
+        "name": "hydrogénation"
+      },
+      {
+        "answer": false,
+        "name": "réduction"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467bd08f6290144d02450d4"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "L azote (N) peut avoir des nombres d oxydation (NO) qui varient de −3 à +5. Laquelle des propositions suivantes est correcte ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Le NO de l atome d azote dans l ion nitrate vaut +4"
+      },
+      {
+        "answer": false,
+        "name": "Le NO de l atome d azote dans l hydrazine (N₂H₄) vaut −4"
+      },
+      {
+        "answer": true,
+        "name": "Le NO de l atome d azote dans l hydroxylamine (NH₂OH) vaut −1"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6467bd2f1325c01907275d0e"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Un oxydant capte un électron.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6468fb4449943a661a510705"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Quelle entité n est pas un oxydant parmi les propositions suivantes ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "MnO₄^{−}"
+      },
+      {
+        "answer": false,
+        "name": "Cu^{2+}"
+      },
+      {
+        "answer": true,
+        "name": "Zn"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6468fbd64c0d534a0abc9252"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Vrai ou faux ∶ dans une demi−équation électronique, un élément s′oxyde si son nombre d′oxydation augmente.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6468fdbe4c0d534a0abc9253"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "A 25°C, comment exprime−t−on la relation de Nernst pour la demi−équation ∶ aOx + ne⁻ + bH⁺ = cRed + dH₂O ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "E = E⁰+0,059/n× log([Ox]ᵃ[H⁺]ᵇ/[Red]ᶜ)"
+      },
+      {
+        "answer": false,
+        "name": " E = E⁰−0,059/n× log([Ox]ᵃ[H⁺]ᵇ/[Red]ᶜ) "
+      },
+      {
+        "answer": false,
+        "name": " E = E⁰+0,059× log([Ox]ᵃ[H⁺]ᵇ/[Red]ᶜ) "
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646900e8a91b787baf4aa9ee"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Soit l équation ∶ Cu^{2+} + Zn = Cu + Zn^{2+}, avec E0(Cu^{2+}/Cu) = 0,34 V vs ESH et E0(Zn^{2+}/Zn) = −0,76 V vs ESH. Quelle est la proposition fausse ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Cu^{2+} est l oxydant et Zn est le réducteur."
+      },
+      {
+        "answer": true,
+        "name": "Il y a n = 4 électrons échangés entre Cu^{2+} et Zn."
+      },
+      {
+        "answer": false,
+        "name": "Cu^{2+} se réduit en gagnant 2 électrons et Zn s oxyde en en perdant 2."
+      },
+      {
+        "answer": false,
+        "name": "𝛥 E0 = 1,1 V donc log(K) = 2 × 𝛥 E0/0,059 > 4, donc la réaction est totale."
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646901a54c0d534a0abc9254"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Dans le composé Fe₃O₄, quel est le degré d'oxydation du fer ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "2"
+      },
+      {
+        "answer": false,
+        "name": "3"
+      },
+      {
+        "answer": false,
+        "name": "8/3"
+      },
+      {
+        "answer": true,
+        "name": "2 et 3"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469022fa91b787baf4aa9ef"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Laquelle des ces 4 propositions est vraie ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Une réaction chimique est une réaction électrochimique."
+      },
+      {
+        "answer": true,
+        "name": "Une réaction électrochimique est une réaction chimique."
+      },
+      {
+        "answer": false,
+        "name": "Une réaction chimique est une réaction redox."
+      },
+      {
+        "answer": false,
+        "name": "Une réaction électrochimique est une réaction redox."
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690287a91b787baf4aa9f0"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Le nombre d oxydation de l atome d oxygène n est pas toujours égal à –II.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690316a91b787baf4aa9f1"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Dans la réaction 3Fe²⁺(aq) → Fe(s) + 2Fe³⁺(aq), quel rôle joue Fe²⁺ ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Le rôle d'oxydant"
+      },
+      {
+        "answer": false,
+        "name": "Le rôle de réducteur"
+      },
+      {
+        "answer": true,
+        "name": "Le rôle d'oxydant et de réducteur"
+      },
+      {
+        "answer": false,
+        "name": "Le rôle d'oxydant ou de réducteur"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646903b2a91b787baf4aa9f2"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Une demi−équation électronique s écrit ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Ox + ne^{−} → Red"
+      },
+      {
+        "answer": false,
+        "name": "Red → Ox + ne^{−}"
+      },
+      {
+        "answer": true,
+        "name": "Ox + ne^{−} = Red"
+      },
+      {
+        "answer": false,
+        "name": "Red = Ox + ne^{−}"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690603a91b787baf4aa9f3"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Quel potentiel obtient−on à la demi−équivalence redox ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Toujours le potentiel standard de l′espèce titrante"
+      },
+      {
+        "answer": false,
+        "name": "Toujours le potentiel standard de l′espèce titrée"
+      },
+      {
+        "answer": true,
+        "name": "Parfois le potentiel standard de l′espèce titrée"
+      },
+      {
+        "answer": false,
+        "name": "Parfois le potentiel standard de l′espèce titrante"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469065ba91b787baf4aa9f4"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Quel potentiel obtient−on à la double équivalence redox ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Toujours le potentiel standard de l'espèce titrante"
+      },
+      {
+        "answer": false,
+        "name": "Toujours le potentiel standard de l'espèce titrée"
+      },
+      {
+        "answer": false,
+        "name": "Parfois le potentiel standard de l'espèce titrée"
+      },
+      {
+        "answer": true,
+        "name": "Parfois le potentiel standard de l'espèce titrante"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646906f5183a942e3067ebd4"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "L intensité de courant débitée par une pile dépend principalement de la force électromotrice de cette pile.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469071bfd44834438b5abf6"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Vrai ou faux ∶ Dans une cellule électrochimique, les cations se déplacent vers la cathode et les anions vers l'anode.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469074a183a942e3067ebd5"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Une cellule électrochimique opérant dans l eau peut avoir une force électromotrice supérieure à la différence des potentiels d oxydation et de réduction de l eau.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469076dfd44834438b5abf7"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Une réaction dans le sens direct passe par les mêmes intermédiaires et états de transition que la réaction dans le sens opposé.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646907c7183a942e3067ebd6"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Comment est la solution électrolytique au voisinage immédiat de l'interface électrode−électrolyte ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Pas électriquement neutre"
+      },
+      {
+        "answer": false,
+        "name": "Electriquement neutre"
+      },
+      {
+        "answer": false,
+        "name": "Chargée positivement"
+      },
+      {
+        "answer": false,
+        "name": "Chargée négativement"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646907f1fd44834438b5abf8"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "On peut obtenir un régime de diffusion stationnaire en l absence de convection. ",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690822183a942e3067ebd7"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Vrai ou faux ∶ Dans une cellule conductimétrique fonctionnant sous tension alternative, il n'y a pas de réaction d oxydation−réduction aux électrodes. ",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469086e0869ea754f137f97"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Du seul point de vue thermodynamique, un métal dévient plus facilement oxydable ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "lorsque le pH diminue"
+      },
+      {
+        "answer": true,
+        "name": "lorsque le pH augmente"
+      },
+      {
+        "answer": false,
+        "name": "lorsque le pH diminue ou augmente"
+      },
+      {
+        "answer": false,
+        "name": "lorsque le pH ne diminue pas ou n augmente pas"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646908a6183a942e3067ebd8"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "On peut protéger un métal de la corrosion en l oxydant électrochimiquement.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646908d20869ea754f137f98"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "La température thermodynamique peut−elle être négative ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Non. En Kelvin, T_\\ₘᵢₙ = 0 K"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646909140869ea754f137f99"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Il vaut mieux cuire ses pâtes au bord de la mer ou en haut de l Everest ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Au bord de la mer. Ca va bouillir très vite en haut de l Everest, mais ce qui est recherché, c′est une très haute température d ébullition ∶ il faut éviter les basses pressions."
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690964183a942e3067ebd9"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Quand un ballon monte dans le ciel ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "il se comprime"
+      },
+      {
+        "answer": true,
+        "name": "il se dilate"
+      },
+      {
+        "answer": false,
+        "name": "il ne change pas"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469099b0869ea754f137f9a"
+    },
+    "category": "Chimie physique & électrochimie",
+    "difficulty": "S5",
+    "name": "Si on ajoute un catalyseur à un système réactionnel qui met en jeu 2 étapes opposées, on favorise l étape directe ou opposée ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Aucune des deux. Le catalyseur ne déplace jamais un équilibre thermodynamique. Les deux étapes subissent la même influence du catalyseur."
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690a4e0869ea754f137f9b"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quel est le nom chimique de la vitamine C ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "L acide ascorbique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690a8a183a942e3067ebda"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Les antiacides qui sont produits dans l estomac contiennent deux bases principalement, à savoir l hydoxyde d aluminium et l hydroxyde de ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Magnésium"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690ab00869ea754f137f9c"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quel gaz de base est utilisé dans la fabrication des engrais, tels que l urée ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "L ammoniac"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690acb183a942e3067ebdb"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quel acide est présent dans le lait ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "L acide lactique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690af40869ea754f137f9d"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quelle est l origine naturelle du latex ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "L hévéa"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690b0d183a942e3067ebdc"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Qui a obtenu le prix Nobel de chimie pour ses travaux sur le polonium et le radium ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Marie Curie"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690b2a0869ea754f137f9e"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quel qualificatif donne−t−on à une substance qui absorbe l humidité ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Hygroscopique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690c550869ea754f137f9f"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Equilibrer cette équation chimique ∶ K+O₂→ K₂O",
+    "propositions": [
+      {
+        "answer": true,
+        "name": " 4K+O₂→ 2K₂O "
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690e2a0869ea754f137fa1"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Equilibrer cette équation chimique ∶ SiO₂ + C → SiC + CO",
+    "propositions": [
+      {
+        "answer": true,
+        "name": " SiO₂ + 3C → SiC + 2CO "
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690e60183a942e3067ebde"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Equilibrer cette équation chimique ∶ PbO₂+ HCl → PbCl₂ + H₂O + Cl₂",
+    "propositions": [
+      {
+        "answer": true,
+        "name": " PbO₂+ 4HCl → 4PbCl₂ + 2H₂O + Cl₂ "
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690e8e0869ea754f137fa2"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Equilibrer cette équation chimique ∶ P + O₂ → P₂O₅",
+    "propositions": [
+      {
+        "answer": true,
+        "name": " 4P + 5O₂ → 2P₂O₅ "
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690eb5183a942e3067ebdf"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Equilibrer cette équation chimique ∶ ZnS + O₂ → ZnO + SO₂",
+    "propositions": [
+      {
+        "answer": true,
+        "name": " 2ZnS + 3O₂ → 2ZnO + 2SO₂ "
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690ede0869ea754f137fa3"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Equilibrer cette équation chimique ∶ PbO₂ → PbO + O₂",
+    "propositions": [
+      {
+        "answer": true,
+        "name": " 2PbO₂ → 2PbO + O₂ "
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690f08183a942e3067ebe0"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Equilibrer cette équation chimique ∶ Al + Cl₂→ AlCl₃",
+    "propositions": [
+      {
+        "answer": true,
+        "name": " 2Al + 3Cl₂→ 2AlCl₃ "
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690f380869ea754f137fa4"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Equilibrer cette équation chimique ∶ P₂O₅ + H₂O → H₃PO₄",
+    "propositions": [
+      {
+        "answer": true,
+        "name": " P₂O₅ + 3H₂O → 2H₃PO₄ "
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690f610869ea754f137fa5"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quelle est l unité de mesure internationale de Pression ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Le Pascal"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690f8a183a942e3067ebe1"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Qu est ce qu une réaction nucléaire ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Une transformation d un ou plusieurs noyaux atomiques"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690fae0869ea754f137fa6"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Comment appelle−t−on une région de l'espace dans laquelle il n'y a pas de discontinuité dans les valeurs de toutes les variables intensives ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Une phase"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690fc2183a942e3067ebe2"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Comment appelle−t−on une phase déformable ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Un fluide"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64690fd80869ea754f137fa7"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Comment appelle−t−on une phase incompressible ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Une phase condensée"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469103f183a942e3067ebe3"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Comparer les rayons d'un atome neutre A , de son anion A⁻ et de son cation A⁺.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "R(A⁻) > R(A) > R(A⁺)"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646910fa0869ea754f137fa8"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quel est l ordre de grandeur de la longueur, en Angstroms, d une liaison C−C simple ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "1,2"
+      },
+      {
+        "answer": false,
+        "name": "1,35"
+      },
+      {
+        "answer": true,
+        "name": "1,54"
+      },
+      {
+        "answer": false,
+        "name": "2"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469113b183a942e3067ebe4"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quel est l ordre de grandeur de la longueur, en Angstroms, d une liaison C=C double ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "1,2"
+      },
+      {
+        "answer": true,
+        "name": "1,35"
+      },
+      {
+        "answer": false,
+        "name": "1,54"
+      },
+      {
+        "answer": false,
+        "name": "2"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469117e0869ea754f137fa9"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quelle est la longueur, en Angstroms, d une liaison C−C aromatique dans le benzène ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "1,2"
+      },
+      {
+        "answer": false,
+        "name": "1,35"
+      },
+      {
+        "answer": true,
+        "name": "1,42"
+      },
+      {
+        "answer": false,
+        "name": "1,54"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646911de183a942e3067ebe5"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "La méthode VSEPR sert à ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "prédire la géométrie d une molécule"
+      },
+      {
+        "answer": false,
+        "name": "estimer les énergies des orbitales atomiques"
+      },
+      {
+        "answer": false,
+        "name": "estimer les électronégativités des atomes"
+      },
+      {
+        "answer": false,
+        "name": "estimer les énergies d ionisations"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469124b0869ea754f137faa"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Considérons la molécule diatomique O₂, placée dans l'axe z sur un système de coordonnées cartésiennes. Quelles sont les orbitales responsables de l'établissement de la liaison 𝜎 ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "sp sur chaque O"
+      },
+      {
+        "answer": false,
+        "name": "𝜋"
+      },
+      {
+        "answer": false,
+        "name": "𝜋 *"
+      },
+      {
+        "answer": false,
+        "name": "1s sur chaque O"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646912bc183a942e3067ebe6"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quelle est la valeur de l angle H−C−H dans le méthane ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "90 degrés"
+      },
+      {
+        "answer": true,
+        "name": "109,5 degrés"
+      },
+      {
+        "answer": false,
+        "name": "120 degrés"
+      },
+      {
+        "answer": false,
+        "name": "180 degrés"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646913190869ea754f137fab"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Le carbone diamant est ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "un solide métallique"
+      },
+      {
+        "answer": true,
+        "name": "un solide covalent"
+      },
+      {
+        "answer": false,
+        "name": "un solide ionique"
+      },
+      {
+        "answer": false,
+        "name": "un solide moléculaire"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64691348183a942e3067ebe7"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Le diiode solide est ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "un solide métallique"
+      },
+      {
+        "answer": false,
+        "name": "un solide covalent"
+      },
+      {
+        "answer": false,
+        "name": "un solide ionique"
+      },
+      {
+        "answer": true,
+        "name": "un solide moléculaire"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646913990869ea754f137fac"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Un exemple d une moléculaire dipolaire est ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "CH₄"
+      },
+      {
+        "answer": false,
+        "name": "H₂"
+      },
+      {
+        "answer": true,
+        "name": "H₂O"
+      },
+      {
+        "answer": false,
+        "name": "NaCl"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646913eb183a942e3067ebe8"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Parmi les molécules suivantes, laquelle est capable de créer des liaisons hydrogène ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "NH₃"
+      },
+      {
+        "answer": false,
+        "name": "CH₄"
+      },
+      {
+        "answer": false,
+        "name": "BH₃"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469144a0869ea754f137fad"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "La géométrie de la molécule de méthane est ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "tétraédrique"
+      },
+      {
+        "answer": false,
+        "name": "plane − trigonale"
+      },
+      {
+        "answer": false,
+        "name": "linéaire"
+      },
+      {
+        "answer": false,
+        "name": "bipyramidale − trigonale"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646914a3183a942e3067ebe9"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Une liaison dans laquelle la densité électronique est concentrée dans la région entre les deux noyaux (dans l axe de la liaison) est une liaison ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "aromatique"
+      },
+      {
+        "answer": false,
+        "name": "pi"
+      },
+      {
+        "answer": false,
+        "name": "ionique"
+      },
+      {
+        "answer": true,
+        "name": "sigma"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64691640183a942e3067ebea"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Pourquoi le dioxygène est considéré comme molécule paramagnétique ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Les protons sont tous alignés selon un champ magnetique"
+      },
+      {
+        "answer": true,
+        "name": "Il y a des électrons célibataires dans les OM"
+      },
+      {
+        "answer": false,
+        "name": "Car la liaison sigma est très basse en énergie"
+      },
+      {
+        "answer": false,
+        "name": "Tous les électrons sont appariés"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646916710869ea754f137fae"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Combien d'électrons peuvent accueillir les orbitales atomiques de type p ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "2"
+      },
+      {
+        "answer": true,
+        "name": "6"
+      },
+      {
+        "answer": false,
+        "name": "10"
+      },
+      {
+        "answer": false,
+        "name": "14"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646916a10869ea754f137faf"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Combien d'électrons peuvent accueillir les orbitales atomiques de type d ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "2"
+      },
+      {
+        "answer": false,
+        "name": "6"
+      },
+      {
+        "answer": true,
+        "name": "10"
+      },
+      {
+        "answer": false,
+        "name": "14"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646916d0183a942e3067ebeb"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Combien d'électrons peuvent accueillir les orbitales atomiques de type f ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "2"
+      },
+      {
+        "answer": false,
+        "name": "6"
+      },
+      {
+        "answer": false,
+        "name": "10"
+      },
+      {
+        "answer": true,
+        "name": "14"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469170c0869ea754f137fb0"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Combien d'électrons peuvent accueillir les orbitales atomiques de type s ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "2"
+      },
+      {
+        "answer": false,
+        "name": "6"
+      },
+      {
+        "answer": false,
+        "name": "10"
+      },
+      {
+        "answer": false,
+        "name": "14"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469176e183a942e3067ebec"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Combien d'électrons sont présents dans orbitale atomique 2p de l' anion F⁻ ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "2"
+      },
+      {
+        "answer": false,
+        "name": "4"
+      },
+      {
+        "answer": false,
+        "name": "6"
+      },
+      {
+        "answer": true,
+        "name": "7"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646917be0869ea754f137fb1"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quelles sont les orbitales de valence pour les éléments C, N et O ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "1s, 2s et 2p"
+      },
+      {
+        "answer": true,
+        "name": "2s et 2p"
+      },
+      {
+        "answer": false,
+        "name": "2p"
+      },
+      {
+        "answer": false,
+        "name": "2p et 3s"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469185e183a942e3067ebed"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "L angle entre les liaisons simples C−C du méthylpropène CH₂=C(CH₃)₂ est ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "égale à 120 degrés "
+      },
+      {
+        "answer": false,
+        "name": "supérieure à 120 degrés et inférieure à 150 degrés"
+      },
+      {
+        "answer": true,
+        "name": "inferieure à 120 degrés"
+      },
+      {
+        "answer": false,
+        "name": "supérieure à 180 degrés"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646918970869ea754f137fb2"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Combien de doublet non−liants se trouvent sur l'azote dans NH₃ ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "1 doublet non−liant"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646919170869ea754f137fb3"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Si la BV de C₂H₄ est une orbitale anti−liante pi qui reçoit un électron suite à l interaction avec une autre molécule, la longueur de la liaison CC dans C₂H₄ ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "augmente"
+      },
+      {
+        "answer": false,
+        "name": "diminue"
+      },
+      {
+        "answer": false,
+        "name": "ne change pas"
+      },
+      {
+        "answer": false,
+        "name": "augmente et puis diminue suite à une relaxation de la liaison"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64691962183a942e3067ebee"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Comment la liaison CO dans méthanal est elle polarisée ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Positive sur C"
+      },
+      {
+        "answer": false,
+        "name": "Positive sur O"
+      },
+      {
+        "answer": false,
+        "name": "Elle n′est pas polarisée"
+      },
+      {
+        "answer": false,
+        "name": "Ca depend de la température"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646919990869ea754f137fb4"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quelle est la valeur, en degrés de l angle dièdre dans le méthanal ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "0"
+      },
+      {
+        "answer": false,
+        "name": "90"
+      },
+      {
+        "answer": false,
+        "name": "120"
+      },
+      {
+        "answer": true,
+        "name": "180"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646919c80869ea754f137fb5"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Combien d'électrons 𝜋 possède le butadiène ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "1"
+      },
+      {
+        "answer": false,
+        "name": "2"
+      },
+      {
+        "answer": true,
+        "name": "4"
+      },
+      {
+        "answer": false,
+        "name": "5"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64691a18183a942e3067ebef"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Si on place une molécule d éthylène selon le plan XY, quelles orbitales atomiques participent au système pi ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "les sp présentes sur chaque C"
+      },
+      {
+        "answer": false,
+        "name": "les 1s des H"
+      },
+      {
+        "answer": false,
+        "name": "les 2py sur les C"
+      },
+      {
+        "answer": true,
+        "name": "les 2pz sur les C"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64691c71b5169f12929468b6"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Comment appelle−t−on la règle qui décrit le remplissage des spin−orbitales p dans l'azote ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Hund"
+      },
+      {
+        "answer": false,
+        "name": "Pauli"
+      },
+      {
+        "answer": false,
+        "name": "Bose−Einstein"
+      },
+      {
+        "answer": false,
+        "name": "Born−Oppenheimer"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64691d410746a030e51c1968"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Comment appelle−t−on la règle qui décrit l'odre de remplissage des orbitales dans un atome ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Madelung"
+      },
+      {
+        "answer": false,
+        "name": "Bohr"
+      },
+      {
+        "answer": false,
+        "name": "Basse−Haute Energie"
+      },
+      {
+        "answer": true,
+        "name": "Klechkowski"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64691d7c8b928e018e3ef153"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Combien d'électrons 𝜋 sont présents dans l'acétylène ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "0"
+      },
+      {
+        "answer": false,
+        "name": "2"
+      },
+      {
+        "answer": true,
+        "name": "4"
+      },
+      {
+        "answer": false,
+        "name": "6"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64691db20746a030e51c1969"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quelle type de liaison covalente entre deux atomes de carbone aura une fréquence de vibration la plus basse ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Double"
+      },
+      {
+        "answer": true,
+        "name": "Simple"
+      },
+      {
+        "answer": false,
+        "name": "Triple"
+      },
+      {
+        "answer": false,
+        "name": "Aromatique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64691df6df7ab4260a96f133"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Combien d'électrons 𝜋 possèdent les molécules aromatiques ? (avec n = entier positif)",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "4n"
+      },
+      {
+        "answer": true,
+        "name": "4n + 2"
+      },
+      {
+        "answer": false,
+        "name": "6n"
+      },
+      {
+        "answer": false,
+        "name": "8n − 2"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64691e4b7f2b8d5e0c920d31"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Parmi les systèmes chimiques suivants, lequel ne présente pas des liaisons H intermoléculaires ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Les protéines"
+      },
+      {
+        "answer": false,
+        "name": "Les alcools"
+      },
+      {
+        "answer": false,
+        "name": "Les acides carboxyliques"
+      },
+      {
+        "answer": true,
+        "name": "Les alcanes"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64691e98df7ab4260a96f134"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Les interactions dans NaCl sont des liaisons ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "pi"
+      },
+      {
+        "answer": false,
+        "name": "triples"
+      },
+      {
+        "answer": true,
+        "name": "ioniques"
+      },
+      {
+        "answer": false,
+        "name": "sigma"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64691ed67f2b8d5e0c920d32"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quelle est la longueur, en Angstroms, d une liaison O−H dans H₂O ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "0,96"
+      },
+      {
+        "answer": false,
+        "name": "1,1"
+      },
+      {
+        "answer": false,
+        "name": "1,2"
+      },
+      {
+        "answer": false,
+        "name": "1,35"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64691f3edf7ab4260a96f135"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quelle est la géométrie des composées suivants ∶ SiCl₄, GeCl₄ et SnCl₄ ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Tétraédrique"
+      },
+      {
+        "answer": false,
+        "name": "Octaédrique"
+      },
+      {
+        "answer": false,
+        "name": "Plane"
+      },
+      {
+        "answer": false,
+        "name": "Linéaire"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64691fa07f2b8d5e0c920d33"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quelle sont les valeurs que peut prendre le nombre quantique de spin d un électron ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "± 1/2"
+      },
+      {
+        "answer": false,
+        "name": "± 1"
+      },
+      {
+        "answer": false,
+        "name": "± 3/4"
+      },
+      {
+        "answer": false,
+        "name": "± 1/4"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64691fe5df7ab4260a96f136"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quelle est la valeur du spin total d'un atome de carbone en valeur absolue ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "0,5"
+      },
+      {
+        "answer": true,
+        "name": "1"
+      },
+      {
+        "answer": false,
+        "name": "2"
+      },
+      {
+        "answer": false,
+        "name": "4"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646920457f2b8d5e0c920d34"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quels sont les deux nombres quantiques permettant de décrire le niveau d énergie d un électron ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "n et ms"
+      },
+      {
+        "answer": true,
+        "name": "n et l"
+      },
+      {
+        "answer": false,
+        "name": "n et ml"
+      },
+      {
+        "answer": false,
+        "name": "l et ms"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "64692096df7ab4260a96f137"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "L état quantique d un électron d un atome peut être décrit par les nombres quantiques ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "n et ms"
+      },
+      {
+        "answer": true,
+        "name": "n, l, ml et ms"
+      },
+      {
+        "answer": false,
+        "name": "n, l et ml"
+      },
+      {
+        "answer": false,
+        "name": "n, l et ms"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "646920ce7f2b8d5e0c920d35"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Une case quantique (orbitale quantique) est caracterisée par ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "n et ms"
+      },
+      {
+        "answer": false,
+        "name": "n"
+      },
+      {
+        "answer": false,
+        "name": "n et l"
+      },
+      {
+        "answer": true,
+        "name": "n, l et ml"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469211adf7ab4260a96f138"
+    },
+    "category": "Chimie & culture générale",
+    "difficulty": "S5",
+    "name": "Quel gaz est libéré lorsque de l acide sulfurique dilué est ajouté au zinc ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Argon"
+      },
+      {
+        "answer": true,
+        "name": "Dihydrogène"
+      },
+      {
+        "answer": false,
+        "name": "Dioxyde de Soufre"
+      },
+      {
+        "answer": false,
+        "name": "Peroxyde d hydrogène"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469b5163aa3f46ed62c7feb"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "La transformation d un acide carboxylique en amide est une réaction d oxydation.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469b569e214dd487b94c4c6"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "L estérification d un acide carboxylique par un alcool est une réaction ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "exothermique"
+      },
+      {
+        "answer": false,
+        "name": "endothermique"
+      },
+      {
+        "answer": true,
+        "name": "athermique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469b6153aa3f46ed62c7fec"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Pour favoriser de la réaction d estérification en milieu acide vers la formation de l ester R₁COOH + R₂OH =R₁COOR₂ + H₂O, on peut ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "ajouter de l eau en excès"
+      },
+      {
+        "answer": true,
+        "name": "ajouter de l alcool en excès"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469b667e214dd487b94c4c7"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "L étape cinétiquement déterminante du mécanisme d hydrolyse d un ester est ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "la protonation de l ester"
+      },
+      {
+        "answer": true,
+        "name": "l addition d eau"
+      },
+      {
+        "answer": false,
+        "name": "l élimination d alcool"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469b6a93aa3f46ed62c7fed"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "L étape cinétiquement déterminante du mécanisme d hydrolyse basique d un amide est ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "l addition d ion hydroxyde"
+      },
+      {
+        "answer": false,
+        "name": "l élimination d ion amidure"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469b6fbe214dd487b94c4c8"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "La saponification d un ester possède une constante d équilibre élevée car ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "l ion hydroxyde est plus nucléophile que l eau"
+      },
+      {
+        "answer": false,
+        "name": "l intermédiaire tétraédrique est très instable"
+      },
+      {
+        "answer": true,
+        "name": "la dernière étape du mécanisme possède une constante d équilibre élevée"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469b7513aa3f46ed62c7fee"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Lors d une réaction entre un alcool et un chlorure d acyle l ajout d une base est nécessaire pour ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "former l alcoolate, plus nucléophile que l alcool"
+      },
+      {
+        "answer": true,
+        "name": "neutraliser l acide formé"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469b78be214dd487b94c4c9"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Les organomagnésiens mixtes s additionnent sur les esters selon ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "une addition nucléophile"
+      },
+      {
+        "answer": false,
+        "name": "une addition électrophile"
+      },
+      {
+        "answer": true,
+        "name": "une séquence addition−élimination"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469b9721375ef66e733ee3e"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "L addition d un organomagnésien mixte sur un ester sans précaution particulière produit ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "un aldéhyde"
+      },
+      {
+        "answer": false,
+        "name": "une cétone"
+      },
+      {
+        "answer": true,
+        "name": "un alcool"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469b9b01375ef66e733ee3f"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Les chlorures d acyle sont plus réactifs que les esters vis−à vis de l addition nucléophile en raison ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "d un effet stérique"
+      },
+      {
+        "answer": true,
+        "name": "de l effet électronique de l atome de chlore"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469b9d0e214dd487b94c4ca"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "L assistance électrophile sur le groupe carbonyle correspond à ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "une augmentation de l électrophilie du carbone"
+      },
+      {
+        "answer": false,
+        "name": "une diminution de la nucléophilie de l atome d oxygène"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469b9f71375ef66e733ee40"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "La stabilité des carbanions en alpha des groupes carbonyles est expliquée par ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "le caractère électrodonneur de l atome de carbone du carbonyle"
+      },
+      {
+        "answer": true,
+        "name": "la délocalisation de la charge sur le groupe carbonyle"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469ba2f1375ef66e733ee41"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Dans un ion énolate (C₂=C₁−O⁻), par quel atome est portée principalement la charge ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "L'atome de carbone C₁"
+      },
+      {
+        "answer": false,
+        "name": "L'atome de carbone C₂"
+      },
+      {
+        "answer": true,
+        "name": "L'atome d'oxygène"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469ba641375ef66e733ee42"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Dans un ion énolate (C₂=C₁−O⁻), sur quel atome ont lieu les réactions sous contrôle de charge ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "L'atome de carbone C₁"
+      },
+      {
+        "answer": false,
+        "name": "L'atome de carbone C₂"
+      },
+      {
+        "answer": true,
+        "name": "L'atome d'oxygène"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469baa3e214dd487b94c4cb"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Dans un ion énolate (C₂=C₁−O⁻), sur quel atome ont lieu les réactions sous contrôle orbitalaire ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "L'atome de carbone C₁"
+      },
+      {
+        "answer": true,
+        "name": "L'atome de carbone C₂"
+      },
+      {
+        "answer": false,
+        "name": "L'atome d'oxygène"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469bac51375ef66e733ee43"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "En réalisant la déprotonation d une cétone à basse température avec une base forte de type diisopropyl amidure de lithium, on obtient ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "l énolate cinétique"
+      },
+      {
+        "answer": false,
+        "name": "l énolate thermodynamique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469bae5e214dd487b94c4cc"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Un énol est en équilibre avec une cétone ou un aldéhyde.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469bb641375ef66e733ee44"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Lors de la réaction d aldolisation entre un aldéhyde et une cétone (conditions thermodynamiques sans facteurs électroniques particuliers), la réaction favorisée est ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "l addition de l énolate de la cétone sur l aldéhyde"
+      },
+      {
+        "answer": false,
+        "name": "l addition de l énolate de l aldéhyde sur la cétone"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469bc4fe214dd487b94c4cd"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Les carbanions de type énolate peuvent donner lieu à des réactions d alkylation.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469bc661375ef66e733ee45"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "La réaction d aldolisation présente une stéréosélectivité due aux encombrements stériques.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469bc7ee214dd487b94c4ce"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "La réaction d aldolisation ne peut pas se produire en milieu acide.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469bc931375ef66e733ee46"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Les carbanions de type énolate ne donnent pas lieu à des réactions d addition nucléophile sur les aldéhydes.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469bcb11375ef66e733ee47"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Une hémisynthèse est ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "la synthèse partielle d une molécule à partir d une molécule naturelle"
+      },
+      {
+        "answer": false,
+        "name": "la moitié des étapes d une synthèse de molécule"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469bcd1e214dd487b94c4cf"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Une réaction de Michaël est une addition de type ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "électrophile"
+      },
+      {
+        "answer": true,
+        "name": "nucléophile"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469bcee1375ef66e733ee48"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Une réaction de Michaël en position 4 est sous contrôle ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "de charge"
+      },
+      {
+        "answer": true,
+        "name": "orbitalaire"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469bd12e214dd487b94c4d0"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Une réaction de Wittig entre un ylure stabilisé et un aldéhyde permet d obtenir un alcène ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Z"
+      },
+      {
+        "answer": true,
+        "name": "E"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469bd241375ef66e733ee49"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Une réaction de Wittig entre un ylure non stabilisé et un aldéhyde permet d obtenir un alcène ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Z"
+      },
+      {
+        "answer": false,
+        "name": "E"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469bd41e214dd487b94c4d1"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Une réaction de métathèse est sous contrôle ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "cinétique"
+      },
+      {
+        "answer": true,
+        "name": "thermodynamique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469bee41375ef66e733ee4a"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Une réaction de métathèse entre deux alcènes (R₁−CH=CH₂ et R₂−CH=CH₂) donne (y compris les isomères) ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "3 alcènes"
+      },
+      {
+        "answer": true,
+        "name": "5 alcènes"
+      },
+      {
+        "answer": false,
+        "name": "6 alcènes"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c0ee1375ef66e733ee4b"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "La réaction de réduction d un ester R₁−COO−R₂ par LiAlH₄ produit ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "un aldéhyde R₁CHO et un alcool R₂OH"
+      },
+      {
+        "answer": true,
+        "name": "deux alcools R₁CH₂OH et R₂OH"
+      },
+      {
+        "answer": false,
+        "name": "deux aldéhydes R₁CHO et R₂CHO"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c1191375ef66e733ee4c"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "La réaction de Diels−Alder entre un diène et un diénophile est stéréospécifique par rapport ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "au diène seulement"
+      },
+      {
+        "answer": false,
+        "name": "au diénophile seulement"
+      },
+      {
+        "answer": true,
+        "name": "au diène et au diénophile"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c14438664510265682e2"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "La réaction de Diels−Alder est sous contrôle de l interaction ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "de l orbitale HO du diène et de l orbitale BV du diénophile"
+      },
+      {
+        "answer": false,
+        "name": "de l orbitale BV du diène et de l orbitale HO du diénophile"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c16e38664510265682e3"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "La régiosélectivité de la réaction de Diels−Alder est sous contrôle ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "des interactions secondaires entre orbitales frontières"
+      },
+      {
+        "answer": false,
+        "name": "de la valeur des coefficients des orbitales atomiques de l orbitale HP du diène"
+      },
+      {
+        "answer": true,
+        "name": "de la somme des produits des coefficients des orbitales atomiques des orbitales frontières en interaction"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c18e38664510265682e4"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "La constante de vitesse d une réaction de Diels−Alder augmente lorsque le diène est substitué par ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "un groupe électrodonneur"
+      },
+      {
+        "answer": false,
+        "name": "un groupe électroattracteur"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c1b41375ef66e733ee4d"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "La constante de vitesse d une réaction de Diels−Alder augmente lorsque le diénophile est substitué par ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "un groupe électrodonneur"
+      },
+      {
+        "answer": true,
+        "name": "un groupe électroattracteur"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c1d638664510265682e5"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "L'approche endo entre réactifs est favorisé dans de nombreuses réactions de Diels Alder en raison ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "des interactions secondaires entre orbitales frontières"
+      },
+      {
+        "answer": false,
+        "name": "d effets stériques favorables"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c1fa1375ef66e733ee4e"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "L hydratation des alcènes terminaux (R−CH=CH₂) en milieu acide conduit préférentiellement à un alcool ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "primaire"
+      },
+      {
+        "answer": true,
+        "name": "secondaire"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c21238664510265682e6"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "L hydratation des alcènes en milieu acide est une réaction stéréosélective.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c23938664510265682e7"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Le mécanisme de l hydratation des alcènes en milieu acide se déroule en ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "une étape élémentaire"
+      },
+      {
+        "answer": true,
+        "name": "deux étapes élémentaires, la première étant cinétiquement déterminante"
+      },
+      {
+        "answer": false,
+        "name": "deux étapes élémentaires, la deuxième étant cinétiquement déterminante"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c25b1375ef66e733ee4f"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "L hydroboration−oxydation d alcènes terminaux (R−CH=CH₂) conduit préférentiellement à un alcool ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "primaire"
+      },
+      {
+        "answer": false,
+        "name": "secondaire"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c27538664510265682e8"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "La réaction d hydroboration des alcènes est une réaction ionique.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c29c38664510265682e9"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "La régiosélectivité de l hydroboration des alcènes est gouvernée par ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "les effets stériques sur l alcène"
+      },
+      {
+        "answer": false,
+        "name": "les effets électroniques sur l alcène"
+      },
+      {
+        "answer": true,
+        "name": "les effets stériques sur le dérivé boré"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c2c238664510265682ea"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "La réduction des alcènes par le dihydrogène en présence de nickel solide est une ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "syn−addition de H₂"
+      },
+      {
+        "answer": false,
+        "name": "trans−addition de H₂"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c2e41375ef66e733ee50"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "En catalyse hétérogène, la réaction d hydrogénation a lieu ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "au sein du métal"
+      },
+      {
+        "answer": true,
+        "name": "sur la surface du métal"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c30d38664510265682eb"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Une hydrogénation catalytique d un alcyne en présence de palladium de Lindlar permet d'obtenir ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "un alcane"
+      },
+      {
+        "answer": true,
+        "name": "un alcène Z"
+      },
+      {
+        "answer": false,
+        "name": "un alcène E"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c44c1375ef66e733ee51"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "L oxydation d un alcène par un peroxy−acide conduit à ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "un alcool"
+      },
+      {
+        "answer": false,
+        "name": "une cétone"
+      },
+      {
+        "answer": true,
+        "name": "un epoxyde"
+      },
+      {
+        "answer": false,
+        "name": "un diol"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c46c38664510265682ec"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "L époxydation suivie d hydrolyse basique d un alcène correspond à ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "une anti−dihydroxylation"
+      },
+      {
+        "answer": false,
+        "name": "une syn−dihydroxylation"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c48b38664510265682ed"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "L approche des nucléophiles lors de l ouverture des époxydes s effectue ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "du côté de l atome d'oxygène du cycle"
+      },
+      {
+        "answer": true,
+        "name": "du côté opposé aux liaisons carbone− oxygène du cycle"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c4b938664510265682ee"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Sur un diagramme d énergie = f(coordonnée réactionnelle), un intermédiaire réactionnel est positionné ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "en un minimum local d'énergie"
+      },
+      {
+        "answer": false,
+        "name": "en un maximum d'énergie"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c4e038664510265682ef"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Sur un diagramme d énergie = f(coordonnée réactionnelle), un état de transition est positionné ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "en un minimum local d énergie"
+      },
+      {
+        "answer": true,
+        "name": "en un maximum d énergie"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c53a38664510265682f0"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Lorsque l energie d activation d une étape élémentaire augmente (les autres paramètres n étant pas modifiés), la constante de vitesse de cette étape ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "augmente"
+      },
+      {
+        "answer": true,
+        "name": "diminue"
+      },
+      {
+        "answer": false,
+        "name": "ne change pas"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c54f38664510265682f1"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Une réaction dans le sens direct passe par les mêmes intermédiaires et états de transition que la réaction dans le sens opposé.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c56c38664510265682f2"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "D'après le postulat de Hammond, à quoi ressemble le complexe activé correspondant à une étape élémentaire exothermique ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Aux réactifs"
+      },
+      {
+        "answer": false,
+        "name": "Aux produits"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c5941375ef66e733ee52"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Pour la majorité des réactions chimiques, la sélectivité ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "augmente avec l augmentation de la température"
+      },
+      {
+        "answer": true,
+        "name": "diminue avec l augmentation de la température"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c5b538664510265682f3"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Un nucléophile est une espèce chimique dont la réactivité est gouvernée par ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "son orbitale occupée la plus haute en énergie"
+      },
+      {
+        "answer": false,
+        "name": "son orbitale vacante la plus basse en énergie"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c5d238664510265682f4"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Un électrophile est une espèce chimique dont la réactivité est gouvernée par ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "son orbitale occupée la plus haute en énergie"
+      },
+      {
+        "answer": true,
+        "name": "son orbitale vacante la plus basse en énergie"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c5e91375ef66e733ee53"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "La règle des 18 électrons est suivie pour tout complexe organométallique.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c61d38664510265682f5"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Dans un complexe octaédrique, sous quelles formes la levée de dégénérescence des orbitales d conduit−elle ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Un groupe de trois orbitales et un groupe de deux orbitales à une énergie plus élevée"
+      },
+      {
+        "answer": false,
+        "name": "Un groupe de deux orbitales et un groupe de trois orbitales à une énergie plus élevée"
+      },
+      {
+        "answer": false,
+        "name": "Un groupe de trois orbitales et deux orbitales à deux énergies différentes supérieures"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c8841375ef66e733ee55"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Le ligand CO est un ligand dont le rôle principal est ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "non liant"
+      },
+      {
+        "answer": false,
+        "name": "pi−donneur"
+      },
+      {
+        "answer": true,
+        "name": "sigma donneur et pi−accepteur"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c8c78622f67600e4bfdd"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "La donation est un transfert d électrons du ligand vers le centre métallique. La rétrodonation est un transfert d électrons du centre métallique vers le ligand.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c8e51375ef66e733ee56"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Vrai ou faux ∶ Dans un complexe métal carbonyle, la rétrodonation est traduite en spectroscopie infrarouge par une augmentation du nombre d'onde correspondant à la vibration de la liaison CO (par rapport à la situation observée dans CO gazeux).",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c9118622f67600e4bfde"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Qu'observe−t−on pour le nombre d'oxydation lors réaction de migration ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Une augmentation"
+      },
+      {
+        "answer": false,
+        "name": "Une diminution"
+      },
+      {
+        "answer": true,
+        "name": "Pas de changement"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c93d8622f67600e4bfdf"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Qu'observe−t−on pour le nombre d'oxydation lors d'une réaction d' addition oxydante ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Une augmentation"
+      },
+      {
+        "answer": false,
+        "name": "Une diminution"
+      },
+      {
+        "answer": false,
+        "name": "Pas de changement"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c9618622f67600e4bfe0"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Qu'observe−t−on pour le nombre d'oxydation lors d' une réaction d'élimination réductrice ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Une augmentation"
+      },
+      {
+        "answer": true,
+        "name": "Une diminution"
+      },
+      {
+        "answer": false,
+        "name": "Pas de changement"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c9791375ef66e733ee57"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Un catalyseur possède plus d électrons de valence qu un précurseur de catalyseur.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c99f8622f67600e4bfe1"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Les orbitales moléculaires du dioxygène sont des combinaisons linéaires d orbitales atomiques ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "2s et 2p"
+      },
+      {
+        "answer": false,
+        "name": "1s et 2s"
+      },
+      {
+        "answer": false,
+        "name": "exclusivement 2p"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c9b61375ef66e733ee58"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Une fonction d onde liante présente un recouvrement positif entre orbitales atomiques.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c9cb8622f67600e4bfe2"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Une orbitale moléculaire de symétrie pi présente un recouvrement axial d orbitales atomiques.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469c9ff8622f67600e4bfe3"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Lors de la realisation du diagramme d interaction entre deux orbitales atomiques d énergies voisines, on observe une combinaison liante et ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "une combinaison antiliante lorsque le recouvrement entre orbitales atomiques est égal à zéro"
+      },
+      {
+        "answer": false,
+        "name": "une combinaison non liante lorsque le recouvrement entre orbitales atomiques est différent de zéro"
+      },
+      {
+        "answer": true,
+        "name": "une combinaison antiliante lorsque le recouvrement entre orbitales atomiques est différent de zéro"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469ca308622f67600e4bfe4"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "En notant n et n* le nombre d électrons liants et non liants d un diagramme d orbitales moléculaires, l indice de liaison est défini par ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "b=n/2"
+      },
+      {
+        "answer": true,
+        "name": "b=(n−n*)/2"
+      },
+      {
+        "answer": false,
+        "name": "b=(n*−n)/2"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469ca591375ef66e733ee59"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Lorsque deux orbitales atomiques portées par deux atomes voisins possèdent les mêmes propriétés de symétrie, on observe que ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "les énergies de ces deux orbitales atomiques sont égales"
+      },
+      {
+        "answer": false,
+        "name": "le recouvrement entre ces deux orbitales atomiques est nul"
+      },
+      {
+        "answer": true,
+        "name": "le recouvrement entre ces deux orbitales atomiques est non nul"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469ca778622f67600e4bfe5"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Il est possible de distinguer par une méthode spectroscopique les électrons liants et les électrons non liants de la configuration électronique d une molécule.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469ca8b8622f67600e4bfe6"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Une orbitale non liante contient toujours un électron non apparié.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469caa48622f67600e4bfe7"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Vrai ou faux ∶Dans un diagramme d'orbitales moléculaires, l'orbitale moléculaire la plus haute occupée est toujours antiliante.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469cacd8622f67600e4bfe8"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Pour remplir un diagramme d orbitales moléculaires par des électrons, on dénombre ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "les électrons de valence apportés par chaque atome moins la charge électrique de l édifice"
+      },
+      {
+        "answer": false,
+        "name": "les électrons de valence apportés par chaque atome + la charge électrique de l édifice"
+      },
+      {
+        "answer": false,
+        "name": "les électrons de coeur et les électrons de valence apportés par chaque atome"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469caf21375ef66e733ee5a"
+    },
+    "category": "Chimie organique",
+    "difficulty": "S5",
+    "name": "Pour réaliser une extractiion liquide−liquide, on utilise, au laboratoire ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "une ampoule de coulée"
+      },
+      {
+        "answer": true,
+        "name": "une ampoule à décanter"
+      },
+      {
+        "answer": false,
+        "name": "un réfrigérant"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469ce1dfe006d754eb8439a"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Que signifie le sigle ADN ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Acide DésoxyriboNucléique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469ce70fe006d754eb8439b"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Comment appelle−t−on un hétéroside lié à une protéine ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Une glycoprotéine"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469cec0fe006d754eb8439c"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Comment appelle−t−on un hétéroside lié à un lipide ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Un glycolipide"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469cf9af84e942a904138ad"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Le D−glycéraldéhyde possède−t−il un carbone asymétrique ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Oui"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469cfaffe006d754eb8439d"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Comment appelle−t−on un mélange équimolaire de 2 isomères D et L ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Un mélange racémique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469cfcbf84e942a904138ae"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Combien d'atomes de carbone possède la forme pyranique des oses ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "5 atomes de carbone"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469cfe3f84e942a904138af"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Quel acide obtient−on par action de la glucose oxydase sur le glucose  ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "L acide gluconique"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469cff9fe006d754eb8439e"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Quels sont les 2 polyols obtenus par réduction chimique ou enzymatique du fructose ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Le sorbitol et le mannitol"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d018f84e942a904138b0"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Quelle est la définition d'un acide aminé ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Un acide avec une fonction amine"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d047fe006d754eb8439f"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Qu'est−ce qu une cellule biologique diploïde ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "une cellule à n chromosomes"
+      },
+      {
+        "answer": true,
+        "name": "une cellule à 2n chromosomes"
+      },
+      {
+        "answer": false,
+        "name": "une cellule à 3n chromosomes"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d06df84e942a904138b1"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Qu'est−ce qu une cellule biologique haploïde ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "une cellule à n chromosomes"
+      },
+      {
+        "answer": false,
+        "name": "une cellule à 2n chromosomes"
+      },
+      {
+        "answer": false,
+        "name": "une cellule à 3n chromosomes"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d090fe006d754eb843a0"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "A quoi conduit la méiose ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "A la formation de gamètes ou cellules sexuelles chez les organismes eucaryotes."
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d0b0f84e942a904138b2"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Qu'est−ce qu une mutation génétique ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Une modification de la séquence d ADN d un gène"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d0cefe006d754eb843a1"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Le sulfate de sodium est un sel normal alors que bisulfate de sodium est un sel acide.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d0f6f84e942a904138b3"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Si les ions hydronium se trouvent dans une solution, par nature, la solution est ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Basique"
+      },
+      {
+        "answer": true,
+        "name": "Acide"
+      },
+      {
+        "answer": false,
+        "name": "Neutre"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d10ff84e942a904138b4"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "La réaction d un acide avec une base est appelée une réaction de neutralisation.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d138f84e942a904138b5"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Lequel est connu comme un donneur de protons ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "L acide"
+      },
+      {
+        "answer": false,
+        "name": "Le sel"
+      },
+      {
+        "answer": false,
+        "name": "La base"
+      },
+      {
+        "answer": false,
+        "name": "L eau"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d171fe006d754eb843a2"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "L orange de méthyle en solution tourne les bases ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "A l incolore"
+      },
+      {
+        "answer": false,
+        "name": "A l orange"
+      },
+      {
+        "answer": true,
+        "name": "Au jaune"
+      },
+      {
+        "answer": false,
+        "name": "Au rose"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d18ef84e942a904138b6"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "L ajout de phénolphtaléine à un acide ne résulte en aucun changement de couleur.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d1b9fe006d754eb843a3"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Une indication de 13 sur l échelle de pH indique ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Un acide fort"
+      },
+      {
+        "answer": true,
+        "name": "Une base forte"
+      },
+      {
+        "answer": false,
+        "name": "Une base faible"
+      },
+      {
+        "answer": false,
+        "name": "Un acide faible"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d1e6f84e942a904138b7"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Une indication inférieure à 7 sur l échelle de pH indique un milieu ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Neutre"
+      },
+      {
+        "answer": false,
+        "name": "Basique"
+      },
+      {
+        "answer": false,
+        "name": "Inconnu"
+      },
+      {
+        "answer": true,
+        "name": "Acide"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d21afe006d754eb843a4"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "La solution de phénolphtaléine tourne les bases ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "A l incolore"
+      },
+      {
+        "answer": false,
+        "name": "A l orange"
+      },
+      {
+        "answer": true,
+        "name": "Au rose"
+      },
+      {
+        "answer": false,
+        "name": "Au jaune"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d23cf84e942a904138b8"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Quelle indication sur l échelle de pH indique une base faible ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "13"
+      },
+      {
+        "answer": true,
+        "name": "8"
+      },
+      {
+        "answer": false,
+        "name": "6"
+      },
+      {
+        "answer": false,
+        "name": "2"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d25dfe006d754eb843a5"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "L hydroxyde de sodium tourne le papier pH de jaune au bleu.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d274fe006d754eb843a6"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "L Acide sulfurique tourne le papier pH de jaune au bleu.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d2a9fe006d754eb843a7"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "L orange de méthyle en solution tourne les acides ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Au jaune"
+      },
+      {
+        "answer": true,
+        "name": "Au rose"
+      },
+      {
+        "answer": false,
+        "name": "A l incolore"
+      },
+      {
+        "answer": false,
+        "name": "A l orange"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d401f84e942a904138b9"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Une indication de 2 sur l échelle de pH indique ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Une base faible"
+      },
+      {
+        "answer": true,
+        "name": "Un acide fort"
+      },
+      {
+        "answer": false,
+        "name": "Une base forte"
+      },
+      {
+        "answer": false,
+        "name": "Un acide faible"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d430fe006d754eb843a8"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "La solution de Bleu de Bromothymol tourne les bases ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "A l orange"
+      },
+      {
+        "answer": false,
+        "name": "Au jaune"
+      },
+      {
+        "answer": false,
+        "name": "A l incolore"
+      },
+      {
+        "answer": true,
+        "name": "Au bleu"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d461f84e942a904138ba"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Une indication supérieure à 7 sur l échelle de pH indique un milieu ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Neutre"
+      },
+      {
+        "answer": false,
+        "name": "Inconnu"
+      },
+      {
+        "answer": true,
+        "name": "Basique"
+      },
+      {
+        "answer": false,
+        "name": "Acide"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d48bfe006d754eb843a9"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "La solution de Bleu de Bromothymol tourne les acides ∶",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Au jaune"
+      },
+      {
+        "answer": false,
+        "name": "Au bleu"
+      },
+      {
+        "answer": false,
+        "name": "A l incolore"
+      },
+      {
+        "answer": false,
+        "name": "A l orange"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d4b5f84e942a904138bb"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Si plus de solutés ne peuvent pas être dissout dans un solvant à une température donnée, cette solution est appelée ∶",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Une solution authentique"
+      },
+      {
+        "answer": false,
+        "name": "Une solution répandue"
+      },
+      {
+        "answer": false,
+        "name": "Une solution instable"
+      },
+      {
+        "answer": true,
+        "name": "Une solution saturée"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d4dffe006d754eb843aa"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Compléter l'équation suivante ∶ Acide + ??? = Sel + Eau",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Non−Métal"
+      },
+      {
+        "answer": true,
+        "name": "Base"
+      },
+      {
+        "answer": false,
+        "name": "Métal"
+      },
+      {
+        "answer": false,
+        "name": "Oxygène"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d4f5f84e942a904138bc"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "La solubilité d'une substance dans un solvant augmente généralement avec une augmentation de la température.",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Vrai"
+      },
+      {
+        "answer": false,
+        "name": "Faux"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d525fe006d754eb843ab"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Laquelle de ces propositions ne désigne pas un acide ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "HCl"
+      },
+      {
+        "answer": false,
+        "name": "H₂SO₄"
+      },
+      {
+        "answer": true,
+        "name": "NaOH"
+      },
+      {
+        "answer": false,
+        "name": "HNO₃"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d56df84e942a904138bd"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Quelle opération consiste à préparer une solution de concentration molaire 2,0.10^{−1} mol/L à partir d une solution mère de concentration molaire 2,0 mol/L ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Une dilution"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d5a2fe006d754eb843ac"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Quelle est la masse de glucose (M = 180 g/mol) à peser pour préparer 100 mL d une solution de glucose à 10 mmol/L ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "0,1800 g"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d61bf84e942a904138be"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "On prélève 20 mL d une solution de concentration initiale C0= 0.25 mol/L que l on dilue dans une fiole jaugée de 50 mL. On effectue ensuite une seconde dilution en prélevant 2 mL de solution diluée que l on met dans une fiole jaugée de 100 mL. Quelle est la concentration finale de la solution diluée ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "2,0.10^{−3} mol/L"
+      },
+      {
+        "answer": false,
+        "name": "5,0.10^{−4} mol/L"
+      },
+      {
+        "answer": false,
+        "name": "4,8.10^{−3} mol/L"
+      },
+      {
+        "answer": false,
+        "name": "1,0.10^{−3} mol/L"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d645fe006d754eb843ad"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Parmi les paramètres suivants, lequel a le moins d'importance lors de la mise en solution d un soluté solide ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "la température"
+      },
+      {
+        "answer": false,
+        "name": "la nature du solvant"
+      },
+      {
+        "answer": false,
+        "name": "la nature du soluté"
+      },
+      {
+        "answer": true,
+        "name": "la pression"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d77cf84e942a904138bf"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Quel soluté sera le plus soluble dans le tétrachlorure de carbone (CCl₄) ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "le saccharose, C₁₂H₂₂O₁₁"
+      },
+      {
+        "answer": false,
+        "name": "l acide éthanoïque CH₃COOH"
+      },
+      {
+        "answer": false,
+        "name": "l iodure de sodium NaI"
+      },
+      {
+        "answer": true,
+        "name": "le n−octane C₈H₁₈"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d7c9fe006d754eb843ae"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Parmi les composés suivants, lequel est un électrolyte fort ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "le glucose C₆H₁₂O₆"
+      },
+      {
+        "answer": false,
+        "name": "l hydroxyde de calcium Ca(OH)₂"
+      },
+      {
+        "answer": false,
+        "name": "le méthanol CH₃OH"
+      },
+      {
+        "answer": true,
+        "name": "le dissulfure de sodium Na₂S"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d7f4f84e942a904138c0"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Dans le cas d'une solution, quelle mesure de concentration va dépendre de la température ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Le pourcentage en masse"
+      },
+      {
+        "answer": false,
+        "name": "La fraction molaire"
+      },
+      {
+        "answer": false,
+        "name": "La molalité"
+      },
+      {
+        "answer": true,
+        "name": "La molarité"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d812fe006d754eb843af"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Quelle est la charge du complexe Na(H₂O)₆ ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "+1"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d829fe006d754eb843b0"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Quelle est la définition d une solution tampon ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "Solution à pH constant"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d83df84e942a904138c1"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Dans l'acide sulfurique, combien y a−t−il de couple acide/base ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "2 couples acide/base"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d84dfe006d754eb843b1"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Quel est le solvant universel ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "L eau"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d86cfe006d754eb843b2"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Quelle est la relation entre pH et pKa d'un acide faible à concentration donnée ?",
+    "propositions": [
+      {
+        "answer": true,
+        "name": "pH=1/2 (pKa − log C)"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d89df84e942a904138c2"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Quelles est la concentration molaire de l'eau pure ?",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "1 mol/L"
+      },
+      {
+        "answer": false,
+        "name": "18 mol/L"
+      },
+      {
+        "answer": true,
+        "name": "55 mol/L"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6469d8bafe006d754eb843b3"
+    },
+    "category": "Chimie des solutions & biochimie",
+    "difficulty": "S5",
+    "name": "Si on ajoute 50 mL d eau à 50 mL d éthanol, on obtient 100 mL de mélange eau/éthanol.",
+    "propositions": [
+      {
+        "answer": false,
+        "name": "Vrai"
+      },
+      {
+        "answer": true,
+        "name": "Faux"
+      }
+    ]
+  }
+]

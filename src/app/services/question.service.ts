@@ -30,4 +30,11 @@ export class QuestionService {
       retry(3)
     );
   }
+
+  // Get the test questions from a JSON file stored in the assets folder
+  public getTestQuestions(): Observable<Question[]> {
+    return this.http.get<Question[]>('assets/data/questions-test.json').pipe(
+      retry(3)
+    );
+  }
 }
